@@ -1,0 +1,451 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "route": "/",
+      "status": 200,
+      "title": "Tiếng Nhật,mở ra mộtthế giới mới.",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app",
+      "status": 200,
+      "title": "こんにちは, Minh Anh! 🌸",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/learn",
+      "status": 200,
+      "title": "Kana Lab — Bảng Chữ Cái",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/practice",
+      "status": 200,
+      "title": "Lộ Trình Học Tiếng Nhật N5",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/review",
+      "status": 200,
+      "title": "Ôn Tập Lặp Lại Cách Khoảng (SRS)",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/vocabulary",
+      "status": 200,
+      "title": "Kho Từ Vựng & Hán Tự",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/grammar",
+      "status": 200,
+      "title": "Ngữ Pháp JLPT — Grammar Lab",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/journey",
+      "status": 200,
+      "title": "Hành Trình Nhật Bản 🗾",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/survival",
+      "status": 200,
+      "title": "Chế Độ Sinh Tồn (Survival Mode)",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/leaderboard",
+      "status": 200,
+      "title": "Bảng Xếp Hạng & Giải Đấu 🏆",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/profile",
+      "status": 200,
+      "title": "Hồ Sơ & Cài Đặt",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 1440,
+      "route": "/app/sensei",
+      "status": 200,
+      "title": "AI Kaiwa Sensei (葵先生) 🌸",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "status": 200,
+      "title": "Tiếng Nhật,mở ra mộtthế giới mới.",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app",
+      "status": 200,
+      "title": "こんにちは, Minh Anh! 🌸",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/learn",
+      "status": 200,
+      "title": "Kana Lab — Bảng Chữ Cái",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/practice",
+      "status": 200,
+      "title": "Lộ Trình Học Tiếng Nhật N5",
+      "overflow": false,
+      "wide": [
+        "BUTTON:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800 border border-transparent"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/app/review",
+      "status": 200,
+      "title": "Ôn Tập Lặp Lại Cách Khoảng (SRS)",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/vocabulary",
+      "status": 200,
+      "title": "Kho Từ Vựng & Hán Tự",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/grammar",
+      "status": 200,
+      "title": "Ngữ Pháp JLPT — Grammar Lab",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/journey",
+      "status": 200,
+      "title": "Hành Trình Nhật Bản 🗾",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/survival",
+      "status": 200,
+      "title": "Chế Độ Sinh Tồn (Survival Mode)",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/leaderboard",
+      "status": 200,
+      "title": "Bảng Xếp Hạng & Giải Đấu 🏆",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/profile",
+      "status": 200,
+      "title": "Hồ Sơ & Cài Đặt",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 768,
+      "route": "/app/sensei",
+      "status": 200,
+      "title": "AI Kaiwa Sensei (葵先生) 🌸",
+      "overflow": false,
+      "wide": [
+        "BUTTON:flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-black shrink-0 transition-all border bg-white dark:bg-sumi-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700",
+        "SPAN:",
+        "BUTTON:flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-black shrink-0 transition-all border bg-white dark:bg-sumi-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700",
+        "SPAN:text-base"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "status": 200,
+      "title": "Tiếng Nhật,mở ra mộtthế giới mới.",
+      "overflow": false,
+      "wide": [
+        "path:[object SVGAnimatedString]"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/app",
+      "status": 200,
+      "title": "こんにちは, Minh Anh! 🌸",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/learn",
+      "status": 200,
+      "title": "Kana Lab — Bảng Chữ Cái",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/practice",
+      "status": 200,
+      "title": "Lộ Trình Học Tiếng Nhật N5",
+      "overflow": false,
+      "wide": [
+        "BUTTON:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800 border border-transparent",
+        "SPAN:",
+        "SPAN:",
+        "SPAN:text-[10px] text-slate-400"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/app/review",
+      "status": 200,
+      "title": "Ôn Tập Lặp Lại Cách Khoảng (SRS)",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/vocabulary",
+      "status": 200,
+      "title": "Kho Từ Vựng & Hán Tự",
+      "overflow": false,
+      "wide": [
+        "BUTTON:px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shrink-0 text-slate-600 dark:text-slate-400 hover:text-slate-900"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/app/grammar",
+      "status": 200,
+      "title": "Ngữ Pháp JLPT — Grammar Lab",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/journey",
+      "status": 200,
+      "title": "Hành Trình Nhật Bản 🗾",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/survival",
+      "status": 200,
+      "title": "Chế Độ Sinh Tồn (Survival Mode)",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/leaderboard",
+      "status": 200,
+      "title": "Bảng Xếp Hạng & Giải Đấu 🏆",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/profile",
+      "status": 200,
+      "title": "Hồ Sơ & Cài Đặt",
+      "overflow": false,
+      "wide": []
+    },
+    {
+      "width": 390,
+      "route": "/app/sensei",
+      "status": 200,
+      "title": "AI Kaiwa Sensei (葵先生) 🌸",
+      "overflow": false,
+      "wide": [
+        "BUTTON:flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-black shrink-0 transition-all border bg-white dark:bg-sumi-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700",
+        "SPAN:",
+        "BUTTON:flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-black shrink-0 transition-all border bg-white dark:bg-sumi-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700",
+        "SPAN:text-base"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/",
+      "status": 200,
+      "title": "Tiếng Nhật,mở ra mộtthế giới mới.",
+      "overflow": false,
+      "wide": [
+        "path:[object SVGAnimatedString]"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app",
+      "status": 200,
+      "title": "こんにちは, Minh Anh! 🌸",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/learn",
+      "status": 200,
+      "title": "Kana Lab — Bảng Chữ Cái",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/practice",
+      "status": 200,
+      "title": "Lộ Trình Học Tiếng Nhật N5",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200",
+        "BUTTON:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800 border border-transparent",
+        "SPAN:"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/review",
+      "status": 200,
+      "title": "Ôn Tập Lặp Lại Cách Khoảng (SRS)",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/vocabulary",
+      "status": 200,
+      "title": "Kho Từ Vựng & Hán Tự",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200",
+        "BUTTON:px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shrink-0 text-slate-600 dark:text-slate-400 hover:text-slate-900",
+        "BUTTON:px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shrink-0 text-slate-600 dark:text-slate-400 hover:text-slate-900"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/grammar",
+      "status": 200,
+      "title": "Ngữ Pháp JLPT — Grammar Lab",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/journey",
+      "status": 200,
+      "title": "Hành Trình Nhật Bản 🗾",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/survival",
+      "status": 200,
+      "title": "Chế Độ Sinh Tồn (Survival Mode)",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/leaderboard",
+      "status": 200,
+      "title": "Bảng Xếp Hạng & Giải Đấu 🏆",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/profile",
+      "status": 200,
+      "title": "Hồ Sơ & Cài Đặt",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-sakura-500 bg-sakura-50 text-sakura-600 dark:bg-sakura-950/50 dark:text-sakura-400"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/app/sensei",
+      "status": 200,
+      "title": "AI Kaiwa Sensei (葵先生) 🌸",
+      "overflow": false,
+      "wide": [
+        "DIV:flex items-center gap-1 sm:gap-2 shrink-0",
+        "A:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-2xl border text-xs sm:text-sm font-black transition shadow-sm border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-200",
+        "BUTTON:flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-black shrink-0 transition-all border bg-white dark:bg-sumi-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700",
+        "SPAN:"
+      ]
+    }
+  ],
+  "errors": []
+}

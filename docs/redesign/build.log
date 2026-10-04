@@ -1,0 +1,81 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nihon-quest@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.5
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./app/app/practice/[slug]/QuizRunner.tsx
+128:6  Warning: React Hook useMemo has a missing dependency: 'currentExercise.options'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+255:6  Warning: React Hook useEffect has a missing dependency: 'displayedOptions'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/43) ...
+   Generating static pages (10/43) 
+   Generating static pages (21/43) 
+   Generating static pages (32/43) 
+ ✓ Generating static pages (43/43)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    175 B          94.2 kB
+├ ○ /_not-found                          137 B          87.3 kB
+├ ƒ /api/account                         0 B                0 B
+├ ƒ /api/account/password                0 B                0 B
+├ ƒ /api/achievements                    0 B                0 B
+├ ƒ /api/activity                        0 B                0 B
+├ ƒ /api/ai/chat                         0 B                0 B
+├ ƒ /api/ai/dungeon                      0 B                0 B
+├ ƒ /api/ai/dungeon/submit               0 B                0 B
+├ ƒ /api/auth/[...nextauth]              0 B                0 B
+├ ƒ /api/auth/forgot-password/reset      0 B                0 B
+├ ƒ /api/auth/otp/send                   0 B                0 B
+├ ƒ /api/auth/register                   0 B                0 B
+├ ƒ /api/journey                         0 B                0 B
+├ ƒ /api/journey/progress                0 B                0 B
+├ ƒ /api/kana                            0 B                0 B
+├ ƒ /api/kana-battle                     0 B                0 B
+├ ƒ /api/kana-battle/submit              0 B                0 B
+├ ƒ /api/kana/practice                   0 B                0 B
+├ ƒ /api/lessons                         0 B                0 B
+├ ƒ /api/lessons/[slug]                  0 B                0 B
+├ ƒ /api/lessons/complete                0 B                0 B
+├ ƒ /api/me                              0 B                0 B
+├ ƒ /api/missions                        0 B                0 B
+├ ƒ /api/review                          0 B                0 B
+├ ƒ /api/review/add                      0 B                0 B
+├ ƒ /api/survival/progress               0 B                0 B
+├ ƒ /app                                 761 B           109 kB
+├ ƒ /app/grammar                         2.61 kB         111 kB
+├ ƒ /app/journey                         48.6 kB         157 kB
+├ ƒ /app/leaderboard                     2.58 kB         111 kB
+├ ƒ /app/learn                           7.42 kB         116 kB
+├ ƒ /app/practice                        7.23 kB         115 kB
+├ ƒ /app/practice/[slug]                 5.35 kB         114 kB
+├ ƒ /app/profile                         3.08 kB         121 kB
+├ ƒ /app/review                          4.21 kB         112 kB
+├ ƒ /app/sensei                          17.9 kB         126 kB
+├ ƒ /app/survival                        10.8 kB         119 kB
+├ ƒ /app/vocabulary                      6.72 kB         115 kB
+├ ○ /forgot-password                     4.25 kB         103 kB
+├ ○ /icon.jpg                            0 B                0 B
+├ ○ /login                               3.38 kB         112 kB
+├ ○ /onboarding                          3.11 kB        90.3 kB
+└ ○ /register                            4.58 kB         104 kB
++ First Load JS shared by all            87.2 kB
+  ├ chunks/23-411a4f211dab43a6.js        31.5 kB
+  ├ chunks/fd9d1056-94f95e7debcac975.js  53.6 kB
+  └ other shared chunks (total)          2.04 kB
+
+
+ƒ Middleware                             49.9 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

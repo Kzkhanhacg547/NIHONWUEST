@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+    --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-jp: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+  }
+
+  .dark {
+    --background: 9 13 22;
+    --foreground: 248 250 252;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Keeps in-page anchors (#roadmap, #kana-full, #review-card) clear of the
+       sticky header instead of hiding them behind it. */
+    scroll-padding-top: 6rem;
+    /* iOS Safari tự phóng to khung nhìn khi font-size < 16px và giữ nguyên độ
+       phóng sau khi blur -> mọi thao tác chạm sau đó rơi sai vị trí. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased dark:bg-sumi-950 dark:text-slate-100 transition-colors duration-200 selection:bg-sakura-500 selection:text-white;
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    /* Bỏ highlight xanh mặc định khi chạm, chuẩn hoá cảm giác "native". */
+    -webkit-tap-highlight-color: transparent;
+    /* Chặn zoom khi bấm đúp lên UI, nhưng vẫn pinch-zoom được. */
+    touch-action: manipulation;
+    overscroll-behavior-y: none;
+  }
+}
+
+/* =========================================================
+   MOBILE FOUNDATION
+   Những quy tắc nền áp cho mọi màn hình trên điện thoại.
+   ========================================================= */
+@media (max-width: 767px) {
+  /* 1) Ô nhập liệu: chặn iOS auto-zoom và nâng chiều cao lên 44px. */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-height: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Select/textarea mặc định của Safari nhỏ hơn 16px -> nhảy layout. */
+  select {
+    line-height: 1.4;
+  }
+
+  /* 2) Bảng và ảnh không được tràn ngang khỏi viewport. */
+  table {
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* Nới vùng chạm cho nút/link nhỏ mà không phải sửa từng class.
+   Dùng cho phần tử không có overflow:hidden (pseudo-element sẽ bị cắt nếu bị clip). */
+@media (pointer: coarse) {
+  .nq-tap {
+    position: relative;
+  }
+
+  .nq-tap::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+  }
+}
+
+/* 5) Trên thiết bị cảm ứng, trạng thái :hover dính lại sau khi chạm và tạo
+      hiệu ứng "giả". Dùng :active để có phản hồi nhấn thay thế. */
+@media (hover: none) {
+  .nq-touch-fx:active {
+    transform: scale(0.97);
+  }
+}
+
+/* 6) Vùng an toàn (notch / home indicator). */
+.nq-safe-b {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nq-safe-t {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* 7) Cuộn ngang mà không kéo theo cả trang. */
+.nq-hscroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.nq-hscroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* 8) Chuỗi dài không được ngắt (URL, email) không nên làm tràn ngang. */
+.nq-break {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 9) Tab bar đáy màn hình (AppNav) che nội dung nếu trang không chừa chỗ.
+     :has() giữ điều này ở đúng một chỗ thay vì phải pad từng màn hình. */
+@media (max-width: 1279px) {
+  body:has(.nq-tabbar) main {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Dự phòng cho trình duyệt không hỗ trợ :has(). */
+@supports not selector(body:has(*)) {
+  @media (max-width: 1279px) {
+    main {
+      padding-bottom: calc(76px + env(safe-area-inset-bottom));
+    }
+  }
+}
+
+.jp-text {
+  font-family: var(--font-jp);
+  font-feature-settings: "palt";
+  letter-spacing: 0.04em;
+}
+
+/* Glassmorphism & Modern Soft Glass */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 41, 59, 0.8);
+}
+
+/* 3D Flip Card for SRS Review */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Japanese Traditional Pattern Background (Subtle Seigaiha Waves) */
+.bg-seigaiha {
+  background-image: radial-gradient(circle at 100% 150%, rgba(244, 63, 110, 0.04) 24%, transparent 25%),
+                    radial-gradient(circle at 0 150%, rgba(244, 63, 110, 0.04) 24%, transparent 25%),
+                    radial-gradient(circle at 50% 100%, rgba(99, 102, 241, 0.04) 10%, transparent 11%);
+  background-size: 32px 16px;
+}
+
+.dark .bg-seigaiha {
+  background-image: radial-gradient(circle at 100% 150%, rgba(244, 63, 110, 0.06) 24%, transparent 25%),
+                    radial-gradient(circle at 0 150%, rgba(244, 63, 110, 0.06) 24%, transparent 25%),
+                    radial-gradient(circle at 50% 100%, rgba(99, 102, 241, 0.06) 10%, transparent 11%);
+  background-size: 32px 16px;
+}
+
+/* Ambient glow accents */
+.glow-sakura {
+  box-shadow: 0 0 25px -4px rgba(244, 63, 110, 0.25);
+}
+
+.glow-amber {
+  box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.25);
+}
+
+.glow-fuji {
+  box-shadow: 0 0 25px -4px rgba(99, 102, 241, 0.25);
+}
+
+/* Custom Clean Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.45);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 0.75);
+}
+
+/* Hide scrollbars cleanly for horizontal tab bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

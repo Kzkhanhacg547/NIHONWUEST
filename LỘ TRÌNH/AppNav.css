@@ -1,0 +1,71 @@
+/* AppNav — thanh điều hướng nổi như ảnh thiết kế (tiền tố an-) */
+.an-header { position: sticky; top: 10px; z-index: 40; padding: 0 20px; margin-bottom: 4px; }
+.an-bar {
+  position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  max-width: 1240px; margin: 0 auto; height: 54px; padding: 0 16px 0 18px;
+  background: rgba(255, 255, 255, 0.96); border: 1px solid #ece8de; border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(60, 45, 30, 0.08); backdrop-filter: blur(8px);
+}
+.dark .an-bar { background: rgba(24, 26, 30, 0.96); border-color: #2b2e33; }
+.an-brand { display: inline-flex; align-items: center; gap: 8px; }
+.an-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 30px; height: 100%; }
+.an-link {
+  position: relative; display: inline-flex; align-items: center; gap: 4px; height: 100%;
+  font-size: 12px; font-weight: 600; color: #2a2a2a; white-space: nowrap;
+}
+.dark .an-link { color: #e6e4de; }
+.an-link:hover { color: #d6322a; }
+.an-link.is-active { color: #d6322a; }
+.an-link.is-active::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px; background: #d6322a;
+}
+.an-explore { position: relative; height: 100%; }
+.an-popover {
+  position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+  min-width: 230px; padding: 8px; border: 1px solid #ece8de; border-radius: 14px; background: #fff;
+  box-shadow: 0 14px 34px rgba(60, 45, 30, 0.14);
+}
+.dark .an-popover { background: #1b1d21; border-color: #2b2e33; }
+.an-popover p { padding: 6px 10px; font-size: 9px; font-weight: 800; letter-spacing: 0.14em; color: #8a8a8a; }
+.an-popover a, .an-popover button.an-row {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 10px; border-radius: 9px;
+  font-size: 12px; font-weight: 600; text-align: left;
+}
+.an-popover a:hover, .an-popover button.an-row:hover { background: #faf3f2; }
+.dark .an-popover a:hover, .dark .an-popover button.an-row:hover { background: #26282d; }
+.an-popover a.is-active { color: #d6322a; }
+.an-popover a span:first-child, .an-popover .an-row span:first-child { width: 20px; text-align: center; }
+.an-popover em { margin-left: auto; font-style: normal; color: #b0b0b0; }
+
+.an-right { display: flex; align-items: center; gap: 10px; }
+.an-icon {
+  position: relative; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px;
+  border: 1px solid #ece8de; font-size: 14px; background: transparent;
+}
+.dark .an-icon { border-color: #2b2e33; }
+.an-icon:hover { background: #faf3f2; }
+.an-icon .an-dot { position: absolute; top: 6px; right: 7px; width: 7px; height: 7px; border-radius: 50%; background: #d6322a; border: 1.5px solid #fff; }
+.an-user { position: relative; }
+.an-user-btn { display: flex; align-items: center; gap: 8px; padding: 2px 4px 2px 2px; border-radius: 99px; }
+.an-avatar { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #111; color: #fff; font-size: 12px; font-weight: 700; }
+.an-user-meta { display: grid; text-align: left; line-height: 1.15; }
+.an-user-meta b { font-size: 10.5px; font-weight: 700; }
+.an-user-meta small { font-size: 9.5px; color: #8a8a8a; }
+.an-user .an-popover { left: auto; right: 0; transform: none; min-width: 200px; }
+.an-menu-btn { display: none; }
+
+.an-mobile-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(15, 15, 15, 0.45); backdrop-filter: blur(4px); }
+.an-mobile {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(320px, 88vw); padding: 16px; overflow-y: auto;
+  background: #fff; box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+}
+.dark .an-mobile { background: #1b1d21; }
+.an-mobile-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.an-mobile a { display: flex; align-items: center; gap: 12px; padding: 12px 10px; border-radius: 10px; font-size: 14px; font-weight: 600; }
+.an-mobile a.is-active { background: #fdeceb; color: #d6322a; }
+.an-mobile a em { margin-left: auto; font-style: normal; color: #b0b0b0; }
+
+@media (max-width: 960px) {
+  .an-links, .an-user-meta { display: none; }
+  .an-menu-btn { display: grid; }
+}
