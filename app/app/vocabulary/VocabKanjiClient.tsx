@@ -1,9 +1,11 @@
 "use client";
 
 import { Fragment, useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Badge, Button, Card, EmptyState, Icon, IconButton, Modal, SelectField } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { Sakura } from "./Sakura";
 
 /* ============================== TYPES ============================== */
 
@@ -83,10 +85,10 @@ const FREQUENCY_LABELS = ["Hiếm gặp", "Ít gặp", "Phổ biến", "Rất ph
 const KANJI_RE = /[\u3400-\u9fff]/;
 const HIRAGANA_RE = /[\u3041-\u309f]/;
 
-/** Lưới 1 hàng trong danh sách: cột ví dụ chỉ hiện ở md và ≥xl (ở lg đã có panel chi tiết chiếm chỗ). */
+/** Lưới 1 hàng trong danh sách: cột ví dụ chỉ hiện ở md (từ lg đã có panel chi tiết bên phải). */
 const ROW_GRID =
-  "flex flex-wrap items-center gap-x-3 gap-y-2 md:grid md:grid-cols-[20px_minmax(84px,108px)_minmax(84px,108px)_minmax(110px,150px)_minmax(0,1fr)_40px_84px] lg:grid-cols-[20px_minmax(84px,108px)_minmax(84px,108px)_minmax(110px,150px)_40px_84px] xl:grid-cols-[20px_minmax(84px,108px)_minmax(84px,108px)_minmax(110px,150px)_minmax(0,1fr)_40px_84px]";
-const ROW_EXTRA_COL = "hidden min-w-0 md:block lg:hidden xl:block";
+  "flex flex-wrap items-center gap-x-3 gap-y-2 md:grid md:grid-cols-[20px_minmax(84px,108px)_minmax(84px,108px)_minmax(110px,150px)_minmax(0,1fr)_40px_84px] lg:grid-cols-[20px_minmax(84px,108px)_minmax(84px,108px)_minmax(110px,150px)_40px_84px] xl:grid-cols-[20px_minmax(84px,108px)_minmax(84px,108px)_minmax(110px,150px)_40px_84px]";
+const ROW_EXTRA_COL = "hidden min-w-0 md:block lg:hidden";
 
 const tagsOf = (tags?: string) => (tags ? tags.split(",").map((t) => t.trim()).filter(Boolean) : []);
 
@@ -266,57 +268,64 @@ function SaveButton({ saved, onSave, className = "" }: { saved: boolean; onSave:
   );
 }
 
-function Pagination({
-  page,
-  totalPages,
-  total,
-  perPage,
-  unit,
-  onPage,
-}: {
-  page: number;
-  totalPages: number;
-  total: number;
-  perPage: number;
-  unit: string;
-  onPage: (p: number) => void;
-}) {
-  if (totalPages <= 1) return null;
-  const from = (page - 1) * perPage + 1;
-  const to = Math.min(page * perPage, total);
+const SLOGAN = "Học hôm nay, giỏi tiếng Nhật ngày mai!";
+
+function Pagination({ page, totalPages, onPage }: { page: number; totalPages: number; onPage: (p: number) => void }) {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1).filter(
     (p) => p === 1 || p === totalPages || Math.abs(p - page) <= 1
   );
+  const circle =
+    "inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition hover:border-red-300 hover:text-red-600 disabled:pointer-events-none disabled:opacity-40 dark:border-slate-700 dark:bg-sumi-900";
   return (
     <nav aria-label="Phân trang" className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4 dark:border-slate-800">
-      <span className="text-xs font-semibold text-slate-500">
-        Hiển thị {from}–{to} / {total.toLocaleString("vi-VN")} {unit}
+      <span className="inline-flex items-center gap-2 rounded-xl bg-slate-50 px-3.5 py-2.5 text-xs font-medium text-slate-600 dark:bg-sumi-950 dark:text-slate-300">
+        <svg viewBox="0 0 24 24" className="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M4 4v16h16" />
+          <path d="M8 15l3-4 3 2 4-6" />
+        </svg>
+        {SLOGAN}
       </span>
-      <div className="flex items-center gap-1">
-        <Button size="sm" variant="outline" disabled={page === 1} onClick={() => onPage(page - 1)}>
-          ‹ Trước
-        </Button>
-        {pages.map((p, idx) => (
-          <Fragment key={p}>
-            {idx > 0 && pages[idx - 1] !== p - 1 && <span className="px-1 text-xs text-slate-400">…</span>}
-            <button
-              type="button"
-              aria-current={p === page ? "page" : undefined}
-              onClick={() => onPage(p)}
-              className={`min-h-11 min-w-11 rounded-xl text-xs font-extrabold transition active:scale-95 ${
-                p === page
-                  ? "bg-red-600 text-white shadow-sm"
-                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-sumi-800"
-              }`}
-            >
-              {p}
-            </button>
-          </Fragment>
-        ))}
-        <Button size="sm" variant="outline" disabled={page === totalPages} onClick={() => onPage(page + 1)}>
-          Sau ›
-        </Button>
-      </div>
+
+      {totalPages > 1 && (
+        <div className="flex items-center gap-1.5">
+          <button type="button" aria-label="Trang trước" disabled={page === 1} onClick={() => onPage(page - 1)} className={circle}>
+            ‹
+          </button>
+          {pages.map((p, idx) => (
+            <Fragment key={p}>
+              {idx > 0 && pages[idx - 1] !== p - 1 && <span className="px-1 text-xs text-slate-400">…</span>}
+              <button
+                type="button"
+                aria-current={p === page ? "page" : undefined}
+                onClick={() => onPage(p)}
+                className={`h-9 min-w-9 rounded-xl px-2 text-xs font-extrabold transition active:scale-95 ${
+                  p === page
+                    ? "bg-red-600 text-white shadow-sm shadow-red-600/30"
+                    : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-sumi-800"
+                }`}
+              >
+                {p}
+              </button>
+            </Fragment>
+          ))}
+          <button type="button" aria-label="Trang sau" disabled={page === totalPages} onClick={() => onPage(page + 1)} className={circle}>
+            ›
+          </button>
+          <select
+            aria-label="Đến trang"
+            value=""
+            onChange={(e) => e.target.value && onPage(Number(e.target.value))}
+            className="ml-1 h-9 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-semibold text-slate-600 dark:border-slate-700 dark:bg-sumi-900 dark:text-slate-300"
+          >
+            <option value="">Đến …</option>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+              <option key={p} value={p}>
+                Trang {p}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
     </nav>
   );
 }
@@ -326,45 +335,48 @@ function Pagination({
 const rowClass = (selected: boolean) =>
   `rounded-2xl border px-3 py-3 transition sm:px-4 ${
     selected
-      ? "border-red-500 bg-red-50/40 shadow-[0_0_0_3px_rgba(220,38,38,0.08)] dark:bg-red-950/20"
+      ? "border-red-400 bg-red-50/40 shadow-[0_0_0_3px_rgba(220,38,38,0.06)] dark:bg-red-950/20"
       : "cursor-pointer border-transparent shadow-[0_1px_0_0_rgb(241_245_249)] hover:bg-slate-50 dark:shadow-[0_1px_0_0_rgb(30_41_59)] dark:hover:bg-sumi-800/50"
   }`;
 
-function MasteredCheckbox({ checked, name, onToggle }: { checked: boolean; name: string; onToggle: () => void }) {
+function StarToggle({ starred, name, onToggle }: { starred: boolean; name: string; onToggle: () => void }) {
   return (
-    <span className="inline-flex h-11 w-11 items-center justify-center">
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onToggle}
-        onClick={(e) => e.stopPropagation()}
-        aria-label={`Đánh dấu đã thuộc: ${name}`}
-        title="Đánh dấu đã thuộc"
-        // 18px was below a usable touch target; the wrapper carries the 44px.
-        className="h-5 w-5 cursor-pointer rounded accent-red-600"
-      />
-    </span>
+    <button
+      type="button"
+      aria-pressed={starred}
+      aria-label={starred ? `Bỏ yêu thích: ${name}` : `Đánh dấu yêu thích: ${name}`}
+      title={starred ? "Bỏ yêu thích" : "Yêu thích"}
+      onClick={(e) => {
+        e.stopPropagation();
+        onToggle();
+      }}
+      className={`inline-flex h-11 w-9 items-center justify-center transition active:scale-90 ${
+        starred ? "text-amber-500" : "text-slate-400 hover:text-amber-500"
+      }`}
+    >
+      <Icon name="star" filled={starred} className="h-[18px] w-[18px]" />
+    </button>
   );
 }
 
 function VocabRow({
   v,
   selected,
-  mastered,
+  starred,
   saved,
   speakingText,
   onSelect,
-  onToggleMastered,
+  onToggleStar,
   onSpeak,
   onSave,
 }: {
   v: VocabItem;
   selected: boolean;
-  mastered: boolean;
+  starred: boolean;
   saved: boolean;
   speakingText: string | null;
   onSelect: () => void;
-  onToggleMastered: () => void;
+  onToggleStar: () => void;
   onSpeak: (t: string) => void;
   onSave: () => void;
 }) {
@@ -382,7 +394,7 @@ function VocabRow({
       }}
       className={`${ROW_GRID} ${rowClass(selected)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500`}
     >
-      <MasteredCheckbox checked={mastered} name={v.word} onToggle={onToggleMastered} />
+      <StarToggle starred={starred} name={v.word} onToggle={onToggleStar} />
 
       <div className="jp-text break-words text-[26px] font-black leading-tight text-slate-900 dark:text-white sm:text-[28px]">{v.word}</div>
 
@@ -428,21 +440,21 @@ function VocabRow({
 function KanjiRow({
   k,
   selected,
-  mastered,
+  starred,
   saved,
   speakingText,
   onSelect,
-  onToggleMastered,
+  onToggleStar,
   onSpeak,
   onSave,
 }: {
   k: KanjiItem;
   selected: boolean;
-  mastered: boolean;
+  starred: boolean;
   saved: boolean;
   speakingText: string | null;
   onSelect: () => void;
-  onToggleMastered: () => void;
+  onToggleStar: () => void;
   onSpeak: (t: string) => void;
   onSave: () => void;
 }) {
@@ -461,7 +473,7 @@ function KanjiRow({
       }}
       className={`${ROW_GRID} ${rowClass(selected)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500`}
     >
-      <MasteredCheckbox checked={mastered} name={k.character} onToggle={onToggleMastered} />
+      <StarToggle starred={starred} name={k.character} onToggle={onToggleStar} />
       <div className="jp-text text-[34px] font-black leading-none text-slate-900 dark:text-white">{k.character}</div>
       <div className="min-w-0">
         <p className="text-sm text-slate-600 dark:text-slate-300">{k.strokeCount} nét</p>
@@ -500,12 +512,12 @@ const detailTable = "overflow-hidden rounded-2xl border border-slate-200 bg-whit
 
 function SrsBox({ name, saved, onSave }: { name: string; saved: boolean; onSave: () => void }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-red-100 bg-red-50/70 p-3.5 dark:border-red-900/50 dark:bg-red-950/30">
+    <div className="flex items-center gap-3 rounded-2xl border border-rose-100 bg-gradient-to-r from-rose-50 to-pink-50/60 p-3.5 dark:border-red-900/50 dark:from-red-950/30 dark:to-red-950/20">
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-200 bg-white text-red-600 dark:border-red-900/60 dark:bg-sumi-900">
         <Icon name="cards" className="h-5 w-5" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-extrabold text-red-700 dark:text-red-300">Thêm vào SRS</p>
+        <p className="text-sm font-extrabold text-red-700 dark:text-red-300">Thêm vào sổ</p>
         <p className="text-xs text-slate-600 dark:text-slate-400">Lưu {name} để ôn tập định kỳ, ghi nhớ lâu dài.</p>
       </div>
       <SaveButton saved={saved} onSave={onSave} className="shrink-0 px-3.5" />
@@ -516,23 +528,19 @@ function SrsBox({ name, saved, onSave }: { name: string; saved: boolean; onSave:
 function VocabDetail({
   v,
   saved,
-  starred,
   speakingText,
   showAllExamples,
   onToggleExamples,
   onSpeak,
   onSave,
-  onToggleStar,
 }: {
   v: VocabItem;
   saved: boolean;
-  starred: boolean;
   speakingText: string | null;
   showAllExamples: boolean;
   onToggleExamples: () => void;
   onSpeak: (t: string) => void;
   onSave: () => void;
-  onToggleStar: () => void;
 }) {
   const freq = frequencyOf(v);
   const tags = tagsOf(v.tags);
@@ -541,45 +549,36 @@ function VocabDetail({
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Badge variant="brand" className="text-[11px] uppercase">
-            Từ vựng
-          </Badge>
-          <Badge variant="amber" className="text-[11px]">
-            JLPT {v.jlptLevel}
-          </Badge>
-        </div>
-        <IconButton
-          label={starred ? "Bỏ đánh dấu yêu thích" : "Đánh dấu yêu thích"}
-          active={starred}
-          onClick={onToggleStar}
-          className="border-transparent bg-transparent dark:bg-transparent"
-        >
-          <Icon name="star" filled={starred} className="h-5 w-5" />
-        </IconButton>
+      <div className="flex items-center gap-2">
+        <Badge variant="brand" className="text-[11px] uppercase">
+          Từ vựng
+        </Badge>
+        <Badge variant="amber" className="text-[11px]">
+          JLPT {v.jlptLevel}
+        </Badge>
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
           <h2 className="jp-text break-words text-5xl font-black leading-tight text-slate-900 dark:text-white sm:text-[56px]">{v.word}</h2>
-          <p className="mt-1.5 flex flex-wrap items-baseline gap-x-4 text-base text-slate-600 dark:text-slate-300">
-            <span className="jp-text">{v.kana}</span>
-            <span className="text-slate-500 dark:text-slate-400">{v.romaji}</span>
-          </p>
+          <p className="jp-text mt-1.5 text-base text-slate-700 dark:text-slate-200">{v.kana}</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">{v.romaji}</p>
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <IconButton label="Nghe phát âm" tone="brand" active={speakingText === v.word} className="h-11 w-11" onClick={() => onSpeak(v.word)}>
             <Icon name="speaker" className="h-5 w-5" />
           </IconButton>
-          <Button size="sm" variant={saved ? "brand" : "brandOutline"} onClick={onSave}>
+          <Button size="sm" variant="brand" className="h-11" onClick={onSave}>
             {saved ? (
               <>
-                Đã lưu vào SRS <Icon name="check" className="h-3.5 w-3.5" />
+                Đã lưu vào sổ <Icon name="check" className="h-3.5 w-3.5" />
               </>
             ) : (
               <>
-                <Icon name="plus" className="h-3.5 w-3.5" /> Lưu vào SRS
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M6 4h12v17l-6-4-6 4z" />
+                </svg>
+                Lưu vào sổ
               </>
             )}
           </Button>
@@ -624,12 +623,13 @@ function VocabDetail({
             Từ này chưa có câu ví dụ.
           </p>
         ) : (
-          <ol className="divide-y divide-slate-100 dark:divide-slate-800">
+          <ol className="mt-2 space-y-2.5">
             {examples.map((ex, i) => (
-              <li key={ex.id ?? i} className="grid grid-cols-[24px_1fr_auto] items-center gap-3 py-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-500 dark:bg-sumi-800">
-                  {i + 1}
-                </span>
+              <li
+                key={ex.id ?? i}
+                className="grid grid-cols-[18px_1fr_auto] items-center gap-3 rounded-2xl border border-rose-100 bg-white px-3.5 py-2.5 dark:border-red-900/40 dark:bg-sumi-900"
+              >
+                <Icon name="star" filled className="h-3.5 w-3.5 text-red-500" />
                 <div className="min-w-0">
                   <p className="jp-text text-[15px] font-semibold leading-[2] text-slate-900 dark:text-white">
                     <ExampleText sentence={ex.japanese} highlight={hl} />
@@ -645,7 +645,7 @@ function VocabDetail({
         )}
       </section>
 
-      <SrsBox name="từ này" saved={saved} onSave={onSave} />
+      <SrsBox name={`「${v.word}」`} saved={saved} onSave={onSave} />
     </div>
   );
 }
@@ -820,6 +820,104 @@ function GridCard({
   );
 }
 
+/* ============================== SIDEBAR & DECOR ============================== */
+
+function PromoBanner() {
+  return (
+    <div className="overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-sm dark:border-slate-800">
+      <Image
+        src="/images/cang-hoc-cang-gioi.webp"
+        alt="Càng học càng giỏi, càng gần ước mơ!"
+        width={1720}
+        height={914}
+        sizes="(min-width: 1280px) 440px, 380px"
+        className="h-auto w-full"
+      />
+    </div>
+  );
+}
+
+function ProgressCard({
+  vocab,
+  kanji,
+  grammar,
+}: {
+  vocab: { done: number; total: number };
+  kanji: { done: number; total: number };
+  grammar: { done: number; total: number };
+}) {
+  const done = vocab.done + kanji.done + grammar.done;
+  const total = vocab.total + kanji.total + grammar.total;
+  const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+  const R = 38;
+  const C = 2 * Math.PI * R;
+  const rows = [
+    { label: "Từ vựng", data: vocab, icon: <Icon name="book" className="h-5 w-5" /> },
+    { label: "Hán tự", data: kanji, icon: <span className="jp-text text-lg font-black leading-none">漢</span> },
+    { label: "Ngữ pháp", data: grammar, icon: <span className="jp-text text-lg font-black leading-none">文</span> },
+  ];
+  return (
+    <section
+      aria-labelledby="learn-progress"
+      className="rounded-3xl border border-slate-100 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-sumi-900"
+    >
+      <h3 id="learn-progress" className="mb-4 flex items-center gap-2 text-base font-extrabold text-slate-900 dark:text-white">
+        <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-violet-100 text-violet-600 dark:bg-violet-950/50">
+          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <path d="M5 20V10M12 20V4M19 20v-7" />
+          </svg>
+        </span>
+        Tiến độ học tập
+      </h3>
+      <div className="grid grid-cols-[120px_1fr] items-center gap-4">
+        <div className="relative h-[120px] w-[120px]">
+          <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90" role="img" aria-label={`Hoàn thành ${pct}%`}>
+            <circle cx="50" cy="50" r={R} fill="none" strokeWidth="9" className="stroke-slate-100 dark:stroke-slate-800" />
+            <circle
+              cx="50"
+              cy="50"
+              r={R}
+              fill="none"
+              strokeWidth="9"
+              strokeLinecap="round"
+              strokeDasharray={`${(pct / 100) * C} ${C}`}
+              className="stroke-red-500 transition-[stroke-dasharray] duration-700"
+            />
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <span className="text-2xl font-black text-slate-900 dark:text-white">{pct}%</span>
+            <span className="text-[11px] text-slate-500">Hoàn thành</span>
+          </div>
+        </div>
+        <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+          {rows.map((r) => (
+            <li key={r.label} className="flex items-center gap-3 py-2">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 text-red-600 dark:bg-red-950/40">{r.icon}</span>
+              <div>
+                <p className="text-xs text-slate-500">{r.label}</p>
+                <p className="text-sm font-extrabold text-slate-900 dark:text-white">
+                  {r.data.done} / {r.data.total}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function QuoteCard() {
+  return (
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-rose-100 via-pink-50 to-white px-5 py-5 text-center dark:from-red-950/40 dark:via-sumi-900 dark:to-sumi-900">
+      <Sakura className="absolute left-4 top-3 h-6 w-6 opacity-80" />
+      <Sakura className="absolute bottom-3 right-5 h-5 w-5 opacity-70" />
+      <p className="jp-text text-lg font-black text-red-700 dark:text-red-300">「継続は力なり」</p>
+      <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Kiên trì là sức mạnh.</p>
+    </div>
+  );
+}
+
 /* ============================== MAIN COMPONENT ============================== */
 
 export function VocabKanjiClient({
@@ -827,11 +925,14 @@ export function VocabKanjiClient({
   kanji,
   savedItemIds = [],
   defaultLevel = "N5",
+  grammarProgress = { done: 0, total: 0 },
 }: {
   vocabulary: VocabItem[];
   kanji: KanjiItem[];
   savedItemIds?: string[];
   defaultLevel?: string;
+  /** Tuỳ chọn: tiến độ ngữ pháp (đã học / tổng). Chưa truyền thì hiển thị 0 / 0. */
+  grammarProgress?: { done: number; total: number };
 }) {
   const [tab, setTab] = useState<Tab>("VOCAB");
   const [levelFilter, setLevelFilter] = useState<string>(defaultLevel);
@@ -1111,20 +1212,29 @@ export function VocabKanjiClient({
   );
   const flashcard = flashcards.length > 0 ? flashcards[Math.min(flashcardIndex, flashcards.length - 1)] : null;
 
-  const unit = tab === "VOCAB" ? "từ" : "Hán tự";
+  const unit = tab === "VOCAB" ? "từ vựng" : "Hán tự";
+  const rangeFrom = totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
+  const rangeTo = Math.min(currentPage * itemsPerPage, totalItems);
+
+  // "Đã học" = số mục đã lưu vào sổ (SRS)
+  const progress = useMemo(
+    () => ({
+      vocab: { done: vocabulary.filter((v) => savedSet.has(v.id)).length, total: vocabulary.length },
+      kanji: { done: kanji.filter((k) => savedSet.has(k.id)).length, total: kanji.length },
+    }),
+    [vocabulary, kanji, savedSet]
+  );
   const advancedCount = (srsOnlyFilter ? 1 : 0) + (viewMode === "FLASHCARD" || viewMode === "TOPIC" ? 1 : 0);
 
   const detail = activeVocab ? (
     <VocabDetail
       v={activeVocab}
       saved={savedSet.has(activeVocab.id)}
-      starred={starredSet.has(activeVocab.id)}
       speakingText={speakingText}
       showAllExamples={showAllExamples}
       onToggleExamples={() => setShowAllExamples((s) => !s)}
       onSpeak={speak}
       onSave={() => handleAddToSrs("VOCAB", activeVocab.id, activeVocab.word)}
-      onToggleStar={() => toggleStar(activeVocab.id)}
     />
   ) : activeKanji ? (
     <KanjiDetail
@@ -1154,9 +1264,9 @@ export function VocabKanjiClient({
   /* ---------- styles ---------- */
 
   const tabBase =
-    "flex h-12 items-center justify-center gap-2 rounded-xl px-4 text-sm font-extrabold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500";
+    "flex h-12 min-w-[132px] items-center justify-center gap-2 rounded-2xl px-5 text-sm font-extrabold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500";
   const tabActive = "bg-red-600 text-white shadow-md shadow-red-600/30";
-  const tabIdle = "text-slate-600 hover:bg-white hover:text-slate-900 dark:text-slate-300 dark:hover:bg-sumi-800 dark:hover:text-white";
+  const tabIdle = "bg-sky-50 text-slate-700 hover:bg-sky-100 dark:bg-sumi-800 dark:text-slate-300 dark:hover:bg-sumi-700";
   const segBtn = (on: boolean) =>
     `rounded-lg px-3 py-2.5 min-h-11 text-xs font-bold transition ${
       on ? "bg-red-600 text-white shadow-sm" : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-sumi-900 dark:text-slate-300 dark:hover:bg-sumi-800"
@@ -1169,11 +1279,11 @@ export function VocabKanjiClient({
   /* ============================== RENDER ============================== */
 
   return (
-    <div className="mx-auto max-w-[1320px] px-4 sm:px-6 pb-20" id="dictionary">
-      <div className="rounded-[28px] border border-white/80 bg-white/85 p-4 shadow-[0_24px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-sumi-900/85 sm:p-5">
-        {/* ---------- Tabs ---------- */}
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
-          <div className="grid w-full grid-cols-3 gap-1 rounded-2xl bg-slate-100/90 p-1 dark:bg-sumi-950 md:w-[540px]">
+    <div id="dictionary">
+      <div className="rounded-t-[40px] rounded-b-[28px] border border-white/80 bg-white p-4 shadow-[0_24px_70px_rgba(15,23,42,0.10)] dark:border-slate-800 dark:bg-sumi-900 sm:p-6">
+        {/* ---------- Tabs + linh vật ---------- */}
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap gap-2.5">
             <button
               type="button"
               onClick={() => switchTab("VOCAB")}
@@ -1191,12 +1301,24 @@ export function VocabKanjiClient({
               <span className="jp-text text-lg leading-none">漢</span> Hán tự
             </button>
             <Link href="/app/grammar" onClick={playClick} className={`${tabBase} ${tabIdle}`}>
-              <span className="jp-text text-lg leading-none">文</span> Ngữ pháp
+              <Icon name="star" className="h-[18px] w-[18px]" /> Ngữ pháp
             </Link>
           </div>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Hơn {vocabulary.length.toLocaleString("vi-VN")} từ vựng theo giáo trình, JLPT và chủ đề đời sống.
-          </p>
+
+          <div className="hidden items-center gap-2 md:flex">
+            <p className="max-w-[170px] -rotate-3 text-right text-[17px] font-semibold italic leading-tight text-red-600 [font-family:'Segoe_Script','Brush_Script_MT','Comic_Sans_MS',cursive]">
+              Học mỗi ngày,
+              <br />
+              tiến bộ từng chút!
+            </p>
+            <Image
+              src="/images/cat_kanji.png"
+              alt="Mèo may mắn"
+              width={96}
+              height={96}
+              className="-mb-2 -mt-6 h-24 w-auto shrink-0 object-contain"
+            />
+          </div>
         </div>
 
         {/* ---------- Search & filters ---------- */}
@@ -1331,7 +1453,12 @@ className="absolute right-0 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items
         {/* ---------- Results header ---------- */}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 px-1 pb-3">
           <p className="text-sm text-slate-600 dark:text-slate-300">
-            Hiển thị <b className="font-extrabold text-slate-900 dark:text-white">{totalItems.toLocaleString("vi-VN")}</b> kết quả
+            Hiển thị{" "}
+            <b className="font-extrabold text-slate-900 dark:text-white">
+              {rangeFrom.toLocaleString("vi-VN")}-{rangeTo.toLocaleString("vi-VN")}
+            </b>{" "}
+            {unit}
+            <span className="text-slate-400"> (tổng {totalItems.toLocaleString("vi-VN")})</span>
           </p>
           <div className="flex items-center gap-3">
             <SelectField plain label="Sắp xếp" value={sortMode} options={sortOptions} onChange={(v) => setSortMode(v as SortMode)} />
@@ -1380,11 +1507,11 @@ className="absolute right-0 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items
                           key={v.id}
                           v={v}
                           selected={isDesktop && activeVocab?.id === v.id}
-                          mastered={masteredSet.has(v.id)}
+                          starred={starredSet.has(v.id)}
                           saved={savedSet.has(v.id)}
                           speakingText={speakingText}
                           onSelect={() => selectItem(v.id)}
-                          onToggleMastered={() => toggleMastered(v.id)}
+                          onToggleStar={() => toggleStar(v.id)}
                           onSpeak={speak}
                           onSave={() => handleAddToSrs("VOCAB", v.id, v.word)}
                         />
@@ -1394,27 +1521,35 @@ className="absolute right-0 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items
                           key={k.id}
                           k={k}
                           selected={isDesktop && activeKanji?.id === k.id}
-                          mastered={masteredSet.has(k.id)}
+                          starred={starredSet.has(k.id)}
                           saved={savedSet.has(k.id)}
                           speakingText={speakingText}
                           onSelect={() => selectItem(k.id)}
-                          onToggleMastered={() => toggleMastered(k.id)}
+                          onToggleStar={() => toggleStar(k.id)}
                           onSpeak={speak}
                           onSave={() => handleAddToSrs("KANJI", k.id, k.character)}
                         />
                       ))}
                 </ul>
               )}
-              <Pagination page={currentPage} totalPages={totalPages} total={totalItems} perPage={itemsPerPage} unit={unit} onPage={goToPage} />
+              <Pagination page={currentPage} totalPages={totalPages} onPage={goToPage} />
             </div>
 
-            <aside className="hidden lg:block" aria-label="Chi tiết">
-              <div
-          className="hidden lg:block sticky max-h-[calc(100dvh-8rem)] overflow-y-auto rounded-3xl bg-slate-50/80 p-5 dark:bg-sumi-950/50"
-          style={{ top: "max(6rem, calc(env(safe-area-inset-top) + 3rem))" }}
-        >
-                {detail ?? <p className="py-10 text-center text-sm text-slate-500">Chọn một mục để xem chi tiết.</p>}
+            <aside className="hidden space-y-5 lg:block" aria-label="Chi tiết">
+              <div className="relative overflow-hidden rounded-3xl border border-rose-100/80 bg-white p-5 shadow-[0_12px_40px_rgba(244,114,182,0.12)] dark:border-slate-800 dark:bg-sumi-900">
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(ellipse_at_top_right,rgba(251,182,210,0.55),transparent_65%),linear-gradient(to_bottom,rgba(255,241,245,0.9),transparent)] dark:opacity-30"
+                />
+                <Sakura className="pointer-events-none absolute right-5 top-4 h-9 w-9 opacity-80" />
+                <Sakura className="pointer-events-none absolute right-16 top-10 h-5 w-5 opacity-60" />
+                <div className="relative">
+                  {detail ?? <p className="py-10 text-center text-sm text-slate-500">Chọn một mục để xem chi tiết.</p>}
+                </div>
               </div>
+              <PromoBanner />
+              <ProgressCard vocab={progress.vocab} kanji={progress.kanji} grammar={{ done: grammarProgress.done, total: grammarProgress.total }} />
+              <QuoteCard />
             </aside>
           </div>
         )}
@@ -1450,7 +1585,7 @@ className="absolute right-0 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items
                 ))}
               </div>
             )}
-            <Pagination page={currentPage} totalPages={totalPages} total={totalItems} perPage={itemsPerPage} unit={unit} onPage={goToPage} />
+            <Pagination page={currentPage} totalPages={totalPages} onPage={goToPage} />
           </>
         )}
 

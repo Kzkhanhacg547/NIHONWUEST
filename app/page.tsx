@@ -1,7 +1,35 @@
+import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Card, Badge } from "@/components/ui";
 import { NihonQuestLogo } from "@/components/NihonQuestLogo";
-import { JapanBackdrop } from "@/components/JapanIllustration";
+import {
+  BrushEdge,
+  IconArrow,
+  IconArrowUR,
+  IconBook,
+  IconCards,
+  IconChat,
+  IconCompass,
+  IconDash,
+  IconDiscord,
+  IconFlame,
+  IconPen,
+  IconPin,
+  IconSpark,
+  IconTelegram,
+  IconTrain,
+  IconUser,
+  IconYouTube,
+  KanaArt,
+  KanjiArt,
+  MapArt,
+  Petals,
+  StreakArt,
+  SrsArt,
+  SurvivalArt,
+  ToriiMark,
+} from "@/components/landing/LandingArt";
+import "./landing.css";
 
 export const metadata = {
   title: "Nihon Quest — Học Tiếng Nhật. Khám Phá Nhật Bản.",
@@ -9,184 +37,257 @@ export const metadata = {
     "Nền tảng luyện tiếng Nhật: bảng 50 âm Gojūon, canvas tập viết Kana, ôn tập lặp lại SRS SM-2, từ vựng JLPT N5 và hội thoại sinh tồn thực chiến.",
 };
 
+/* Đổi đường dẫn ở đây nếu route thật khác. */
+const NAV = [
+  { label: "Trang chủ", href: "/", active: true },
+  { label: "Khám phá", href: "#tinh-nang" },
+  { label: "Hành trình", href: "/app" },
+  { label: "Cộng đồng", href: "/app" },
+];
+
+const SOCIALS = [
+  { label: "YouTube", href: "#", icon: <IconYouTube /> },
+  { label: "Discord", href: "#", icon: <IconDiscord /> },
+  { label: "Telegram", href: "#", icon: <IconTelegram /> },
+];
+
+const CHIPS: { icon: ReactNode; text: ReactNode }[] = [
+  { icon: <IconBook />, text: <>Bảng 50 âm<br />&amp; chữ cái</> },
+  { icon: <IconPen />, text: <>Canvas luyện viết<br />thông minh</> },
+  { icon: <IconSpark />, text: <>Tích hợp SRS<br />SM-2</> },
+  { icon: <IconTrain />, text: <>Bản đồ Shinkansen<br />khám phá Nhật Bản</> },
+];
+
+const FEATURES: {
+  tone: string;
+  icon: ReactNode;
+  title: string;
+  desc: string;
+  cta: string;
+  art: ReactNode;
+}[] = [
+  {
+    tone: "sakura",
+    icon: <span lang="ja">あ</span>,
+    title: "Bảng 50 Âm & Canvas Viết Chữ",
+    desc: "Sắp xếp khoa học theo 5 nguyên âm a-i-u-e-o. Canvas HTML5 nhận diện nét vẽ giúp bạn rèn chữ Hiragana và Katakana chuẩn xác.",
+    cta: "Khám phá",
+    art: <KanaArt />,
+  },
+  {
+    tone: "fuji",
+    icon: <IconCards />,
+    title: "Flashcard Ôn Tập Lặp Lại (SRS)",
+    desc: "Thuật toán Spaced Repetition SM-2 phân bố thời gian ôn tập tối ưu (Again, Hard, Good, Easy), giúp kiến thức khắc sâu vào trí nhớ dài hạn.",
+    cta: "Bắt đầu ngay",
+    art: <SrsArt />,
+  },
+  {
+    tone: "matcha",
+    icon: <IconPin />,
+    title: "Japan Journey: Bản Đồ Khám Phá",
+    desc: "Chinh phục các chặng tàu từ Tokyo, Hakone, Kyoto, Osaka đến Hokkaido. Tích lũy XP để mở khóa danh lam thắng cảnh và danh hiệu.",
+    cta: "Khám phá",
+    art: <MapArt />,
+  },
+  {
+    tone: "rose",
+    icon: <IconChat />,
+    title: "Chế Độ Sinh Tồn Thực Chiến",
+    desc: "Nhập vai các tình huống đời thực: gọi mì Ramen tại quán, hỏi đường ở ga Shinjuku, tính tiền tại Konbini.",
+    cta: "Trải nghiệm",
+    art: <SurvivalArt />,
+  },
+  {
+    tone: "teal",
+    icon: <span lang="ja">漢</span>,
+    title: "Kho Từ Vựng & Hán Tự JLPT N5",
+    desc: "Tra cứu âm On, âm Kun, số nét, ý nghĩa và ví dụ thực tế của hơn 100 chữ Hán và từ vựng cốt lõi.",
+    cta: "Luyện ngay",
+    art: <KanjiArt />,
+  },
+  {
+    tone: "amber",
+    icon: <IconFlame />,
+    title: "Gamification: Streak & Daily Quests",
+    desc: "Giữ thói quen mỗi ngày với chuỗi Streak, nhiệm vụ hằng ngày và bảng xếp hạng để thăng cấp nhân vật.",
+    cta: "Xem chi tiết",
+    art: <StreakArt />,
+  },
+];
+
 export default function Home() {
   return (
-    <div className="nq-workspace bg-slate-50 dark:bg-sumi-950">
-      <JapanBackdrop />
-      <div className="relative z-10">
-        <div className="space-y-10 sm:space-y-16 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 pb-[calc(1rem+env(safe-area-inset-bottom))]">
-      {/* Top Navbar Brand */}
-      <header className="flex flex-wrap items-center justify-between gap-x-3 gap-y-3 pb-2">
-        <Link href="/" className="shrink-0">
-          <NihonQuestLogo size="md" />
-        </Link>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/login"
-            className="nq-tap inline-flex min-h-11 items-center rounded-xl px-3.5 text-sm font-bold text-slate-700 transition hover:bg-slate-100 active:bg-slate-200 dark:text-slate-300 dark:hover:bg-sumi-800"
-          >
-            Đăng nhập
-          </Link>
-          <Link
-            href="/register"
-            className="nq-tap inline-flex min-h-11 items-center rounded-xl bg-gradient-to-r from-sakura-500 via-rose-500 to-sakura-600 px-4 text-sm font-black text-white shadow-md shadow-sakura-500/25 transition hover:from-sakura-600 hover:to-rose-600 active:scale-[0.98]"
-          >
-            Tạo tài khoản 🌸
-          </Link>
+    <div className="hp">
+      {/* ============================ HERO ============================ */}
+      <section className="hp-hero" aria-labelledby="hp-hero-title">
+        <div className="hp-hero__scene" aria-hidden="true">
+          {/* Ảnh đặt tại public/images/hero-japan.webp */}
+          <Image
+            src="/images/hero-japan.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            quality={85}
+            className="hp-hero__img"
+          />
         </div>
-      </header>
+        <Petals />
 
-      {/* Hero Banner */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sumi-900 via-[#1e1b4b] to-slate-950 p-6 sm:p-10 lg:p-14 text-white border border-slate-800 shadow-2xl">
-        <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-sakura-600/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-0 right-1/4 w-48 h-48 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none" />
+        <div className="hp-wrap hp-hero__inner">
+          <header className="hp-header">
+            <Link href="/" className="hp-brand shrink-0" aria-label="Nihon Quest — trang chủ">
+              <NihonQuestLogo size="md" />
+            </Link>
 
-        <div className="relative z-10 max-w-2xl space-y-5">
-          <Badge variant="sakura" dot className="bg-sakura-500/20 text-sakura-300 border-sakura-500/30 text-[11px] font-black uppercase tracking-widest px-3 py-1.5">
-            🇯🇵 KHÁM PHÁ TIẾNG NHẬT THEO CÁCH MỚI
-          </Badge>
+            <nav className="hp-nav" aria-label="Điều hướng chính">
+              {NAV.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={item.active ? "is-active" : undefined}
+                  aria-current={item.active ? "page" : undefined}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
 
-          <h1 className="text-[clamp(1.75rem,7.5vw,3rem)] sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-            Học Tiếng Nhật. <br />
-            <span className="bg-gradient-to-r from-sakura-400 via-rose-300 to-amber-300 bg-clip-text text-transparent">
-              Khám Phá Nhật Bản.
+            <div className="hp-actions">
+              <Link href="/login" className="hp-btn hp-btn--ghost hp-btn--sm">
+                Đăng nhập
+              </Link>
+              <Link href="/register" className="hp-btn hp-btn--primary hp-btn--sm">
+                <IconUser />
+                Tạo tài khoản
+              </Link>
+            </div>
+          </header>
+
+          <div className="hp-hero__body">
+            <span className="hp-badge">
+              <ToriiMark size={18} />
+              Khám phá tiếng Nhật theo cách mới
             </span>
-          </h1>
 
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-            Bạn không chỉ đơn thuần học ngoại ngữ. Bạn đang bắt đầu chuyến hành trình Shinkansen xuyên qua Tokyo, Kyoto, Osaka với bảng 50 âm Gojūon, canvas tập viết nét chữ, và các tình huống giao tiếp sinh tồn đời thực.
-          </p>
+            <h1 id="hp-hero-title" className="hp-h1">
+              <span className="hp-h1__a">Học Tiếng Nhật.</span>
+              <span className="hp-h1__b">Khám Phá Nhật Bản.</span>
+            </h1>
 
-          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 pt-3">
-            <Link
-              href="/register"
-              className="inline-flex min-h-[52px] w-full sm:w-auto items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 px-6 text-base font-black text-slate-950 shadow-lg shadow-amber-500/30 transition hover:shadow-xl active:scale-[0.98]"
-            >
-              Bắt đầu hành trình miễn phí 🚀
-            </Link>
-            <Link
-              href="/app"
-              className="inline-flex min-h-[52px] w-full sm:w-auto items-center justify-center gap-2 rounded-2xl border border-slate-200/60 bg-white/95 px-6 text-base font-bold text-slate-900 shadow-md transition hover:bg-white active:scale-[0.98]"
-            >
-              Vào Dashboard ứng dụng ⛩️
-            </Link>
+            <p className="hp-lead">
+              Bạn không chỉ đơn thuần học ngoại ngữ. Bạn đang bắt đầu chuyến hành trình Shinkansen
+              xuyên qua Tokyo, Kyoto, Osaka với bảng 50 âm Gojūon, canvas tập viết nét chữ và các
+              tình huống giao tiếp sinh tồn đời thực.
+            </p>
+
+            <div className="hp-cta">
+              <Link href="/register" className="hp-btn hp-btn--primary">
+                <span className="hp-btn__dot"><IconCompass /></span>
+                Bắt đầu hành trình miễn phí
+                <IconArrow />
+              </Link>
+              <Link href="/app" className="hp-btn hp-btn--ghost">
+                <IconDash />
+                Vào Dashboard ứng dụng
+                <IconArrowUR />
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-6 gap-y-2 pt-4 text-xs font-bold text-slate-400">
-            <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Bảng 50 âm Gojūon</span>
-            <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Canvas luyện viết nét</span>
-            <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Ôn tập lặp lại SRS SM-2</span>
-            <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Bản đồ Shinkansen</span>
-          </div>
+          <ul className="hp-chips" style={{ listStyle: "none", margin: 0, paddingLeft: 0 }}>
+            {CHIPS.map((c, i) => (
+              <li key={i} className="hp-chip">
+                <span className="hp-chip__icon">{c.icon}</span>
+                <span>{c.text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Decorative Torii Background Motif */}
-        <div className="absolute right-6 bottom-4 text-9xl sm:text-[180px] opacity-10 select-none pointer-events-none font-jp">
-          ⛩️
+        <BrushEdge />
+      </section>
+
+      {/* ============================ FEATURES ============================ */}
+      <section id="tinh-nang" className="hp-features" aria-labelledby="hp-features-title">
+        <div className="hp-head">
+          <div className="hp-eyebrow">Tính năng đột phá</div>
+          <div className="hp-title-wrap">
+            <ToriiMark size={48} />
+            <h2 id="hp-features-title" className="hp-title">
+              Mọi Công Cụ Bạn Cần Để Làm Chủ Tiếng Nhật
+            </h2>
+          </div>
+          <p className="hp-sub">
+            Từ bảng chữ cái cơ bản đến hội thoại đời thực, Nihon Quest đồng hành cùng bạn trên từng
+            chặng đường.
+          </p>
+        </div>
+
+        <div className="hp-grid">
+          {FEATURES.map((f) => (
+            <article key={f.title} className={`hp-card hp-card--${f.tone}`}>
+              <div className="hp-card__body">
+                <span className="hp-card__icon" aria-hidden="true">{f.icon}</span>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+                <div className="hp-card__cta">
+                  <Link href="/app" className="hp-pill">
+                    {f.cta}
+                    <IconArrow size={14} />
+                  </Link>
+                </div>
+              </div>
+              <div className="hp-card__art" aria-hidden="true">{f.art}</div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Feature Showcase Grid */}
-      <section className="space-y-8">
-        <div className="text-center max-w-xl mx-auto space-y-2">
-          <span className="text-xs font-black uppercase tracking-widest text-sakura-600 dark:text-sakura-400">
-            TÍNH NĂNG ĐỘT PHÁ
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight text-balance">
-            Mọi Công Cụ Bạn Cần Để Làm Chủ Tiếng Nhật
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-500">
-            Từ bảng chữ cái cơ bản đến hội thoại đời thực, Nihon Quest đồng hành cùng bạn trên từng chặng đường.
+      {/* ============================ FOOTER ============================ */}
+      <footer className="hp-footer">
+        <BrushEdge />
+        <div className="hp-footer__bg" aria-hidden="true">
+          <div className="hp-footer__pic">
+            {/* Ảnh đặt tại public/images/footer-japan.webp */}
+            <Image
+              src="/images/footer-japan.webp"
+              alt=""
+              fill
+              sizes="100vw"
+              quality={85}
+              className="hp-footer__img"
+            />
+          </div>
+        </div>
+
+        <div className="hp-wrap hp-footer__inner">
+          <div className="hp-footer__row">
+            <blockquote className="hp-quote">
+              Không chỉ là một app học tiếng Nhật, mà là cánh cửa mở ra thế giới mới.
+            </blockquote>
+
+            <div className="hp-footer__side">
+              <nav className="hp-footer__nav" aria-label="Liên kết chân trang">
+                {NAV.map((item) => (
+                  <Link key={item.label} href={item.href}>{item.label}</Link>
+                ))}
+              </nav>
+              <div className="hp-social">
+                {SOCIALS.map((s) => (
+                  <a key={s.label} href={s.href} aria-label={s.label}>{s.icon}</a>
+                ))}
+                <span className="hp-hanko" lang="ja" aria-hidden="true">学習</span>
+              </div>
+            </div>
+          </div>
+
+          <p className="hp-copy">
+            © 2026 Nihon Quest (日本クエスト). Đồng hành học tiếng Nhật. Đi khám phá xứ sở hoa anh đào.
           </p>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <Card hover className="p-5 sm:p-6 space-y-3 border-2 border-slate-200/80 dark:border-slate-800">
-            <div className="w-12 h-12 rounded-2xl bg-sakura-50 dark:bg-sakura-950/60 flex items-center justify-center text-2xl font-jp font-black text-sakura-600">
-              あ
-            </div>
-            <h3 className="font-black text-lg text-slate-900 dark:text-white">
-              Bảng 50 Âm & Canvas Viết Chữ
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Sắp xếp khoa học theo 5 nguyên âm a-i-u-e-o. Tích hợp Canvas HTML5 nhận diện nét vẽ giúp bạn rèn chữ viết Hiragana và Katakana chuẩn xác.
-            </p>
-          </Card>
-
-          <Card hover className="p-5 sm:p-6 space-y-3 border-2 border-slate-200/80 dark:border-slate-800">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 flex items-center justify-center text-2xl text-indigo-600">
-              🎴
-            </div>
-            <h3 className="font-black text-lg text-slate-900 dark:text-white">
-              Flashcard Ôn Tập Lặp Lại (SRS)
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Áp dụng thuật toán Spaced Repetition SM-2 phân bố thời gian ôn tập tối ưu (Again, Hard, Good, Easy), giúp kiến thức khắc sâu vào trí nhớ dài hạn.
-            </p>
-          </Card>
-
-          <Card hover className="p-5 sm:p-6 space-y-3 border-2 border-slate-200/80 dark:border-slate-800">
-            <div className="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 flex items-center justify-center text-2xl text-amber-600">
-              🗾
-            </div>
-            <h3 className="font-black text-lg text-slate-900 dark:text-white">
-              Japan Journey: Bản Đồ Khám Phá
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Chinh phục các chặng tàu từ Tokyo, Hakone, Kyoto, Osaka đến Hokkaido. Học tập tích lũy XP để mở khóa danh lam thắng cảnh và danh hiệu quý giá.
-            </p>
-          </Card>
-
-          <Card hover className="p-5 sm:p-6 space-y-3 border-2 border-slate-200/80 dark:border-slate-800">
-            <div className="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/60 flex items-center justify-center text-2xl text-rose-600">
-              🍜
-            </div>
-            <h3 className="font-black text-lg text-slate-900 dark:text-white">
-              Chế Độ Sinh Tồn Thực Chiến
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Nhập vai giải quyết các tình huống giao tiếp đời thực với người bản xứ: gọi mì Ramen tại quán, hỏi đường tại ga Shinjuku, hay tính tiền tại Konbini.
-            </p>
-          </Card>
-
-          <Card hover className="p-5 sm:p-6 space-y-3 border-2 border-slate-200/80 dark:border-slate-800">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 flex items-center justify-center text-2xl font-jp font-black text-emerald-600">
-              漢
-            </div>
-            <h3 className="font-black text-lg text-slate-900 dark:text-white">
-              Kho Từ Vựng & Hán Tự JLPT N5
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Tra cứu đầy đủ âm On, âm Kun, số nét viết, ý nghĩa và ví dụ ngữ cảnh thực tế của hơn 100 chữ Hán và từ vựng cốt lõi.
-            </p>
-          </Card>
-
-          <Card hover className="p-5 sm:p-6 space-y-3 border-2 border-slate-200/80 dark:border-slate-800">
-            <div className="w-12 h-12 rounded-2xl bg-orange-50 dark:bg-orange-950/60 flex items-center justify-center text-2xl text-orange-600">
-              🔥
-            </div>
-            <h3 className="font-black text-lg text-slate-900 dark:text-white">
-              Gamification: Streak & Daily Quests
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Duy trì thói quen học tập hàng ngày với chuỗi ngọn lửa Streak, hệ thống nhiệm vụ hàng ngày và thăng cấp nhân vật qua bảng xếp hạng.
-            </p>
-          </Card>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 pt-8 pb-4 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p>© 2026 Nihon Quest (日本クエスト). Đồng hành học tiếng Nhật & khám phá xứ sở hoa anh đào.</p>
-        <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2 font-bold">
-          <Link href="/login" className="inline-flex min-h-11 items-center px-3 hover:text-slate-900 dark:hover:text-white underline underline-offset-4">Đăng nhập</Link>
-          <Link href="/register" className="inline-flex min-h-11 items-center px-3 hover:text-slate-900 dark:hover:text-white underline underline-offset-4">Đăng ký</Link>
-          <Link href="/app" className="inline-flex min-h-11 items-center px-3 text-sakura-600 dark:text-sakura-400 hover:underline underline-offset-4">Vào ứng dụng ➔</Link>
         </div>
       </footer>
-        </div>
-      </div>
     </div>
   );
 }

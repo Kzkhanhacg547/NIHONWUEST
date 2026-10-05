@@ -1,22 +1,65 @@
+import fs from "node:fs";
+import path from "node:path";
+import Image from "next/image";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/auth-options";
 import { prisma } from "@/lib/prisma";
 import { AppNav } from "@/components/AppNav";
-import { JapanBackdrop, JapanScenicPanel } from "@/components/JapanIllustration";
 import { GrammarClient } from "./GrammarClient";
 
 export const metadata = { title: "Ngữ Pháp JLPT — Nihon Quest" };
+// Mỗi lần tải trang sẽ xáo ảnh cấp độ lại từ đầu
+export const dynamic = "force-dynamic";
+
+const IMG_EXT = /\.(webp|jpe?g|png|avif)$/i;
+const LEVELS = ["N5", "N4", "N3"] as const;
+
+/**
+ * Đọc toàn bộ ảnh trong public/images/level, xáo trộn (Fisher-Yates),
+ * rồi gán cho N5/N4/N3 để 3 thẻ không trùng ảnh trong cùng một lần hiển thị.
+ * Chạy ở server nên kết quả được truyền xuống client dưới dạng props
+ * -> không bị lệch hydration và không đổi ảnh khi re-render.
+ */
+function pickLevelImages(): Record<(typeof LEVELS)[number], string | null> {
+  const dir = path.join(process.cwd(), "public", "images", "level");
+  let files: string[] = [];
+  try {
+    files = fs.readdirSync(dir).filter((f) => IMG_EXT.test(f));
+  } catch {
+    files = [];
+  }
+  for (let i = files.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [files[i], files[j]] = [files[j], files[i]];
+  }
+  const result = {} as Record<(typeof LEVELS)[number], string | null>;
+  LEVELS.forEach((lv, i) => {
+    // Nếu thư mục có ít hơn 3 ảnh thì buộc phải lặp lại
+    result[lv] = files.length ? `/images/level/${encodeURIComponent(files[i % files.length])}` : null;
+  });
+  return result;
+}
 
 export default async function GrammarPage() {
   const session = await getServerSession(authOptions);
   const uid = (session?.user as { id?: string } | undefined)?.id;
   if (!uid) redirect("/login");
 
-  const user = await prisma.user.findUnique({ where: { id: uid }, select: { learningLevel: true } });
+  const user = await prisma.user.findUnique({
+    where: { id: uid },
+    select: { learningLevel: true, name: true },
+  });
   const userLevel = user?.learningLevel ?? "N5";
-  const grammar = await prisma.grammar.findMany({ include: { examples: { orderBy: { id: "asc" } } }, orderBy: [{ level: "asc" }, { title: "asc" }] });
+  const displayName = user?.name ?? session?.user?.name ?? "bạn";
+
+  // Chỉ hỗ trợ N5, N4, N3
+  const grammar = await prisma.grammar.findMany({
+    where: { level: { in: [...LEVELS] } },
+    include: { examples: { orderBy: { id: "asc" } } },
+    orderBy: [{ level: "asc" }, { title: "asc" }],
+  });
   const serialized = grammar.map((g) => ({
     id: g.id,
     title: g.title,
@@ -27,77 +70,67 @@ export default async function GrammarPage() {
     examples: g.examples.map((e) => ({ id: e.id, japanese: e.japanese, romaji: e.romaji, meaning: e.meaning })),
   }));
 
+  const levelImages = pickLevelImages();
+
   return (
     <div className="nq-workspace">
-      <JapanBackdrop />
       <AppNav />
 
       {/* HERO */}
-      <section className="relative mx-auto mt-2 grid max-w-[1320px] items-center gap-2 px-4 sm:px-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-        <div className="relative z-10 py-8 lg:py-12">
-          <div className="mb-4 flex items-center gap-2 text-[11px] font-bold tracking-[0.14em] text-slate-500 dark:text-slate-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-red-600" aria-hidden="true" />
-            THƯ VIỆN TRI THỨC NHẬT BẢN
-          </div>
-          <h1 className="text-[clamp(1.75rem,7.5vw,40px)] font-black leading-[1.08] tracking-tight text-balance text-slate-900 dark:text-white sm:text-5xl">
-            Từ vựng, Hán tự, <span className="text-red-600">Ngữ pháp.</span>
-          </h1>
-          <p className="mt-4 max-w-md text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
-            Khám phá cấu trúc, cách dùng và ví dụ theo từng cấp độ JLPT trong một không gian tra cứu thống nhất.
-          </p>
-        </div>
+      <section className="mx-auto mt-2 max-w-[1320px] px-4 sm:px-6">
+        <div className="relative isolate overflow-hidden rounded-3xl bg-[#0b1230]">
+          <Image
+            src="/images/dashboard/fuji-hero.webp"
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1320px) 1320px, 100vw"
+            className="-z-20 object-cover object-[70%_center]"
+          />
+          {/* Lớp phủ tối bên trái để chữ luôn dễ đọc */}
+          <div
+            className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0b1230]/90 via-[#0b1230]/55 to-transparent"
+            aria-hidden="true"
+          />
 
-        <div className="relative hidden h-[230px] md:block lg:h-[260px]">
-          <div className="absolute inset-0 overflow-hidden [-webkit-mask-image:linear-gradient(to_right,transparent,black_28%)] [mask-image:linear-gradient(to_right,transparent,black_28%)] [&>*]:h-full [&>*]:w-full">
-            <JapanScenicPanel variant="fuji" showLabel={false} />
-          </div>
-          <div className="pointer-events-none absolute right-2 top-4 flex items-start gap-3 lg:right-4">
-            <p className="hidden max-w-[88px] pt-1 text-[8px] font-semibold leading-snug tracking-[0.18em] text-slate-500 xl:block">
-              FOUNDATIONS
-              <br />
-              FOR A BRIGHTER
-              <br />
-              JOURNEY
+          <div className="relative px-6 py-10 sm:px-10 sm:py-14 lg:py-16">
+            <p className="mb-4 text-xs font-bold tracking-[0.14em] text-white/80">
+              <span className="border-b-2 border-red-500 pb-0.5">CHÀO MỪNG BẠN ĐẾN VỚI NIHONGUEST</span>
             </p>
-            <p
-              className="jp-text text-2xl font-medium tracking-[0.35em] text-slate-800 dark:text-slate-200 [writing-mode:vertical-rl]"
-              aria-hidden="true"
+            <h1 className="max-w-xl text-[clamp(2rem,7.5vw,3.5rem)] font-black leading-[1.08] tracking-tight text-white">
+              Từ vựng, Hán tự,
+              <br />
+              <span className="text-red-500">Ngữ pháp.</span>
+            </h1>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/85">
+              Khám phá cấu trúc, cách dùng và hơn thế nữa – để chinh phục tiếng Nhật một cách tự tin và hiệu quả!
+            </p>
+            <Link
+              href="#grammar-list"
+              className="mt-7 inline-flex min-h-11 items-center gap-3 rounded-full bg-gradient-to-r from-red-600 to-rose-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-red-900/30 transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              日本語の基礎
-            </p>
+              <span aria-hidden="true">📖</span>
+              Bắt đầu học ngay
+              <span aria-hidden="true">›</span>
+            </Link>
           </div>
+
+          <p
+            className="jp-text pointer-events-none absolute right-6 top-6 hidden text-2xl font-medium tracking-[0.35em] text-white/90 [writing-mode:vertical-rl] md:block"
+            aria-hidden="true"
+          >
+            日本語
+          </p>
         </div>
       </section>
 
-      {/* TABS */}
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 mb-8">
-        <nav className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-slate-100 dark:bg-sumi-900 w-fit" aria-label="Thư viện tiếng Nhật">
-          <Link 
-            href="/app/vocabulary#vocabulary" 
-            className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-white hover:text-slate-900 dark:text-slate-400 dark:hover:bg-sumi-800 dark:hover:text-white transition-all"
-          >
-            ▤ &nbsp;Từ vựng
-          </Link>
-          <Link 
-            href="/app/vocabulary#kanji" 
-            className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-white hover:text-slate-900 dark:text-slate-400 dark:hover:bg-sumi-800 dark:hover:text-white transition-all"
-          >
-            <span className="jp-text font-bold">漢</span>&nbsp; Hán tự
-          </Link>
-          <Link 
-            href="/app/grammar" 
-            className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold bg-white text-red-600 shadow-sm dark:bg-sumi-800 dark:text-red-400 transition-all"
-          >
-            <span className="jp-text">文</span>&nbsp; Ngữ pháp
-          </Link>
-        </nav>
-        <p className="mt-3 text-sm text-slate-500 dark:text-slate-400 ml-2">
-          {grammar.length} cấu trúc được hệ thống theo cấp độ, ý nghĩa, công thức và ngữ cảnh sử dụng.
-        </p>
-      </div>
-
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 pb-20">
-        <GrammarClient grammar={serialized} defaultLevel={userLevel} />
+      <div className="mx-auto max-w-[1320px] px-4 pb-20 pt-5 sm:px-6">
+        <GrammarClient
+          grammar={serialized}
+          defaultLevel={userLevel}
+          displayName={displayName}
+          levelImages={levelImages}
+        />
       </div>
     </div>
   );

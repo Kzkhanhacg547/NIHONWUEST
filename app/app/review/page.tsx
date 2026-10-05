@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { readdirSync } from "node:fs";
+import path from "node:path";
 import type { CSSProperties } from "react";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
@@ -6,17 +8,58 @@ import { authOptions } from "@/lib/auth-options";
 import { prisma } from "@/lib/prisma";
 import { AppNav } from "@/components/AppNav";
 import { Icon, type IconName } from "@/components/ui";
-import { JapanBackdrop, JapanScenicPanel } from "@/components/JapanIllustration";
+import { JapanBackdrop } from "@/components/JapanIllustration";
 import { ReviewClient, ReviewSettingsButton, SpeakButton } from "./ReviewClient";
 import { resolveReviewItems } from "@/lib/review/resolveReviewItem";
 import "./review.css";
 
 const MODES: { href: string; icon: IconName; title: string; desc: string; tone: "red" | "blue"; active?: boolean }[] = [
-  { href: "/app/review", icon: "card", title: "SRS Flashcard", desc: "Ôn tập theo trí nhớ dài hạn", tone: "red", active: true },
-  { href: "/app/practice", icon: "quiz", title: "Quiz bài học", desc: "Kiểm tra kiến thức đã học", tone: "red" },
+  { href: "/app/review", icon: "card", title: "SRS Flashcard", desc: "Ôn tập theo tần suất lặp lại", tone: "red", active: true },
+  { href: "/app/practice", icon: "quiz", title: "Quiz bài học", desc: "Kiểm tra kiến thức đã học", tone: "blue" },
   { href: "/app/survival", icon: "chat", title: "Hội thoại sinh tồn", desc: "Luyện phản xạ giao tiếp", tone: "blue" },
   { href: "/app/learn#kana-full", icon: "pen", title: "Xưởng viết Kana", desc: "Luyện viết Hiragana & Katakana", tone: "red" },
 ];
+
+// 4 thẻ lối tắt dưới khung flashcard. Kiểm tra lại các href cho khớp route thật của dự án.
+const PROMOS: { href: string; glyph: string; title: string; desc: string; tone: "red" | "blue" | "violet" | "teal" }[] = [
+  { href: "/app/vocabulary", glyph: "語", title: "Từ vựng", desc: "Mở rộng vốn từ", tone: "red" },
+  { href: "/app/grammar", glyph: "文", title: "Ngữ pháp", desc: "Hiểu sâu - Dùng chuẩn", tone: "blue" },
+  { href: "/app/survival", glyph: "話", title: "Hội thoại", desc: "Tự tin giao tiếp", tone: "violet" },
+  { href: "/app/explore", glyph: "和", title: "Khám phá", desc: "Văn hóa Nhật Bản", tone: "teal" },
+];
+
+// Quét thư mục ảnh nền flashcard. Thêm / bớt ảnh trong public/images/SRS_card/back/ là tự cập nhật.
+function listCardBackgrounds(): string[] {
+  try {
+    const dir = path.join(process.cwd(), "public", "images", "SRS_card", "back");
+    return readdirSync(dir)
+      .filter((f) => /\.(png|jpe?g|webp|avif)$/i.test(f))
+      .sort()
+      .map((f) => `/images/SRS_card/back/${encodeURIComponent(f)}`);
+  } catch {
+    return [];
+  }
+}
+
+function TrendIcon({ size = 22 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 17l6-6 4 4 8-9" />
+      <path d="M15 6h6v6" />
+    </svg>
+  );
+}
+
+function ToriiMini() {
+  return (
+    <svg width="22" height="20" viewBox="0 0 24 22" fill="currentColor" aria-hidden="true">
+      <path d="M1 4Q12 8 23 4V1Q12 5 1 1Z" />
+      <rect x="4" y="8" width="16" height="2" />
+      <rect x="5" y="6" width="2" height="15" />
+      <rect x="17" y="6" width="2" height="15" />
+    </svg>
+  );
+}
 
 export default async function ReviewPage() {
   const session = await getServerSession(authOptions);
@@ -141,34 +184,23 @@ export default async function ReviewPage() {
   return (
     <div className="nq-workspace rv-page">
       <JapanBackdrop />
+      {/* Ảnh nền dưới header (full-bleed, phía sau AppNav) */}
+      <div className="rv-banner" aria-hidden="true" />
       <AppNav />
 
       <div className="rv-container">
-        <nav className="rv-crumbs" aria-label="Breadcrumb" data-intro>
-          <Link href="/app" aria-label="Trang chủ">
-            <Icon name="home" size={16} />
-          </Link>
-          <span aria-hidden="true">›</span>
-          <Link href="/app/review">Ôn Tập</Link>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Đấu trường luyện tập</span>
-        </nav>
-
         <section className="rv-hero" data-intro>
           <div className="rv-hero-copy">
+            <span className="rv-hero-kicker jp-text">一歩ずつ、夢に近づく。</span>
             <h1>
               Đấu trường <em>luyện tập</em>
             </h1>
             <p>Luyện tập chủ động. Củng cố trí nhớ. Biến kiến thức thành kỹ năng thực tế.</p>
           </div>
-          <div className="rv-hero-scene" data-parallax="0.08">
-            <div className="rv-hero-art" aria-hidden="true">
-              <JapanScenicPanel variant="fuji" showLabel={false} />
-            </div>
-            <div className="rv-quote">
-              <span className="jp-text">継続は力なり</span>
-              <small>“Kiên trì sẽ thành sức mạnh.”</small>
-            </div>
+          <div className="rv-quote" data-parallax="0.08">
+            <span className="jp-text">継続は力なり</span>
+            <small>“Kiên trì sẽ thành sức mạnh.”</small>
+            <i className="rv-quote-more" aria-hidden="true">»</i>
           </div>
         </section>
 
@@ -184,33 +216,64 @@ export default async function ReviewPage() {
               <span className="rv-tab-icon">
                 <Icon name={mode.icon} size={22} />
               </span>
-              <span>
+              <span className="rv-tab-text">
                 <b>{mode.title}</b>
                 <small>{mode.desc}</small>
               </span>
+              <span className="rv-tab-go" aria-hidden="true">›</span>
             </Link>
           ))}
         </nav>
 
         <div className="rv-shell" data-reveal>
-          <section className="rv-panel" aria-labelledby="rv-title">
-            <div className="rv-panel-head">
-              <span className="rv-panel-icon">
-                <Icon name="card" size={26} />
-              </span>
-              <div>
-                <h2 id="rv-title">SRS Flashcard</h2>
-                <p>Ôn tập thông minh theo thuật toán Spaced Repetition System (SRS).</p>
+          <div className="rv-main">
+            <section className="rv-panel" aria-labelledby="rv-title">
+              <div className="rv-panel-head">
+                <span className="rv-panel-icon">
+                  <Icon name="card" size={26} />
+                </span>
+                <div>
+                  <h2 id="rv-title">SRS Flashcard</h2>
+                  <p>Ôn tập thông minh theo thuật toán Spaced Repetition System (SRS).</p>
+                </div>
+                <ReviewSettingsButton />
               </div>
-              <ReviewSettingsButton />
-            </div>
-            <div id="review-card">
-              <ReviewClient initial={enrichedItems} />
-            </div>
-          </section>
+              <div id="review-card">
+                <ReviewClient initial={enrichedItems} backgrounds={listCardBackgrounds()} />
+              </div>
+            </section>
+
+            <nav className="rv-promos" aria-label="Khám phá thêm">
+              {PROMOS.map((p) => (
+                <Link key={p.href} href={p.href} className="rv-promo" data-tone={p.tone}>
+                  <span className="rv-promo-art jp-text" aria-hidden="true">{p.glyph}</span>
+                  <b>{p.title}</b>
+                  <small>{p.desc}</small>
+                  <span className="rv-promo-go" aria-hidden="true">
+                    <Icon name="arrowRight" size={18} />
+                  </span>
+                </Link>
+              ))}
+            </nav>
+
+            <p className="rv-footline">
+              <ToriiMini />
+              <span className="jp-text">また、がんばりましょう！</span>
+              <i aria-hidden="true" />
+              <span>Cố gắng lên nhé!</span>
+            </p>
+          </div>
 
           <aside className="rv-aside" aria-label="Thống kê ôn tập">
-            <section className="rv-stat">
+            <section className="rv-stat is-due">
+              <svg className="rv-due-torii" viewBox="0 0 120 100" aria-hidden="true">
+                <g fill="#e8453b">
+                  <path d="M4 20Q60 38 116 20L120 8Q60 26 0 8Z" />
+                  <rect x="18" y="34" width="84" height="7" />
+                  <rect x="26" y="30" width="9" height="68" rx="1.5" />
+                  <rect x="85" y="30" width="9" height="68" rx="1.5" />
+                </g>
+              </svg>
               <div className="rv-stat-head">
                 <span className="rv-stat-icon">
                   <Icon name="calendar" size={22} />
@@ -240,12 +303,15 @@ export default async function ReviewPage() {
             <section className="rv-stat">
               <div className="rv-stat-head">
                 <span className="rv-stat-icon is-green">
-                  <Icon name="timer" size={22} />
+                  <TrendIcon />
                 </span>
                 <div>
-<b>Tỉ lệ ghi nhớ</b>
-                    <small>Dựa trên {totalGrades} lượt ôn đã ghi nhận</small>
+                  <b>Tỉ lệ ghi nhớ</b>
+                  <small>Dựa trên {totalGrades} lượt ôn đã ghi nhận</small>
                 </div>
+                <span className="rv-stat-trend" aria-hidden="true">
+                  <TrendIcon size={18} />
+                </span>
               </div>
               <div className="rv-retention">
                 <div className="rv-ring" style={{ "--retention": `${retention * 3.6}deg` } as CSSProperties}>

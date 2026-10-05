@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Card, Button, Badge } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
 import { KanaBattleCard } from "@/components/KanaBattleCard";
 
@@ -34,6 +33,13 @@ export interface PracticeLessonItem {
 }
 
 type MainTab = "LESSONS" | "BATTLE";
+type SortKey = "ORDER" | "SCORE" | "XP";
+
+const LEVEL_TONE: Record<string, string> = {
+  N5: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-900/60",
+  N4: "bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-900/60",
+  N3: "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-900/60",
+};
 
 export function PracticeClient({
   lessons,
@@ -45,58 +51,51 @@ export function PracticeClient({
   userLevel: string;
 }) {
   const [mainTab, setMainTab] = useState<MainTab>("LESSONS");
-  const [selectedUnit, setSelectedUnit] = useState<number | "ALL">(1);
+  const [selectedUnit, setSelectedUnit] = useState<number | "ALL">("ALL");
   const [statusFilter, setStatusFilter] = useState<"ALL" | "COMPLETED" | "UNFINISHED">("ALL");
+  const [sort, setSort] = useState<SortKey>("ORDER");
   const [query, setQuery] = useState("");
   const { playClick } = useSoundAndTheme();
 
-  const currentUnitInfo = useMemo(() => {
-    if (selectedUnit === "ALL") return null;
-    return units.find((u) => u.number === selectedUnit) || units[0];
-  }, [selectedUnit, units]);
+  const currentUnit = useMemo(
+    () => (selectedUnit === "ALL" ? null : units.find((u) => u.number === selectedUnit) ?? null),
+    [selectedUnit, units]
+  );
 
   const displayedLessons = useMemo(() => {
     let result = lessons;
+    if (currentUnit) result = lessons.slice(currentUnit.startIndex, currentUnit.endIndex);
 
-    // Filter by unit
-    if (selectedUnit !== "ALL") {
-      const u = units.find((item) => item.number === selectedUnit);
-      if (u) {
-        result = lessons.slice(u.startIndex, u.endIndex);
-      }
-    }
+    if (statusFilter === "COMPLETED") result = result.filter((l) => l.progressStatus === "COMPLETED");
+    else if (statusFilter === "UNFINISHED") result = result.filter((l) => l.progressStatus !== "COMPLETED");
 
-    // Filter by status
-    if (statusFilter === "COMPLETED") {
-      result = result.filter((l) => l.progressStatus === "COMPLETED");
-    } else if (statusFilter === "UNFINISHED") {
-      result = result.filter((l) => l.progressStatus !== "COMPLETED");
-    }
+    const q = query.trim().toLowerCase();
+    if (q) result = result.filter((l) => l.title.toLowerCase().includes(q) || l.description.toLowerCase().includes(q));
 
-    // Filter by search query
-    if (query.trim()) {
-      const q = query.toLowerCase();
-      result = result.filter(
-        (l) => l.title.toLowerCase().includes(q) || l.description.toLowerCase().includes(q)
-      );
-    }
+    const sorted = [...result];
+    if (sort === "SCORE") sorted.sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+    if (sort === "XP") sorted.sort((a, b) => b.xpReward - a.xpReward);
+    return sorted;
+  }, [lessons, currentUnit, statusFilter, query, sort]);
 
-    return result;
-  }, [lessons, units, selectedUnit, statusFilter, query]);
+  const pill = (active: boolean) =>
+    `flex min-h-12 shrink-0 items-center gap-2.5 rounded-2xl border px-3 py-2 text-[13px] font-bold transition active:scale-[0.98] ${
+      active
+        ? "border-red-600 bg-red-600 text-white shadow-md shadow-red-600/25"
+        : "border-slate-200 bg-white text-slate-700 hover:border-red-200 hover:bg-rose-50 dark:border-slate-800 dark:bg-sumi-900 dark:text-slate-300 dark:hover:bg-sumi-800"
+    }`;
 
   return (
     <div className="space-y-6">
-      {/* ── Main Tab Switcher ── */}
-      <div className="flex items-center gap-2 bg-white dark:bg-sumi-900 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm w-full sm:w-fit">
+      {/* ── Main tab ── */}
+      <div className="flex w-full items-center gap-2 rounded-2xl border border-slate-200 bg-white p-1.5 shadow-sm dark:border-slate-800 dark:bg-sumi-900 sm:w-fit">
         <button
           type="button"
           id="practice-tab-lessons"
           onClick={() => { playClick(); setMainTab("LESSONS"); }}
           aria-pressed={mainTab === "LESSONS"}
-          className={`flex min-h-11 flex-1 sm:flex-none items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-black transition-all active:scale-[0.98] ${
-            mainTab === "LESSONS"
-              ? "bg-sakura-500 text-white shadow-md shadow-sakura-500/20"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800"
+          className={`flex min-h-11 flex-1 items-center justify-center gap-2 rounded-xl px-4 text-sm font-black transition active:scale-[0.98] sm:flex-none ${
+            mainTab === "LESSONS" ? "bg-red-600 text-white shadow-md shadow-red-600/25" : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-sumi-800"
           }`}
         >
           📚 Bài Học
@@ -106,233 +105,162 @@ export function PracticeClient({
           id="practice-tab-battle"
           onClick={() => { playClick(); setMainTab("BATTLE"); }}
           aria-pressed={mainTab === "BATTLE"}
-          className={`flex min-h-11 flex-1 sm:flex-none items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-black transition-all active:scale-[0.98] ${
-            mainTab === "BATTLE"
-              ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-md shadow-violet-500/25"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800"
+          className={`flex min-h-11 flex-1 items-center justify-center gap-2 rounded-xl px-4 text-sm font-black transition active:scale-[0.98] sm:flex-none ${
+            mainTab === "BATTLE" ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-md shadow-violet-500/25" : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-sumi-800"
           }`}
         >
           🃏 Kana Battle
-          <span className="bg-amber-400 text-slate-900 text-[10px] font-black px-1.5 py-0.5 rounded-full">NEW</span>
+          <span className="rounded-full bg-amber-400 px-1.5 py-0.5 text-[10px] font-black text-slate-900">NEW</span>
         </button>
       </div>
 
-      {/* ── Kana Battle Game ── */}
       {mainTab === "BATTLE" && (
-        <div className="rounded-3xl bg-gradient-to-br from-violet-950/80 via-indigo-950/60 to-slate-900/80 border border-violet-700/20 shadow-xl overflow-hidden p-4">
+        <div className="overflow-hidden rounded-3xl border border-violet-700/20 bg-gradient-to-br from-violet-950/80 via-indigo-950/60 to-slate-900/80 p-4 shadow-xl">
           <KanaBattleCard />
         </div>
       )}
 
-      {/* ── Lessons browser (hidden when on BATTLE tab) ── */}
       {mainTab === "LESSONS" && (
         <>
-          {/* Unit Selector Bar (Tabs / Pills) */}
-          <div className="bg-white dark:bg-sumi-900 p-2 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
-          <button
-            type="button"
-            onClick={() => {
-              playClick();
-              setSelectedUnit("ALL");
-            }}
-            className={`px-3.5 py-2.5 rounded-xl text-[13px] font-bold shrink-0 transition-all active:scale-[0.98] ${
-              selectedUnit === "ALL"
-                ? "bg-sakura-500 text-white shadow-md shadow-sakura-500/20"
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800"
-            }`}
-          >
-            📚 Tất cả ({lessons.length} bài)
-          </button>
-
-          {units.map((u) => {
-            const unitLessons = lessons.slice(u.startIndex, u.endIndex);
-            const completedCount = unitLessons.filter((l) => l.progressStatus === "COMPLETED").length;
-            const isAllDone = completedCount === unitLessons.length && unitLessons.length > 0;
-            const active = selectedUnit === u.number;
-
-            return (
-              <button
-                key={u.number}
-                type="button"
-                onClick={() => {
-                  playClick();
-                  setSelectedUnit(u.number);
-                }}
-                className={`flex min-h-11 items-center gap-2 px-3.5 py-2.5 rounded-xl text-[13px] font-bold shrink-0 transition-all active:scale-[0.98] ${
-                  active
-                    ? "bg-sakura-500 text-white shadow-md shadow-sakura-500/20"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800 border border-transparent"
-                }`}
-              >
-                <span>{u.icon}</span>
-                <span>Unit 0{u.number}</span>
-                {isAllDone ? (
-                  <span className={`text-[10px] ${active ? "text-white" : "text-emerald-500"}`}>✓</span>
-                ) : (
-                  <span className={`text-[10px] ${active ? "text-rose-100" : "text-slate-400"}`}>
-                    {completedCount}/{unitLessons.length}
-                  </span>
-                )}
+          {/* ── Unit tabs (giống thanh danh mục ở ảnh mẫu) ── */}
+          <div className="rounded-3xl border border-slate-200/70 bg-white/90 p-2 shadow-sm dark:border-slate-800 dark:bg-sumi-900/80">
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
+              <button type="button" onClick={() => { playClick(); setSelectedUnit("ALL"); }} className={pill(selectedUnit === "ALL")}>
+                <span className={`flex h-8 w-8 items-center justify-center rounded-xl text-base ${selectedUnit === "ALL" ? "bg-white/20" : "bg-slate-100 dark:bg-sumi-800"}`}>▦</span>
+                Tất cả <span className="text-[11px] opacity-70">({lessons.length} bài)</span>
               </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Active Unit Header Banner & Quick Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-100/70 dark:bg-sumi-900/60 p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800">
-        <div className="flex items-center gap-3">
-          <span className="text-3xl p-2 rounded-2xl bg-white dark:bg-sumi-800 shadow-sm shrink-0">
-            {currentUnitInfo ? currentUnitInfo.icon : "📖"}
-          </span>
-          <div>
-            <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
-              {currentUnitInfo ? currentUnitInfo.title : `Tất cả bài học ${userLevel}`}
-            </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              {currentUnitInfo
-                ? currentUnitInfo.description
-                : `Danh sách toàn bộ ${lessons.length} bài học theo lộ trình chuẩn JLPT ${userLevel}`}
-            </p>
+              {units.map((u) => {
+                const list = lessons.slice(u.startIndex, u.endIndex);
+                const done = list.filter((l) => l.progressStatus === "COMPLETED").length;
+                const active = selectedUnit === u.number;
+                return (
+                  <button key={u.number} type="button" onClick={() => { playClick(); setSelectedUnit(u.number); }} className={pill(active)}>
+                    <span className={`flex h-8 w-8 items-center justify-center rounded-xl text-base ${active ? "bg-white/20" : "bg-slate-100 dark:bg-sumi-800"}`}>{u.icon}</span>
+                    Unit 0{u.number}
+                    <span className={`text-[11px] ${active ? "text-rose-100" : "text-slate-400"}`}>
+                      {list.length > 0 && done === list.length ? "✓" : `(${done}/${list.length})`}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        {/* Filter and Search */}
-        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 w-full sm:w-auto sm:shrink-0">
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Tìm bài học..."
-            aria-label="Tìm bài học"
-            className="min-h-11 px-3 py-2.5 rounded-xl text-base sm:text-sm border border-slate-200 dark:border-slate-700 bg-white dark:bg-sumi-800 text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-sakura-500 w-full sm:w-44"
-          />
+          {/* ── Tiêu đề danh sách + tìm kiếm + sắp xếp ── */}
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="flex items-start gap-3">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-red-600 text-2xl text-white shadow-md shadow-red-600/25">
+                {currentUnit ? currentUnit.icon : "📖"}
+              </span>
+              <div>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">
+                  {currentUnit ? currentUnit.title : "Danh sách khóa học"}
+                </h3>
+                <p className="mt-0.5 max-w-2xl text-xs text-slate-500 dark:text-slate-400">
+                  {currentUnit ? currentUnit.description : `Khám phá ${lessons.length} bài học JLPT ${userLevel} được sắp xếp theo trình độ, dễ học, dễ nhớ`}
+                </p>
+              </div>
+            </div>
 
-          <div className="flex items-center gap-1 bg-white dark:bg-sumi-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
-            <button
-              type="button"
-              onClick={() => setStatusFilter("ALL")}
-              aria-pressed={statusFilter === "ALL"}
-              className={`flex-1 sm:flex-none min-h-11 px-3 py-2 rounded-lg text-xs font-bold transition active:scale-[0.97] ${
-                statusFilter === "ALL"
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-sumi-950"
-                  : "text-slate-500 hover:text-slate-900 dark:text-slate-400"
-              }`}
-            >
-              Tất cả
-            </button>
-            <button
-              type="button"
-              onClick={() => setStatusFilter("UNFINISHED")}
-              aria-pressed={statusFilter === "UNFINISHED"}
-              className={`flex-1 sm:flex-none min-h-11 px-3 py-2 rounded-lg text-xs font-bold transition active:scale-[0.97] ${
-                statusFilter === "UNFINISHED"
-                  ? "bg-sakura-500 text-white"
-                  : "text-slate-500 hover:text-slate-900 dark:text-slate-400"
-              }`}
-            >
-              Chưa xong
-            </button>
-            <button
-              type="button"
-              onClick={() => setStatusFilter("COMPLETED")}
-              aria-pressed={statusFilter === "COMPLETED"}
-              className={`flex-1 sm:flex-none min-h-11 px-3 py-2 rounded-lg text-xs font-bold transition active:scale-[0.97] ${
-                statusFilter === "COMPLETED"
-                  ? "bg-emerald-500 text-white"
-                  : "text-slate-500 hover:text-slate-900 dark:text-slate-400"
-              }`}
-            >
-              Đã xong
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Lesson Cards Grid */}
-      {displayedLessons.length === 0 ? (
-        <div className="text-center py-12 bg-white dark:bg-sumi-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <span className="text-3xl">🔍</span>
-          <p className="font-bold text-sm text-slate-700 dark:text-slate-300 mt-2">
-            Không tìm thấy bài học phù hợp
-          </p>
-          <p className="text-xs text-slate-400 mt-1">
-            Thử thay đổi bộ lọc trạng thái hoặc từ khóa tìm kiếm
-          </p>
-        </div>
-      ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {displayedLessons.map((l) => {
-            const isCompleted = l.progressStatus === "COMPLETED";
-            const isInProgress = l.progressStatus === "IN_PROGRESS";
-
-            return (
-              <Card
-                key={l.id}
-                hover
-                className={`flex flex-col justify-between overflow-hidden border-2 transition-all p-5 ${
-                  isCompleted
-                    ? "border-emerald-200 dark:border-emerald-800/60 bg-gradient-to-br from-white to-emerald-50/20 dark:from-sumi-900 dark:to-emerald-950/20"
-                    : isInProgress
-                    ? "border-amber-200 dark:border-amber-800/60 bg-gradient-to-br from-white to-amber-50/20 dark:from-sumi-900 dark:to-amber-950/20"
-                    : "border-slate-200/80 dark:border-slate-800 bg-white dark:bg-sumi-900"
-                }`}
+            <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center lg:w-auto">
+              <div className="flex min-h-11 flex-1 overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-sumi-800 sm:w-64 sm:flex-none">
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Tìm kiếm bài học..."
+                  aria-label="Tìm bài học"
+                  className="min-w-0 flex-1 bg-transparent px-3 text-base text-slate-800 placeholder:text-slate-400 focus:outline-none dark:text-slate-200 sm:text-sm"
+                />
+                <span className="flex w-11 items-center justify-center bg-slate-900 text-sm text-white dark:bg-white dark:text-sumi-950" aria-hidden>🔍</span>
+              </div>
+              <select
+                value={sort}
+                onChange={(e) => setSort(e.target.value as SortKey)}
+                aria-label="Sắp xếp"
+                className="min-h-11 rounded-xl border border-slate-200 bg-white px-3 text-base text-slate-700 dark:border-slate-700 dark:bg-sumi-800 dark:text-slate-200 sm:text-sm"
               >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-lg bg-slate-100 dark:bg-sumi-800 text-xs font-black text-slate-600 dark:text-slate-300">
-                      #{l.order + 1}
-                    </span>
-                    {isCompleted ? (
-                      <Badge variant="matcha">✓ Đã học</Badge>
-                    ) : isInProgress ? (
-                      <Badge variant="amber">⏳ Đang học</Badge>
-                    ) : (
-                      <Badge variant="slate">Mới</Badge>
-                    )}
-                  </div>
+                <option value="ORDER">Sắp xếp: Theo lộ trình</option>
+                <option value="SCORE">Điểm cao nhất</option>
+                <option value="XP">Nhiều XP nhất</option>
+              </select>
+              <div className="flex items-center gap-1 rounded-xl border border-slate-200 bg-white p-1 dark:border-slate-700 dark:bg-sumi-800">
+                {([["ALL", "Tất cả"], ["UNFINISHED", "Chưa xong"], ["COMPLETED", "Đã xong"]] as const).map(([key, label]) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setStatusFilter(key)}
+                    aria-pressed={statusFilter === key}
+                    className={`min-h-9 flex-1 rounded-lg px-3 text-xs font-bold transition sm:flex-none ${
+                      statusFilter === key ? "bg-red-600 text-white" : "text-slate-500 hover:text-slate-900 dark:text-slate-400"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
 
-                  <h4 className="text-base font-black text-slate-900 dark:text-white tracking-tight leading-snug">
-                    {cleanLessonTitle(l.title)}
-                  </h4>
-                  <p className="mt-1 text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-                    {l.description}
-                  </p>
+          {/* ── Lưới thẻ bài học ── */}
+          {displayedLessons.length === 0 ? (
+            <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center dark:border-slate-800 dark:bg-sumi-900">
+              <span className="text-3xl">🔍</span>
+              <p className="mt-2 text-sm font-bold text-slate-700 dark:text-slate-300">Không tìm thấy bài học phù hợp</p>
+              <p className="mt-1 text-xs text-slate-400">Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm</p>
+            </div>
+          ) : (
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {displayedLessons.map((l) => {
+                const done = l.progressStatus === "COMPLETED";
+                const doing = l.progressStatus === "IN_PROGRESS";
+                const unit = units.find((u) => l.order >= u.startIndex && l.order < u.endIndex) ?? units[0];
+                const pct = done ? 100 : l.score ?? 0;
 
-                  <div className="flex flex-wrap items-center gap-3 mt-3 text-xs font-bold text-slate-500">
-                    <span className="flex items-center gap-1">
-                      📝 {l.exercisesCount} câu hỏi
-                    </span>
-                    <span className="flex items-center gap-1 text-amber-600 dark:text-amber-400">
-                      ✨ +{l.xpReward} XP
-                    </span>
-                    {l.score !== undefined && l.score !== null && (
-                      <span className="text-emerald-600 dark:text-emerald-400 font-black">
-                        {l.score}% điểm
-                      </span>
-                    )}
-                  </div>
-                </div>
+                return (
+                  <article
+                    key={l.id}
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-sumi-900"
+                  >
+                    <div className="pointer-events-none absolute -right-3 -top-3 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-rose-100 to-transparent text-5xl opacity-80 dark:from-red-950/40" aria-hidden>
+                      {unit.icon}
+                    </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
-                  <Link href={`/app/practice/${l.slug}`} className="block">
-                    <Button
-                      variant={isCompleted ? "secondary" : "sakura"}
-                      size="sm"
-                      className="w-full justify-center font-bold text-xs"
+                    <span className={`relative w-fit rounded-lg border px-2.5 py-1 text-xs font-black ${LEVEL_TONE[l.level] ?? LEVEL_TONE.N5}`}>
+                      {l.level}
+                    </span>
+
+                    <h4 className="relative mt-3 text-[15px] font-black leading-snug text-slate-900 dark:text-white">
+                      {cleanLessonTitle(l.title)}
+                    </h4>
+                    <p className="relative mt-1 line-clamp-2 min-h-[2.5rem] text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                      {l.description}
+                    </p>
+
+                    <div className="relative mt-3 flex items-center gap-3 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                      <span>📝 {l.exercisesCount} câu</span>
+                      <span className="text-red-500">◔ {pct}%</span>
+                      <span className="ml-auto rounded-md bg-amber-50 px-2 py-0.5 font-bold text-amber-600 dark:bg-amber-950/40 dark:text-amber-300">+{l.xpReward} XP</span>
+                    </div>
+
+                    <Link
+                      href={`/app/practice/${l.slug}`}
+                      className={`relative mt-4 inline-flex min-h-10 items-center justify-center gap-2 rounded-xl border text-[13px] font-black transition active:scale-[0.98] ${
+                        doing
+                          ? "border-red-600 bg-red-600 text-white shadow-md shadow-red-600/25 hover:bg-red-700"
+                          : "border-red-500 bg-white text-red-600 hover:bg-red-50 dark:bg-transparent dark:hover:bg-red-950/30"
+                      }`}
                     >
-                      {isCompleted ? "🔄 Luyện tập lại" : "🚀 Bắt đầu bài học"}
-                    </Button>
-                  </Link>
-                </div>
-              </Card>
-            );
-          })}
-        </div>
+                      <span aria-hidden>▶</span>
+                      {done ? "Luyện tập lại" : doing ? "Tiếp tục học" : "Bắt đầu học"}
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+          )}
+        </>
       )}
-    </>
-  )}
-</div>
+    </div>
   );
 }

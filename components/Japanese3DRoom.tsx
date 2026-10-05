@@ -486,23 +486,23 @@ export function Japanese3DRoom({
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-md flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 animate-in fade-in duration-200">
       <div className="w-full max-w-6xl my-auto rounded-3xl border border-slate-200/90 dark:border-slate-800/90 bg-slate-50 dark:bg-sumi-950 shadow-2xl overflow-hidden flex flex-col max-h-[94dvh]">
         {/* ── STICKY TOP APP BAR: Unified, Airy & Modern ────────────────── */}
-        <header className="glass-panel sticky top-0 z-30 px-4 sm:px-6 py-3 border-b border-slate-200/80 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white/95 dark:bg-sumi-900/95 backdrop-blur-md">
+        <header className="glass-panel sticky top-0 z-30 px-3 sm:px-6 py-2.5 sm:py-3 border-b border-slate-200/80 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-2.5 sm:gap-3 bg-white/95 dark:bg-sumi-900/95 backdrop-blur-md">
           <div className="flex items-center gap-3 min-w-0">
             <span className="text-2xl sm:text-3xl select-none shrink-0 p-1.5 rounded-2xl bg-white dark:bg-sumi-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
               {data.landmark3D}
             </span>
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-lg sm:text-xl font-black font-jp text-slate-900 dark:text-white tracking-wide truncate">
                   {data.nameJa}
                 </h2>
-                <Badge variant="sakura" className="font-bold text-xs uppercase tracking-wider">
+                <Badge variant="sakura" className="font-bold text-xs uppercase tracking-wider shrink-0">
                   {data.name}
                 </Badge>
                 
                 {/* Live Exploration Progress Bar & Badge */}
-                <div className="flex items-center gap-2 bg-slate-100 dark:bg-sumi-800 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-700">
-                  <div className="w-16 sm:w-20 h-1.5 bg-slate-200 dark:bg-sumi-950 rounded-full overflow-hidden">
+                <div className="flex items-center gap-2 bg-slate-100 dark:bg-sumi-800 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-700 shrink-0">
+                  <div className="w-14 sm:w-20 h-1.5 bg-slate-200 dark:bg-sumi-950 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-gradient-to-r from-sakura-500 to-emerald-500 transition-all duration-500 rounded-full"
                       style={{ width: `${exploredPercent}%` }}
@@ -523,63 +523,67 @@ export function Japanese3DRoom({
           </div>
 
           {/* Interactive Utility Controls (Omikuji, Stamp, City Switcher & Close) */}
-          <div className="flex items-center gap-2 shrink-0 flex-wrap justify-end">
-            {/* Omikuji Button */}
-            <button
-              type="button"
-              onClick={drawOmikuji}
-              disabled={isShakingOmikuji}
-              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:hover:bg-amber-900/60 dark:text-amber-200 border border-amber-200 dark:border-amber-900/60 flex items-center gap-1.5 transition-all active:scale-95 shadow-sm"
-              title="Rút quẻ may mắn Omikuji"
-            >
-              <span>🎋</span>
-              <span>{isShakingOmikuji ? "Đang lắc..." : "Rút quẻ"}</span>
-            </button>
+          <div className="flex items-center gap-2 shrink-0 flex-wrap justify-between sm:justify-end w-full md:w-auto pt-1.5 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
+            <div className="flex items-center gap-2">
+              {/* Omikuji Button */}
+              <button
+                type="button"
+                onClick={drawOmikuji}
+                disabled={isShakingOmikuji}
+                className="px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:hover:bg-amber-900/60 dark:text-amber-200 border border-amber-200 dark:border-amber-900/60 flex items-center gap-1.5 transition-all active:scale-95 shadow-sm"
+                title="Rút quẻ may mắn Omikuji"
+              >
+                <span>🎋</span>
+                <span>{isShakingOmikuji ? "Đang lắc..." : "Rút quẻ"}</span>
+              </button>
 
-            {/* Eki-Stamp Button */}
-            <button
-              type="button"
-              onClick={triggerStamp}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold font-jp border transition-all active:scale-95 flex items-center gap-1.5 shadow-sm ${
-                isStamped
-                  ? "border-red-500/80 text-red-600 bg-red-50 dark:bg-red-950/40 dark:text-red-300 shadow-red-500/10"
-                  : "border-slate-200 bg-white text-slate-600 hover:border-red-300 hover:text-red-600 dark:border-slate-700 dark:bg-sumi-900 dark:text-slate-300"
-              } ${stampPounded ? "scale-110" : ""}`}
-              title="Đóng con dấu kỷ niệm ga tàu"
-            >
-              <span>⛩️</span>
-              <span>{isStamped ? `${data.nameJa.slice(0, 3)} 済` : "Đóng dấu ga"}</span>
-            </button>
+              {/* Eki-Stamp Button */}
+              <button
+                type="button"
+                onClick={triggerStamp}
+                className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold font-jp border transition-all active:scale-95 flex items-center gap-1.5 shadow-sm ${
+                  isStamped
+                    ? "border-red-500/80 text-red-600 bg-red-50 dark:bg-red-950/40 dark:text-red-300 shadow-red-500/10"
+                    : "border-slate-200 bg-white text-slate-600 hover:border-red-300 hover:text-red-600 dark:border-slate-700 dark:bg-sumi-900 dark:text-slate-300"
+                } ${stampPounded ? "scale-110" : ""}`}
+                title="Đóng con dấu kỷ niệm ga tàu"
+              >
+                <span>⛩️</span>
+                <span>{isStamped ? `${data.nameJa.slice(0, 3)} 済` : "Đóng dấu ga"}</span>
+              </button>
+            </div>
 
-            {/* City switcher */}
-            {allCities && allCities.length > 1 && onSelectCity && (
-              <div className="hidden lg:flex items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-sumi-900 border border-slate-200 dark:border-slate-800">
-                {allCities.slice(0, 5).map((c) => {
-                  const isCurrent = c.slug === data.slug;
-                  return (
-                    <button
-                      key={c.slug}
-                      onClick={() => onSelectCity(c.slug)}
-                      className={`px-2 py-0.5 rounded-lg text-xs font-jp font-bold transition-all ${
-                        isCurrent
-                          ? "bg-white dark:bg-sumi-800 text-sakura-600 dark:text-sakura-400 shadow-sm"
-                          : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                      }`}
-                    >
-                      {c.nameJa}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
+            <div className="flex items-center gap-2 ml-auto sm:ml-0">
+              {/* City switcher */}
+              {allCities && allCities.length > 1 && onSelectCity && (
+                <div className="hidden lg:flex items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-sumi-900 border border-slate-200 dark:border-slate-800">
+                  {allCities.slice(0, 5).map((c) => {
+                    const isCurrent = c.slug === data.slug;
+                    return (
+                      <button
+                        key={c.slug}
+                        onClick={() => onSelectCity(c.slug)}
+                        className={`px-2 py-0.5 rounded-lg text-xs font-jp font-bold transition-all ${
+                          isCurrent
+                            ? "bg-white dark:bg-sumi-800 text-sakura-600 dark:text-sakura-400 shadow-sm"
+                            : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                        }`}
+                      >
+                        {c.nameJa}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
 
-            <button
-              onClick={onClose}
-              aria-label="Đóng Không Gian Văn Hóa"
-              className="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 dark:bg-sumi-800 dark:hover:bg-sumi-700 dark:text-slate-300 flex items-center justify-center font-bold text-base transition-all active:scale-95 border border-slate-200/80 dark:border-slate-700"
-            >
-              ✕
-            </button>
+              <button
+                onClick={onClose}
+                aria-label="Đóng Không Gian Văn Hóa"
+                className="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 dark:bg-sumi-800 dark:hover:bg-sumi-700 dark:text-slate-300 flex items-center justify-center font-bold text-base transition-all active:scale-95 border border-slate-200/80 dark:border-slate-700"
+              >
+                ✕
+              </button>
+            </div>
           </div>
         </header>
 

@@ -1,12 +1,12 @@
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import { authOptions } from "@/lib/auth-options";
 import { prisma } from "@/lib/prisma";
 import { AppNav } from "@/components/AppNav";
-import { Button } from "@/components/ui";
-import { JapanBackdrop, JapanScenicPanel } from "@/components/JapanIllustration";
+import { JapanBackdrop } from "@/components/JapanIllustration";
 import { PracticeClient, type UnitInfo, type PracticeLessonItem } from "./PracticeClient";
-import Link from "next/link";
 
 function cleanLessonTitle(title: string): string {
   if (!title) return "";
@@ -41,6 +41,12 @@ const UNITS_BY_LEVEL: Record<string, UnitInfo[]> = {
   ],
 };
 
+const LEVEL_DESCS: Record<string, string> = {
+  N5: "Hệ thống bài học cơ bản từ Kana đến giao tiếp hàng ngày kèm trắc nghiệm giúp bạn chinh phục JLPT hiệu quả.",
+  N4: "Lộ trình sơ trung cấp: Biến thể động từ, câu điều kiện, bị động và sai khiến thực chiến.",
+  N3: "Ngữ pháp trung cấp: Diễn đạt sắc thái, thời điểm và giao tiếp nơi công sở chuyên nghiệp.",
+};
+
 export default async function PracticePage() {
   const session = await getServerSession(authOptions);
   const uid = (session?.user as { id?: string } | undefined)?.id;
@@ -55,19 +61,11 @@ export default async function PracticePage() {
     include: { progress: { where: { userId: uid } }, _count: { select: { exercises: true } } },
   });
 
-  // Filter lessons for user's current level
   const lessons = allLessons.filter((l) => l.level === userLevel);
   const completedCount = lessons.filter((l) => l.progress[0]?.status === "COMPLETED").length;
   const progressPercent = Math.round((completedCount / Math.max(1, lessons.length)) * 100);
   const nextLesson = lessons.find((l) => l.progress[0]?.status !== "COMPLETED") || lessons[0];
-
-  const UNITS = UNITS_BY_LEVEL[userLevel] ?? UNITS_BY_LEVEL["N5"];
-
-  const LEVEL_DESCS: Record<string, string> = {
-    N5: "Hệ thống bài học cơ bản từ Kana đến giao tiếp hàng ngày kèm trắc nghiệm phản xạ.",
-    N4: "Lộ trình sơ trung cấp: Biến thể động từ, câu điều kiện, bị động và sai khiến thực chiến.",
-    N3: "Ngữ pháp trung cấp: Diễn đạt sắc thái, thời điểm và giao tiếp nơi công sở chuyên nghiệp.",
-  };
+  const units = UNITS_BY_LEVEL[userLevel] ?? UNITS_BY_LEVEL["N5"];
 
   const serializedLessons: PracticeLessonItem[] = lessons.map((l) => ({
     id: l.id,
@@ -82,83 +80,141 @@ export default async function PracticePage() {
     score: l.progress[0]?.score,
   }));
 
+  const stats = [
+    { icon: "📚", tone: "bg-red-50 text-red-600 dark:bg-red-950/40", value: `${lessons.length} bài học`, label: "có hệ thống" },
+    { icon: "⏱️", tone: "bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40", value: "~15 phút/bài", label: "học ngắn gọn" },
+    { icon: "📈", tone: "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40", value: `${progressPercent}%`, label: "hoàn thành" },
+  ];
+
   return (
     <div className="nq-workspace">
       <JapanBackdrop />
       <AppNav />
 
-      {/* HERO */}
-      <section className="relative mx-auto mt-2 grid max-w-[1320px] items-center gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-        <div className="relative z-10 py-8 lg:py-12" data-intro>
-          <div className="mb-4 flex items-center gap-2 text-[11px] font-bold tracking-[0.14em] text-slate-500 dark:text-slate-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-red-600" aria-hidden="true" />
-            BÀI HỌC &nbsp;›&nbsp; LỘ TRÌNH JLPT {userLevel}
+      {/* ───────── HERO: ảnh Phú Sĩ làm nền, mờ dần sang trái ───────── */}
+      <section className="relative mx-auto max-w-[1320px] overflow-hidden sm:px-6" data-intro>
+        <div className="relative overflow-hidden lg:rounded-3xl">
+          {/* Ảnh Phú Sĩ nằm trong khung, mờ dần sang trái bằng mask (không còn khối trắng) */}
+          <div
+            className="absolute inset-y-0 right-0 w-full lg:w-[72%]"
+            style={{
+              WebkitMaskImage: "linear-gradient(to right, transparent 0%, #000 38%)",
+              maskImage: "linear-gradient(to right, transparent 0%, #000 38%)",
+            }}
+          >
+            <Image
+              src="/images/dashboard/fuji-hero.webp"
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 1320px) 950px, 100vw"
+              className="object-cover object-[60%_center]"
+            />
           </div>
-          <h1 className="text-[clamp(1.75rem,7.5vw,40px)] font-black leading-[1.08] tracking-tight text-balance text-slate-900 dark:text-white sm:text-5xl">
-            Học theo <span className="text-red-600">hành trình thực tế.</span>
-          </h1>
-          <p className="mt-4 max-w-md text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
-            {LEVEL_DESCS[userLevel] ?? LEVEL_DESCS["N5"]}
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3 text-sm font-medium text-slate-600 dark:text-slate-300">
-            <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 dark:bg-sumi-800">
-              ▤ {lessons.length} bài học
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 dark:bg-sumi-800">
-              ◷ ~15 phút / bài
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 dark:bg-sumi-800">
-              ▥ {progressPercent}% hoàn thành
-            </span>
-          </div>
-        </div>
-
-        <div className="relative hidden h-[230px] overflow-hidden rounded-3xl shadow-lg md:block lg:h-[260px]" data-intro data-parallax>
-          <JapanScenicPanel variant="konbini" showLabel={false} />
-        </div>
-      </section>
-
-      {/* COURSE SUMMARY */}
-      <section className="mx-auto max-w-[1320px] px-4 sm:px-6 mb-8" data-reveal>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 md:p-8 rounded-3xl bg-white/80 dark:bg-sumi-900/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/80 shadow-sm">
-          <div className="flex-1 w-full">
-            <small className="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 mb-2 block">
-              TIẾN ĐỘ LỘ TRÌNH JLPT {userLevel}
-            </small>
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-2">
-              {progressPercent === 100 ? `Bạn đã hoàn thành khóa học ${userLevel}.` : "Tiếp tục hành trình học tập."}
-            </h2>
-            <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
-              Đã hoàn thành {completedCount} / {lessons.length} bài học.
+          <div className="absolute inset-0 bg-white/80 dark:bg-sumi-950/80 lg:hidden" />
+        <div className="relative px-4 py-12 sm:px-8 lg:px-12 lg:py-16">
+          <div className="max-w-xl">
+            <div className="mb-4 flex items-center gap-2 text-[11px] font-bold tracking-[0.3em] text-slate-600 dark:text-slate-300">
+              <span className="h-2 w-2 rounded-full bg-red-600" aria-hidden="true" />
+              HỌC TIẾNG NHẬT · JLPT {userLevel}
+            </div>
+            <h1 className="text-[clamp(2.25rem,8vw,4rem)] font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white">
+              Học theo hành
+              <br />
+              trình <span className="relative text-red-600">thực tế.
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M2 6 Q60 1 120 4 T198 3" fill="none" stroke="#dc2626" strokeWidth="3" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h1>
+            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+              {LEVEL_DESCS[userLevel] ?? LEVEL_DESCS["N5"]}
             </p>
-            <div className="h-3 w-full max-w-md overflow-hidden rounded-full bg-slate-100 dark:bg-sumi-800 shadow-inner">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-red-500 to-rose-600 transition-all duration-1000 ease-out"
-                style={{ width: `${progressPercent}%` }}
-              />
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {stats.map((s) => (
+                <div key={s.label} className="flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/90 px-3.5 py-2.5 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-sumi-900/80">
+                  <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-lg ${s.tone}`}>{s.icon}</span>
+                  <div className="leading-tight">
+                    <b className="block text-[13px] text-slate-900 dark:text-white">{s.value}</b>
+                    <small className="text-[11px] text-slate-500 dark:text-slate-400">{s.label}</small>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              {nextLesson && (
+                <Link
+                  href={`/app/practice/${nextLesson.slug}`}
+                  className="inline-flex min-h-12 items-center gap-2 rounded-full bg-red-600 px-7 text-sm font-black text-white shadow-lg shadow-red-600/30 transition hover:bg-red-700 active:scale-[0.98]"
+                >
+                  Bắt đầu học ngay <span aria-hidden>→</span>
+                </Link>
+              )}
+              <a
+                href="#courses"
+                className="inline-flex min-h-12 items-center gap-3 rounded-full border border-slate-200 bg-white/90 py-1 pl-1 pr-5 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur dark:border-slate-700 dark:bg-sumi-900/80 dark:text-slate-200"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-xs dark:bg-sumi-800">▶</span>
+                Xem danh sách bài học
+              </a>
             </div>
           </div>
-          
-          {nextLesson && (
-            <div className="shrink-0 w-full md:w-auto flex flex-col items-start md:items-end p-5 rounded-2xl bg-slate-50 dark:bg-sumi-950 border border-slate-100 dark:border-slate-800">
-              <small className="text-[10px] font-bold tracking-wider text-red-500 dark:text-red-400 mb-1">
-                BÀI HỌC TIẾP THEO
-              </small>
-              <b className="text-base text-slate-900 dark:text-white mb-4 line-clamp-1">
-                {cleanLessonTitle(nextLesson.title)}
-              </b>
-              <Link href={`/app/practice/${nextLesson.slug}`} className="w-full">
-                <Button variant="sakura" size="sm" className="w-full shadow-lg shadow-red-500/20">
-                  Học bài này ngay →
-                </Button>
-              </Link>
-            </div>
-          )}
+        </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 pb-20" data-reveal>
-        <PracticeClient lessons={serializedLessons} units={UNITS} userLevel={userLevel} />
+      {/* ───────── TIẾN ĐỘ + MASCOT MÈO THẦN TÀI ───────── */}
+      <section className="mx-auto mt-4 mb-8 max-w-[1320px] px-4 sm:px-6" data-reveal>
+        <div className="relative overflow-hidden rounded-3xl border border-rose-200/70 bg-gradient-to-r from-rose-50 via-white to-rose-50/60 p-5 shadow-sm dark:border-red-900/40 dark:from-sumi-900 dark:via-sumi-900 dark:to-red-950/30 md:p-6">
+          <div className="grid items-center gap-5 md:grid-cols-[1fr_auto] lg:grid-cols-[1.1fr_1fr_auto]">
+            <div className="flex items-center gap-4">
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-red-100 text-4xl dark:bg-red-950/50" aria-hidden>🏮</span>
+              <div className="min-w-0 flex-1">
+                <small className="text-[10px] font-bold tracking-[0.2em] text-slate-500 dark:text-slate-400">TIẾN ĐỘ LỘ TRÌNH JLPT {userLevel}</small>
+                <h2 className="text-xl font-black text-slate-900 dark:text-white sm:text-2xl">
+                  {progressPercent === 100 ? `Hoàn thành khóa ${userLevel}!` : "Tiếp tục hành trình học tập."}
+                </h2>
+                <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-400">
+                  Bạn đã hoàn thành <b>{completedCount}/{lessons.length}</b> bài học.
+                </p>
+                <div className="mt-3 flex items-center gap-3">
+                  <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-rose-100 dark:bg-sumi-800">
+                    <div className="h-full rounded-full bg-gradient-to-r from-red-500 to-rose-600" style={{ width: `${progressPercent}%` }} />
+                  </div>
+                  <b className="text-xs text-slate-700 dark:text-slate-200">{progressPercent}%</b>
+                </div>
+              </div>
+            </div>
+
+            {nextLesson && (
+              <div className="flex items-center gap-4 rounded-2xl border border-rose-100 bg-white/80 p-4 dark:border-slate-800 dark:bg-sumi-950/60">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-red-600 text-lg font-black text-white shadow-md">
+                  {userLevel}
+                </span>
+                <div className="min-w-0">
+                  <b className="block text-sm text-slate-900 dark:text-white">Bài tiếp theo</b>
+                  <small className="mb-2 block truncate text-xs text-slate-500 dark:text-slate-400">{cleanLessonTitle(nextLesson.title)}</small>
+                  <Link
+                    href={`/app/practice/${nextLesson.slug}`}
+                    className="inline-flex min-h-9 items-center gap-1.5 rounded-full bg-red-600 px-5 text-xs font-black text-white shadow-md shadow-red-600/25 hover:bg-red-700"
+                  >
+                    Học ngay →
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            <div className="relative hidden h-32 w-32 justify-self-end md:block lg:h-36 lg:w-36">
+              <Image src="/images/dashboard/maneki-neko.webp" alt="Mèo thần tài Maneki-neko" fill sizes="144px" className="object-contain drop-shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="courses" className="mx-auto max-w-[1320px] scroll-mt-24 px-4 pb-20 sm:px-6" data-reveal>
+        <PracticeClient lessons={serializedLessons} units={units} userLevel={userLevel} />
       </div>
     </div>
   );

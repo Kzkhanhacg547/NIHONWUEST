@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -159,7 +159,7 @@ export function ReviewSettingsButton() {
                 <div>
                   <h4>Phím tắt</h4>
                   <p>
-                    <kbd>Space</kbd> lật thẻ · <kbd>1</kbd> Again · <kbd>2</kbd> Hard · <kbd>3</kbd> Good · <kbd>4</kbd> Easy
+                    <kbd>Space</kbd> lật thẻ · <kbd>←</kbd> <kbd>→</kbd> đổi thẻ · <kbd>1</kbd> Again · <kbd>2</kbd> Hard · <kbd>3</kbd> Good · <kbd>4</kbd> Easy
                     (chấm điểm sau khi đã lật thẻ).
                   </p>
                 </div>
@@ -180,72 +180,8 @@ export function ReviewSettingsButton() {
   );
 }
 
-// ======================== Phong cảnh trang trí sau mặt thẻ ========================
-const BLOSSOMS_TOP: [number, number, number][] = [
-  [18, 40, 9], [40, 62, 11], [68, 80, 10], [96, 98, 12], [120, 112, 9], [150, 118, 10],
-  [44, 30, 7], [82, 56, 8], [112, 80, 8], [28, 86, 8], [10, 70, 7], [172, 134, 7],
-  [112, 14, 8], [90, 26, 9], [70, 44, 8],
-];
-const BLOSSOMS_RIGHT: [number, number, number][] = [
-  [776, 296, 9], [752, 314, 8], [790, 270, 8], [728, 330, 7], [796, 246, 7],
-];
-
-function Blossoms({ points }: { points: [number, number, number][] }) {
-  return (
-    <>
-      {points.map(([x, y, r], i) => (
-        <g key={`${x}-${y}`}>
-          <circle cx={x} cy={y} r={r} fill={i % 2 ? "#fad0d3" : "#f6b3b9"} opacity="0.92" />
-          <circle cx={x} cy={y} r={r / 3} fill="#ee8a94" opacity="0.9" />
-        </g>
-      ))}
-    </>
-  );
-}
-
-function CardScenery() {
-  return (
-    <svg className="rv-scenery" viewBox="0 0 800 340" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="rvMist" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#8d99a6" stopOpacity="0" />
-          <stop offset="1" stopColor="#8d99a6" stopOpacity="0.3" />
-        </linearGradient>
-      </defs>
-      {/* núi xa + sương */}
-      <path d="M470 340l118-142c10-12 22-12 32 0l118 142z" fill="#9aa6b2" opacity="0.2" />
-      <path d="M0 340V262c60-26 110-18 170 4s100 6 150-14 90-36 140-18 80 22 130 6 120-44 210-22V340z" fill="url(#rvMist)" />
-      {/* rừng thông */}
-      <path d="M24 322l12-36 12 36zM46 326l10-30 10 30zM70 320l9-26 9 26zM96 326l8-22 8 22z" fill="#4a6355" opacity="0.32" />
-      <path d="M690 330l10-26 10 26zM716 334l8-20 8 20z" fill="#4a6355" opacity="0.3" />
-      {/* cổng torii */}
-      <g fill="#d3261e">
-        <rect x="664" y="236" width="9" height="90" rx="1.5" />
-        <rect x="727" y="236" width="9" height="90" rx="1.5" />
-        <rect x="656" y="252" width="88" height="7" />
-        <path d="M636 226Q700 244 764 226L768 212Q700 230 632 212Z" />
-      </g>
-      {/* cành anh đào */}
-      <g fill="none" stroke="#c4a59d" strokeLinecap="round" strokeWidth="2.5" opacity="0.25">
-        <path d="M-4 52C40 60 70 74 110 100S170 126 196 136" />
-        <path d="M52 66C60 40 80 24 112 14" strokeWidth="2" />
-        <path d="M806 256C782 280 762 298 730 328" strokeWidth="2" />
-      </g>
-      <Blossoms points={BLOSSOMS_TOP} />
-      <Blossoms points={BLOSSOMS_RIGHT} />
-      {/* cánh hoa rơi */}
-      <g fill="#f4a9ae" opacity="0.75">
-        <ellipse cx="300" cy="110" rx="6" ry="3" transform="rotate(35 300 110)" />
-        <ellipse cx="610" cy="150" rx="5" ry="2.5" transform="rotate(-25 610 150)" />
-        <ellipse cx="520" cy="60" rx="5" ry="2.5" transform="rotate(50 520 60)" />
-        <ellipse cx="190" cy="250" rx="5" ry="2.5" transform="rotate(10 190 250)" />
-      </g>
-    </svg>
-  );
-}
-
 // ======================== Phiên ôn tập ========================
-export function ReviewClient({ initial }: { initial: EnrichedReviewItem[] }) {
+export function ReviewClient({ initial, backgrounds = [] }: { initial: EnrichedReviewItem[]; backgrounds?: string[] }) {
   const router = useRouter();
   const { playClick, playCorrect, playIncorrect, playFanfare, showToast } = useSoundAndTheme();
 
@@ -339,12 +275,28 @@ export function ReviewClient({ initial }: { initial: EnrichedReviewItem[] }) {
     [currentItem, submitting, items, currentIndex, playClick, playCorrect, playIncorrect, playFanfare, showToast, router]
   );
 
-  // Phím tắt: Space lật thẻ, 1–4 chấm điểm (sau khi lật)
+  // Xem thẻ trước / sau mà không chấm điểm (không đổi lịch SRS)
+  const goStep = useCallback(
+    (dir: 1 | -1) => {
+      const n = items.length;
+      if (n < 2) return;
+      setCurrentIndex((i) => (i + dir + n) % n);
+      setIsFlipped(false);
+    },
+    [items.length]
+  );
+
+  // Phím tắt: Space lật thẻ, ←/→ đổi thẻ, 1–4 chấm điểm (sau khi lật)
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const t = e.target;
       if (t instanceof HTMLInputElement || t instanceof HTMLTextAreaElement || t instanceof HTMLSelectElement) return;
       if (document.querySelector('[aria-modal="true"]')) return; // đang mở hộp thoại / menu
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        e.preventDefault();
+        goStep(e.key === "ArrowRight" ? 1 : -1);
+        return;
+      }
       if (e.key === " " || e.code === "Space") {
         e.preventDefault();
         if (!e.repeat) setIsFlipped((f) => !f);
@@ -357,7 +309,7 @@ export function ReviewClient({ initial }: { initial: EnrichedReviewItem[] }) {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [isFlipped, submitting, handleGrade]);
+  }, [isFlipped, submitting, handleGrade, goStep]);
 
   if (!items.length) {
     return (
@@ -409,10 +361,43 @@ export function ReviewClient({ initial }: { initial: EnrichedReviewItem[] }) {
 
   const flip = () => setIsFlipped((f) => !f);
 
+  // Mỗi thẻ một phong cảnh, xoay vòng qua các ảnh trong public/images/SRS_card/back/
+  const bg = backgrounds.length ? backgrounds[(done + currentIndex) % backgrounds.length] : null;
+  const flashStyle = bg ? ({ "--rv-card-img": `url("${bg}")` } as CSSProperties) : undefined;
+
+  const renderFace = (back: boolean) => (
+    <div className={`rv-face ${back ? "is-back" : ""}`} aria-hidden={back ? !isFlipped : isFlipped}>
+      <div className="rv-face-top">
+        <span className="rv-count">
+          {position} / {sessionTotal}
+        </span>
+        <span className="rv-jlpt">{jlptLabel}</span>
+      </div>
+      <div className="rv-face-main">
+        <div className="rv-paper">
+          <div className="rv-paper-body">
+            <p className={`rv-term-text rv-fs-${back ? "md" : size} jp-text`}>{currentItem.title}</p>
+            {showReading && <p className="rv-reading jp-text">{currentItem.reading}</p>}
+            {!back && romaji && <p className="rv-romaji">{romaji}</p>}
+            {back && meaning && <p className="rv-meaning">{meaning}</p>}
+          </div>
+          {isJapaneseText && <SpeakButton text={currentItem.title} className="rv-speak" size={20} />}
+          {back && (
+            <div className="rv-paper-foot">
+              <span>Đã củng cố: {currentItem.repetitions} lần</span>
+              <span>Chu kỳ hiện tại: {currentItem.interval} ngày</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="rv-session">
       <div
         className="rv-flash"
+        style={flashStyle}
         tabIndex={0}
         onClick={flip}
         onKeyDown={(e) => {
@@ -423,52 +408,38 @@ export function ReviewClient({ initial }: { initial: EnrichedReviewItem[] }) {
         }}
       >
         <div className={`rv-flash-inner ${isFlipped ? "is-flipped" : ""}`}>
-          {/* MẶT TRƯỚC */}
-          <div className="rv-face" aria-hidden={isFlipped}>
-            <CardScenery />
-            <div className="rv-face-top">
-              <span className="rv-count">
-                {position} / {sessionTotal}
-              </span>
-              <span className="rv-jlpt">{jlptLabel}</span>
-            </div>
-            <div className="rv-face-main">
-              <div>
-                <div className="rv-term">
-                  <p className={`rv-term-text rv-fs-${size} jp-text`}>{currentItem.title}</p>
-                  {isJapaneseText && <SpeakButton text={currentItem.title} className="rv-speak" size={20} />}
-                </div>
-                {showReading && <p className="rv-reading jp-text">{currentItem.reading}</p>}
-                {romaji && <p className="rv-romaji">{romaji}</p>}
-              </div>
-            </div>
-          </div>
-
-          {/* MẶT SAU */}
-          <div className="rv-face is-back" aria-hidden={!isFlipped}>
-            <CardScenery />
-            <div className="rv-face-top">
-              <span className="rv-count">
-                {position} / {sessionTotal}
-              </span>
-              <span className="rv-jlpt">{jlptLabel}</span>
-            </div>
-            <div className="rv-face-main">
-              <div>
-                <div className="rv-term">
-                  <p className="rv-term-text rv-fs-md jp-text">{currentItem.title}</p>
-                  {isJapaneseText && <SpeakButton text={currentItem.title} className="rv-speak" size={20} />}
-                </div>
-                {showReading && <p className="rv-reading jp-text">{currentItem.reading}</p>}
-                {meaning && <p className="rv-meaning">{meaning}</p>}
-              </div>
-            </div>
-            <div className="rv-face-foot">
-              <span>Đã củng cố: {currentItem.repetitions} lần</span>
-              <span>Chu kỳ hiện tại: {currentItem.interval} ngày</span>
-            </div>
-          </div>
+          {renderFace(false)}
+          {renderFace(true)}
         </div>
+
+        {items.length > 1 && (
+          <>
+            <button
+              type="button"
+              className="rv-nav is-prev"
+              aria-label="Thẻ trước"
+              onClick={(e) => {
+                e.stopPropagation();
+                playClick();
+                goStep(-1);
+              }}
+            >
+              <Icon name="arrowRight" size={22} />
+            </button>
+            <button
+              type="button"
+              className="rv-nav is-next"
+              aria-label="Thẻ kế tiếp"
+              onClick={(e) => {
+                e.stopPropagation();
+                playClick();
+                goStep(1);
+              }}
+            >
+              <Icon name="arrowRight" size={22} />
+            </button>
+          </>
+        )}
       </div>
 
       <div className="rv-hint">

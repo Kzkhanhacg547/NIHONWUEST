@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NihonQuestLogo } from "./NihonQuestLogo";
 import { SPEECH_RATES, useSoundAndTheme } from "./SoundAndThemeContext";
+import { guessVoiceGender, voiceGenderLabel } from "@/lib/voiceGender";
 import { Icon, IconButton, type IconName } from "./ui";
 
 interface NavItem {
@@ -301,7 +302,7 @@ export function AppNav({
                         <option value="">Tự động (tiếng Nhật)</option>
                         {availableVoices.map((voice) => (
                           <option key={voice.voiceURI} value={voice.voiceURI}>
-                            {voice.name} ({voice.lang})
+                            {voice.name} ({voice.lang}) · {voiceGenderLabel(guessVoiceGender(voice.name))}
                           </option>
                         ))}
                       </select>

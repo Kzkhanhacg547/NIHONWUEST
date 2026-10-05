@@ -6,6 +6,7 @@ import { authOptions } from "@/lib/auth-options";
 import { prisma } from "@/lib/prisma";
 import { AppNav } from "@/components/AppNav";
 import { JapanBackdrop, JapanScenicPanel } from "@/components/JapanIllustration";
+import { PathDecor, PathIcon, type DecorTheme, type PathIconName } from "@/components/PathDecor";
 import { buildLearningPath, sanitizeAnswers, LEVEL_LABELS, GOAL_LABELS, SKILL_LABELS, STYLE_LABELS, type PathModule } from "@/lib/personalization";
 
 export const metadata = { title: "Lộ Trình Cá Nhân — Nihon Quest" };
@@ -15,6 +16,51 @@ type ModuleStatus = "COMPLETED" | "IN_PROGRESS" | "NOT_STARTED" | "AVAILABLE";
 interface EnrichedModule extends PathModule {
   status: ModuleStatus;
   exerciseCount: number | null;
+}
+
+/* ---------- Họa tiết & ký hiệu theo nhóm (không cần ảnh riêng cho từng bài) ---------- */
+
+const KIND_THEME: Record<PathModule["kind"], DecorTheme> = {
+  KANA: "sakura",
+  LESSON: "lantern",
+  VOCAB: "lantern",
+  GRAMMAR: "wave",
+  REVIEW: "wave",
+  SURVIVAL: "train",
+  JOURNEY: "torii",
+  SENSEI: "sakura",
+  MOCK: "torii",
+};
+
+const KIND_GLYPH: Record<PathModule["kind"], string> = {
+  KANA: "あ",
+  LESSON: "学",
+  VOCAB: "語",
+  GRAMMAR: "文",
+  REVIEW: "復",
+  SURVIVAL: "旅",
+  JOURNEY: "道",
+  SENSEI: "師",
+  MOCK: "試",
+};
+
+/** Chọn họa tiết: ưu tiên từ khóa trong tiêu đề, sau đó theo nhóm. */
+function pickTheme(m: PathModule): DecorTheme {
+  const t = m.title.toLowerCase();
+  if (/biến âm|dakuten|handakuten/.test(t)) return "sakura";
+  if (/yoon|âm ghép|âm ngắt/.test(t)) return "lantern";
+  if (/tàu|ga |konbini|nghe hiểu|sân bay|taxi/.test(t)) return "train";
+  if (/lượng từ|đếm|đền|chùa/.test(t)) return "torii";
+  return KIND_THEME[m.kind];
+}
+
+/** Tách tiêu đề: phần đầu (trắng) + phần cuối (đỏ). */
+function splitTitle(name: string): [string, string] {
+  const m = name.match(/^(.*?[–—-])\s+(.+)$/);
+  if (m) return [m[1], m[2]];
+  const words = name.trim().split(/\s+/);
+  if (words.length < 2) return [name, ""];
+  return [words.slice(0, -1).join(" "), words[words.length - 1]];
 }
 
 export default async function LearningPathPage() {
@@ -91,13 +137,14 @@ export default async function LearningPathPage() {
   const percent = Math.round((completed / Math.max(1, modules.length)) * 100);
   const current = currentIdx >= 0 ? modules[currentIdx] : null;
   const displayName = user.profile?.displayName || session?.user?.name || "Bạn";
+  const [titleHead, titleTail] = splitTitle(path.name);
 
-  const answerChips = [
-    { label: "Trình độ", value: LEVEL_LABELS[answers.level] },
-    { label: "Mục tiêu", value: GOAL_LABELS[answers.goal] },
-    { label: "Kỹ năng", value: SKILL_LABELS[answers.focusSkill] },
-    { label: "Phong cách", value: STYLE_LABELS[answers.learningStyle] },
-    { label: "Mỗi ngày", value: `${answers.dailyGoalMinutes} phút` },
+  const answerChips: { label: string; value: string; icon: PathIconName }[] = [
+    { label: "Trình độ", value: LEVEL_LABELS[answers.level], icon: "level" },
+    { label: "Mục tiêu", value: GOAL_LABELS[answers.goal], icon: "goal" },
+    { label: "Kỹ năng", value: SKILL_LABELS[answers.focusSkill], icon: "skill" },
+    { label: "Phong cách", value: STYLE_LABELS[answers.learningStyle], icon: "style" },
+    { label: "Thời gian", value: `${answers.dailyGoalMinutes} phút`, icon: "clock" },
   ];
 
   return (
@@ -106,116 +153,153 @@ export default async function LearningPathPage() {
       <div className="nqp-wrap">
         <AppNav userName={displayName} levelLabel={answers.level} />
 
-        {/* HERO */}
+        {/* ===== HERO ===== */}
         <section className="nqp-hero">
+          <div className="nqp-hero-scene" aria-hidden="true">
+            <JapanScenicPanel variant="fuji" showLabel={false} />
+          </div>
+          <div className="nqp-vtext" aria-hidden="true">
+            <span>日本へ行こう</span>
+            <i className="nqp-seal">旅</i>
+          </div>
+
           <div className="nqp-hero-copy">
-            <span className="nqp-eyebrow">LỘ TRÌNH CÁ NHÂN HÓA</span>
-            <h1 className="nqp-title">{path.name}</h1>
+            <span className="nqp-eyebrow">
+              <span className="nqp-eyebrow-ico"><PathIcon name="goal" /></span>
+              LỘ TRÌNH CÁ NHÂN HÓA
+            </span>
+            <h1 className="nqp-title">
+              {titleHead}
+              {titleTail && <em>{titleTail}</em>}
+            </h1>
             <p className="nqp-tagline">{path.tagline}</p>
+
             <div className="nqp-chips">
               {answerChips.map((c) => (
                 <span key={c.label} className="nqp-chip">
-                  <small>{c.label}</small>
-                  <b>{c.value}</b>
+                  <span className="nqp-chip-ico"><PathIcon name={c.icon} /></span>
+                  <span className="nqp-chip-txt">
+                    <small>{c.label}</small>
+                    <b>{c.value}</b>
+                  </span>
                 </span>
               ))}
             </div>
+
             <div className="nqp-hero-actions">
               {current ? (
                 <Link className="nqp-btn-red" href={current.target}>
-                  {current.status === "IN_PROGRESS" ? "Tiếp tục: " : "Bắt đầu: "}
-                  {current.title} →
+                  <span className="nqp-btn-ico"><PathIcon name="flame" /></span>
+                  <span className="nqp-btn-txt">
+                    {current.status === "IN_PROGRESS" ? "Tiếp tục: " : "Bắt đầu: "}
+                    {current.title}
+                  </span>
+                  <span aria-hidden="true">→</span>
                 </Link>
               ) : (
                 <Link className="nqp-btn-red" href="/app/review">
-                  Hoàn thành lộ trình — Ôn tập SRS →
+                  <span className="nqp-btn-ico"><PathIcon name="flame" /></span>
+                  <span className="nqp-btn-txt">Hoàn thành lộ trình — Ôn tập SRS</span>
+                  <span aria-hidden="true">→</span>
                 </Link>
               )}
               <Link className="nqp-btn-ghost" href="/app/profile">
+                <span className="nqp-btn-ico"><PathIcon name="refresh" /></span>
                 Thay đổi lựa chọn
               </Link>
             </div>
           </div>
-          <div className="nqp-hero-scene">
-            <JapanScenicPanel variant="fuji" showLabel={false} />
-          </div>
-        </section>
-
-        {/* STATS */}
-        <section className="nqp-stats">
-          <div className="nqp-stat">
-            <b>{modules.length}</b>
-            <small>Mô-đun kiến thức</small>
-          </div>
-          <div className="nqp-stat">
-            <b>{path.totalMinutes} phút</b>
-            <small>Tổng thời lượng</small>
-          </div>
-          <div className="nqp-stat">
-            <b>{path.modulesPerWeek}/tuần</b>
-            <small>Nhịp học ({path.answers.dailyMinutes} phút/ngày)</small>
-          </div>
-          <div className="nqp-stat">
-            <b>~{path.estWeeks} tuần</b>
-            <small>Hoàn thành dự kiến</small>
-          </div>
-          <div className="nqp-stat nqp-stat-wide">
-            <div className="nqp-stat-top">
-              <b>{percent}%</b>
-              <small>{completed}/{modules.length} mô-đun đã hoàn thành</small>
-            </div>
-            <div className="nqp-bar"><span style={{ width: `${percent}%` }} /></div>
-          </div>
         </section>
 
         <div className="nqp-grid">
-          {/* TIMELINE */}
+          {/* ===== CỘT TRÁI: THỐNG KÊ + TIMELINE ===== */}
           <div className="nqp-main">
+            <section className="nqp-stats" aria-label="Thống kê lộ trình">
+              <div className="nqp-stat s-blue">
+                <span className="nqp-stat-ico"><PathIcon name="cap" /></span>
+                <div><b>{modules.length}</b><small>Mô-đun kiến thức</small></div>
+              </div>
+              <div className="nqp-stat s-violet">
+                <span className="nqp-stat-ico"><PathIcon name="layers" /></span>
+                <div><b>{path.totalMinutes} phút</b><small>Tổng thời lượng</small></div>
+              </div>
+              <div className="nqp-stat s-green">
+                <span className="nqp-stat-ico"><PathIcon name="target" /></span>
+                <div>
+                  <b>{path.modulesPerWeek}/tuần</b>
+                  <small>Nhịp học ({path.answers.dailyMinutes} phút/ngày)</small>
+                </div>
+              </div>
+              <div className="nqp-stat s-amber">
+                <span className="nqp-stat-ico"><PathIcon name="flame" /></span>
+                <div><b>~{path.estWeeks} tuần</b><small>Hoàn thành dự kiến</small></div>
+              </div>
+            </section>
+
             <div className="nqp-sec-title">
-              <h2>Khóa kiến thức của bạn</h2>
+              <h2>
+                <span className="nqp-sakura" aria-hidden="true">✿</span>
+                Khóa kiến thức của bạn
+              </h2>
               <span>Được sắp xếp riêng theo 5 lựa chọn khi tạo tài khoản — khác với danh sách Bài học chung.</span>
             </div>
+
             <ol className="nqp-timeline">
               {modules.map((m, i) => {
                 const isCurrent = i === currentIdx;
+                const theme = pickTheme(m);
                 return (
                   <li
                     key={m.id}
-                    className={`nqp-module ${m.status === "COMPLETED" ? "is-done" : ""} ${isCurrent ? "is-current" : ""}`}
+                    className={[
+                      "nqp-module",
+                      `k-${m.kind.toLowerCase()}`,
+                      m.status === "COMPLETED" ? "is-done" : "",
+                      isCurrent ? "is-current" : "",
+                    ].join(" ")}
                   >
                     <span className="nqp-node" aria-hidden="true">
                       {m.status === "COMPLETED" ? "✓" : i + 1}
                     </span>
+
                     <div className="nqp-module-body">
-                      <div className="nqp-module-top">
-                        <span className={`nqp-kind k-${m.kind.toLowerCase()}`}>{kindLabel(m.kind)}</span>
-                        <span className="nqp-meta">
-                          {m.minutes} phút · +{m.xp} XP
-                          {m.exerciseCount != null ? ` · ${m.exerciseCount} bài tập` : ""}
-                        </span>
-                        {m.status === "COMPLETED" && <span className="nqp-done">Đã hoàn thành</span>}
-                        {isCurrent && <span className="nqp-now">Đang học</span>}
-                      </div>
-                      <h3>{m.title}</h3>
-                      <p>{m.description}</p>
-                      <div className="nqp-module-foot">
-                        <span className="nqp-why" title="Lý do mô-đun này nằm trong lộ trình của bạn">
-                          💡 {m.why}
-                        </span>
-                        <div className="nqp-skills">
-                          {m.skills.map((s) => (
-                            <span key={s} className="nqp-skill">{s}</span>
-                          ))}
+                      <PathDecor theme={theme} />
+
+                      <div className="nqp-module-content">
+                        <div className="nqp-module-top">
+                          <span className={`nqp-kind k-${m.kind.toLowerCase()}`}>
+                            <i aria-hidden="true">{KIND_GLYPH[m.kind]}</i>
+                            {kindLabel(m.kind)}
+                          </span>
+                          <span className="nqp-meta">
+                            {m.minutes} phút • +{m.xp} XP
+                            {m.exerciseCount != null ? ` • ${m.exerciseCount} bài tập` : ""}
+                          </span>
+                          {m.status === "COMPLETED" && <span className="nqp-done">Đã hoàn thành</span>}
+                          {isCurrent && <span className="nqp-now">Đang học</span>}
                         </div>
+
+                        <h3>{m.title}</h3>
+                        <p>{m.description}</p>
+
+                        <div className="nqp-module-foot">
+                          <span className="nqp-why" title="Lý do mô-đun này nằm trong lộ trình của bạn">
+                            <span aria-hidden="true">💡</span> {m.why}
+                          </span>
+                          <div className="nqp-skills">
+                            {m.skills.map((s) => (
+                              <span key={s} className="nqp-skill">{s}</span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {m.target && (
+                          <Link className={`nqp-go ${isCurrent ? "is-current" : ""}`} href={m.target}>
+                            {m.status === "COMPLETED" ? "Học lại" : isCurrent ? "Tiếp tục ngay" : "Mở mô-đun"}
+                            <span aria-hidden="true">→</span>
+                          </Link>
+                        )}
                       </div>
-                      {m.target && (
-                        <Link
-                          className={`nqp-go ${isCurrent ? "is-current" : ""}`}
-                          href={m.target}
-                        >
-                          {m.status === "COMPLETED" ? "Học lại" : isCurrent ? "Tiếp tục ngay" : "Mở mô-đun"} →
-                        </Link>
-                      )}
                     </div>
                   </li>
                 );
@@ -223,10 +307,13 @@ export default async function LearningPathPage() {
             </ol>
           </div>
 
-          {/* SIDEBAR */}
+          {/* ===== CỘT PHẢI ===== */}
           <aside className="nqp-side">
-            <section className="nqp-card">
-              <h3>Vì sao lộ trình này phù hợp bạn?</h3>
+            <section className="nqp-card nqp-card-why">
+              <div className="nqp-card-head">
+                <span className="nqp-card-ico"><PathIcon name="torii" /></span>
+                <h3>Vì sao lộ trình này phù hợp bạn?</h3>
+              </div>
               <p className="nqp-side-note">
                 Engine cá nhân hóa phân tích 5 lựa chọn của bạn khi tạo tài khoản và xây dựng trình tự nội dung riêng.
               </p>
@@ -242,14 +329,19 @@ export default async function LearningPathPage() {
               </ul>
             </section>
 
-            <section className="nqp-card">
-              <h3>Đang học mô-đun {currentIdx >= 0 ? currentIdx + 1 : modules.length} / {modules.length}</h3>
+            <section className="nqp-card nqp-card-now">
+              <h3>
+                Đang học: mô-đun {currentIdx >= 0 ? currentIdx + 1 : modules.length} / {modules.length}
+              </h3>
               {current ? (
                 <>
                   <p className="nqp-current-title">{current.title}</p>
-                  <div className="nqp-bar"><span style={{ width: `${percent}%` }} /></div>
+                  <div className="nqp-progress-row">
+                    <div className="nqp-bar"><span style={{ width: `${percent}%` }} /></div>
+                    <small>{percent}% • {completed}/{modules.length}</small>
+                  </div>
                   <Link className="nqp-btn-red nqp-btn-block" href={current.target}>
-                    Học ngay →
+                    Học ngay <span aria-hidden="true">→</span>
                   </Link>
                 </>
               ) : (
@@ -258,11 +350,16 @@ export default async function LearningPathPage() {
             </section>
 
             <section className="nqp-card nqp-card-plain">
-              <h3>Lộ trình ≠ Bài học</h3>
+              <div className="nqp-card-head">
+                <span className="nqp-card-ico is-red"><PathIcon name="style" /></span>
+                <h3>Lộ trình + Bài học</h3>
+              </div>
               <p>
                 <b>Bài học</b> là kho nội dung chung theo cấp độ. <b>Lộ trình cá nhân</b> là chuỗi mô-đun được chọn và sắp xếp riêng cho bạn — xen kẽ bài học, từ vựng, sinh tồn, hội thoại AI và ôn tập SRS theo đúng mục tiêu của bạn.
               </p>
-              <Link className="nqp-link" href="/app/practice">Xem toàn bộ Bài học →</Link>
+              <Link className="nqp-link" href="/app/practice">
+                Xem toàn bộ Bài học <span aria-hidden="true">→</span>
+              </Link>
             </section>
           </aside>
         </div>

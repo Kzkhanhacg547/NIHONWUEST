@@ -1,12 +1,20 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
-import { Card, Button, Badge } from "@/components/ui";
+import { useState, useRef, useEffect, useCallback, type ReactNode } from "react";
+import { Button, Icon, Modal } from "@/components/ui";
+import {
+  BriefcaseIcon, BulbIcon, ChevronRight, DoubleCheckIcon, HeroScene, KebabIcon,
+  SakuraFlower, SendIcon, SparkleIcon, StarIcon, UserIcon, WaveIcon,
+} from "./SenseiDecor";
+import { SenseiSideRail, type RecentLesson } from "./SenseiSideRail";
 import { SenseiAvatar, type AvatarState } from "@/components/SenseiAvatar";
 import { SenseiDailyDungeon } from "@/components/SenseiDailyDungeon";
 import { N3_KAIWA_SCENARIOS, type KaiwaScenario } from "@/lib/n3KaiwaScenarios";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
 import { kanaToRomaji } from "@/lib/romajiConverter";
+import { SENSEI_CHARACTERS, DEFAULT_SENSEI_ID, type SenseiCharacterId } from "@/lib/senseiCharacters";
+import { useSenseiVoice, type VoiceSource } from "@/lib/useSenseiVoice";
+import { voiceGenderLabel } from "@/lib/voiceGender";
 
 interface Message {
   id: string;
@@ -17,8 +25,112 @@ interface Message {
   createdAt: string;
 }
 
-export function SenseiKaiwaClient() {
-  const { playClick, playCorrect, speak: globalSpeak } = useSoundAndTheme();
+/** Con dấu đỏ "葵" (hanko) — định danh Sensei trong khung chat. */
+function Seal({ className = "", char = "葵" }: { className?: string; char?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`inline-flex shrink-0 items-center justify-center rounded-full bg-red-600 font-jp font-black text-white shadow-sm ring-2 ring-white dark:ring-sumi-900 ${className}`}
+    >
+      {char}
+    </span>
+  );
+}
+
+const SOURCE_LABEL: Record<VoiceSource, string> = {
+  manual: "chọn riêng cho Sensei",
+  global: "theo cài đặt âm thanh chung",
+  auto: "tự chọn theo giới tính",
+};
+
+function MicIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="9" y="3" width="6" height="11" rx="3" />
+      <path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6" />
+    </svg>
+  );
+}
+
+/** Pill bật/tắt hiển thị (Furigana, Romaji, Dịch nghĩa, Tự đọc) — to, có icon tròn như bản mẫu. */
+function Pill({
+  on,
+  onClick,
+  title,
+  icon,
+  children,
+}: {
+  on: boolean;
+  onClick: () => void;
+  title: string;
+  icon: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={on}
+      title={title}
+      className={`inline-flex h-11 shrink-0 items-center gap-2 rounded-full border pl-1.5 pr-4 text-[13px] font-extrabold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500 ${
+        on
+          ? "border-transparent bg-gradient-to-r from-[#ff3d6e] to-[#f0245a] text-white shadow-md shadow-rose-500/30"
+          : "border-rose-100 bg-white/90 text-slate-700 hover:border-rose-200 dark:border-slate-700 dark:bg-sumi-800 dark:text-slate-200"
+      }`}
+    >
+      <span
+        className={`grid h-8 w-8 place-items-center rounded-full text-[13px] ${
+          on ? "bg-white/25 text-white" : "bg-rose-50 text-rose-500 dark:bg-rose-950/40"
+        }`}
+      >
+        {icon}
+      </span>
+      {children}
+    </button>
+  );
+}
+
+/** Chân dung tròn của Sensei. Có `character.portrait` thì dùng ảnh, không thì dùng con dấu hanko. */
+function SenseiPortrait({
+  character,
+  className = "h-10 w-10",
+}: {
+  character: { seal: string; portrait?: string; nameRomaji: string };
+  className?: string;
+}) {
+  if (character.portrait) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={character.portrait}
+        alt=""
+        className={`shrink-0 rounded-full bg-white object-cover ring-2 ring-white dark:ring-sumi-900 ${className}`}
+      />
+    );
+  }
+  return <Seal char={character.seal} className={`${className} text-sm`} />;
+}
+
+const cardShell =
+  "rounded-[2rem] border border-white/80 bg-white/85 shadow-[0_14px_40px_-16px_rgba(244,63,94,0.25)] backdrop-blur dark:border-slate-800 dark:bg-sumi-900/85";
+
+
+interface SenseiKaiwaClientProps {
+  /** Bài học gần đây của người học (lấy từ server). Bỏ trống sẽ hiện trạng thái rỗng. */
+  recentLessons?: RecentLesson[];
+}
+
+export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps) {
+  const { playClick, playCorrect, speechVoiceURI } = useSoundAndTheme();
 
   // Main Tab State (Kaiwa vs Dungeon)
   const [activeSenseiTab, setActiveSenseiTab] = useState<"KAIWA" | "DUNGEON">("KAIWA");
@@ -41,9 +153,18 @@ export function SenseiKaiwaClient() {
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [avatarState, setAvatarState] = useState<AvatarState>("IDLE");
+  const [characterId, setCharacterId] = useState<SenseiCharacterId>(DEFAULT_SENSEI_ID);
+  const character = SENSEI_CHARACTERS[characterId];
+  // Giọng đọc + khẩu hình theo giới tính của nhân vật (không dùng giọng mặc định của thiết bị).
+  const voice = useSenseiVoice(character);
+  const isSpeaking = voice.isSpeaking;
+  const greetOnSwitch = useRef(false);
+  const hasSavedCharacter = useRef(false);
+  const derivedFromGlobal = useRef(false);
+  const lastGlobalURI = useRef<string | null>(null);
+  const [mounted, setMounted] = useState(false);
   const [showFurigana, setShowFurigana] = useState(true);
   const [showRomaji, setShowRomaji] = useState(true);
   const [showTranslations, setShowTranslations] = useState(true);
@@ -54,9 +175,30 @@ export function SenseiKaiwaClient() {
   const [tempKeyInput, setTempKeyInput] = useState("");
   const [tempModelInput, setTempModelInput] = useState("gemini-3.6-flash");
 
+
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const recognitionRef = useRef<any>(null);
   const baseInputRef = useRef<string>("");
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Nhớ Sensei người học đã chọn
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("nihon_sensei_character");
+      if (saved && saved in SENSEI_CHARACTERS) {
+        setCharacterId(saved as SenseiCharacterId);
+        hasSavedCharacter.current = true;
+      }
+      // Mốc để phân biệt "context vừa nạp giọng đã lưu" với "người học vừa đổi giọng chung".
+      lastGlobalURI.current = localStorage.getItem("nq_speech_voice") ?? "";
+    } catch {
+      lastGlobalURI.current = "";
+      /* localStorage bị chặn: dùng mặc định */
+    }
+  }, []);
 
   // Load API Key & Model from localStorage
   useEffect(() => {
@@ -85,6 +227,10 @@ export function SenseiKaiwaClient() {
     }
   };
 
+  // Ổn định tham chiếu: Modal chạy lại effect (và đoạt focus) khi onClose đổi,
+  // nên nếu truyền arrow inline thì mỗi lần gõ phím sẽ nhảy focus khỏi ô nhập key.
+  const closeKeyModal = useCallback(() => setIsKeyModalOpen(false), []);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -93,28 +239,64 @@ export function SenseiKaiwaClient() {
     scrollToBottom();
   }, [messages, loading]);
 
-  // TTS Speech Synthesis with Avatar Lip-Sync using Global TTS
+  // Giọng đọc theo giới tính nhân vật. Khẩu hình chạy theo sự kiện của chính utterance
+  // (onstart / onboundary / onend), không còn setTimeout ước lượng độ dài.
   const speakJapanese = useCallback(
-    (text: string) => {
+    (text: string, reading?: string) => {
       if (!text) return;
-
-      // Extract Japanese text
-      const japaneseMatch = text.match(/[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF\u3000-\u303F]+/g);
-      const cleanJp = japaneseMatch ? japaneseMatch.join(" ") : text;
-
-      setIsSpeaking(true);
-      setAvatarState("TALKING");
-
-      globalSpeak(cleanJp);
-
-      const estimatedMs = Math.max(1500, cleanJp.length * 200);
-      setTimeout(() => {
-        setIsSpeaking(false);
-        setAvatarState("IDLE");
-      }, estimatedMs);
+      voice.speak(text, { reading });
     },
-    [globalSpeak]
+    [voice.speak] // eslint-disable-line react-hooks/exhaustive-deps
   );
+
+  // Avatar đang "nói" đúng khi âm thanh thật đang phát.
+  useEffect(() => {
+    if (voice.isSpeaking) setAvatarState("TALKING");
+    else setAvatarState((st) => (st === "TALKING" ? "IDLE" : st));
+  }, [voice.isSpeaking]);
+
+  const switchCharacter = (id: SenseiCharacterId, greet: boolean) => {
+    if (id === characterId) return;
+    try {
+      localStorage.setItem("nihon_sensei_character", id);
+    } catch {
+      /* bỏ qua */
+    }
+    hasSavedCharacter.current = true;
+    greetOnSwitch.current = greet;
+    setCharacterId(id);
+  };
+
+  const handleSelectCharacter = (id: SenseiCharacterId) => {
+    if (id === characterId) return;
+    playClick();
+    switchCharacter(id, autoVoice);
+  };
+
+  // Nhân vật bám theo cài đặt âm thanh chung: chọn giọng nam/nữ ở nút loa trên navbar
+  // thì Sensei đổi sang nhân vật cùng giới. Lần đầu vào trang (chưa chọn Sensei nào)
+  // cũng lấy theo giọng chung. Đổi Sensei bằng tay không ghi ngược lên cài đặt chung,
+  // nên các module khác (flashcard, nghe…) không bị ảnh hưởng.
+  const globalGender = voice.globalGender;
+  useEffect(() => {
+    const prev = lastGlobalURI.current;
+    lastGlobalURI.current = speechVoiceURI;
+    const userChanged = prev !== null && prev !== speechVoiceURI;
+    const initialDerive = !hasSavedCharacter.current && !derivedFromGlobal.current;
+    if (globalGender === "unknown" || (!userChanged && !initialDerive)) return;
+    derivedFromGlobal.current = true;
+    if (globalGender === character.gender) return;
+    const target = Object.values(SENSEI_CHARACTERS).find((c) => c.gender === globalGender);
+    if (target) switchCharacter(target.id, userChanged && autoVoice);
+  }, [speechVoiceURI, globalGender]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Chào bằng giọng mới ngay sau khi đổi Sensei (người học nghe là biết giới tính có khớp không).
+  // Effect của hook (cancel giọng cũ) chạy trước effect này trong cùng một lần commit.
+  useEffect(() => {
+    if (!greetOnSwitch.current) return;
+    greetOnSwitch.current = false;
+    speakJapanese(character.greeting.ja, character.greeting.reading);
+  }, [characterId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Play initial scenario message speech on change if autoVoice is on
   const handleSelectScenario = (sc: KaiwaScenario) => {
@@ -131,7 +313,7 @@ export function SenseiKaiwaClient() {
     };
     setMessages([firstMsg]);
     if (autoVoice) {
-      setTimeout(() => speakJapanese(sc.initialMessage), 300);
+      setTimeout(() => speakJapanese(sc.initialMessage, sc.initialFurigana), 300);
     }
   };
 
@@ -156,6 +338,7 @@ export function SenseiKaiwaClient() {
       return;
     }
 
+    voice.cancel(); // không để giọng Sensei lọt vào micro
     // Save current text in input as base so new speech appends rather than overwrites
     baseInputRef.current = input.trim();
 
@@ -285,501 +468,772 @@ export function SenseiKaiwaClient() {
     }
   };
 
+  // Lưu chủ đề yêu thích ("Đã lưu") — chỉ lưu trên trình duyệt.
+  const [savedIds, setSavedIds] = useState<string[]>([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [voicePanelOpen, setVoicePanelOpen] = useState(false);
+  const [grammarOpen, setGrammarOpen] = useState(false);
+  const closeGrammarModal = useCallback(() => setGrammarOpen(false), []);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("nihon_sensei_saved_scenarios");
+      if (raw) setSavedIds(JSON.parse(raw));
+    } catch {
+      /* bỏ qua */
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDown = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [menuOpen]);
+
+  const isSaved = savedIds.includes(selectedScenario.id);
+  const toggleSaved = () => {
+    playClick();
+    const next = isSaved ? savedIds.filter((id) => id !== selectedScenario.id) : [...savedIds, selectedScenario.id];
+    setSavedIds(next);
+    try {
+      localStorage.setItem("nihon_sensei_saved_scenarios", JSON.stringify(next));
+    } catch {
+      /* bỏ qua */
+    }
+  };
+
+  // ── Dữ liệu dẫn xuất cho giao diện (không ảnh hưởng logic) ──
+  const lastAssistant = [...messages].reverse().find((m) => m.role === "assistant");
+
+  const statusLabel = loading
+    ? "Đang soạn câu trả lời..."
+    : isSpeaking
+    ? "Đang nói..."
+    : isListening
+    ? "Đang lắng nghe..."
+    : "Đang online";
+  const statusDot = loading ? "bg-amber-500" : isSpeaking ? "bg-rose-500" : isListening ? "bg-violet-500" : "bg-emerald-500";
+
+  // Câu thoại của Sensei trong bong bóng — là text thật, đổi theo trạng thái.
+  const bubble = loading
+    ? { ja: "少し考えますね…", vi: `Để ${character.viRef} suy nghĩ một chút nhé…` }
+    : isListening
+    ? { ja: "どうぞ、聞いていますよ。", vi: `Mời em nói, ${character.viRef} đang nghe đây.` }
+    : isSpeaking
+    ? { ja: "よく聞いてくださいね。", vi: "Em nghe kỹ nhé." }
+    : avatarState === "HAPPY"
+    ? { ja: "いいですね！その調子！", vi: "Rất tốt! Cứ thế phát huy nhé!" }
+    : { ja: "今日は何を話しましょうか？", vi: "Hôm nay chúng ta nói về chủ đề gì nhỉ?" };
+
+  const focusRing =
+    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500";
+
   return (
-    <div className="space-y-6 max-w-5xl mx-auto">
-      {/* ── Main Feature Switcher ── */}
-      <div className="flex items-center gap-2 bg-white dark:bg-sumi-900 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm w-fit">
-        <button
-          type="button"
-          onClick={() => { playClick(); setActiveSenseiTab("KAIWA"); }}
-          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition-all ${
-            activeSenseiTab === "KAIWA"
-              ? "bg-sakura-500 text-white shadow-md shadow-sakura-500/20"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800"
-          }`}
+    <div className="mx-auto w-full max-w-[1400px] space-y-4">
+      {/* ── Chuyển chế độ: Kaiwa / Daily Dungeon ── */}
+      <div className="flex justify-center">
+        <div
+          role="tablist"
+          aria-label="Chế độ luyện tập với Sensei"
+          className="inline-flex rounded-full border border-white/80 bg-white/80 p-1 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-sumi-900/80"
         >
-          💬 AI Kaiwa (Đàm Thoại)
-        </button>
-        <button
-          type="button"
-          onClick={() => { playClick(); setActiveSenseiTab("DUNGEON"); }}
-          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition-all ${
-            activeSenseiTab === "DUNGEON"
-              ? "bg-gradient-to-r from-amber-500 to-rose-500 text-white shadow-md shadow-amber-500/25"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-sumi-800"
-          }`}
-        >
-          🏯 Sensei&apos;s Daily Dungeon
-          <span className="bg-amber-300 text-slate-950 text-[9px] font-black px-1.5 py-0.5 rounded-full">DAILY</span>
-        </button>
-      </div>
-
-      {activeSenseiTab === "DUNGEON" ? (
-        <SenseiDailyDungeon />
-      ) : (
-        <>
-          {/* Top Banner: Scenario Selector & AI Key Setup */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <span className="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">
-            CHỦ ĐỀ ĐÀM THOẠI N3 THỰC CHIẾN
-          </span>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                setTempKeyInput(apiKey);
-                setIsKeyModalOpen(true);
-                playClick();
-              }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-black bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-300 dark:border-amber-600/40 transition shadow-xs"
-              title="Cài đặt Google Gemini API Key để trò chuyện không giới hạn"
-            >
-              <span>🔑</span>
-              <span>{apiKey ? "AI Key: Đã kết nối" : "Cài đặt AI Key"}</span>
-              {apiKey && <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />}
-            </button>
-            <Badge variant="sakura" dot>
-              {selectedScenario.badge}
-            </Badge>
-          </div>
-        </div>
-
-        {/* Horizontal Scenario Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-          {N3_KAIWA_SCENARIOS.map((sc) => {
-            const isSelected = selectedScenario.id === sc.id;
+          {(
+            [
+              { id: "KAIWA", label: "AI Kaiwa", icon: "chat" },
+              { id: "DUNGEON", label: "Daily Dungeon", icon: "flame" },
+            ] as const
+          ).map((t) => {
+            const on = activeSenseiTab === t.id;
             return (
               <button
-                key={sc.id}
-                onClick={() => handleSelectScenario(sc)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-black shrink-0 transition-all border ${
-                  isSelected
-                    ? "bg-sakura-500 text-white border-sakura-500 shadow-md shadow-sakura-500/25 scale-[1.02]"
-                    : "bg-white dark:bg-sumi-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
+                key={t.id}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                onClick={() => {
+                  playClick();
+                  setActiveSenseiTab(t.id);
+                }}
+                className={`inline-flex h-10 items-center gap-2 rounded-full px-4 text-xs font-extrabold transition ${focusRing} ${
+                  on
+                    ? "bg-gradient-to-r from-[#ff3d6e] to-[#f0245a] text-white shadow-sm shadow-rose-500/30"
+                    : "text-slate-600 hover:text-rose-600 dark:text-slate-300"
                 }`}
               >
-                <span className="text-base">{sc.icon}</span>
-                <span>{sc.title}</span>
+                <Icon name={t.icon} className="h-4 w-4" />
+                {t.label}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Main 2-Column Conversation Stage */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        {/* ==========================================
-            LEFT / SENSEI AVATAR STAGE (4 cols)
-            ========================================== */}
-        <div className="lg:col-span-4 space-y-4">
-          <Card className="p-6 text-center border-2 border-sakura-200/80 dark:border-slate-800 bg-gradient-to-b from-sakura-50/40 via-white to-white dark:from-sumi-900 dark:via-sumi-950 dark:to-sumi-900 shadow-md relative overflow-hidden">
-            <div className="absolute top-3 left-3">
-              <Badge variant={isSpeaking ? "sakura" : isListening ? "fuji" : "matcha"} dot>
-                {isSpeaking ? "Đang nói..." : isListening ? "Đang lắng nghe..." : "Sẵn sàng trò chuyện"}
-              </Badge>
-            </div>
-
-            {/* Sensei Animated Avatar */}
-            <div className="pt-5 pb-2">
-              <SenseiAvatar
-                state={avatarState}
-                isSpeaking={isSpeaking}
-                isListening={isListening}
-                size={190}
-                className="mx-auto"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <h3 className="font-black text-lg text-slate-900 dark:text-white flex items-center justify-center gap-1.5">
-                葵先生 (Aoi Sensei)
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                Gia sư đàm thoại tiếng Nhật N3
-              </p>
-            </div>
-
-            {/* Settings Toggles (Furigana, Meaning, Auto-Voice) */}
-            <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-around text-xs">
-              <button
-                onClick={() => {
-                  setShowFurigana(!showFurigana);
-                  playClick();
-                }}
-                className={`px-2.5 py-1 rounded-xl font-bold transition ${
-                  showFurigana
-                    ? "bg-sakura-50 text-sakura-600 dark:bg-sakura-950/60 dark:text-sakura-300 border border-sakura-200"
-                    : "text-slate-400"
-                }`}
-                title="Bật/Tắt Furigana"
-              >
-                あ Furigana
-              </button>
-
-              <button
-                onClick={() => {
-                  setShowRomaji(!showRomaji);
-                  playClick();
-                }}
-                className={`px-2.5 py-1 rounded-xl font-bold transition ${
-                  showRomaji
-                    ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200"
-                    : "text-slate-400"
-                }`}
-                title="Bật/Tắt Phiên âm Romaji"
-              >
-                🔤 Romaji
-              </button>
-
-              <button
-                onClick={() => {
-                  setShowTranslations(!showTranslations);
-                  playClick();
-                }}
-                className={`px-2.5 py-1 rounded-xl font-bold transition ${
-                  showTranslations
-                    ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-300 border border-indigo-200"
-                    : "text-slate-400"
-                }`}
-                title="Bật/Tắt Dịch nghĩa tiếng Việt"
-              >
-                🇻🇳 Dịch nghĩa
-              </button>
-
-              <button
-                onClick={() => {
-                  setAutoVoice(!autoVoice);
-                  playClick();
-                }}
-                className={`px-2.5 py-1 rounded-xl font-bold transition ${
-                  autoVoice
-                    ? "bg-amber-50 text-amber-600 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200"
-                    : "text-slate-400"
-                }`}
-                title="Tự động phát giọng nói khi Sensei trả lời"
-              >
-                {autoVoice ? "🔊 Tự đọc" : "🔈 Tắt đọc"}
-              </button>
-            </div>
-          </Card>
-
-          {/* Grammar Focus for Current Scenario */}
-          <Card className="p-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-sumi-900 space-y-2.5">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
-                MẪU CÂU N3 TRỌNG TÂM
-              </span>
-              <span className="text-xs">💡</span>
-            </div>
-            <div className="space-y-2">
-              {selectedScenario.keyGrammar.map((g, idx) => (
-                <div key={idx} className="p-2 rounded-xl bg-slate-50 dark:bg-sumi-800/60 border border-slate-100 dark:border-slate-800 text-xs">
-                  <span className="font-bold text-sakura-600 dark:text-sakura-400 font-jp block">
-                    {g.pattern}
-                  </span>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">
-                    {g.meaning}
-                  </span>
+      {activeSenseiTab === "DUNGEON" ? (
+        <SenseiDailyDungeon />
+      ) : (
+        <>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(280px,320px)_minmax(0,1fr)] lg:items-start xl:grid-cols-[320px_minmax(0,1fr)_300px]">
+            {/* ═════════ CỘT TRÁI — SENSEI ═════════ */}
+            <section aria-label={character.nameRomaji} className={`overflow-hidden ${cardShell}`}>
+              {/* Ảnh nền + avatar */}
+              <div className="relative h-[290px] overflow-hidden">
+                <HeroScene />
+                <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-bold text-slate-700 shadow-sm">
+                  <span aria-hidden="true" className={`h-2 w-2 rounded-full ${statusDot}`} />
+                  {statusLabel}
+                </span>
+                <span className="absolute right-3 top-3 z-10 rounded-full bg-white/85 px-3 py-1.5 text-[11px] font-extrabold text-rose-600 shadow-sm">
+                  JLPT N3
+                </span>
+                <p
+                  lang="ja"
+                  aria-hidden="true"
+                  className="absolute right-4 top-14 z-10 -rotate-6 font-jp text-[15px] font-bold italic leading-tight text-rose-500"
+                >
+                  一緒に
+                  <br />
+                  がんばりましょう！
+                </p>
+                <div className="absolute inset-x-0 bottom-0 flex justify-center">
+                  <div className="w-full max-w-[250px]">
+                    <SenseiAvatar
+                      state={avatarState}
+                      isSpeaking={isSpeaking}
+                      isListening={isListening}
+                      size={260}
+                      character={character}
+                      viseme={voice.viseme}
+                    />
+                  </div>
                 </div>
-              ))}
-            </div>
-          </Card>
-        </div>
+              </div>
 
-        {/* ==========================================
-            RIGHT / CHAT DIALOGUE & MIC (8 cols)
-            ========================================== */}
-        {/* 650px cố định vượt quá chiều cao màn hình điện thoại nên ô nhập
-            liệu bị đẩy khỏi tầm nhìn. */}
-        <div className="lg:col-span-8 flex flex-col h-[min(650px,65dvh)] min-h-[420px] sm:h-[650px] sm:min-h-0 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-sumi-900/90 shadow-lg overflow-hidden">
-          {/* Header of Chat */}
-          <div className="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-sumi-950/50">
-            <div>
-              <h4 className="font-black text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                <span>{selectedScenario.icon}</span>
-                <span>{selectedScenario.title}</span>
-              </h4>
-              <p className="text-[11px] text-slate-500 font-jp mt-0.5">
-                {selectedScenario.titleJa}
-              </p>
-            </div>
+              {/* Thân thẻ — mép trên bo cong đè lên ảnh */}
+              <div className="relative -mt-7 rounded-t-[2rem] bg-white px-4 pb-4 pt-4 dark:bg-sumi-900">
+                <div className="flex items-center gap-3">
+                  <SakuraFlower className="h-8 w-8 shrink-0" />
+                  <div className="min-w-0">
+                    <h2 className="flex flex-wrap items-baseline gap-x-2">
+                      <span lang="ja" className="font-jp text-base font-black text-slate-900 dark:text-white">
+                        {character.nameJa}
+                      </span>
+                      <span className="text-sm font-extrabold text-rose-600 dark:text-rose-400">{character.nameRomaji}</span>
+                    </h2>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Giáo viên dạy tiếng Nhật N3</p>
+                  </div>
+                </div>
 
-            <Button
-              onClick={() => handleSelectScenario(selectedScenario)}
-              variant="ghost"
-              size="sm"
-              className="text-xs text-slate-500 hover:text-slate-800"
+                {/* Bong bóng thoại */}
+                <div className="mt-3 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-sm dark:border-slate-700 dark:bg-sumi-800">
+                  <div className="min-w-0 flex-1">
+                    <p lang="ja" className="font-jp text-[14px] font-bold leading-snug text-slate-900 dark:text-white">
+                      「{bubble.ja}」
+                    </p>
+                    {showTranslations && (
+                      <p className="mt-0.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{bubble.vi}</p>
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      playClick();
+                      speakJapanese(bubble.ja);
+                    }}
+                    aria-label="Nghe câu Sensei vừa nói"
+                    className={`grid h-10 w-10 shrink-0 place-items-center rounded-full bg-rose-50 text-rose-500 transition hover:bg-rose-100 dark:bg-rose-950/40 ${focusRing}`}
+                  >
+                    <WaveIcon className={`h-5 w-5 ${isSpeaking ? "motion-safe:animate-pulse" : ""}`} />
+                  </button>
+                </div>
+
+                {/* Hành động nhanh */}
+                <div className="mt-3 grid grid-cols-2 gap-2.5">
+                  <button
+                    type="button"
+                    onClick={toggleListening}
+                    aria-pressed={isListening}
+                    className={`flex min-h-[52px] items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#ff3d6e] to-[#f0245a] px-3 text-left text-white shadow-md shadow-rose-500/30 transition hover:brightness-105 ${focusRing}`}
+                  >
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white/25">
+                      <MicIcon className="h-4 w-4" />
+                    </span>
+                    <span className="min-w-0 leading-tight">
+                      <span className="block truncate text-[13px] font-extrabold">
+                        {isListening ? "Dừng nghe" : "Nói với Sensei"}
+                      </span>
+                      <span className="block text-[10px] opacity-90">{isListening ? "Đang thu âm" : "Giọng nói"}</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    disabled={!lastAssistant}
+                    onClick={() => {
+                      if (!lastAssistant) return;
+                      playClick();
+                      speakJapanese(lastAssistant.content, lastAssistant.furigana);
+                    }}
+                    className={`flex min-h-[52px] items-center gap-2.5 rounded-2xl border border-slate-100 bg-white px-3 text-left shadow-sm transition hover:border-rose-200 disabled:opacity-50 dark:border-slate-700 dark:bg-sumi-800 ${focusRing}`}
+                  >
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-slate-100 text-slate-600 dark:bg-sumi-900 dark:text-slate-300">
+                      <Icon name="speaker" className="h-4 w-4" />
+                    </span>
+                    <span className="min-w-0 leading-tight">
+                      <span className="block truncate text-[13px] font-extrabold text-slate-800 dark:text-white">Nghe lại</span>
+                      <span className="block text-[10px] text-slate-500 dark:text-slate-400">Câu gần nhất</span>
+                    </span>
+                  </button>
+                </div>
+
+                {/* Chọn Sensei */}
+                <p className="mt-4 text-[11px] font-extrabold tracking-wide text-slate-500 dark:text-slate-400">Chọn Sensei:</p>
+                <div role="radiogroup" aria-label="Chọn giáo viên và giọng đọc" className="mt-2 grid grid-cols-2 gap-2.5">
+                  {Object.values(SENSEI_CHARACTERS).map((c) => {
+                    const on = c.id === characterId;
+                    return (
+                      <button
+                        key={c.id}
+                        type="button"
+                        role="radio"
+                        aria-checked={on}
+                        onClick={() => handleSelectCharacter(c.id)}
+                        className={`flex min-h-[52px] items-center gap-2.5 rounded-2xl px-2.5 py-2 text-left transition ${focusRing} ${
+                          on
+                            ? "bg-gradient-to-r from-[#ff3d6e] to-[#f0245a] text-white shadow-md shadow-rose-500/30"
+                            : "bg-slate-100/80 text-slate-800 hover:bg-slate-100 dark:bg-sumi-800 dark:text-slate-200"
+                        }`}
+                      >
+                        <SenseiPortrait character={c} className="h-9 w-9" />
+                        <span className="min-w-0 leading-tight">
+                          <span className="block truncate text-[13px] font-extrabold">{c.nameRomaji}</span>
+                          <span className={`block text-[10px] ${on ? "opacity-90" : "text-slate-500 dark:text-slate-400"}`}>
+                            Giọng {c.genderLabel.toLowerCase()}
+                          </span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Giọng đọc đang dùng (bấm để mở chi tiết / đổi thủ công) */}
+                <button
+                  type="button"
+                  onClick={() => setVoicePanelOpen((v) => !v)}
+                  aria-expanded={voicePanelOpen}
+                  className={`mt-4 flex w-full items-center gap-3 rounded-2xl bg-amber-50 px-3 py-3 text-left transition hover:bg-amber-100/70 dark:bg-amber-950/25 ${focusRing}`}
+                >
+                  <BulbIcon className="h-8 w-8 shrink-0 text-amber-400" />
+                  <span className="min-w-0 flex-1 leading-tight">
+                    <span className="block truncate text-[11px] font-bold text-slate-700 dark:text-slate-200">
+                      {!mounted
+                        ? "Đang khởi tạo giọng đọc..."
+                        : !voice.supported
+                        ? "Trình duyệt chưa hỗ trợ giọng đọc"
+                        : voice.activeVoice
+                        ? voice.activeVoice.name
+                        : "Chưa tìm thấy giọng tiếng Nhật"}
+                    </span>
+                    <span className="mt-0.5 block truncate text-[10px] text-slate-500 dark:text-slate-400">
+                      {mounted && voice.supported && voice.activeVoice
+                        ? `${SOURCE_LABEL[voice.source]} · ${voice.speechRate}x`
+                        : "Từ vựng, hội thoại, ngữ pháp, luyện phản xạ."}
+                    </span>
+                  </span>
+                  <ChevronRight className={`h-4 w-4 shrink-0 text-slate-400 transition ${voicePanelOpen ? "rotate-90" : ""}`} />
+                </button>
+
+                {voicePanelOpen && mounted && (
+                  <div className="mt-2 space-y-2 rounded-2xl border border-amber-100 bg-white p-3 text-[11px] text-slate-600 dark:border-amber-900/40 dark:bg-sumi-800 dark:text-slate-300">
+                    {!voice.supported ? (
+                      <p className="text-amber-700 dark:text-amber-400">
+                        Trình duyệt này không hỗ trợ giọng đọc. Hãy thử Chrome, Edge hoặc Safari.
+                      </p>
+                    ) : (
+                      <>
+                        {!voice.exactMatch && voice.activeVoice && (
+                          <p className="leading-relaxed text-amber-800 dark:text-amber-300">
+                            Thiết bị chưa có giọng {character.genderLabel.toLowerCase()} tiếng Nhật riêng, nên hệ thống{" "}
+                            {character.gender === "male" ? "hạ" : "nâng"} tông giọng sẵn có (pitch{" "}
+                            {character.voice.fallbackPitch}) để phân biệt thầy Ren và cô Aoi.
+                          </p>
+                        )}
+                        {voice.voices.length > 0 && (
+                          <>
+                            <label htmlFor="sensei-voice" className="block font-bold">
+                              Đổi giọng đọc thủ công
+                            </label>
+                            <select
+                              id="sensei-voice"
+                              value={voice.selectedURI ?? ""}
+                              onChange={(e) => voice.setVoiceURI(e.target.value || null)}
+                              className="min-h-11 w-full rounded-xl border border-slate-200 bg-white px-2.5 text-base text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose-500 dark:border-slate-700 dark:bg-sumi-950 dark:text-slate-200 sm:text-xs"
+                            >
+                              <option value="">Tự động chọn theo giới tính Sensei</option>
+                              {voice.voices.map((v) => (
+                                <option key={v.uri} value={v.uri}>
+                                  {v.name} ({voiceGenderLabel(v.guess)})
+                                </option>
+                              ))}
+                            </select>
+                          </>
+                        )}
+                      </>
+                    )}
+                  </div>
+                )}
+              </div>
+            </section>
+
+            {/* ═════════ CỘT GIỮA — HỘI THOẠI ═════════ */}
+            <section
+              aria-label={`Hội thoại với ${character.nameRomaji}`}
+              className={`flex h-[680px] flex-col overflow-hidden p-4 sm:p-5 lg:h-[min(820px,calc(100dvh-7rem))] lg:min-h-[640px] ${cardShell}`}
             >
-              🔄 Bắt đầu lại
-            </Button>
-          </div>
+              {/* Header */}
+              <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3 dark:border-slate-800">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-rose-50 text-2xl dark:bg-rose-950/40">
+                    {selectedScenario.icon || <BriefcaseIcon className="h-6 w-6 text-rose-500" />}
+                  </span>
+                  <div className="min-w-0">
+                    <h2 className="truncate text-base font-extrabold text-slate-900 dark:text-white">
+                      {selectedScenario.title}
+                    </h2>
+                    <p className="truncate text-xs text-slate-500 dark:text-slate-400">
+                      Luyện nói - Hỏi đáp - Phản hồi tức thì
+                    </p>
+                  </div>
+                </div>
 
-          {/* Messages Scroll View */}
-          <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4">
-            {messages.map((msg) => {
-              const isUser = msg.role === "user";
-              return (
-                <div key={msg.id} className={`flex gap-3 ${isUser ? "justify-end" : "justify-start"}`}>
-                  {!isUser && (
-                    <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-sakura-500 to-rose-500 flex items-center justify-center text-white text-xs font-black shrink-0 mt-0.5 shadow-sm">
-                      葵
-                    </div>
-                  )}
-                  <div
-                    className={`max-w-[85%] sm:max-w-[78%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
-                      isUser
-                        ? "bg-gradient-to-r from-sakura-500 to-rose-500 text-white rounded-tr-sm font-medium"
-                        : "bg-slate-50 dark:bg-sumi-800 text-slate-800 dark:text-slate-100 border border-slate-200/70 dark:border-slate-700/70 rounded-tl-sm"
+                <div className="flex shrink-0 items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={toggleSaved}
+                    aria-pressed={isSaved}
+                    className={`inline-flex h-9 items-center gap-1.5 rounded-full border px-3 text-xs font-bold transition ${focusRing} ${
+                      isSaved
+                        ? "border-rose-200 bg-rose-50 text-rose-600 dark:border-rose-900/60 dark:bg-rose-950/40 dark:text-rose-300"
+                        : "border-slate-200 bg-white text-slate-600 hover:border-rose-200 dark:border-slate-700 dark:bg-sumi-800 dark:text-slate-300"
                     }`}
                   >
-                    {/* Furigana subtext if available */}
-                    {showFurigana && msg.furigana && (
-                      <p className={`text-[11px] font-jp mb-1 font-medium ${isUser ? "text-rose-100" : "text-slate-400 dark:text-slate-400"}`}>
-                        {msg.furigana}
-                      </p>
-                    )}
+                    <StarIcon className="h-3.5 w-3.5" filled={isSaved} />
+                    {isSaved ? "Đã lưu" : "Lưu"}
+                  </button>
 
-                    {/* Main Message Content */}
-                    <p className="font-jp text-sm sm:text-base leading-relaxed whitespace-pre-wrap font-medium">
-                      {msg.content}
-                    </p>
-
-                    {/* Romaji phonetic subtext if enabled */}
-                    {showRomaji && (
-                      <p className={`text-xs font-mono italic mt-1 leading-relaxed ${isUser ? "text-rose-100" : "text-emerald-600 dark:text-emerald-400"}`}>
-                        🔤 {kanaToRomaji(msg.furigana || msg.content)}
-                      </p>
-                    )}
-
-                    {/* Meaning translation subtext if available */}
-                    {showTranslations && msg.meaning && (
-                      <p className={`text-xs mt-2 pt-2 border-t italic leading-relaxed ${isUser ? "text-rose-100 border-white/20" : "text-slate-600 dark:text-slate-300 border-slate-200/50 dark:border-slate-700/50"}`}>
-                        🇻🇳 {msg.meaning}
-                      </p>
-                    )}
-
-                    {/* Audio Playback button for Sensei */}
-                    {!isUser && (
-                      <div className="mt-2.5 flex items-center gap-3 pt-1">
+                  <div className="relative" ref={menuRef}>
+                    <button
+                      type="button"
+                      onClick={() => setMenuOpen((v) => !v)}
+                      aria-haspopup="menu"
+                      aria-expanded={menuOpen}
+                      aria-label="Thêm tuỳ chọn"
+                      className={`grid h-9 w-9 place-items-center rounded-full text-slate-500 transition hover:bg-slate-100 dark:hover:bg-sumi-800 ${focusRing}`}
+                    >
+                      <KebabIcon className="h-5 w-5" />
+                    </button>
+                    {menuOpen && (
+                      <div
+                        role="menu"
+                        className="absolute right-0 top-full z-20 mt-1 w-52 overflow-hidden rounded-2xl border border-slate-100 bg-white py-1 shadow-xl dark:border-slate-700 dark:bg-sumi-800"
+                      >
                         <button
+                          type="button"
+                          role="menuitem"
                           onClick={() => {
-                            playClick();
-                            speakJapanese(msg.content);
+                            setMenuOpen(false);
+                            handleSelectScenario(selectedScenario);
                           }}
-                          className="flex items-center gap-1 text-[11px] font-bold text-sakura-600 dark:text-sakura-400 hover:underline"
+                          className="flex w-full items-center gap-2 px-3 py-2.5 text-left text-xs font-bold text-slate-700 hover:bg-rose-50 dark:text-slate-200 dark:hover:bg-sumi-900"
                         >
-                          🔊 Nghe lại
+                          <Icon name="refresh" className="h-4 w-4 text-slate-500" />
+                          Bắt đầu lại
+                        </button>
+                        <button
+                          type="button"
+                          role="menuitem"
+                          onClick={() => {
+                            setMenuOpen(false);
+                            setTempKeyInput(apiKey);
+                            setIsKeyModalOpen(true);
+                            playClick();
+                          }}
+                          className="flex w-full items-center gap-2 px-3 py-2.5 text-left text-xs font-bold text-slate-700 hover:bg-rose-50 dark:text-slate-200 dark:hover:bg-sumi-900"
+                        >
+                          <Icon name="settings" className="h-4 w-4 text-slate-500" />
+                          <span className="flex-1">{apiKey ? "AI Key: Đã kết nối" : "Cài đặt AI Key"}</span>
+                          {apiKey && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500" />}
                         </button>
                       </div>
                     )}
                   </div>
                 </div>
-              );
-            })}
-
-            {loading && (
-              <div className="flex gap-3 items-center">
-                <div className="w-9 h-9 rounded-2xl bg-sakura-500 flex items-center justify-center text-white text-xs font-black animate-pulse">
-                  葵
-                </div>
-                <div className="px-4 py-3 rounded-2xl bg-slate-100 dark:bg-sumi-800 text-xs font-medium text-slate-500 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-sakura-500 animate-ping" />
-                  Sensei đang suy nghĩ câu trả lời...
-                </div>
               </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* Quick Reply Suggestions (Chips to never get stuck) */}
-          <div className="px-4 py-2 bg-slate-50/70 dark:bg-sumi-950/70 border-t border-slate-100 dark:border-slate-800">
-            <div className="flex items-center gap-1.5 mb-1.5 text-[10px] font-black uppercase tracking-wider text-slate-400">
-              <span>💡 GỢI Ý ĐỐI ĐÁP NHANH (N3)</span>
-            </div>
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
-              {selectedScenario.suggestedReplies.map((reply, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSendMessage(reply.ja)}
-                  className="px-3 py-1.5 rounded-xl bg-white dark:bg-sumi-800 hover:bg-sakura-50 dark:hover:bg-sakura-950/40 text-slate-700 dark:text-slate-300 hover:text-sakura-600 border border-slate-200 dark:border-slate-700 text-xs font-medium shrink-0 text-left transition max-w-[280px] truncate shadow-2xs"
-                  title={reply.vi}
-                >
-                  <span className="font-jp font-bold truncate block">{reply.ja}</span>
-                  <span className="text-[10px] text-slate-400 truncate block mt-0.5">{reply.vi}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom Input Box + Microphone Action */}
-          <div className="p-3 sm:p-4 bg-white dark:bg-sumi-900 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2">
-            {/* Microphone Button with Sound Wave Pulse */}
-            <button
-              onClick={toggleListening}
-              className={`p-3.5 rounded-2xl text-lg transition-all shrink-0 flex items-center justify-center shadow-md ${
-                isListening
-                  ? "bg-rose-500 text-white animate-pulse shadow-rose-500/40 scale-105"
-                  : "bg-slate-100 dark:bg-sumi-800 text-slate-700 dark:text-slate-200 hover:bg-sakura-50 hover:text-sakura-600"
-              }`}
-              title={isListening ? "Đang thu âm... Nhấn để dừng" : "Nhấn để nói tiếng Nhật (Micro)"}
-            >
-              {isListening ? "🔴" : "🎙️"}
-            </button>
-
-            {/* Text input */}
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSendMessage();
-                }
-              }}
-              placeholder={isListening ? "Đang lắng nghe giọng nói tiếng Nhật..." : "Nhập câu tiếng Nhật hoặc bấm Micro để nói..."}
-              className="flex-1 px-4 py-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-sumi-950 text-sm font-jp focus:outline-none focus:ring-2 focus:ring-sakura-500 dark:text-white"
-            />
-
-            {/* Send Button */}
-            <Button
-              onClick={() => handleSendMessage()}
-              disabled={!input.trim() || loading}
-              variant="sakura"
-              size="md"
-              className="px-5 font-black shrink-0 shadow-md shadow-sakura-500/25"
-            >
-              Gửi 🚀
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* API Key Modal */}
-      {isKeyModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-sumi-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full shadow-2xl space-y-4 animate-in fade-in zoom-in duration-200">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">🔑</span>
-                <h3 className="font-black text-slate-900 dark:text-white text-base">
-                  Cấu hình Google Gemini AI Key
-                </h3>
-              </div>
-              <button
-                onClick={() => setIsKeyModalOpen(false)}
-                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-sumi-800 flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-sm font-bold"
+              {/* Tuỳ chọn hiển thị */}
+              <div
+                role="group"
+                aria-label="Tùy chọn hiển thị"
+                className="no-scrollbar -mx-1 flex items-center gap-2 overflow-x-auto px-1 py-3"
               >
-                ✕
-              </button>
-            </div>
-
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Nhập Google Gemini API Key để mở khóa toàn bộ trí thông minh đàm thoại tiếng Nhật (Gemini 1.5 Flash), nói chuyện tự do mọi chủ đề. Khóa được lưu trực tiếp trên trình duyệt của bạn.
-            </p>
-
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center justify-between">
-                <span>API Key (Hỗ trợ Bể nhiều Key & Đa nền tảng):</span>
-                <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">Tự động đảo Key khi hết hạn ngạch</span>
-              </label>
-              <textarea
-                rows={3}
-                value={tempKeyInput}
-                onChange={(e) => setTempKeyInput(e.target.value)}
-                placeholder="Dán 1 hoặc nhiều Gemini Key (AIzaSy...), Groq Key (gsk_...), OpenRouter Key (sk-or-)... Mỗi key 1 dòng hoặc cách nhau bằng dấu phẩy"
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-sumi-950 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-amber-500 dark:text-white resize-none"
-              />
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-tight">
-                💡 <strong>Mẹo:</strong> Bạn có thể tạo 2-3 Google Gemini key từ các tài khoản Google khác nhau và dán vào đây để hệ thống tự luân phiên, không bao giờ lo bị nghẽn!
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center justify-between">
-                <span>Chọn Mô hình AI (Gemini 3 / Groq):</span>
-                <span className="text-[10px] text-amber-500 font-normal">Tự động chuyển model nếu 503</span>
-              </label>
-              <select
-                value={tempModelInput}
-                onChange={(e) => setTempModelInput(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-sumi-950 text-xs font-bold text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              >
-                <option value="gemini-3.6-flash">⚡ Gemini 3.6 Flash (Chính thức từ Google - Khuyên dùng)</option>
-                <option value="gemini-3.6-flash-preview">🧪 Gemini 3.6 Flash Preview</option>
-                <option value="gemini-3.8-flash">🚀 Gemini 3.8 Flash (Tốc độ cao)</option>
-                <option value="gemini-3.6-pro">🌟 Gemini 3.6 Pro (Chuyên sâu cao cấp)</option>
-              </select>
-            </div>
-
-            <div className="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-[11px] text-amber-800 dark:text-amber-300 space-y-1.5">
-              <div className="font-bold flex items-center gap-1">
-                <span>💡</span>
-                <span>Nơi lấy API Key miễn phí không giới hạn:</span>
-              </div>
-              <ul className="list-disc pl-4 space-y-1 text-[10px]">
-                <li>
-                  <a
-                    href="https://aistudio.google.com/app/apikey"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-bold underline text-amber-900 dark:text-amber-200 hover:text-amber-600"
-                  >
-                    Google AI Studio (Gemini 3.6 Flash miễn phí) ↗
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://console.groq.com/keys"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-bold underline text-amber-900 dark:text-amber-200 hover:text-amber-600"
-                  >
-                    Groq Cloud (gsk_... 14,400 lượt/ngày cực nhanh) ↗
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="flex items-center justify-between pt-2">
-              {apiKey ? (
-                <button
+                <Pill
+                  on={showFurigana}
                   onClick={() => {
-                    localStorage.removeItem("nihon_gemini_key");
-                    setApiKey("");
-                    setTempKeyInput("");
-                    setIsKeyModalOpen(false);
+                    setShowFurigana(!showFurigana);
+                    playClick();
                   }}
-                  className="text-xs font-bold text-rose-500 hover:underline"
+                  title="Bật/Tắt Furigana"
+                  icon={<span lang="ja" className="font-jp font-black">あ</span>}
                 >
-                  Xóa Key đã lưu
-                </button>
-              ) : (
-                <span className="text-[11px] text-slate-400">Chưa cài đặt</span>
+                  Furigana
+                </Pill>
+                <Pill
+                  on={showRomaji}
+                  onClick={() => {
+                    setShowRomaji(!showRomaji);
+                    playClick();
+                  }}
+                  title="Bật/Tắt Phiên âm Romaji"
+                  icon={<span className="text-[11px] font-black">Aa</span>}
+                >
+                  Romaji
+                </Pill>
+                <Pill
+                  on={showTranslations}
+                  onClick={() => {
+                    setShowTranslations(!showTranslations);
+                    playClick();
+                  }}
+                  title="Bật/Tắt Dịch nghĩa tiếng Việt"
+                  icon={<span className="text-[11px] font-black">VI</span>}
+                >
+                  Dịch nghĩa
+                </Pill>
+                <Pill
+                  on={autoVoice}
+                  onClick={() => {
+                    setAutoVoice(!autoVoice);
+                    playClick();
+                  }}
+                  title="Tự động phát giọng nói khi Sensei trả lời"
+                  icon={<Icon name="speaker" className="h-4 w-4" />}
+                >
+                  {autoVoice ? "Tự đọc" : "Tắt đọc"}
+                </Pill>
+              </div>
+
+              {/* Tin nhắn */}
+              <div className="min-h-0 flex-1 space-y-4 overflow-y-auto rounded-2xl border border-slate-100 bg-white/70 p-3 dark:border-slate-800 dark:bg-sumi-950/40 sm:p-4">
+                {messages.map((msg) => {
+                  const isUser = msg.role === "user";
+                  const romaji = showRomaji ? kanaToRomaji(msg.furigana || msg.content) : "";
+                  return isUser ? (
+                    <div key={msg.id} className="flex justify-end">
+                      <div className="relative max-w-[88%] rounded-2xl rounded-tr-md bg-[#1c2745] py-3 pl-4 pr-12 text-white shadow-md sm:max-w-[72%]">
+                        <span
+                          aria-hidden="true"
+                          className="absolute right-2.5 top-2.5 grid h-8 w-8 place-items-center rounded-full bg-sky-100 text-sky-500"
+                        >
+                          <UserIcon className="h-4 w-4" />
+                        </span>
+                        <p lang="ja" className="whitespace-pre-wrap font-jp text-[15px] font-medium leading-relaxed">
+                          {msg.content}
+                        </p>
+                        {showFurigana && msg.furigana && (
+                          <p className="mt-0.5 font-jp text-xs text-slate-300">{msg.furigana}</p>
+                        )}
+                        {romaji && <p className="mt-0.5 text-xs text-slate-300">{romaji}</p>}
+                        {showTranslations && msg.meaning && (
+                          <p className="mt-1.5 border-t border-white/15 pt-1.5 text-xs text-slate-200">{msg.meaning}</p>
+                        )}
+                        <DoubleCheckIcon className="ml-auto mt-1 h-4 w-4 text-rose-300" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div key={msg.id} className="flex items-start gap-3">
+                      <SenseiPortrait character={character} className="mt-0.5 h-10 w-10" />
+                      <div className="max-w-[88%] rounded-2xl rounded-tl-md border border-slate-100 bg-white px-4 py-3 shadow-sm dark:border-slate-700 dark:bg-sumi-800 sm:max-w-[78%]">
+                        <p lang="ja" className="whitespace-pre-wrap font-jp text-[15px] font-medium leading-relaxed text-slate-900 dark:text-slate-100">
+                          {msg.content}
+                        </p>
+                        {(romaji || (showFurigana && msg.furigana)) && (
+                          <p className="mt-1 text-xs leading-relaxed text-sky-700 dark:text-sky-300">
+                            {romaji}
+                            {romaji && showFurigana && msg.furigana ? " " : ""}
+                            {showFurigana && msg.furigana && <span lang="ja" className="font-jp">{msg.furigana}</span>}
+                          </p>
+                        )}
+                        {showTranslations && msg.meaning && (
+                          <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                            {msg.meaning.startsWith("(") ? msg.meaning : `(${msg.meaning})`}
+                          </p>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            playClick();
+                            speakJapanese(msg.content, msg.furigana);
+                          }}
+                          className={`mt-2.5 inline-flex h-8 items-center gap-1.5 rounded-full bg-rose-50 px-3.5 text-[11px] font-extrabold text-rose-600 transition hover:bg-rose-100 dark:bg-rose-950/40 dark:text-rose-300 ${focusRing}`}
+                        >
+                          <Icon name="speaker" className="h-3.5 w-3.5" />
+                          Nghe lại
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {loading && (
+                  <div className="flex items-center gap-3">
+                    <SenseiPortrait character={character} className="h-10 w-10 motion-safe:animate-pulse" />
+                    <div className="flex items-center gap-2 rounded-2xl rounded-tl-md border border-slate-100 bg-white px-4 py-3 text-xs font-medium text-slate-500 shadow-sm dark:border-slate-700 dark:bg-sumi-800">
+                      <span aria-hidden="true" className="flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-rose-400 motion-safe:animate-bounce" style={{ animationDelay: "0ms" }} />
+                        <span className="h-1.5 w-1.5 rounded-full bg-rose-400 motion-safe:animate-bounce" style={{ animationDelay: "150ms" }} />
+                        <span className="h-1.5 w-1.5 rounded-full bg-rose-400 motion-safe:animate-bounce" style={{ animationDelay: "300ms" }} />
+                      </span>
+                      Sensei đang suy nghĩ câu trả lời...
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Trả lời nhanh (giữ từ bản cũ để người học không bị kẹt) */}
+              {!loading && selectedScenario.suggestedReplies.length > 0 && (
+                <div className="no-scrollbar mt-3 flex items-center gap-2 overflow-x-auto" aria-label="Gợi ý trả lời nhanh">
+                  {selectedScenario.suggestedReplies.map((reply, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => handleSendMessage(reply.ja)}
+                      title={reply.vi}
+                      className={`max-w-[260px] shrink-0 rounded-full border border-rose-100 bg-white px-3.5 py-1.5 text-left transition hover:border-rose-300 hover:bg-rose-50 dark:border-slate-700 dark:bg-sumi-800 dark:hover:bg-rose-950/30 ${focusRing}`}
+                    >
+                      <span lang="ja" className="block truncate font-jp text-xs font-bold text-slate-700 dark:text-slate-200">
+                        {reply.ja}
+                      </span>
+                      <span className="block truncate text-[10px] text-slate-400">{reply.vi}</span>
+                    </button>
+                  ))}
+                </div>
               )}
 
-              <div className="flex items-center gap-2">
-                <Button
-                  onClick={() => setIsKeyModalOpen(false)}
-                  variant="ghost"
-                  size="sm"
-                  className="text-xs"
-                >
-                  Đóng
-                </Button>
-                <Button
-                  onClick={handleSaveApiKey}
-                  variant="primary"
-                  size="sm"
-                  className="text-xs font-black bg-amber-500 hover:bg-amber-600 text-slate-950 border-none shadow-md shadow-amber-500/20"
-                >
-                  Lưu Key 💾
-                </Button>
+              {/* Gợi ý chủ đề hôm nay = danh sách scenario */}
+              <div className="mt-3">
+                <p className="mb-1.5 flex items-center gap-1.5 text-[11px] font-extrabold text-slate-500 dark:text-slate-400">
+                  <SparkleIcon className="h-3.5 w-3.5 text-rose-500" />
+                  Gợi ý chủ đề hôm nay
+                </p>
+                <div className="no-scrollbar flex items-stretch gap-2 overflow-x-auto pb-1">
+                  {N3_KAIWA_SCENARIOS.map((sc) => {
+                    const on = selectedScenario.id === sc.id;
+                    return (
+                      <button
+                        key={sc.id}
+                        type="button"
+                        onClick={() => handleSelectScenario(sc)}
+                        aria-pressed={on}
+                        className={`flex min-w-[170px] shrink-0 items-center justify-between gap-2 rounded-2xl border px-3 py-2 text-left transition ${focusRing} ${
+                          on
+                            ? "border-rose-300 bg-rose-50 dark:border-rose-900/60 dark:bg-rose-950/30"
+                            : "border-slate-100 bg-white hover:border-rose-200 dark:border-slate-700 dark:bg-sumi-800"
+                        }`}
+                      >
+                        <span className="min-w-0 leading-tight">
+                          <span className="block truncate text-xs font-extrabold text-slate-800 dark:text-slate-100">{sc.title}</span>
+                          <span lang="ja" className="block truncate font-jp text-[10px] text-slate-500 dark:text-slate-400">
+                            {sc.titleJa}
+                          </span>
+                        </span>
+                        <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
+
+              {/* Ô nhập */}
+              <div className="mt-3 flex items-center gap-2 rounded-full border border-slate-200 bg-white p-1.5 transition focus-within:border-rose-300 focus-within:ring-2 focus-within:ring-rose-500/20 dark:border-slate-700 dark:bg-sumi-950">
+                <button
+                  type="button"
+                  onClick={toggleListening}
+                  aria-pressed={isListening}
+                  aria-label={isListening ? "Đang thu âm — nhấn để dừng" : "Nói tiếng Nhật bằng micro"}
+                  title={isListening ? "Đang thu âm... Nhấn để dừng" : "Nhấn để nói tiếng Nhật (Micro)"}
+                  className={`grid h-11 w-11 shrink-0 place-items-center rounded-full transition ${focusRing} ${
+                    isListening
+                      ? "bg-rose-500 text-white shadow-md shadow-rose-500/30 motion-safe:animate-pulse"
+                      : "bg-rose-50 text-rose-500 hover:bg-rose-100 dark:bg-rose-950/40"
+                  }`}
+                >
+                  <MicIcon />
+                </button>
+
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSendMessage();
+                    }
+                  }}
+                  aria-label="Nhập câu tiếng Nhật"
+                  placeholder={isListening ? "Đang lắng nghe giọng nói tiếng Nhật..." : "Nhập tin nhắn hoặc nhấn giữ để nói..."}
+                  className="min-w-0 flex-1 bg-transparent px-1 py-2.5 font-jp text-base text-slate-900 outline-none placeholder:text-slate-400 dark:text-white sm:text-sm"
+                />
+
+                <button
+                  type="button"
+                  onClick={() => handleSendMessage()}
+                  disabled={!input.trim() || loading}
+                  className={`inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#ff3d6e] to-[#f0245a] px-6 text-sm font-black text-white shadow-md shadow-rose-500/30 transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none ${focusRing}`}
+                >
+                  Gửi
+                  <SendIcon className="h-4 w-4" />
+                </button>
+              </div>
+            </section>
+
+            {/* ═════════ CỘT PHẢI ═════════ */}
+            <div className="lg:col-span-2 xl:col-span-1">
+              <SenseiSideRail
+                grammarPatterns={selectedScenario.keyGrammar.map((g) => g.pattern)}
+                onOpenGrammar={() => {
+                  playClick();
+                  setGrammarOpen(true);
+                }}
+                recentLessons={recentLessons}
+              />
             </div>
           </div>
-        </div>
-      )}
+
+          {/* Mẫu câu N3 trọng tâm (mở từ "Ngữ pháp hôm nay") */}
+          <Modal isOpen={grammarOpen} onClose={closeGrammarModal} title="Mẫu câu N3 trọng tâm" maxWidth="md">
+            <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+              {selectedScenario.keyGrammar.map((g, idx) => (
+                <li key={idx} className="py-3 first:pt-0 last:pb-0">
+                  <span lang="ja" className="block font-jp text-base font-bold text-slate-900 dark:text-white">
+                    {g.pattern}
+                  </span>
+                  <span className="mt-0.5 block text-xs leading-relaxed text-slate-500 dark:text-slate-400">{g.meaning}</span>
+                </li>
+              ))}
+            </ul>
+          </Modal>
+
+
+          {/* API Key Modal (dùng Modal chung: focus trap, Escape, khóa cuộn nền) */}
+          <Modal isOpen={isKeyModalOpen} onClose={closeKeyModal} title="Cấu hình Google Gemini AI Key" maxWidth="md">
+            <div className="space-y-4">
+              <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                Nhập Google Gemini API Key để mở khóa toàn bộ trí thông minh đàm thoại tiếng Nhật (Gemini 1.5 Flash), nói chuyện tự do mọi chủ đề. Khóa được lưu trực tiếp trên trình duyệt của bạn.
+              </p>
+
+              <div className="space-y-2">
+                <label htmlFor="nq-ai-keys" className="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <span>API Key (Hỗ trợ Bể nhiều Key & Đa nền tảng):</span>
+                  <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400">Tự động đảo Key khi hết hạn ngạch</span>
+                </label>
+                <textarea
+                  id="nq-ai-keys"
+                  rows={3}
+                  value={tempKeyInput}
+                  onChange={(e) => setTempKeyInput(e.target.value)}
+                  placeholder="Dán 1 hoặc nhiều Gemini Key (AIzaSy...), Groq Key (gsk_...), OpenRouter Key (sk-or-)... Mỗi key 1 dòng hoặc cách nhau bằng dấu phẩy"
+                  className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 font-mono text-base focus:outline-none focus:ring-2 focus:ring-red-500 dark:border-slate-700 dark:bg-sumi-950 dark:text-white sm:text-xs"
+                />
+                <p className="text-[10px] leading-tight text-slate-500 dark:text-slate-400">
+                  <strong>Mẹo:</strong> Bạn có thể tạo 2-3 Google Gemini key từ các tài khoản Google khác nhau và dán vào đây để hệ thống tự luân phiên, không bao giờ lo bị nghẽn!
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="nq-ai-model" className="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <span>Chọn Mô hình AI (Gemini 3 / Groq):</span>
+                  <span className="text-[10px] font-normal text-amber-600">Tự động chuyển model nếu 503</span>
+                </label>
+                <select
+                  id="nq-ai-model"
+                  value={tempModelInput}
+                  onChange={(e) => setTempModelInput(e.target.value)}
+                  className="min-h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-base font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500 dark:border-slate-700 dark:bg-sumi-950 dark:text-slate-200 sm:text-xs"
+                >
+                  <option value="gemini-3.6-flash">⚡ Gemini 3.6 Flash (Chính thức từ Google - Khuyên dùng)</option>
+                  <option value="gemini-3.6-flash-preview">🧪 Gemini 3.6 Flash Preview</option>
+                  <option value="gemini-3.8-flash">🚀 Gemini 3.8 Flash (Tốc độ cao)</option>
+                  <option value="gemini-3.6-pro">🌟 Gemini 3.6 Pro (Chuyên sâu cao cấp)</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5 rounded-xl border border-slate-200 bg-slate-50 p-3 text-[11px] text-slate-700 dark:border-slate-700 dark:bg-sumi-950 dark:text-slate-300">
+                <div className="flex items-center gap-1 font-bold">
+                  <Icon name="bulb" className="h-3.5 w-3.5 text-amber-500" />
+                  <span>Nơi lấy API Key miễn phí không giới hạn:</span>
+                </div>
+                <ul className="list-disc space-y-1 pl-4 text-[11px]">
+                  <li>
+                    <a
+                      href="https://aistudio.google.com/app/apikey"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-bold text-red-600 underline hover:opacity-80 dark:text-red-400"
+                    >
+                      Google AI Studio (Gemini 3.6 Flash miễn phí) ↗
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://console.groq.com/keys"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-bold text-red-600 underline hover:opacity-80 dark:text-red-400"
+                    >
+                      Groq Cloud (gsk_... 14,400 lượt/ngày cực nhanh) ↗
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex items-center justify-between pt-1">
+                {apiKey ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      localStorage.removeItem("nihon_gemini_key");
+                      setApiKey("");
+                      setTempKeyInput("");
+                      setIsKeyModalOpen(false);
+                    }}
+                    className="text-xs font-bold text-rose-500 hover:underline"
+                  >
+                    Xóa Key đã lưu
+                  </button>
+                ) : (
+                  <span className="text-[11px] text-slate-400">Chưa cài đặt</span>
+                )}
+
+                <div className="flex items-center gap-2">
+                  <Button onClick={closeKeyModal} variant="ghost" size="sm" className="text-xs">
+                    Đóng
+                  </Button>
+                  <Button onClick={handleSaveApiKey} variant="brand" size="sm" className="text-xs font-black">
+                    Lưu Key
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Modal>
         </>
       )}
     </div>

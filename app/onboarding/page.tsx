@@ -10,6 +10,7 @@ import {
   FOCUS_SKILL_OPTIONS,
   LEARNING_STYLE_OPTIONS,
 } from "@/lib/personalization";
+import "./onboarding.css";
 
 const STEPS = [...ONBOARDING_QUESTIONS];
 
@@ -82,25 +83,28 @@ export default function OnboardingPage() {
     }
   };
 
-  const choices: readonly any[] =
-    step === 0
+  const optionsFor = (index: number): readonly any[] =>
+    index === 0
       ? LEVEL_OPTIONS
-      : step === 1
+      : index === 1
         ? GOAL_OPTIONS
-        : step === 2
+        : index === 2
           ? TIME_OPTIONS
-          : step === 3
+          : index === 3
             ? FOCUS_SKILL_OPTIONS
             : LEARNING_STYLE_OPTIONS;
 
-  const isSelected = (option: any): boolean => {
-    const stepId = currentStep.id as StepId;
+  const isSelectedFor = (index: number, option: any): boolean => {
+    const stepId = STEPS[index].id as StepId;
     if (stepId === "level") return levelChoice === option.key;
     if (stepId === "goal") return selections.learningGoal === option.value;
     if (stepId === "time") return selections.dailyGoalMinutes === option.value;
     if (stepId === "focusSkill") return selections.focusSkill === option.value;
     return selections.learningStyle === option.value;
   };
+
+  const selectedLabel = (index: number): string =>
+    optionsFor(index).find((o: any) => isSelectedFor(index, o))?.label ?? "";
 
   const select = (option: any) => {
     const stepId = currentStep.id as StepId;
@@ -118,59 +122,100 @@ export default function OnboardingPage() {
     }
   };
 
+  const choices = optionsFor(step);
+
   return (
-    <div className="nq-onboard-page">
+    <div className="ob-page">
       <JapanBackdrop />
-      <div className="nq-onboard-shell">
-        <header className="nq-onboard-top" data-intro>
-          <Link href="/"><NihonQuestLogo size="sm" /></Link>
-          <nav className="nq-onboard-mini-nav" aria-label="Giới thiệu"><span>Trải nghiệm</span><span>Hành trình</span><span>Không gian học</span></nav>
-          <div className="nq-onboard-top-actions">
-            <Link href="/login">Đăng nhập</Link>
-            <Link href="/register" className="nq-top-cta">Bắt đầu <i><NQIcon name="arrowUR" /></i></Link>
+
+      <div className="ob-scene" aria-hidden="true">
+        <JapanScenicPanel variant="fuji" showLabel={false} />
+      </div>
+
+      <div className="ob-shell">
+        {/* ───────── Thanh đầu trang ───────── */}
+        <header className="ob-top">
+          <Link href="/" className="ob-top-logo" aria-label="Nihon Quest - Trang chủ">
+            <NihonQuestLogo size="sm" />
+          </Link>
+          <nav className="ob-top-nav" aria-label="Giới thiệu">
+            <span>Trải nghiệm</span>
+            <span>Hành trình</span>
+            <span>Không gian học</span>
+          </nav>
+          <div className="ob-top-actions">
+            <Link href="/login" className="ob-top-login">Đăng nhập</Link>
+            <Link href="/register" className="ob-top-cta">
+              <span>Bắt đầu</span>
+              <i><NQIcon name="arrowUR" /></i>
+            </Link>
           </div>
         </header>
 
-        <ol className="nq-stepper" aria-label="Tiến trình cá nhân hóa" data-intro>
+        {/* ───────── Tiến trình ───────── */}
+        <ol className="ob-stepper" aria-label="Tiến trình cá nhân hóa">
           {STEPS.map((item, index) => (
-            <li key={item.id} className={`nq-step ${step === index ? "is-active" : ""} ${index < step ? "is-done" : ""}`} aria-current={step === index ? "step" : undefined}>
-              <span>{index + 1}</span><b>{item.label}</b>
+            <li
+              key={item.id}
+              className={`ob-step ${step === index ? "is-active" : ""} ${index < step ? "is-done" : ""}`}
+              aria-current={step === index ? "step" : undefined}
+            >
+              <span className="ob-step-dot">{index < step ? "✓" : index + 1}</span>
+              <b>{item.label}</b>
             </li>
           ))}
         </ol>
 
-        <section className="nq-onboard-hero">
-          <div className="nq-onboard-copy" data-intro>
-            <span className="eyebrow">NIHON QUEST</span>
-            <h1>Cá nhân hóa<em>hành trình học của bạn.</em></h1>
-            <p>Chỉ với 5 bước, chúng tôi phân tích trình độ, mục tiêu, thời gian, kỹ năng trọng tâm và phong cách học để thiết kế lộ trình riêng cho bạn.</p>
+        {/* ───────── Giới thiệu ───────── */}
+        <section className="ob-hero">
+          <div className="ob-hero-copy">
+            <span className="ob-eyebrow">NIHON QUEST</span>
+            <h1>
+              Cá nhân hóa
+              <em>hành trình học của bạn.</em>
+            </h1>
+            <p>
+              Chỉ với {STEPS.length} bước đơn giản, chúng tôi sẽ thiết kế lộ trình học tiếng Nhật phù hợp nhất với trình
+              độ, mục tiêu, thời gian và phong cách học của bạn.
+            </p>
           </div>
-          <div className="nq-onboard-scene" data-intro data-parallax><JapanScenicPanel variant="fuji" /></div>
+
+          <aside className="ob-callout" aria-hidden="true">
+            <span className="jp-text">旅</span>
+            <p>Mỗi hành trình vĩ đại đều bắt đầu bằng một lựa chọn phù hợp.</p>
+            <i />
+          </aside>
         </section>
 
-        <section className="nq-onboard-card" data-reveal>
-          <div className="nq-onboard-card-head">
-            <small><b>0{step + 1}</b> / 0{STEPS.length}</small>
-            <h2>{currentStep.title}</h2>
+        {/* ───────── Thẻ câu hỏi ───────── */}
+        <section className="ob-card" aria-labelledby="ob-question">
+          <div className="ob-card-head">
+            <small>
+              <b>0{step + 1}</b> / 0{STEPS.length}
+            </small>
+            <h2 id="ob-question">{currentStep.title}</h2>
             <p>{currentStep.subtitle}</p>
           </div>
 
-          <div className="nq-choice-grid" role="radiogroup" aria-label={currentStep.title}>
+          <div key={step} className="ob-choices" role="radiogroup" aria-label={currentStep.title}>
             {choices.map((option: any) => {
-              const selected = isSelected(option);
+              const selected = isSelectedFor(step, option);
               return (
                 <button
                   key={currentStep.id === "level" ? option.key : option.value}
                   type="button"
                   role="radio"
                   aria-checked={selected}
-                  className={`nq-choice ${selected ? "is-selected" : ""}`}
-                  data-tilt
+                  className={`ob-choice ${selected ? "is-selected" : ""}`}
                   onClick={() => select(option)}
                 >
-                  <span className="nq-choice-check" aria-hidden="true">{selected ? "✓" : ""}</span>
-                  <span className="nq-choice-art">
-                    {SVG_ART.includes(option.art) ? <ChoiceArt kind={option.art as ChoiceArtKind} /> : <span className="jp-text">{option.art}</span>}
+                  <span className="ob-choice-check" aria-hidden="true">{selected ? "✓" : ""}</span>
+                  <span className="ob-choice-art">
+                    {SVG_ART.includes(option.art) ? (
+                      <ChoiceArt kind={option.art as ChoiceArtKind} />
+                    ) : (
+                      <span className="jp-text">{option.art}</span>
+                    )}
                   </span>
                   <b>{option.label}</b>
                   <small>{option.desc}</small>
@@ -179,19 +224,37 @@ export default function OnboardingPage() {
             })}
           </div>
 
-          <div className="nq-onboard-actions">
-            <button className="nq-onboard-back" type="button" disabled={step === 0} onClick={() => setStep((s) => Math.max(0, s - 1))}><NQIcon name="back" /> Quay lại</button>
-            <div className="nq-onboard-dots" aria-hidden="true">{STEPS.map((_, i) => <span key={i} className={i === step ? "is-active" : ""} />)}</div>
-            <button className="nq-onboard-next" type="button" onClick={handleNext} disabled={loading}>
+          <div className="ob-actions">
+            <button className="ob-back" type="button" disabled={step === 0} onClick={() => setStep((s) => Math.max(0, s - 1))}>
+              <NQIcon name="back" /> Quay lại
+            </button>
+            <div className="ob-dots" aria-hidden="true">
+              {STEPS.map((_, i) => (
+                <span key={i} className={i === step ? "is-active" : ""} />
+              ))}
+            </div>
+            <button className="ob-next" type="button" onClick={handleNext} disabled={loading}>
               {loading ? "Đang thiết lập..." : isLast ? "Xem lộ trình của bạn" : "Tiếp theo"} <NQIcon name="arrow" />
             </button>
           </div>
         </section>
       </div>
 
-      <div className="nq-side-jp nq-side-jp-onboard" aria-hidden="true">
-        <span className="jp-text">日本への旅</span><i />
-        <small>HÀNH TRÌNH<br />MỚI.<br />MỘT<br />PHIÊN BẢN<br />MỚI.</small>
+      {/* Chữ dọc bên phải (chỉ hiện trên màn hình rộng) */}
+      <div className="ob-side" aria-hidden="true">
+        <span className="jp-text">日本への旅</span>
+        <i />
+        <small>
+          HÀNH TRÌNH
+          <br />
+          MỚI.
+          <br />
+          MỘT
+          <br />
+          PHIÊN BẢN
+          <br />
+          MỚI.
+        </small>
       </div>
     </div>
   );

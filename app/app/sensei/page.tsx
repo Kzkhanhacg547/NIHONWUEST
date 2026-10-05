@@ -2,8 +2,8 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/auth-options";
 import { AppNav } from "@/components/AppNav";
-import { PageTitle } from "@/components/ui";
 import { SenseiKaiwaClient } from "./SenseiKaiwaClient";
+import { SakuraBackdrop } from "./SenseiDecor";
 
 export const metadata = {
   title: "AI Kaiwa Sensei N3 — Nihon Quest",
@@ -15,15 +15,14 @@ export default async function SenseiPage() {
   const uid = (session?.user as { id?: string } | undefined)?.id;
   if (!uid) redirect("/login");
 
+  // TODO: lấy "bài học gần đây" thật của người học (cần schema/API tiến độ học) rồi truyền vào:
+  // const recentLessons = await getRecentLessons(uid);
+
   return (
-    <div className="nq-workspace space-y-6">
+    <div className="nq-workspace relative isolate space-y-5">
+      <SakuraBackdrop />
       <AppNav />
-      <PageTitle
-        title="AI Kaiwa Sensei (葵先生) 🌸"
-        subtitle="Luyện phản xạ giao tiếp tiếng Nhật thực tế N3 bằng giọng nói và văn bản. Đồng bộ khẩu hình tự nhiên và nhận phản hồi trực tiếp."
-        badge="JLPT N3 Kaiwa"
-      />
-      <SenseiKaiwaClient />
+      <SenseiKaiwaClient /* recentLessons={recentLessons} */ />
     </div>
   );
 }
