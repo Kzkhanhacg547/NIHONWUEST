@@ -8,22 +8,42 @@
     --foreground: 15 23 42;
     --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     --font-jp: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+    /* Mirror Tailwind palette (slate/sumi) để đồng bộ transition */
+    --nq-bg: 255 255 255;
+    --nq-bg-soft: 241 245 249;
+    --nq-bg-card: 255 255 255;
+    --nq-border: 226 232 240;
+    --nq-text: 15 23 42;
+    --nq-text-soft: 71 85 105;
+    --nq-text-muted: 100 113 128;
   }
 
   .dark {
     --background: 9 13 22;
     --foreground: 248 250 252;
+    --nq-bg: 9 13 22;
+    --nq-bg-soft: 30 41 59;
+    --nq-bg-card: 20 26 37;
+    --nq-border: 51 65 85;
+    --nq-text: 248 250 252;
+    --nq-text-soft: 203 213 225;
+    --nq-text-muted: 148 163 184;
   }
 
-  html {
+html {
     scroll-behavior: smooth;
-    /* Keeps in-page anchors (#roadmap, #kana-full, #review-card) clear of the
-       sticky header instead of hiding them behind it. */
+    /* color-scheme được set dynamically bởi SoundAndThemeContext khi toggle theme.
+       Giá trị fallback 'light' để browser không bị sai trước khi JS chạy. */
+    color-scheme: light;
     scroll-padding-top: 6rem;
     /* iOS Safari tự phóng to khung nhìn khi font-size < 16px và giữ nguyên độ
        phóng sau khi blur -> mọi thao tác chạm sau đó rơi sai vị trí. */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -32,8 +52,35 @@
     }
   }
 
+  /* ---- Global theme transition ----
+     Áp transition chỉ cho màu sắc (color, background-color, border-color) – không
+     bao gồm backdrop-filter / background-image vì chúng không interpolate được trên
+     hầu hết browser và gây nhấp nháy / ẩn content trong lúc chuyển.
+     Dùng :not() để loại trừ các element đang chạy animation / keyframe riêng
+     tránh xung đột với transform/opacity animation. */
+  html,
+  body,
+  body *:not([class*="animate-"]):not([class*="motion-"]):not([class*="nq-floating"]) {
+    transition-property: background-color, color, border-color, box-shadow, fill, stroke, outline-color;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Nút / interactive element: transition nhanh hơn để không bị lag khi hover */
+  button, a, input, select, textarea, [role="button"] {
+    transition-duration: 150ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html,
+    body,
+    body * {
+      transition: none !important;
+    }
+  }
+
   body {
-    @apply bg-slate-50 text-slate-900 antialiased dark:bg-sumi-950 dark:text-slate-100 transition-colors duration-200 selection:bg-sakura-500 selection:text-white;
+    @apply bg-slate-50 text-slate-900 antialiased dark:bg-sumi-950 dark:text-slate-100 selection:bg-sakura-500 selection:text-white;
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
@@ -158,19 +205,23 @@
   letter-spacing: 0.04em;
 }
 
-/* Glassmorphism & Modern Soft Glass */
+/* Glassmorphism & Modern Soft Glass
+   Dùng CSS variable cho màu nền để transition khi đổi theme được mượt hơn.
+   backdrop-filter không transition được → luôn để nguyên giá trị. */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  --glass-bg: 255 255 255;
+  background: rgb(var(--glass-bg) / 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid rgb(226 232 240 / 0.8);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark .glass-panel {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(30, 41, 59, 0.8);
+  --glass-bg: 15 23 42;
+  background: rgb(var(--glass-bg) / 0.85);
+  border: 1px solid rgb(30 41 59 / 0.8);
 }
 
 /* 3D Flip Card for SRS Review */

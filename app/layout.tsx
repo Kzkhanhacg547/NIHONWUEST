@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
+  scripts: [
+    {
+      id: "theme-initializer",
+      dangerouslySetInnerHTML: `(function(){try{var t=localStorage.getItem("nq_theme");var d=document.documentElement;var dark=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(dark){d.classList.add("dark");d.style.colorScheme="dark";}else{d.classList.remove("dark");d.style.colorScheme="light";}}catch(e){}})();`,
+    },
+  ],
 };
 
 // viewportFit: "cover" là bắt buộc để env(safe-area-inset-*) có giá trị, nếu không

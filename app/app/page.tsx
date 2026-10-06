@@ -11,7 +11,7 @@ import { buildEnrichedLeaderboard } from "@/lib/rivalBots";
 import { AppNav } from "@/components/AppNav";
 import { JapanBackdrop } from "@/components/JapanIllustration";
 import {
-  BrushUnderline, Daruma, Icon, JapanStreetScene, ModeArt, PathDeco, ShinkansenStrip, type ModeArtKind,
+  BrushUnderline, Daruma, Icon, ModeArt, PathDeco, ShinkansenStrip, type ModeArtKind,
 } from "@/components/DashboardArt";
 import { ActivityButton } from "./ActivityButton";
 import { buildLearningPath, sanitizeAnswers } from "@/lib/personalization";
@@ -247,7 +247,12 @@ export default async function AppHome() {
                 </section>
 
                 <section className="nqd-focus">
-                  <div className="nqd-focus-bg"><JapanStreetScene /></div>
+                  <div className="nqd-focus-bg" aria-hidden="true">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="nqd-bg-light" src="/dash/light.png" alt="" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="nqd-bg-dark" src="/dash/dark.png" alt="" />
+                  </div>
                   <div className="nqd-focus-top">
                     {isNewLesson && <span className="nqd-new">New</span>}
                     <span className="nqd-pill">BÀI HỌC HÔM NAY</span>
@@ -359,15 +364,15 @@ export default async function AppHome() {
                         </span>
                         <b>
                           <span className="nqd-rank-name">{label}</span>
-                          {row.isBot && <span className="nqd-bot-badge">BOT</span>}
+                          {row.isBot && <span className="nqd-bot-badge"></span>}
                         </b>
                         <em>{row.xp.toLocaleString("vi-VN")} XP</em>
                       </div>
                     );
                   })}
-                  {weeklyList.some((row) => row.isBot) && (
+                  {/*weeklyList.some((row) => row.isBot) && (
                     <p className="nqd-bot-note">Học viên ảo (BOT) do hệ thống tạo để luyện cạnh tranh — không phải người dùng thật.</p>
-                  )}
+                  )*/}
                 </section>
 
                 <section className="nqd-card nqd-side-card">

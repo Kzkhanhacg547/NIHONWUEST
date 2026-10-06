@@ -3,11 +3,11 @@
 import { useState, useRef, useEffect, useCallback, type ReactNode } from "react";
 import { Button, Icon, Modal } from "@/components/ui";
 import {
-  BriefcaseIcon, BulbIcon, ChevronRight, DoubleCheckIcon, HeroScene, KebabIcon,
+  BriefcaseIcon, BulbIcon, ChevronRight, DoubleCheckIcon, KebabIcon,
   SakuraFlower, SendIcon, SparkleIcon, StarIcon, UserIcon, WaveIcon,
 } from "./SenseiDecor";
 import { SenseiSideRail, type RecentLesson } from "./SenseiSideRail";
-import { SenseiAvatar, type AvatarState } from "@/components/SenseiAvatar";
+import { SenseiAvatar, type AvatarEmotion, type AvatarState } from "@/components/SenseiAvatar";
 import { SenseiDailyDungeon } from "@/components/SenseiDailyDungeon";
 import { N3_KAIWA_SCENARIOS, type KaiwaScenario } from "@/lib/n3KaiwaScenarios";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
@@ -120,6 +120,15 @@ function SenseiPortrait({
   return <Seal char={character.seal} className={`${className} text-sm`} />;
 }
 
+/** Bỏ emoji và phần chú thích tiếng Việt trong ngoặc để giọng Nhật không đọc lẫn. */
+function toSpeechText(raw: string): string {
+  const cleaned = raw
+    .replace(/\p{Extended_Pictographic}/gu, "")
+    .replace(/\s*[（(][^()（）]*[)）]\s*$/u, (m) => (/[\u3040-\u30FF\u4E00-\u9FFF]/.test(m) ? m : ""))
+    .trim();
+  return cleaned || raw;
+}
+
 const cardShell =
   "rounded-[2rem] border border-white/80 bg-white/85 shadow-[0_14px_40px_-16px_rgba(244,63,94,0.25)] backdrop-blur dark:border-slate-800 dark:bg-sumi-900/85";
 
@@ -155,6 +164,15 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
   const [loading, setLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [avatarState, setAvatarState] = useState<AvatarState>("IDLE");
+  // Cảm xúc tách riêng khỏi trạng thái nói/nghe, tự về bình thường sau vài giây.
+  const [emotion, setEmotion] = useState<AvatarEmotion>("NEUTRAL");
+  const emotionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const scenarioTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const flashEmotion = useCallback((e: AvatarEmotion, ms = 4500) => {
+    if (emotionTimer.current) clearTimeout(emotionTimer.current);
+    setEmotion(e);
+    if (e !== "NEUTRAL") emotionTimer.current = setTimeout(() => setEmotion("NEUTRAL"), ms);
+  }, []);
   const [characterId, setCharacterId] = useState<SenseiCharacterId>(DEFAULT_SENSEI_ID);
   const character = SENSEI_CHARACTERS[characterId];
   // Giọng đọc + khẩu hình theo giới tính của nhân vật (không dùng giọng mặc định của thiết bị).
@@ -182,6 +200,15 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
 
   useEffect(() => {
     setMounted(true);
+    return () => {
+      if (emotionTimer.current) clearTimeout(emotionTimer.current);
+      if (scenarioTimer.current) clearTimeout(scenarioTimer.current);
+      try {
+        recognitionRef.current?.abort?.();
+      } catch {
+        /* bỏ qua */
+      }
+    };
   }, []);
 
   // Nhớ Sensei người học đã chọn
@@ -295,6 +322,7 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
   useEffect(() => {
     if (!greetOnSwitch.current) return;
     greetOnSwitch.current = false;
+    flashEmotion("HAPPY");
     speakJapanese(character.greeting.ja, character.greeting.reading);
   }, [characterId]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -312,8 +340,10 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
       createdAt: new Date().toISOString(),
     };
     setMessages([firstMsg]);
+    setEmotion("NEUTRAL");
+    if (scenarioTimer.current) clearTimeout(scenarioTimer.current);
     if (autoVoice) {
-      setTimeout(() => speakJapanese(sc.initialMessage, sc.initialFurigana), 300);
+      scenarioTimer.current = setTimeout(() => speakJapanese(sc.initialMessage, sc.initialFurigana), 300);
     }
   };
 
@@ -409,7 +439,9 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
 
     setMessages((prev) => [...prev, userMsg]);
     setLoading(true);
-    setAvatarState("LISTENING");
+    setEmotion("NEUTRAL");
+    voice.cancel();
+    setAvatarState("THINKING");
 
     try {
       const activeKey =
@@ -430,12 +462,12 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
         }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => null);
       if (data?.conversationId) {
         setConversationId(data.conversationId);
       }
-      if (data?.message?.content) {
-        const aiContent = data.message.content;
+      if (res.ok && data?.message?.content) {
+        const aiContent: string = data.message.content;
         const aiMsg: Message = {
           id: data.message.id || `ai_${Date.now()}`,
           role: "assistant",
@@ -445,26 +477,27 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
 
         setMessages((prev) => [...prev, aiMsg]);
         playCorrect();
-        setAvatarState("HAPPY");
-
-        if (autoVoice) {
-          speakJapanese(aiContent);
-        } else {
-          setTimeout(() => setAvatarState("IDLE"), 1200);
-        }
+        setAvatarState("IDLE");
+        flashEmotion("HAPPY");
+        if (autoVoice) speakJapanese(toSpeechText(aiContent));
+      } else {
+        throw new Error(data?.error || `HTTP ${res.status}`);
       }
     } catch {
-      // Fallback
+      // Lỗi mạng / API: báo rõ cho người học thay vì im lặng, Sensei tỏ vẻ lo lắng.
       const fallbackMsg: Message = {
         id: `ai_${Date.now()}`,
         role: "assistant",
-        content: "とてもよく言えました！その調子でどんどん練習していきましょうね。🌸 (Bạn nói rất tốt! Cứ tiếp tục luyện tập như vậy nhé.)",
+        content: "ごめんなさい、うまく聞こえませんでした。もう一度言ってもらえますか？",
+        meaning: "Xin lỗi, cô/thầy chưa nghe rõ. Em nói lại giúp được không? (Kiểm tra kết nối hoặc AI Key rồi thử lại nhé.)",
         createdAt: new Date().toISOString(),
       };
       setMessages((prev) => [...prev, fallbackMsg]);
       setAvatarState("IDLE");
+      flashEmotion("WORRIED", 5000);
     } finally {
       setLoading(false);
+      setAvatarState((st) => (st === "THINKING" ? "IDLE" : st));
     }
   };
 
@@ -530,8 +563,10 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
     ? { ja: "どうぞ、聞いていますよ。", vi: `Mời em nói, ${character.viRef} đang nghe đây.` }
     : isSpeaking
     ? { ja: "よく聞いてくださいね。", vi: "Em nghe kỹ nhé." }
-    : avatarState === "HAPPY"
+    : emotion === "HAPPY"
     ? { ja: "いいですね！その調子！", vi: "Rất tốt! Cứ thế phát huy nhé!" }
+    : emotion === "WORRIED"
+    ? { ja: "もう一度お願いします。", vi: "Em thử lại một lần nữa nhé." }
     : { ja: "今日は何を話しましょうか？", vi: "Hôm nay chúng ta nói về chủ đề gì nhỉ?" };
 
   const focusRing =
@@ -584,37 +619,25 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(280px,320px)_minmax(0,1fr)] lg:items-start xl:grid-cols-[320px_minmax(0,1fr)_300px]">
             {/* ═════════ CỘT TRÁI — SENSEI ═════════ */}
             <section aria-label={character.nameRomaji} className={`overflow-hidden ${cardShell}`}>
-              {/* Ảnh nền + avatar */}
-              <div className="relative h-[290px] overflow-hidden">
-                <HeroScene />
-                <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-bold text-slate-700 shadow-sm">
-                  <span aria-hidden="true" className={`h-2 w-2 rounded-full ${statusDot}`} />
-                  {statusLabel}
+              {/* Avatar chuyển động dựng từ ảnh (ảnh đã có sẵn nền lớp học) */}
+              <div className="relative h-[290px] overflow-hidden bg-rose-50 dark:bg-sumi-800">
+                <SenseiAvatar
+                  state={avatarState}
+                  emotion={emotion}
+                  isSpeaking={isSpeaking}
+                  isListening={isListening}
+                  size={260}
+                  character={character}
+                  viseme={voice.viseme}
+                  className="absolute inset-0"
+                />
+                <span className="absolute left-3 top-3 z-10 inline-flex max-w-[60%] items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-bold text-slate-700 shadow-sm">
+                  <span aria-hidden="true" className={`h-2 w-2 shrink-0 rounded-full ${statusDot}`} />
+                  <span className="truncate" role="status" aria-live="polite">{statusLabel}</span>
                 </span>
                 <span className="absolute right-3 top-3 z-10 rounded-full bg-white/85 px-3 py-1.5 text-[11px] font-extrabold text-rose-600 shadow-sm">
                   JLPT N3
                 </span>
-                <p
-                  lang="ja"
-                  aria-hidden="true"
-                  className="absolute right-4 top-14 z-10 -rotate-6 font-jp text-[15px] font-bold italic leading-tight text-rose-500"
-                >
-                  一緒に
-                  <br />
-                  がんばりましょう！
-                </p>
-                <div className="absolute inset-x-0 bottom-0 flex justify-center">
-                  <div className="w-full max-w-[250px]">
-                    <SenseiAvatar
-                      state={avatarState}
-                      isSpeaking={isSpeaking}
-                      isListening={isListening}
-                      size={260}
-                      character={character}
-                      viseme={voice.viseme}
-                    />
-                  </div>
-                </div>
               </div>
 
               {/* Thân thẻ — mép trên bo cong đè lên ảnh */}

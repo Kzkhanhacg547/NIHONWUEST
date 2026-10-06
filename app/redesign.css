@@ -48,6 +48,8 @@
 .nq-brand-type small{font-size:9px;letter-spacing:.2em;color:var(--nq-muted);font-weight:500}
 .nq-logo-sm .nq-wordmark{font-size:21px}.nq-logo-sm small{font-size:7px}
 .nq-logo-md .nq-wordmark{font-size:27px}
+.dark .nq-wordmark{color:#f1f5f9}
+.dark .nq-brand-type small{color:#94a3b8}
 
 /* Vertical JP + footers */
 .nq-side-jp{position:absolute;z-index:3;top:64px;right:26px;display:flex;flex-direction:column;align-items:center;gap:14px;color:var(--nq-ink)}

@@ -65,6 +65,8 @@ export function ProfileForm({
       theme === "dark" ||
       (theme === "system" && typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches);
     document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    try { localStorage.setItem("nq_theme", theme); } catch {}
   }
 
   return (

@@ -4,6 +4,9 @@ import { useState, useEffect, useRef, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { Card, Button, Badge } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { SafeImg } from "./SafeImg";
+
+type CategoryKey = "restaurant" | "station" | "konbini" | "other";
 
 interface DialogueStep {
   npcSpeaker: string;
@@ -29,6 +32,7 @@ interface ScenarioDef {
   level: string;
   xpReward: number;
   bgGradient: string;
+  category: CategoryKey;
   description: string;
   steps: DialogueStep[];
 }
@@ -37,6 +41,7 @@ const REAL_SCENARIOS: ScenarioDef[] = [
   {
     id: "sc-ramen",
     slug: "ordering-ramen",
+    category: "restaurant",
     title: "Gọi Món Tại Tiệm Ramen Shibuya",
     locationName: "Quán Ramen Ichiran Shibuya, Tokyo",
     level: "N5 Thực Chiến",
@@ -140,6 +145,7 @@ const REAL_SCENARIOS: ScenarioDef[] = [
   {
     id: "sc-station",
     slug: "shinjuku-station",
+    category: "station",
     title: "Hỏi Đường Tại Đại Nhà Ga Shinjuku",
     locationName: "Ga Shinjuku Tuyến Yamanote, Tokyo",
     level: "N5 Thực Chiến",
@@ -202,6 +208,7 @@ const REAL_SCENARIOS: ScenarioDef[] = [
   {
     id: "sc-konbini",
     slug: "konbini-shopping",
+    category: "konbini",
     title: "Mua Sắm Tại Cửa Hàng Tiện Lợi (Konbini)",
     locationName: "Cửa hàng 7-Eleven Akihabara",
     level: "N5 Thực Chiến",
@@ -289,6 +296,7 @@ const REAL_SCENARIOS: ScenarioDef[] = [
   {
     id: "sc-akiba",
     slug: "akihabara-anime",
+    category: "other",
     title: "Mua Sắm Anime & Miễn Thuế Tại Akihabara",
     locationName: "Cửa hàng Figure Akihabara, Tokyo",
     level: "N5 Thực Chiến",
@@ -351,6 +359,7 @@ const REAL_SCENARIOS: ScenarioDef[] = [
   {
     id: "sc-ryokan",
     slug: "hakone-ryokan",
+    category: "other",
     title: "Nhận Phòng Ryokan & Tắm Onsen Tại Hakone",
     locationName: "Lữ quán suối nước nóng Hakone Onsen",
     level: "N5 Thực Chiến",
@@ -405,6 +414,7 @@ const REAL_SCENARIOS: ScenarioDef[] = [
   {
     id: "sc-pharmacy",
     slug: "japanese-pharmacy",
+    category: "other",
     title: "Mua Thuốc Cảm Sốt Tại Hiệu Thuốc Nhật",
     locationName: "Hiệu thuốc Matsumoto Kiyoshi, Tokyo",
     level: "N5 Thực Chiến",
@@ -459,6 +469,7 @@ const REAL_SCENARIOS: ScenarioDef[] = [
   {
     id: "sc-taxi",
     slug: "kyoto-taxi",
+    category: "station",
     title: "Đi Taxi Ngắm Cảnh Tại Cố Đô Kyoto",
     locationName: "Cửa Tây Ga Kyoto",
     level: "N5 Thực Chiến",
@@ -525,8 +536,6 @@ interface ScenarioMeta {
   stepLabels: string[];
   vocab: VocabItem[];
   tip?: string;
-  /** Ảnh nhân vật/khung cảnh đặt trong /public, vd "/survival/ramen.jpg". Không có thì dùng gradient + emoji. */
-  sceneImage?: string;
 }
 
 const DEFAULT_TIP = "Khi gọi món hoặc nhờ giúp đỡ, bạn có thể dùng 「〜をお願いします」 để thể hiện sự lịch sự.";
@@ -535,7 +544,6 @@ const SCENARIO_META: Record<string, ScenarioMeta> = {
   "ordering-ramen": {
     objective: "Gọi món ramen một cách lịch sự và tự nhiên.",
     stepLabels: ["Chào và báo số người", "Chọn món & độ cứng mì", "Nhận món và cảm ơn"],
-    sceneImage: "/survival/ramen.jpg",
     vocab: [
       { ja: "ラーメン", romaji: "ramen", vi: "mì ramen" },
       { ja: "注文", romaji: "chūmon", vi: "gọi món", say: "ちゅうもん" },
@@ -629,6 +637,41 @@ const POLITENESS_TAG: Record<DialogueStep["choices"][0]["politeness"], { label: 
   },
 };
 
+
+
+// ======================== ẢNH (public/images/survival) ========================
+// Ảnh minh họa bài  : /images/survival/lesson/<slug>.png     (khung 16:10, dùng cho thẻ + nền hội thoại)
+// Ảnh nhân vật      : /images/survival/character/<slug>.png  (PNG nền trong suốt, nhân vật đứng, cắt từ đầu tới chân)
+// Chưa có file -> tự động dùng gradient + emoji, không bị vỡ giao diện.
+const IMG_BASE = "/images/survival";
+const lessonImg = (slug: string) => `${IMG_BASE}/lesson/${slug}.png`;
+const characterImg = (slug: string) => `${IMG_BASE}/character/${slug}.png`;
+
+const SCENARIO_ICON: Record<string, string> = {
+  "ordering-ramen": "🍜",
+  "shinjuku-station": "🚉",
+  "konbini-shopping": "🏪",
+  "akihabara-anime": "🎮",
+  "hakone-ryokan": "♨️",
+  "japanese-pharmacy": "💊",
+  "kyoto-taxi": "🚕",
+};
+
+const CATEGORY_TABS: Array<{ key: CategoryKey | "all"; label: string; icon: string }> = [
+  { key: "all", label: "Tất cả", icon: "🔥" },
+  { key: "restaurant", label: "Nhà hàng", icon: "🍜" },
+  { key: "station", label: "Nhà ga", icon: "🚆" },
+  { key: "konbini", label: "Konbini", icon: "🏪" },
+  { key: "other", label: "Khác", icon: "✨" },
+];
+
+function levelBadgeCls(level: string) {
+  if (level.startsWith("N5")) return "bg-rose-600 text-white";
+  if (level.startsWith("N4")) return "bg-emerald-600 text-white";
+  return "bg-sky-600 text-white";
+}
+
+
 type Choice = DialogueStep["choices"][0];
 
 function SpeakerButton({ onClick, label = "Nghe phát âm", className = "" }: { onClick: () => void; label?: string; className?: string }) {
@@ -684,7 +727,7 @@ export function SurvivalClient({
   const [combo, setCombo] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [imgFailed, setImgFailed] = useState(false);
+  const [filter, setFilter] = useState<CategoryKey | "all">("all");
 
   // Speech Recognition (Microphone Voice Input)
   const [isListening, setIsListening] = useState(false);
@@ -759,7 +802,6 @@ export function SurvivalClient({
     setCombo(0);
     setMaxScore(scDef.steps.length * 100);
     setIsCompleted(false);
-    setImgFailed(false);
     speak(scDef.steps[0].npcJapanese);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -806,10 +848,24 @@ export function SurvivalClient({
   const handleVoiceSpoken = (transcript: string) => {
     if (!activeScenario || phase !== "choose") return;
     const step = activeScenario.steps[currentStepIndex];
-    // Tìm đáp án gần nhất bằng cách so khớp ký tự
-    const matched =
-      step.choices.find((c) => c.textJa.includes(transcript) || transcript.includes(c.textJa.slice(0, 3))) ||
-      step.choices[0];
+    const normalizedTranscript = transcript.replace(/\s+/g, "").trim();
+    const matched = step.choices.find((c) => {
+      const normalizedChoice = c.textJa.replace(/\s+/g, "").trim();
+      return (
+        normalizedChoice.includes(normalizedTranscript) ||
+        normalizedTranscript.includes(normalizedChoice.slice(0, 4)) ||
+        normalizedTranscript.includes(normalizedChoice.slice(-4))
+      );
+    });
+
+    if (!matched) {
+      showToast({
+        title: "🎙️ Không nhận diện rõ",
+        description: `"${transcript}" không khớp với đáp án. Vui lòng thử lại hoặc chọn bằng tay.`,
+        type: "error",
+      });
+      return;
+    }
 
     showToast({
       title: `🎙️ Đã nhận diện giọng nói: "${transcript}"`,
@@ -907,52 +963,158 @@ export function SurvivalClient({
 
   // ======================== MÀN DANH SÁCH ========================
   if (!activeScenario) {
+    const visible = REAL_SCENARIOS.filter((s) => filter === "all" || s.category === filter);
+
     return (
       <>
         {hero}
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 pb-20">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {REAL_SCENARIOS.map((scDef) => {
-              const dbMatch = scenarios.find((s) => s.slug === scDef.slug);
-              const isDone = dbMatch?.isCompleted ?? false;
+        <section id="thu-thach" className="mx-auto max-w-[1320px] scroll-mt-24 px-4 pb-24 sm:px-6">
+          {/* Tiêu đề + bộ lọc */}
+          <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-center gap-4">
+              <span
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-rose-500 to-pink-500 text-xl text-white shadow-lg shadow-rose-500/30"
+                aria-hidden
+              >
+                ◎
+              </span>
+              <div>
+                <h2 className="text-2xl font-black text-slate-900 dark:text-white">Chọn thử thách</h2>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Khám phá các tình huống thực tế và chinh phục từng cấp độ!
+                </p>
+              </div>
+            </div>
 
-              return (
-                <Card
-                  key={scDef.id}
-                  hover
-                  className={`flex flex-col justify-between overflow-hidden border-2 transition-all ${
-                    isDone
-                      ? "border-emerald-300 dark:border-emerald-800 bg-emerald-50/20 dark:bg-emerald-950/10"
-                      : "border-slate-200 dark:border-slate-800"
-                  }`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-2.5">
-                      <Badge variant={isDone ? "matcha" : "sakura"}>{isDone ? "✓ Đã thành thục" : scDef.level}</Badge>
-                      <span className="text-xs font-bold text-amber-600 dark:text-amber-400">✨ +{scDef.xpReward} XP</span>
-                    </div>
-                    <h3 className="text-xl font-black text-slate-900 dark:text-white">{scDef.title}</h3>
-                    <p className="text-xs font-semibold text-sakura-600 dark:text-sakura-400 mt-1">📍 {scDef.locationName}</p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-3">{scDef.description}</p>
-                  </div>
-
-                  <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800">
-                    <Button
-                      variant={isDone ? "secondary" : "sakura"}
-                      onClick={() => startScenario(scDef)}
-                      className="w-full justify-center font-bold"
-                    >
-                      {isDone ? "🔄 Luyện lại phản xạ" : "⚔️ Vào cuộc đối thoại"}
-                    </Button>
-                  </div>
-                </Card>
-              );
-            })}
+            <div
+              role="tablist"
+              aria-label="Lọc thử thách"
+              className="flex flex-wrap gap-1.5 rounded-full border border-white/70 bg-white/80 p-1.5 shadow-sm backdrop-blur dark:border-slate-700 dark:bg-sumi-900/80"
+            >
+              {CATEGORY_TABS.map((tab) => {
+                const active = filter === tab.key;
+                return (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    role="tab"
+                    aria-selected={active}
+                    onClick={() => {
+                      playClick();
+                      setFilter(tab.key);
+                    }}
+                    className={`inline-flex min-h-10 items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold transition ${
+                      active
+                        ? "bg-rose-50 text-rose-600 ring-1 ring-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-900"
+                        : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-sumi-800"
+                    }`}
+                  >
+                    <span aria-hidden>{tab.icon}</span>
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
+
+          {visible.length === 0 ? (
+            <p className="rounded-3xl border border-dashed border-slate-300 bg-white/70 py-14 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-sumi-900/60">
+              Chưa có thử thách nào trong mục này.
+            </p>
+          ) : (
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {visible.map((scDef) => {
+                const dbMatch = scenarios.find((s) => s.slug === scDef.slug);
+                const isDone = dbMatch?.isCompleted ?? false;
+                const icon = SCENARIO_ICON[scDef.slug] ?? "🎌";
+
+                return (
+                  <article
+                    key={scDef.id}
+                    className={`group flex flex-col overflow-hidden rounded-3xl bg-white shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-sumi-900 ${
+                      isDone ? "ring-2 ring-rose-500" : "ring-1 ring-slate-200/80 dark:ring-slate-800"
+                    }`}
+                  >
+                    {/* Ảnh minh họa */}
+                    <div className={`relative h-44 overflow-hidden bg-gradient-to-br sm:h-48 ${scDef.bgGradient}`}>
+                      <SafeImg
+                        src={lessonImg(scDef.slug)}
+                        alt={scDef.title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        fallback={
+                          <div className="flex h-full w-full items-center justify-center text-6xl opacity-80" aria-hidden>
+                            {icon}
+                          </div>
+                        }
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" />
+                      <span
+                        className={`absolute left-3 top-3 rounded-full px-3 py-1 text-[11px] font-black shadow ${levelBadgeCls(scDef.level)}`}
+                      >
+                        {scDef.level}
+                      </span>
+                      <span
+                        className={`absolute right-3 top-3 inline-flex items-center gap-1 rounded-full px-3 py-1 text-[11px] font-bold shadow ${
+                          isDone ? "bg-emerald-600 text-white" : "bg-white/90 text-slate-600"
+                        }`}
+                      >
+                        <span aria-hidden>{isDone ? "✓" : "○"}</span>
+                        {isDone ? "Đã hoàn thành" : "Chưa hoàn thành"}
+                      </span>
+                    </div>
+
+                    {/* Nội dung */}
+                    <div className="relative flex flex-1 flex-col px-5 pb-5 pt-9">
+                      <span
+                        className="absolute -top-6 left-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl shadow-lg ring-4 ring-white dark:bg-sumi-900 dark:ring-sumi-900"
+                        aria-hidden
+                      >
+                        {icon}
+                      </span>
+                      <h3 className="text-lg font-black leading-snug text-slate-900 dark:text-white">{scDef.title}</h3>
+                      <p className="mt-1.5 flex items-start gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                        <span aria-hidden>📍</span>
+                        <span>{scDef.locationName}</span>
+                      </p>
+                      <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                        {scDef.description}
+                      </p>
+
+                      <div className="mt-auto flex items-center justify-between gap-3 pt-5">
+                        <span className="inline-flex items-center gap-1.5 text-sm font-black text-slate-800 dark:text-slate-100">
+                          <span className="text-amber-500" aria-hidden>★</span>+{scDef.xpReward} XP
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => startScenario(scDef)}
+                          className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-5 py-2 text-sm font-bold transition ${
+                            isDone
+                              ? "bg-rose-600 text-white shadow-md shadow-rose-500/30 hover:bg-rose-700"
+                              : "border border-rose-300 text-rose-600 hover:bg-rose-50 dark:border-rose-800 dark:text-rose-300 dark:hover:bg-rose-950/40"
+                          }`}
+                        >
+                          {isDone ? "Chơi lại" : "Bắt đầu"} <span aria-hidden>›</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
+
+          <div className="mt-12 flex items-end justify-between" aria-hidden>
+            <div className="flex items-end gap-3">
+              <span className="text-5xl text-rose-500">⛩</span>
+              <span className="pb-1 font-serif text-lg italic text-rose-300">がんばってね！</span>
+            </div>
+            <span className="text-4xl opacity-80">🌸</span>
+          </div>
+        </section>
       </>
     );
   }
+
 
   // ======================== MÀN CHƠI (giống ảnh thiết kế) ========================
   const steps = activeScenario.steps;
@@ -965,12 +1127,11 @@ export function SurvivalClient({
   const scenarioNo = String(REAL_SCENARIOS.findIndex((s) => s.id === activeScenario.id) + 1).padStart(2, "0");
   const finalPercentage = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 100;
   const idealScore = Math.max(...currentStep.choices.map((c) => c.score));
-  const useImage = !!meta.sceneImage && !imgFailed;
   const stepLabel = (i: number) => meta.stepLabels[i] ?? `Bước ${i + 1}`;
   const progressPct = isCompleted ? 100 : Math.round((currentStepIndex / steps.length) * 100 + (phase === "feedback" ? 100 / steps.length : 0));
 
   return (
-    <div className="mx-auto w-full max-w-[1240px] space-y-5 px-3 pb-10 pt-4 sm:px-6 animate-in fade-in duration-200">
+    <div className="mx-auto w-full max-w-[1280px] space-y-5 px-3 pb-10 pt-4 sm:px-6 animate-in fade-in duration-200">
       {/* ── Thanh trên: quay lại / breadcrumb / công cụ ── */}
       <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -1031,18 +1192,19 @@ export function SurvivalClient({
       {/* ── Tiêu đề tình huống + thống kê ── */}
       <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
         <div className="min-w-0">
-          <span className="inline-block rounded-full bg-rose-50 px-3 py-1 text-[11px] font-black tracking-wide text-torii-600 dark:bg-rose-950/50 dark:text-rose-300">
-            ● SURVIVAL MODE · TÌNH HUỐNG THỰC TẾ
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-3 py-1 text-[11px] font-black tracking-wide text-torii-600 dark:bg-rose-950/50 dark:text-rose-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+            SURVIVAL MODE · TÌNH HUỐNG THỰC TẾ
           </span>
-          <h1 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white sm:text-4xl leading-tight">
             {scenarioNo}. {activeScenario.title}
           </h1>
-          <p className="mt-1.5 max-w-2xl text-sm text-slate-600 dark:text-slate-400">{activeScenario.description}</p>
+          <p className="mt-2 max-w-2xl text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{activeScenario.description}</p>
         </div>
 
         <div className="flex flex-wrap items-stretch gap-3">
           {/* Bước */}
-          <div className="rounded-2xl border border-slate-200/80 bg-white/95 px-4 py-3 shadow-sm dark:border-slate-800 dark:bg-sumi-900/90">
+          <div className="flex flex-col rounded-2xl border border-slate-200/80 bg-white/95 px-4 py-3 shadow-sm dark:border-slate-800 dark:bg-sumi-900/90 min-w-[140px]">
             <div className="flex items-center">
               {steps.map((_, i) => {
                 const done = isCompleted || i < currentStepIndex || (i === currentStepIndex && phase === "feedback");
@@ -1058,16 +1220,18 @@ export function SurvivalClient({
                           : "border-slate-300 bg-white dark:border-slate-600 dark:bg-sumi-900"
                       }`}
                     />
-                    <span className={`block h-0.5 w-7 ${done ? "bg-torii-600" : "bg-slate-300 dark:bg-slate-600"}`} />
+                    {i < steps.length - 1 && (
+                      <span className={`block h-0.5 w-6 ${done ? "bg-torii-600" : "bg-slate-300 dark:bg-slate-600"}`} />
+                    )}
                   </span>
                 );
               })}
-              <span className="text-lg leading-none text-torii-600" aria-hidden>⛩</span>
+              <span className="text-lg leading-none text-torii-600 ml-1" aria-hidden>⛩</span>
             </div>
             <p className="mt-2 text-xs font-bold text-torii-600">
               Bước {Math.min(currentStepIndex + 1, steps.length)} / {steps.length}
             </p>
-            <p className="text-sm font-black text-slate-900 dark:text-white">{stepLabel(Math.min(currentStepIndex, steps.length - 1))}</p>
+            <p className="text-sm font-black text-slate-900 dark:text-white leading-tight">{stepLabel(Math.min(currentStepIndex, steps.length - 1))}</p>
           </div>
 
           {/* Combo */}
@@ -1095,28 +1259,37 @@ export function SurvivalClient({
         <div className="min-w-0 space-y-4">
           {/* Cảnh hội thoại */}
           <div
-            className={`relative min-h-[300px] overflow-hidden rounded-3xl bg-gradient-to-br shadow-lg sm:min-h-[380px] lg:min-h-[430px] ${activeScenario.bgGradient}`}
+            className={`relative min-h-[360px] overflow-hidden rounded-3xl bg-gradient-to-br shadow-xl ring-1 ring-white/30 sm:min-h-[420px] lg:min-h-[480px] ${activeScenario.bgGradient}`}
           >
-            {useImage && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={meta.sceneImage}
+            <SafeImg
+              src={lessonImg(activeScenario.slug)}
+              alt={activeScenario.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/10" />
+
+            <span className="absolute left-4 top-4 inline-flex max-w-[70%] items-center gap-1.5 rounded-full border border-white/40 bg-black/30 px-3.5 py-1.5 text-xs font-bold text-white backdrop-blur-md">
+              <span aria-hidden>📍</span>
+              <span className="truncate">{activeScenario.locationName}</span>
+            </span>
+
+            {/* Nhân vật */}
+            <div className="pointer-events-none absolute bottom-0 left-2 flex h-[72%] items-end sm:left-8 sm:h-[88%]">
+              <SafeImg
+                key={activeScenario.slug}
+                src={characterImg(activeScenario.slug)}
                 alt={currentStep.npcSpeaker}
-                onError={() => setImgFailed(true)}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="h-full w-auto max-w-[48vw] object-contain object-bottom drop-shadow-2xl sm:max-w-[40vw] lg:max-w-[360px]"
+                fallback={
+                  <span className="select-none text-[96px] leading-none drop-shadow-2xl sm:text-[150px] lg:text-[210px]" aria-hidden>
+                    {currentStep.npcAvatar}
+                  </span>
+                }
               />
-            )}
-            {!useImage && (
-              <div className="absolute bottom-0 left-4 flex items-end sm:left-14" aria-hidden>
-                <span className="select-none text-[96px] leading-none drop-shadow-2xl sm:text-[150px] lg:text-[210px]">
-                  {currentStep.npcAvatar}
-                </span>
-              </div>
-            )}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+            </div>
 
             {/* Bong bóng thoại */}
-            <div className="absolute inset-x-3 bottom-3 sm:inset-x-auto sm:bottom-auto sm:right-6 sm:top-1/2 sm:w-[48%] sm:-translate-y-1/2">
+            <div className="absolute inset-x-3 bottom-3 sm:inset-x-auto sm:bottom-auto sm:right-6 sm:top-1/2 sm:w-[50%] sm:-translate-y-1/2">
               <div
                 key={`${currentStepIndex}-${phase}`}
                 className="relative rounded-3xl bg-white/95 p-5 shadow-2xl backdrop-blur animate-in fade-in zoom-in-95 duration-200 dark:bg-sumi-900/95 sm:before:absolute sm:before:-left-2 sm:before:top-1/2 sm:before:h-4 sm:before:w-4 sm:before:-translate-y-1/2 sm:before:rotate-45 sm:before:bg-white/95 sm:dark:before:bg-sumi-900/95 sm:before:content-['']"
@@ -1127,7 +1300,7 @@ export function SurvivalClient({
                       <p className="text-sm font-bold text-torii-600 dark:text-rose-300">{currentStep.npcSpeaker}</p>
                       <SpeakerButton onClick={() => speak(currentStep.npcJapanese)} label="Nghe lại câu thoại" />
                     </div>
-                    <p className="jp-text mt-1 text-xl font-black leading-snug text-slate-900 dark:text-white sm:text-2xl">
+                    <p className="jp-text mt-2 text-xl font-black leading-snug text-slate-900 dark:text-white sm:text-2xl">
                       {currentStep.npcJapanese}
                     </p>
                     {showHints && (
@@ -1140,7 +1313,7 @@ export function SurvivalClient({
                 ) : (
                   <>
                     <p className="text-sm font-bold text-torii-600 dark:text-rose-300">{currentStep.npcSpeaker} phản hồi</p>
-                    <p className="mt-1 text-sm font-medium leading-relaxed text-slate-800 dark:text-slate-100">
+                    <p className="mt-2 text-sm font-medium leading-relaxed text-slate-800 dark:text-slate-100">
                       💡 {picked.npcFeedback}
                     </p>
                     <p
@@ -1160,8 +1333,8 @@ export function SurvivalClient({
 
           {/* Khung đáp án */}
           {!isCompleted ? (
-            <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-4 shadow-sm dark:border-slate-800 dark:bg-sumi-900/90 sm:p-5">
-              <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-5 shadow-sm dark:border-slate-800 dark:bg-sumi-900/90 sm:p-6">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
                 <h2 className="flex items-center gap-2 text-lg font-black text-slate-900 dark:text-white">
                   <span className="text-torii-600" aria-hidden>🙋</span> Hãy chọn câu trả lời của bạn:
                 </h2>
@@ -1186,7 +1359,7 @@ export function SurvivalClient({
                 </div>
               </div>
 
-              <div className="space-y-2.5" role="list">
+              <div className="space-y-3" role="list">
                 {currentStep.choices.map((choice, i) => {
                   const tag = POLITENESS_TAG[choice.politeness];
                   const isPicked = picked === choice;
@@ -1211,7 +1384,7 @@ export function SurvivalClient({
                         type="button"
                         disabled={phase !== "choose"}
                         onClick={() => handleChoose(choice)}
-                        className="flex min-w-0 flex-1 flex-col gap-2 p-3 text-left sm:flex-row sm:items-center sm:gap-4"
+                        className="flex min-w-0 flex-1 flex-col gap-2 p-3.5 text-left sm:flex-row sm:items-center sm:gap-4"
                       >
                         <span className="flex min-w-0 flex-1 items-center gap-3">
                           <span
@@ -1248,7 +1421,7 @@ export function SurvivalClient({
               </div>
 
               {/* Gợi ý */}
-              <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-amber-100 bg-amber-50/70 px-4 py-2.5 text-xs dark:border-amber-900/50 dark:bg-amber-950/20">
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-amber-100 bg-amber-50/70 px-4 py-2.5 text-xs dark:border-amber-900/50 dark:bg-amber-950/20">
                 <p className="min-w-0 text-slate-600 dark:text-slate-300">
                   <span className="mr-2 font-black text-amber-600">💡 Gợi ý</span>
                   {meta.tip ?? DEFAULT_TIP}

@@ -207,7 +207,7 @@ export default async function PracticePage() {
             )}
 
             <div className="relative hidden h-32 w-32 justify-self-end md:block lg:h-36 lg:w-36">
-              <Image src="/images/dashboard/maneki-neko.webp" alt="Mèo thần tài Maneki-neko" fill sizes="144px" className="object-contain drop-shadow-lg" />
+              <Image src="/cat_hand.png" alt="Mèo thần tài Maneki-neko" fill sizes="144px" className="object-contain drop-shadow-lg" />
             </div>
           </div>
         </div>

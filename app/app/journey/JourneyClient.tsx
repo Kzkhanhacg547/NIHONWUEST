@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { Card, Button, Badge } from "@/components/ui";
+import { Card, Badge } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
 import { Japanese3DRoom, CityRoomData } from "@/components/Japanese3DRoom";
 import { CITY_DETAILS, CityGourmet } from "./cityData";
@@ -110,6 +110,61 @@ function SakuraFallCanvas({ mode }: { mode: "DAY" | "NIGHT" }) {
 
   return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-10 w-full h-full" />;
 }
+
+
+const IMG_BASE = "/images/journey";
+const ACHIEVEMENTS_HREF = "/app/achievements"; // đổi nếu route huy hiệu của bạn khác
+
+/** Ảnh minh hoạ: /images/journey/<slug>.png -> fallback landmarkImage -> nền gradient */
+function CityImage({ slug, fallback, className }: { slug: string; fallback?: string; className?: string }) {
+  const [src, setSrc] = useState<string | null>(`${IMG_BASE}/${slug}.png`);
+  const [triedFallback, setTriedFallback] = useState(false);
+  if (!src) return <div className={`jy-img-fallback ${className ?? ""}`} />;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt=""
+      loading="lazy"
+      className={className}
+      onError={() => {
+        if (!triedFallback && fallback) {
+          setTriedFallback(true);
+          setSrc(fallback);
+        } else setSrc(null);
+      }}
+    />
+  );
+}
+
+function PinThumb({ slug, tone }: { slug: string; tone: MapTone }) {
+  if (tone === "locked") return <span>🔒</span>;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={`${IMG_BASE}/${slug}.png`} alt="" onError={(e) => ((e.currentTarget.style.display = "none"))} />;
+}
+
+function ShinkansenArt() {
+  return (
+    <svg className="jy-train" viewBox="0 0 420 90" aria-hidden="true">
+      <defs>
+        <linearGradient id="jyTrainBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ffffff" />
+          <stop offset="1" stopColor="#dfe8f5" />
+        </linearGradient>
+      </defs>
+      <path d="M8 62 C8 48 40 34 120 32 L330 32 C372 32 404 46 414 62 L414 66 L8 66 Z" fill="url(#jyTrainBody)" stroke="#b7c6dd" />
+      <rect x="8" y="52" width="406" height="7" fill="#1d4f9c" />
+      <rect x="8" y="59" width="406" height="3" fill="#e8344b" />
+      {Array.from({ length: 13 }).map((_, i) => (
+        <rect key={i} x={150 + i * 17} y="40" width="11" height="9" rx="2" fill="#27407a" />
+      ))}
+      <path d="M338 38 C362 38 386 44 400 54 L338 54 Z" fill="#27407a" />
+      <rect x="0" y="68" width="420" height="3" rx="1.5" fill="#cfd9ea" opacity=".7" />
+    </svg>
+  );
+}
+
+const achIcon = (icon: string) => (icon === "star" ? "⭐" : /^[^\x00-\x7F]{1,4}$/.test(icon) ? icon : "🏅");
 
 export function JourneyClient({
   rows,
@@ -237,70 +292,93 @@ export function JourneyClient({
     setSelectedCity({ row, details: CITY_DETAILS[loc.slug] || CITY_DETAILS.tokyo });
   };
 
+  const activeRow = rows[activeIdx];
+  const cultureCount = rows.reduce((n, r, i) => {
+    if (tones[i] === "locked" || tones[i] === "next") return n;
+    return n + (CITY_DETAILS[r.location.slug]?.culturalArtifacts?.length ?? 0);
+  }, 0);
+
   return (
-    <div className="mx-auto max-w-[1320px] px-3 sm:px-6 py-4 sm:py-6 space-y-6 sm:space-y-8">
-      {/* Bản đồ Nhật Bản 3D */}
-      <JapanMap3D
-        night={atmosphere === "NIGHT"}
-        activeIndex={activeIdx}
-        onSelect={(i) => openCity(rows[i])}
-        pins={rows.map((r, i): MapPin => ({
-          id: r.location.id,
-          slug: r.location.slug,
-          name: r.location.name,
-          tone: tones[i],
-          icon: <span>{tones[i] === "done" ? "✓" : tones[i] === "locked" ? "🔒" : "⛩"}</span>,
-          sub:
-            tones[i] === "done" ? "Đã chinh phục"
-            : tones[i] === "open" ? "Đang du ngoạn"
-            : tones[i] === "next" ? "Sẵn sàng mở"
-            : `${r.location.requirementXp} XP`,
-        }))}
-      >
+    <div className="jy-shell">
+      {/* ============ HERO + BẢN ĐỒ 3D ============ */}
+      <section className={`jy-hero ${atmosphere === "NIGHT" ? "is-night" : ""}`}>
+        <div className="jy-hero-bg" style={{ backgroundImage: `url(${IMG_BASE}/hero.png)` }} />
+        <div className="jy-hero-shade" />
         <SakuraFallCanvas mode={atmosphere} />
-        <div className="jm-hud">
-          <div className="flex items-center gap-2 flex-wrap">
-            <Badge variant="sakura" className="bg-white/20 text-white border-white/30 text-xs font-black">
-              HÀNH TRÌNH KHÁM PHÁ NHẬT BẢN 🗾
-            </Badge>
+
+        <div className="jy-hero-copy">
+          <div className="jy-hero-top">
+            <Badge variant="sakura" className="jy-hero-badge">HÀNH TRÌNH KHÁM PHÁ NHẬT BẢN ✦</Badge>
             <button
+              type="button"
+              className="jy-mode-btn"
               onClick={() => {
                 playClick();
                 setAtmosphere(atmosphere === "DAY" ? "NIGHT" : "DAY");
               }}
-              className="px-3 py-1 rounded-full text-xs font-bold bg-black/30 backdrop-blur-md border border-white/20 text-white hover:bg-black/50 transition"
             >
               {atmosphere === "DAY" ? "🌙 Cảnh đêm" : "☀️ Cảnh ngày"}
             </button>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mt-2">Du Ngoạn Xuyên Nhật Bản</h2>
-          <p className="text-sm opacity-85 leading-relaxed mt-1">
-            Bấm vào ghim trên bản đồ để vào không gian văn hóa của từng thành phố.
-          </p>
-        </div>
-        <div className="jm-stats">
-          <span className="text-xs font-bold">Chặng đã chinh phục</span>
-          <div className="text-3xl font-black">{completedCount} / {rows.length}</div>
-          <div className="w-full bg-white/25 h-2 rounded-full mt-1 overflow-hidden">
-            <div className="bg-amber-400 h-full rounded-full transition-all duration-500" style={{ width: `${(completedCount / Math.max(1, rows.length)) * 100}%` }} />
-          </div>
-        </div>
-      </JapanMap3D>
+          <h2 className="jy-hero-title">
+            Du Ngoạn<br />Xuyên <em>Nhật Bản</em>
+          </h2>
+          <p className="jy-hero-sub">Bước vào bản đồ 3D để khám phá những nét văn hóa đặc sắc của từng thành phố.</p>
 
-      {/* Landmarks Roadmap */}
-      <div className="space-y-5">
-        <div className="flex items-center justify-between">
+          <div className="jy-hero-stats">
+            <div><span className="jy-st-ico">🧭</span><b>{completedCount} / {rows.length}</b><small>Thành phố đã khám phá</small></div>
+            <div><span className="jy-st-ico">⭐</span><b>{cultureCount}</b><small>Văn hóa đặc sắc</small></div>
+            <div><span className="jy-st-ico">🗺️</span><b>∞</b><small>Kiến thức cho bạn</small></div>
+          </div>
+
+          <button type="button" className="jy-hero-cta" onClick={() => activeRow && openCity(activeRow)}>
+            Tiếp tục hành trình <span aria-hidden>→</span>
+          </button>
+        </div>
+
+        {/* Bản đồ 3D giữ nguyên (JapanMap3D) */}
+        <div className="jy-hero-map">
+          <JapanMap3D
+            night={atmosphere === "NIGHT"}
+            activeIndex={activeIdx}
+            onSelect={(i) => openCity(rows[i])}
+            pins={rows.map((r, i): MapPin => ({
+              id: r.location.id,
+              slug: r.location.slug,
+              name: r.location.name,
+              tone: tones[i],
+              icon: <PinThumb slug={r.location.slug} tone={tones[i]} />,
+              sub: tones[i] === "locked" ? `${r.location.requirementXp} XP` : r.location.nameJa,
+            }))}
+          >
+            {null}
+          </JapanMap3D>
+        </div>
+
+        <aside className="jy-hero-tip">
+          <span className="jy-tip-ico">🏯</span>
           <div>
-            <h3 className="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-              <span>🚅</span> Lộ Trình Tuyến Shinkansen Du Lịch
-            </h3>
-            <p className="text-xs text-slate-500">
-              Bấm vào bất kỳ thành phố nào để khám phá không gian văn hóa, món ăn đặc sản và đóng dấu lưu niệm Eki-stamp!
-            </p>
+            <strong>Khám phá văn hoá Nhật Bản</strong>
+            <p>Mỗi thành phố là một câu chuyện, một nền văn hoá và những bài học tiếng Nhật thú vị.</p>
           </div>
-        </div>
+          <span aria-hidden className="jy-tip-arrow">›</span>
+        </aside>
+      </section>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {/* ============ LỘ TRÌNH SHINKANSEN ============ */}
+      <section className="jy-section">
+        <header className="jy-section-head">
+          <div className="jy-section-title">
+            <span className="jy-section-ico">🚅</span>
+            <div>
+              <h3>Lộ Trình Tuyến Shinkansen Du Lịch</h3>
+              <p>Bấm vào bất kỳ thành phố nào để khám phá không gian văn hóa, món ăn đặc sản và đóng dấu lưu niệm Eki-stamp!</p>
+            </div>
+          </div>
+          <ShinkansenArt />
+        </header>
+
+        <div className="jy-features-grid jy-city-grid">
           {rows.map((row, idx) => {
             const loc = row.location;
             const details = CITY_DETAILS[loc.slug] || CITY_DETAILS.tokyo;
@@ -311,121 +389,67 @@ export function JourneyClient({
             const isStamped = stampedCities.has(loc.slug) || isCompleted;
             const progressPct = isCompleted ? 100 : (cityProgressMap[loc.id] ?? row.progress?.progress ?? 0);
 
+            if (isLocked) {
+              return (
+                <button type="button" key={loc.id} onClick={() => openCity(row)} className="jy-card jy-city is-locked">
+                  <CityImage slug={loc.slug} fallback={details.landmarkImage} className="jy-city-bg" />
+                  <span className="jy-chip jy-chip-step">Chặng #{idx + 1}</span>
+                  <div className="jy-lock">
+                    <span className="jy-lock-ico">🔒</span>
+                    <h4>{loc.name} <span className="jp-text">{loc.nameJa}</span></h4>
+                    <strong>Chưa mở khóa</strong>
+                    <p>Hoàn thành các thành phố trước để tiếp tục hành trình. Cần {loc.requirementXp} XP.</p>
+                  </div>
+                </button>
+              );
+            }
+
             return (
-              <div
+              <article
                 key={loc.id}
                 onClick={() => openCity(row)}
-                className={`group rounded-3xl border-2 transition-all duration-300 p-5 relative overflow-hidden flex flex-col justify-between ${
-                  isCompleted
-                    ? "cursor-pointer border-emerald-300 dark:border-emerald-800 bg-emerald-50/20 dark:bg-emerald-950/10 hover:shadow-card-hover hover:-translate-y-1"
-                    : isInProgress
-                    ? "cursor-pointer border-sakura-400 dark:border-sakura-800 bg-sakura-50/20 dark:bg-sakura-950/10 hover:shadow-card-hover hover:-translate-y-1"
-                    : isLocked
-                    ? "cursor-not-allowed opacity-55 border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-sumi-950/60 grayscale"
-                    : "cursor-pointer border-slate-200 dark:border-slate-800 bg-white dark:bg-sumi-900 hover:border-sakura-400 hover:shadow-card-hover hover:-translate-y-1"
-                }`}
+                className={`jy-card jy-city ${isCompleted ? "is-done" : isInProgress ? "is-live" : ""}`}
               >
-                {/* Locked overlay */}
-                {isLocked && (
-                  <div className="absolute inset-0 z-10 rounded-3xl flex flex-col items-center justify-center gap-2 bg-black/30 dark:bg-black/50 backdrop-blur-[2px]">
-                    <div className="w-12 h-12 rounded-full bg-slate-800/80 border-2 border-slate-600 flex items-center justify-center text-2xl shadow-lg">
-                      🔒
-                    </div>
-                    <div className="text-center px-4">
-                      <p className="text-xs font-extrabold text-white drop-shadow">Chưa mở khóa</p>
-                      <p className="text-[11px] text-amber-300 font-bold mt-0.5">Cần {loc.requirementXp} XP</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* 3D Depth Landmark Visual */}
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-black px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-sumi-800 text-slate-600 dark:text-slate-300">
-                      Chặng #{idx + 1}
-                    </span>
-
-                    {isCompleted ? (
-                      <Badge variant="matcha">✓ Đã chinh phục</Badge>
-                    ) : isInProgress ? (
-                      <Badge variant="sakura">Đang du ngoạn</Badge>
-                    ) : (
-                      <Badge variant="slate">🔒 Cần {loc.requirementXp} XP</Badge>
-                    )}
-                  </div>
-
-                  <div className="flex items-center gap-3 my-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-sakura-100 to-amber-100 dark:from-sakura-950/60 dark:to-sumi-800 flex items-center justify-center text-2xl sm:text-3xl shadow-inner group-hover:scale-110 transition-transform shrink-0">
-                      {details.landmark3D}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h4 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white truncate">
-                        {loc.name}{" "}
-                        <span className="jp-text text-sakura-600 dark:text-sakura-400 font-bold ml-0.5">
-                          {loc.nameJa}
-                        </span>
-                      </h4>
-                      <p className="text-xs font-semibold text-slate-400 mt-0.5 truncate">
-                        {details.highlights[0]}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mt-2 leading-relaxed">
-                    {loc.description}
-                  </p>
-
-                  {/* Exploration Progress Bar on Card */}
-                  {!isLocked && (
-                    <div className="mt-3.5 space-y-1 bg-slate-50 dark:bg-sumi-950/60 p-2 rounded-xl border border-slate-100 dark:border-slate-800/80">
-                      <div className="flex items-center justify-between text-[11px] font-bold">
-                        <span className="text-slate-500 dark:text-slate-400">Tiến độ khám phá:</span>
-                        <span className={progressPct >= 100 ? "text-emerald-600 dark:text-emerald-400 font-black" : "text-sakura-600 dark:text-sakura-400 font-bold"}>
-                          {progressPct}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-slate-200 dark:bg-sumi-800 h-1.5 rounded-full overflow-hidden">
-                        <div
-                          className={`h-full rounded-full transition-all duration-500 ${
-                            progressPct >= 100
-                              ? "bg-emerald-500"
-                              : "bg-gradient-to-r from-sakura-500 to-amber-500"
-                          }`}
-                          style={{ width: `${progressPct}%` }}
-                        />
-                      </div>
-                    </div>
-                  )}
+                <div className="jy-city-media">
+                  <CityImage slug={loc.slug} fallback={details.landmarkImage} />
+                  <span className="jy-chip jy-chip-step">Chặng #{idx + 1}</span>
+                  {isCompleted ? (
+                    <span className="jy-chip jy-chip-done">✓ Đã khám phá</span>
+                  ) : isInProgress ? (
+                    <span className="jy-chip jy-chip-live">Đang đi ngay!</span>
+                  ) : null}
                 </div>
 
-                {/* Bottom Info & Tour Button */}
-                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2 flex-wrap text-xs">
-                  <span className="font-bold text-amber-600 dark:text-amber-400 shrink-0">
-                    ✨ +{loc.xpReward} XP
-                  </span>
+                <div className="jy-city-body">
+                  <div className="jy-city-id">
+                    <span className="jy-city-ico">{details.landmark3D}</span>
+                    <div>
+                      <h4>{loc.name} <span className="jp-text">{loc.nameJa}</span></h4>
+                      <small>{details.highlights[0]}</small>
+                    </div>
+                  </div>
+                  <p className="jy-city-desc">{loc.description}</p>
 
-                  {isLocked ? (
-                    <span className="font-bold text-slate-400 flex items-center gap-1 shrink-0">
-                      🔒 Cần {loc.requirementXp} XP
-                    </span>
-                  ) : (
-                    <span className="font-bold text-sakura-600 group-hover:translate-x-1 transition-transform flex items-center gap-1 shrink-0">
-                      Khám phá Không Gian Văn Hóa 🏯 ➔
-                    </span>
-                  )}
+                  <div className="jy-prog">
+                    <div className="jy-prog-row">
+                      <span>Tiến độ khám phá</span>
+                      <b className={progressPct >= 100 ? "is-full" : ""}>{progressPct}%</b>
+                    </div>
+                    <div className="jy-prog-bar"><i style={{ width: `${progressPct}%` }} /></div>
+                  </div>
+
+                  <div className="jy-city-foot">
+                    <span className="jy-xp">⭐ +{loc.xpReward} XP</span>
+                    <span className="jy-go">Khám phá {loc.name} →</span>
+                  </div>
                 </div>
 
-                {/* Red Inkan Stamp Watermark if stamped */}
-                {isStamped && (
-                  <div className="absolute right-3 bottom-3 opacity-15 pointer-events-none select-none border-2 border-red-600 text-red-600 font-jp font-black text-[11px] p-1.5 rounded-xl rotate-12">
-                    {details.stampJa}
-                  </div>
-                )}
-              </div>
+                {isStamped && <div className="jy-stamp">{details.stampJa}</div>}
+              </article>
             );
           })}
         </div>
-      </div>
+      </section>
 
       {/* 3D VIRTUAL EXHIBITION ROOM */}
       {selectedCity && (
@@ -494,40 +518,45 @@ export function JourneyClient({
         />
       )}
 
-      {/* Achievements Showcase Grid */}
-      <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-        <h3 className="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-          <span>🏆</span> Huy Hiệu Thành Tựu Khám Phá ({achievements.length})
-        </h3>
+      {/* ============ HUY HIỆU ============ */}
+      <section className="jy-section jy-ach">
+        <header className="jy-section-head">
+          <div className="jy-section-title">
+            <span className="jy-section-ico">🏆</span>
+            <h3>Huy Hiệu Thành Tựu Khám Phá ({achievements.length})</h3>
+          </div>
+          <button type="button" className="jy-ach-all" onClick={() => router.push(ACHIEVEMENTS_HREF)}>
+            Xem tất cả huy hiệu →
+          </button>
+        </header>
 
-        {achievements.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {achievements.map((ach) => (
-              <Card
-                key={ach.id}
-                className="flex items-center gap-3 p-4 border-amber-200/80 bg-amber-50/20 dark:border-amber-900/40 dark:bg-amber-950/10 shadow-sm"
-              >
-                <div className="w-10 h-10 rounded-2xl bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center text-xl shrink-0">
-                  {ach.achievement.icon === "star" ? "⭐" : "🏅"}
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm text-slate-900 dark:text-white">
-                    {ach.achievement.title}
-                  </h4>
-                  <p className="text-xs text-slate-500 mt-0.5">{ach.achievement.description}</p>
-                  <span className="inline-block text-[10px] font-bold text-amber-600 dark:text-amber-400 mt-1">
-                    +{ach.achievement.xpReward} XP Đã nhận
-                  </span>
-                </div>
-              </Card>
-            ))}
+        <div className="jy-ach-wrap">
+          {achievements.length > 0 ? (
+            <div className="jy-ach-grid">
+              {achievements.map((ach) => (
+                <Card key={ach.id} className="jy-ach-card">
+                  <span className="jy-ach-ico">{achIcon(ach.achievement.icon)}</span>
+                  <div>
+                    <h4>{ach.achievement.title}</h4>
+                    <p>{ach.achievement.description}</p>
+                    <b>★ +{ach.achievement.xpReward} XP</b>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="jy-ach-empty">
+              Chưa mở khóa thành tựu nào. Hãy hoàn thành các chặng Shinkansen để sưu tầm huy hiệu!
+            </div>
+          )}
+
+          <div className="jy-mascot">
+            <p className="jy-bubble">Khám phá thêm nhiều thành phố để nhận huy hiệu đặc biệt nhé!</p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`${IMG_BASE}/mascot.png`} alt="" onError={(e) => (e.currentTarget.style.display = "none")} />
           </div>
-        ) : (
-          <div className="p-6 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 text-center text-slate-500 text-sm">
-            Chưa mở khóa thành tựu nào. Hãy hoàn thành các chặng Shinkansen để sưu tầm huy hiệu!
-          </div>
-        )}
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -37,10 +37,17 @@ export function ModuleLoading({ label = "nội dung" }: { label?: string }) {
       className="mx-auto flex min-h-[60vh] w-full max-w-[1320px] flex-col items-center justify-center gap-6 px-4 py-16"
     >
       <div className="relative">
-        <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-3xl border-2 border-sakura-400/50 bg-sakura-50 shadow-2xl shadow-sakura-500/30 motion-safe:animate-pulse sm:h-28 sm:w-28">
-          <span className="jp-text text-5xl leading-none" aria-hidden="true">
-            日
-          </span>
+        <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-3xl border-2 border-sakura-400/50 bg-white shadow-2xl shadow-sakura-500/30 motion-safe:animate-pulse sm:h-28 sm:w-28">
+          {/* Logo chính thức của dự án: app/icon.png (App Router metadata route, phục vụ tại /icon.png). */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/icon.png"
+            alt="Nihon Quest"
+            width={112}
+            height={112}
+            className="h-full w-full object-contain"
+            draggable={false}
+          />
         </div>
         <div
           className="absolute -inset-3 rounded-[36px] border-2 border-sakura-400/60 motion-safe:animate-spin dark:border-sakura-500/60"

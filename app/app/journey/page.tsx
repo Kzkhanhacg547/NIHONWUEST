@@ -6,6 +6,7 @@ import { AppNav } from "@/components/AppNav";
 import { JourneyClient } from "./JourneyClient";
 import { canUnlockJourney, resolveJourneyStatus } from "@/lib/journey";
 import { JapanBackdrop } from "@/components/JapanIllustration";
+import "./journey.css";
 
 export default async function JourneyPage() {
   const session = await getServerSession(authOptions);

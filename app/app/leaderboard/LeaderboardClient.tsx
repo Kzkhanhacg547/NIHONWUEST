@@ -77,7 +77,7 @@ export function LeaderboardClient({
                   {/* Bots are synthetic. Labelling them here stops the banner
                       from reading as a real person challenging the user. */}
                   <Badge variant="slate" className="shrink-0 text-[9px] uppercase tracking-wider">
-                    Học viên ảo (BOT)
+                    Học viên
                   </Badge>
                   <span className="text-xs text-slate-500 dark:text-slate-400 font-bold">
                     {directRival.bot.displayName || "Học viên ảo"}
@@ -183,7 +183,6 @@ export function LeaderboardClient({
                     </Badge>
                     {user.isBot && (
                       <Badge variant="slate" className="shrink-0 text-[9px] uppercase tracking-wider">
-                        BOT ảo
                       </Badge>
                     )}
                   </div>
@@ -219,13 +218,13 @@ export function LeaderboardClient({
             <p className="text-xs text-slate-500 mt-1">Hãy hoàn thành một bài học hoặc ôn tập để dẫn đầu bảng xếp hạng！🌸</p>
           </Card>
         )}
-
-        {users.some((u) => u.isBot) && (
+  
+        {/*users.some((u) => u.isBot) && (
           <p className="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
             Các học viên có nhãn <b>BOT ảo</b> là nhân vật do hệ thống tạo ra để luyện cạnh tranh —
             không phải người dùng thật. Thứ hạng và XP của họ không phản ánh hoạt động của người thật.
           </p>
-        )}
+        )*/} 
       </div>
     </div>
   );
