@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 import { SpeakButton } from "./LessonSections";
 import { IconArrowRight, IconCheck, IconClose, IconRefresh } from "./LessonIcons";
 
@@ -258,24 +259,27 @@ export function QuizRunner({
           description: data.error ?? "Vui lòng làm lại bài quiz.",
           type: "error",
         });
-      } else if (!passed) {
-        showToast({
-          title: `Chưa đạt ${PASS_PERCENT}% — cần luyện lại`,
-          description: `Đạt ${score}% điểm. Bài học chưa được tính XP.`,
-          type: "info",
-        });
-      } else if (data.isPriorCompleted) {
-        showToast({
-          title: `Luyện tập lại hoàn tất: ${lesson.title}!`,
-          description: `Đạt ${score}% điểm · Điểm cao nhất: ${data.bestScore ?? score}%!`,
-          type: "info",
-        });
       } else {
-        showToast({
-          title: `Hoàn thành bài học: ${lesson.title}!`,
-          description: `Đạt ${score}% điểm · Nhận +${xpAwarded} XP!`,
-          type: "xp",
-        });
+        notifyProgressUpdated();
+        if (!passed) {
+          showToast({
+            title: `Chưa đạt ${PASS_PERCENT}% — cần luyện lại`,
+            description: `Đạt ${score}% điểm. Bài học chưa được tính XP.`,
+            type: "info",
+          });
+        } else if (data.isPriorCompleted) {
+          showToast({
+            title: `Luyện tập lại hoàn tất: ${lesson.title}!`,
+            description: `Đạt ${score}% điểm · Điểm cao nhất: ${data.bestScore ?? score}%!`,
+            type: "info",
+          });
+        } else {
+          showToast({
+            title: `Hoàn thành bài học: ${lesson.title}!`,
+            description: `Đạt ${score}% điểm · Nhận +${xpAwarded} XP!`,
+            type: "xp",
+          });
+        }
       }
       router.refresh();
     } catch {

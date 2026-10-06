@@ -4,9 +4,12 @@
  */
 export type VoiceGuess = "female" | "male" | "unknown";
 
-// Tên giọng tiếng Nhật phổ biến trên macOS/iOS, Windows/Edge, Chrome.
-const FEMALE_RE = /kyoko|o-?ren|haruka|ayumi|sayaka|nanami|mizuki|shiori|aoi|female|女性|google\s*(日本語|japanese)/i;
-const MALE_RE = /otoya|hattori|ichiro|keita|takumi|naoki|daichi|kenji|hiroshi|male|男性/i;
+// Tên giọng tiếng Nhật phổ biến trên macOS/iOS, Windows/Edge, Chrome, Android.
+const FEMALE_RE =
+  /\b(kyoko|haruka|ayumi|sayaka|nanami|mizuki|shiori|aoi|kazuha|tomoka|mayu|asuka|akane|sakura|hana|yui|rin|o-ren|oren|female|女性|nữ)\b|\b(voice\s*2|female|nữ)\b|google\s*(日本語|japanese)|ja-jp-(standard-[ab]|wavenet-[ab]|neural2-b)/i;
+
+const MALE_RE =
+  /\b(otoya|hattori|ichiro|keita|takumi|naoki|daichi|kenji|hiroshi|taro|kazuki|masahiro|osamu|kenta|sho|shin|ryo|daiki|sota|taichi|yuto|kazuya|tomoya|nobu|male|男性|nam)\b|\b(voice\s*1|male|nam)\b|ja-jp-(standard-[cd]|wavenet-[cd]|neural2-[cd])/i;
 
 export function guessVoiceGender(name: string): VoiceGuess {
   // "female" chứa "male": kiểm tra nữ trước.

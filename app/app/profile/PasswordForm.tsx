@@ -1,70 +1,58 @@
 "use client";
 
 import { useState } from "react";
-import { Card } from "@/components/ui";
+import { SectionHead, field, labelCls, btnGhost, panel } from "./parts";
 
 export function PasswordForm() {
-  const [msg, setMsg] = useState("");
+  const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
+  const [show, setShow] = useState(false);
 
   async function change(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setBusy(true);
-    setMsg("");
-    const data = new FormData(e.currentTarget);
-    const res = await fetch("/api/account/password", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        currentPassword: String(data.get("current") || ""),
-        newPassword: String(data.get("next") || ""),
-      }),
-    });
-    const json = await res.json().catch(() => ({}));
-    setBusy(false);
-    setMsg(res.ok ? "Password changed." : (json.error ?? "Change failed."));
-    if (res.ok) e.currentTarget.reset();
+    setMsg(null);
+    const data = new FormData(form);
+    try {
+      const res = await fetch("/api/account/password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ currentPassword: String(data.get("current") || ""), newPassword: String(data.get("next") || "") }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok) { setMsg({ text: "Đã đổi mật khẩu thành công.", ok: true }); form.reset(); }
+      else setMsg({ text: json.error ?? "Đổi mật khẩu thất bại. Vui lòng kiểm tra lại.", ok: false });
+    } catch {
+      setMsg({ text: "Không thể kết nối. Vui lòng thử lại.", ok: false });
+    } finally {
+      setBusy(false);
+    }
   }
 
+  const type = show ? "text" : "password";
+
   return (
-    <Card className="p-6">
-      <h3 className="text-base font-black text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-        <span>🔑</span> Đổi Mật Khẩu
-      </h3>
-      <form onSubmit={change} className="grid gap-3 sm:grid-cols-2">
-        <label className="text-xs font-bold uppercase tracking-wider text-slate-500">
-          Mật khẩu hiện tại
-          <input
-            name="current"
-            type="password"
-            required
-            minLength={8}
-            className="mt-1 w-full min-h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-sumi-900 p-2.5 text-base sm:text-sm text-slate-900 dark:text-white outline-none focus:border-sakura-500"
-            placeholder="••••••••"
-          />
+    <section className={panel}>
+      <SectionHead icon="lock" title="Đổi mật khẩu" desc="Dùng mật khẩu dài ít nhất 8 ký tự để bảo vệ tài khoản." />
+      <form onSubmit={change} className="grid gap-4 px-5 py-6 sm:grid-cols-2 sm:px-6">
+        <label className={labelCls}>Mật khẩu hiện tại
+          <input name="current" type={type} required minLength={8} autoComplete="current-password" className={field} placeholder="••••••••" />
         </label>
-        <label className="text-xs font-bold uppercase tracking-wider text-slate-500">
-          Mật khẩu mới
-          <input
-            name="next"
-            type="password"
-            required
-            minLength={8}
-            className="mt-1 w-full min-h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-sumi-900 p-2.5 text-base sm:text-sm text-slate-900 dark:text-white outline-none focus:border-sakura-500"
-            placeholder="Tối thiểu 8 ký tự"
-          />
+        <label className={labelCls}>Mật khẩu mới
+          <input name="next" type={type} required minLength={8} autoComplete="new-password" className={field} placeholder="Tối thiểu 8 ký tự" />
         </label>
-        <div className="sm:col-span-2 flex items-center gap-4 pt-2">
-          <button
-            disabled={busy}
-            type="submit"
-            className="min-h-11 rounded-xl border border-slate-200 dark:border-slate-700 px-5 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-sumi-800 transition disabled:opacity-50"
-          >
-            {busy ? "Đang đổi..." : "Cập nhật mật khẩu"}
-          </button>
-          {msg ? <p role="status" className="text-sm font-semibold text-sakura-600 dark:text-sakura-400">{msg === "Password changed." ? "Đã đổi mật khẩu thành công! ✅" : (msg === "Change failed." ? "Đổi mật khẩu thất bại. Vui lòng kiểm tra lại." : msg)}</p> : null}
+        <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
+          <label className="flex cursor-pointer items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+            <input type="checkbox" checked={show} onChange={(e) => setShow(e.target.checked)} className="h-4 w-4 rounded border-slate-300 text-rose-600 focus:ring-rose-500" />
+            Hiện mật khẩu
+          </label>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            {msg ? <p role="status" className={`text-sm font-semibold ${msg.ok ? "text-emerald-600 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}>{msg.text}</p> : null}
+            <button type="submit" disabled={busy} className={btnGhost}>{busy ? "Đang đổi..." : "Cập nhật mật khẩu"}</button>
+          </div>
         </div>
       </form>
-    </Card>
+    </section>
   );
 }

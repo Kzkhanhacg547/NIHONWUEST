@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NihonQuestLogo } from "./NihonQuestLogo";
 import { SPEECH_RATES, useSoundAndTheme } from "./SoundAndThemeContext";
+import { useUserProgress } from "./UserProgressContext";
 import { guessVoiceGender, voiceGenderLabel } from "@/lib/voiceGender";
 import { Icon, IconButton, type IconName } from "./ui";
 
@@ -34,9 +35,9 @@ const MORE_ITEMS: NavItem[] = [
   { href: "/app/survival", label: "Survival Mode", glyph: "食", short: "Sinh tồn" },
   { href: "/app/sensei", label: "AI Kaiwa Sensei", glyph: "話", short: "Sensei" },
   { href: "/app/leaderboard", label: "Bảng xếp hạng", glyph: "杯", short: "BXH" },
-  // Reachable only from here. Without it the profile route is orphaned and
-  // there is no logout, no settings and no account deletion in the product.
-  { href: "/app/profile", label: "Hồ sơ & Cài đặt", glyph: "設", short: "Hồ sơ" },
+  { href: "/app/stats", label: "Thống kê học tập", glyph: "計", short: "Thống kê" },
+  { href: "/app/settings", label: "Cài đặt hệ thống", glyph: "設", short: "Cài đặt" },
+  { href: "/app/profile", label: "Hồ sơ cá nhân", glyph: "人", short: "Hồ sơ" },
 ];
 
 function NavGlyph({ item }: { item: NavItem }) {
@@ -106,7 +107,12 @@ export function AppNav({
   /** > 0 thì hiện chấm đỏ trên chuông thông báo */
   unreadCount?: number;
 }) {
-  const displayImage = userImage || avatar;
+  const { progress } = useUserProgress();
+  const effectiveName = progress?.displayName || userName;
+  const effectiveAvatar = progress?.avatar || avatar || userImage;
+  const effectiveLevel = progress?.level ?? userLevel;
+  const effectiveStreak = progress?.currentStreak ?? streak;
+  const effectiveXP = progress?.totalXP ?? userXP;
   const pathname = usePathname();
   const {
     resolvedTheme,
@@ -363,7 +369,7 @@ export function AppNav({
               aria-label="Hồ sơ và cài đặt tài khoản"
               className="hidden rounded-full transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 sm:block"
             >
-              <Avatar name={userName} image={displayImage} />
+              <Avatar name={effectiveName} image={effectiveAvatar} />
             </Link>
 
             <IconButton label="Mở menu" className="h-9 w-9 sm:h-10 sm:w-10 xl:hidden" onClick={() => setMobileOpen(true)}>
@@ -460,9 +466,9 @@ export function AppNav({
                 className="flex min-h-[52px] items-center gap-3 rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-semibold text-slate-700 transition active:scale-[0.98] dark:border-slate-700 dark:text-slate-200 dark:hover:bg-sumi-800"
               >
                 <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center">
-                  <Avatar name={userName} image={displayImage} />
+                  <Avatar name={effectiveName} image={effectiveAvatar} />
                 </span>
-                <span className="flex-1 truncate">{userName || "Hồ sơ & Cài đặt"}</span>
+                <span className="flex-1 truncate">{effectiveName || "Hồ sơ & Cài đặt"}</span>
                 <Icon name="arrow" className="h-3.5 w-3.5 shrink-0 text-slate-400" />
               </Link>
             </div>

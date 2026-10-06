@@ -145,7 +145,7 @@ export const SENSEI_CHARACTERS: Record<SenseiCharacterId, SenseiCharacter> = {
       reading: "こんにちは、れんです。よろしくおねがいします。",
       vi: "Xin chào, thầy là Ren. Rất mong được giúp em.",
     },
-    voice: { pitch: 0.95, fallbackPitch: 0.68, rate: 0.95 },
+    voice: { pitch: 0.88, fallbackPitch: 0.62, rate: 0.92 },
     palette: {
       hair: ["#2f3a4a", "#1f2733", "#11161f"],
       skin: ["#fbe9df", "#f6d5c6"],

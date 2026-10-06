@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { Card, Button, Badge } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 import { SafeImg } from "./SafeImg";
 
 type CategoryKey = "restaurant" | "station" | "konbini" | "other";
@@ -940,6 +941,7 @@ export function SurvivalClient({
             : `Chúc mừng bạn đã hoàn thành hội thoại thực chiến và nhận +${data.xpAwarded} XP!`,
         type: "achievement",
       });
+      notifyProgressUpdated();
       router.refresh();
     } catch {
       showToast({

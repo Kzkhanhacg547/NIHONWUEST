@@ -4,13 +4,20 @@ import { requireUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { checkAnswer, scoreQuiz } from "@/lib/quiz";
 import { todayKeyForUser } from "@/lib/missionDay";
+import { awardUserXP, touchUserActivity } from "@/lib/progress-service";
 
 /** Below this accuracy the lesson stays IN_PROGRESS and pays no XP. */
 const PASS_THRESHOLD = 0.6;
 
 const schema = z.object({
   lessonId: z.string(),
-  answers: z.array(z.object({ exerciseId: z.string(), answer: z.string(), timeSpent: z.number().min(0).max(3600).default(0) })),
+  answers: z.array(
+    z.object({
+      exerciseId: z.string(),
+      answer: z.string(),
+      timeSpent: z.number().min(0).max(3600).default(0),
+    })
+  ),
 });
 
 export async function POST(req: Request) {
@@ -30,16 +37,28 @@ export async function POST(req: Request) {
   });
 
   const byId = new Map(lesson.exercises.map((e) => [e.id, e]));
-  const graded = parsed.data.answers.map((a) => {
-    const ex = byId.get(a.exerciseId);
-    if (!ex) return null;
-    const isCorrect = checkAnswer(ex.correctAnswer, a.answer);
-    return { exerciseId: ex.id, isCorrect, points: ex.points, answer: a.answer, timeSpent: a.timeSpent };
-  }).filter(Boolean) as Array<{ exerciseId: string; isCorrect: boolean; points: number; answer: string; timeSpent: number }>;
+  const graded = parsed.data.answers
+    .map((a) => {
+      const ex = byId.get(a.exerciseId);
+      if (!ex) return null;
+      const isCorrect = checkAnswer(ex.correctAnswer, a.answer);
+      return { exerciseId: ex.id, isCorrect, points: ex.points, answer: a.answer, timeSpent: a.timeSpent };
+    })
+    .filter(Boolean) as Array<{ exerciseId: string; isCorrect: boolean; points: number; answer: string; timeSpent: number }>;
+
+  const now = new Date();
 
   for (const g of graded) {
     await prisma.exerciseAttempt.create({
-      data: { userId, exerciseId: g.exerciseId, lessonId: lesson.id, isCorrect: g.isCorrect, userAnswer: g.answer, timeSpent: g.timeSpent },
+      data: {
+        userId,
+        exerciseId: g.exerciseId,
+        lessonId: lesson.id,
+        isCorrect: g.isCorrect,
+        userAnswer: g.answer,
+        timeSpent: g.timeSpent,
+        createdAt: now,
+      },
     });
 
     if (!g.isCorrect) {
@@ -56,7 +75,7 @@ export async function POST(req: Request) {
           },
         },
         update: {
-          dueAt: new Date(),
+          dueAt: now,
           interval: 0,
           repetitions: 0,
         },
@@ -67,14 +86,12 @@ export async function POST(req: Request) {
           ease: 2.5,
           interval: 0,
           repetitions: 0,
-          dueAt: new Date(),
+          dueAt: now,
         },
       });
     }
   }
 
-  // Reject partial submissions: the client could otherwise submit one correct
-  // answer out of twenty and force accuracy to 100%.
   if (graded.length !== lesson.exercises.length) {
     return NextResponse.json(
       {
@@ -82,7 +99,7 @@ export async function POST(req: Request) {
         expected: lesson.exercises.length,
         received: graded.length,
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
@@ -92,8 +109,6 @@ export async function POST(req: Request) {
   const bestScore = existing?.score != null ? Math.max(existing.score, score) : score;
   const bestAccuracy = existing?.accuracy != null ? Math.max(existing.accuracy, summary.accuracy) : summary.accuracy;
 
-  // A lesson only counts as COMPLETED (and only earns its reward) once it is
-  // actually passed; otherwise it stays resumable.
   const status = passed ? "COMPLETED" : "IN_PROGRESS";
 
   const progress = await prisma.userLessonProgress.upsert({
@@ -102,7 +117,7 @@ export async function POST(req: Request) {
       status,
       score: bestScore,
       accuracy: bestAccuracy,
-      completedAt: passed ? new Date() : null,
+      completedAt: passed ? now : null,
     },
     create: {
       userId,
@@ -110,35 +125,29 @@ export async function POST(req: Request) {
       status,
       score,
       accuracy: summary.accuracy,
-      completedAt: passed ? new Date() : null,
+      completedAt: passed ? now : null,
     },
   });
 
   const isPriorCompleted = existing?.status === "COMPLETED";
   let xpAwarded = 0;
+  let awardResult = null;
 
-  // Idempotent XP: referenceId lessonId means one reward per lesson, and only
-  // a passing attempt can trigger it.
   if (passed) {
-    const priorXp = await prisma.xpTransaction.findFirst({
-      where: { userId, reason: "LESSON_COMPLETE", referenceId: lesson.id },
+    awardResult = await awardUserXP({
+      userId,
+      amount: lesson.xpReward,
+      reason: "LESSON_COMPLETE",
+      referenceId: lesson.id,
+      now,
     });
-    if (!priorXp) {
-      xpAwarded = lesson.xpReward;
-      await prisma.$transaction([
-        prisma.xpTransaction.create({
-          data: { userId, amount: lesson.xpReward, reason: "LESSON_COMPLETE", referenceId: lesson.id },
-        }),
-        prisma.user.update({
-          where: { id: userId },
-          data: { totalXP: { increment: lesson.xpReward }, lastActivityAt: new Date() },
-        }),
-      ]);
-    }
+    xpAwarded = awardResult.xpAwarded;
+  } else {
+    await touchUserActivity(userId, now);
   }
 
   // Update daily mission
-  const todayKey = await todayKeyForUser(userId);
+  const todayKey = await todayKeyForUser(userId, now);
   await prisma.userDailyMission.updateMany({
     where: { userId, date: todayKey, mission: { type: "LESSON" }, status: "IN_PROGRESS" },
     data: { progress: { increment: 1 } },
@@ -153,5 +162,11 @@ export async function POST(req: Request) {
     xpAwarded,
     isPriorCompleted,
     progressId: progress.id,
+    newLevel: awardResult?.level,
+    newTotalXP: awardResult?.totalXP,
+    leveledUp: awardResult?.leveledUp ?? false,
+    newlyUnlockedAchievements: awardResult?.newlyUnlockedAchievements ?? [],
+    newlyUnlockedJourney: awardResult?.newlyUnlockedJourney ?? [],
   });
 }
+

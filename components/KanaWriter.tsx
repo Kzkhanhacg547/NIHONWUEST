@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { KanaStrokeGuide } from "@/components/KanaStrokeGuide";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 import { loadGlyph, type GlyphStroke, type Pt } from "@/lib/kana-strokes";
 import { loadTf, PASS_SCORE, scoreKana, type ScoreResult } from "@/lib/kana-score";
 
@@ -175,6 +176,7 @@ export function KanaWriter({ character, romaji, script, onPass, onClose }: Props
       if (!res.ok) throw new Error(String(res.status));
       setSaved(true);
       playCorrect();
+      notifyProgressUpdated();
       showToast({ title: `Đã học: ${character} (${romaji})!`, description: "Đã thêm vào hàng đợi ôn tập Spaced Repetition!", type: "xp" });
       onPass?.();
     } catch {

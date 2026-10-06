@@ -3,51 +3,54 @@
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Card } from "@/components/ui";
+import { SectionHead, btnGhost, panel } from "./parts";
 
 export function DangerZone() {
   const router = useRouter();
   const [msg, setMsg] = useState("");
+  const [busy, setBusy] = useState(false);
 
   async function logout() {
+    setBusy(true);
     await signOut({ redirect: false });
     router.push("/login");
   }
 
   async function remove() {
     if (!confirm("Bạn có chắc chắn muốn xóa tài khoản và toàn bộ dữ liệu học tập không? Thao tác này không thể hoàn tác.")) return;
-    const res = await fetch("/api/account", { method: "DELETE" });
-    if (!res.ok) {
-      setMsg("Xóa tài khoản thất bại.");
-      return;
+    setBusy(true);
+    setMsg("");
+    try {
+      const res = await fetch("/api/account", { method: "DELETE" });
+      if (!res.ok) throw new Error();
+      await signOut({ redirect: false });
+      router.push("/register");
+    } catch {
+      setBusy(false);
+      setMsg("Xóa tài khoản thất bại. Vui lòng thử lại.");
     }
-    await signOut({ redirect: false });
-    router.push("/register");
   }
 
   return (
-    <Card className="p-6 border-red-200 dark:border-red-950/40">
-      <h3 className="text-base font-black text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-        <span>⚠️</span> Quản Lý Tài Khoản
-      </h3>
-      <p className="text-xs text-slate-500 mb-4">
-        Đăng xuất khỏi phiên hiện tại hoặc xoá vĩnh viễn toàn bộ tiến trình học tập của bạn.
-      </p>
-      <div className="flex flex-wrap gap-3">
-        <button
-          onClick={logout}
-          className="rounded-xl border border-slate-200 dark:border-slate-700 px-5 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-sumi-800 transition"
-        >
-          🚪 Đăng xuất
-        </button>
-        <button
-          onClick={remove}
-          className="rounded-xl bg-red-600 hover:bg-red-700 px-5 py-2.5 text-sm font-bold text-white transition shadow-sm"
-        >
-          🗑️ Xóa tài khoản
-        </button>
+    <section className={`${panel} border-red-200/70 dark:border-red-900/50`}>
+      <SectionHead icon="alert" tone="red" title="Quản lý tài khoản" desc="Đăng xuất hoặc xóa vĩnh viễn tài khoản của bạn." />
+      <div className="divide-y divide-slate-100 dark:divide-slate-800">
+        <div className="flex flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div>
+            <p className="text-sm font-semibold">Đăng xuất</p>
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">Kết thúc phiên đăng nhập trên thiết bị này.</p>
+          </div>
+          <button disabled={busy} onClick={logout} className={`${btnGhost} w-full sm:w-auto`}>Đăng xuất</button>
+        </div>
+        <div className="flex flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div>
+            <p className="text-sm font-semibold text-red-700 dark:text-red-400">Xóa tài khoản</p>
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">Toàn bộ tiến trình học sẽ bị xóa và không thể khôi phục.</p>
+          </div>
+          <button disabled={busy} onClick={remove} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-red-600 px-5 text-sm font-semibold text-white transition hover:bg-red-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-red-500/30 disabled:opacity-50 sm:w-auto">Xóa tài khoản</button>
+        </div>
       </div>
-      {msg ? <p role="alert" className="mt-3 text-sm font-semibold text-red-600">{msg}</p> : null}
-    </Card>
+      {msg ? <p role="alert" className="border-t border-red-100 bg-red-50 px-5 py-3 text-sm font-semibold text-red-600 sm:px-6 dark:border-red-900/50 dark:bg-red-500/10 dark:text-red-300">{msg}</p> : null}
+    </section>
   );
 }

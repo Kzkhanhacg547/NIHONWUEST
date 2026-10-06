@@ -15,10 +15,10 @@ import { Icon } from "@/components/ui";
 
 
 export const SENSEI_ROUTES = {
-  lessons: "/lessons",
-  vocabulary: "/vocabulary",
-  grammar: "/grammar",
-  listening: "/listening",
+  lessons: "/app/practice",
+  vocabulary: "/app/vocabulary",
+  grammar: "/app/grammar",
+  listening: "/app/survival",
 };
 
 export interface RecentLesson {

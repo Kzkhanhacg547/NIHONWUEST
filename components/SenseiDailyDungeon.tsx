@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button, Card, Badge } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 import { kanaToRomaji } from "@/lib/romajiConverter";
 
 interface QuestionOption {
@@ -153,6 +154,7 @@ export function SenseiDailyDungeon() {
       });
       setStreak(data.streak || streak + 1);
       setIsCompletedToday(true);
+      notifyProgressUpdated();
       setPhase("RESULT");
     } catch {
       setSubmitResult({

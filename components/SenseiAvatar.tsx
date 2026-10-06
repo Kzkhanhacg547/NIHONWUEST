@@ -15,6 +15,7 @@ import { DEFAULT_SENSEI_ID, SENSEI_CHARACTERS, type SenseiCharacter } from "@/li
 
 export type AvatarState = "IDLE" | "LISTENING" | "TALKING" | "THINKING" | "HAPPY" | "WORRIED";
 export type AvatarEmotion = "NEUTRAL" | "HAPPY" | "WORRIED";
+export type MouthShape = "closed" | "a" | "i" | "u" | "e" | "o";
 
 interface Props {
   state?: AvatarState;

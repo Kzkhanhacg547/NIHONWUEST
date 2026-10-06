@@ -4,6 +4,7 @@ import { requireUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { nextDueDate, updateSrs, type Grade } from "@/lib/srs";
 import { todayKeyForUser } from "@/lib/missionDay";
+import { touchUserActivity } from "@/lib/progress-service";
 
 const schema = z.object({
   reviewItemId: z.string(),
@@ -39,11 +40,17 @@ export async function POST(req: Request) {
     data: { ease: next.ease, interval: next.interval, repetitions: next.repetitions, dueAt, lastReviewedAt: now },
   });
   await prisma.reviewHistory.create({
-    data: { userId, reviewItemId: item.id, contentType: item.contentType, contentId: item.contentId, grade },
+    data: { userId, reviewItemId: item.id, contentType: item.contentType, contentId: item.contentId, grade, createdAt: now },
   });
+
+  await touchUserActivity(userId, now);
+
+  const today = await todayKeyForUser(userId, now);
   await prisma.userDailyMission.updateMany({
-    where: { userId, date: await todayKeyForUser(userId, now), mission: { type: "REVIEW" } },
+    where: { userId, date: today, mission: { type: "REVIEW" }, status: "IN_PROGRESS" },
     data: { progress: { increment: 1 } },
   });
+
   return NextResponse.json(updated);
 }
+

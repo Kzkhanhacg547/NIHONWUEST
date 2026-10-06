@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { localDateKey } from "@/lib/streak";
+import { awardUserXP, touchUserActivity } from "@/lib/progress-service";
 
 const schema = z.object({
   character: z.string().min(1),
@@ -29,23 +30,16 @@ export async function POST(req: Request) {
     create: { userId, contentType: "KANA", contentId, repetitions: 1, interval: 1, dueAt: new Date(now.getTime() + 86400000), lastReviewedAt: now },
   });
 
-  // Award XP (+10 XP) for mastering kana
-  const priorXp = await prisma.xpTransaction.findFirst({
-    where: { userId, reason: "KANA_PRACTICE", referenceId: contentId },
+  const awardResult = await awardUserXP({
+    userId,
+    amount: 10,
+    reason: "KANA_PRACTICE",
+    referenceId: contentId,
+    now,
   });
 
-  let xpAwarded = 0;
-  if (!priorXp) {
-    xpAwarded = 10;
-    await prisma.xpTransaction.create({
-      data: { userId, amount: 10, reason: "KANA_PRACTICE", referenceId: contentId },
-    });
-    await prisma.user.update({
-      where: { id: userId },
-      data: { totalXP: { increment: 10 }, lastActivityAt: now },
-    });
-  } else {
-    await prisma.user.update({ where: { id: userId }, data: { lastActivityAt: now } });
+  if (awardResult.xpAwarded === 0) {
+    await touchUserActivity(userId, now);
   }
 
   const user = await prisma.user.findUnique({ where: { id: userId }, select: { timezone: true } });
@@ -55,5 +49,15 @@ export async function POST(req: Request) {
     data: { progress: { increment: 1 } },
   });
 
-  return NextResponse.json({ ok: true, contentId, xpAwarded });
+  return NextResponse.json({
+    ok: true,
+    contentId,
+    xpAwarded: awardResult.xpAwarded,
+    newLevel: awardResult.level,
+    newTotalXP: awardResult.totalXP,
+    leveledUp: awardResult.leveledUp,
+    newlyUnlockedAchievements: awardResult.newlyUnlockedAchievements,
+    newlyUnlockedJourney: awardResult.newlyUnlockedJourney,
+  });
 }
+

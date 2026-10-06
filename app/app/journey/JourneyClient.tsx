@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Card, Badge } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 import { Japanese3DRoom, CityRoomData } from "@/components/Japanese3DRoom";
 import { CITY_DETAILS, CityGourmet } from "./cityData";
 import { JapanMap3D, type MapPin, type MapTone } from "@/components/JapanMap3D";
@@ -234,6 +235,7 @@ export function JourneyClient({
       }
 
       await fetch("/api/achievements", { method: "POST" });
+      notifyProgressUpdated();
       router.refresh();
     } catch {
       showToast({ title: "Lỗi kết nối máy chủ.", type: "error" });
@@ -256,6 +258,7 @@ export function JourneyClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ locationId, action: "stamp" }),
       });
+      notifyProgressUpdated();
       router.refresh();
     } catch {}
   };

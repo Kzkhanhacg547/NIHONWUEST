@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import { Modal } from "@/components/ui";
 import { KanaWriter } from "@/components/KanaWriter";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 
 export interface KanaRow {
   id: string;
@@ -91,6 +92,7 @@ export function KanaLab({ kana, practiced }: { kana: KanaRow[]; practiced: strin
       if (res.ok) {
         setDoneSet((prev) => new Set(prev).add(key));
         playCorrect();
+        notifyProgressUpdated();
         showToast({ title: `Đã học: ${k.character} (${k.romaji})!`, description: "Đã thêm vào hàng đợi ôn tập Spaced Repetition!", type: "xp" });
       } else {
         showToast({ title: "Không lưu được ký tự.", description: `Máy chủ trả về lỗi ${res.status}. Vui lòng thử lại.`, type: "error" });

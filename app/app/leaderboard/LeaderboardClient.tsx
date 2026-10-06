@@ -183,6 +183,7 @@ export function LeaderboardClient({
                     </Badge>
                     {user.isBot && (
                       <Badge variant="slate" className="shrink-0 text-[9px] uppercase tracking-wider">
+                        AI
                       </Badge>
                     )}
                   </div>

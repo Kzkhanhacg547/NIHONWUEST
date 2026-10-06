@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 interface KanaCard {
@@ -172,6 +173,7 @@ export function KanaBattleCard() {
       if (!res.ok) throw new Error("Submit failed");
       const data = await res.json();
       setServerResult(data);
+      notifyProgressUpdated();
     } catch {
       setSubmitError("Không thể lưu kết quả. Vui lòng thử lại.");
     } finally {

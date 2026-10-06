@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { localDateKey } from "@/lib/streak";
+import { awardUserXP } from "@/lib/progress-service";
 
 const submitSchema = z.object({
   score: z.number().int().min(0).max(5),
@@ -25,38 +26,23 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Dữ liệu không hợp lệ." }, { status: 400 });
   }
 
-  const { score, answers } = parsed.data;
+  const { score } = parsed.data;
   const now = new Date();
   const user = await prisma.user.findUnique({ where: { id: userId }, select: { timezone: true } });
   const dateKey = localDateKey(now, user?.timezone ?? "UTC");
 
   const referenceId = `dungeon_${dateKey}`;
 
-  // Check if already completed today to prevent duplicate XP exploit
-  const existingXp = await prisma.xpTransaction.findFirst({
-    where: { userId, reason: "SENSEI_DAILY_DUNGEON", referenceId },
+  // Base 50 XP for clearing dungeon + 10 XP per correct answer
+  const xpEarned = 50 + score * 10;
+
+  const awardResult = await awardUserXP({
+    userId,
+    amount: xpEarned,
+    reason: "SENSEI_DAILY_DUNGEON",
+    referenceId,
+    now,
   });
-
-  let xpEarned = 0;
-  if (!existingXp) {
-    // Base 50 XP for clearing dungeon + 10 XP per correct answer
-    xpEarned = 50 + score * 10;
-
-    await prisma.$transaction([
-      prisma.xpTransaction.create({
-        data: {
-          userId,
-          amount: xpEarned,
-          reason: "SENSEI_DAILY_DUNGEON",
-          referenceId,
-        },
-      }),
-      prisma.user.update({
-        where: { id: userId },
-        data: { totalXP: { increment: xpEarned } },
-      }),
-    ]);
-  }
 
   // Update Daily Mission if any KANA or LESSON mission exists
   const missions = await prisma.dailyMission.findMany({
@@ -146,9 +132,12 @@ export async function POST(req: Request) {
       await prisma.userAchievement.create({
         data: { userId, achievementId: achievement.id },
       });
-      await prisma.user.update({
-        where: { id: userId },
-        data: { totalXP: { increment: achievement.xpReward } },
+      await awardUserXP({
+        userId,
+        amount: achievement.xpReward,
+        reason: "ACHIEVEMENT",
+        referenceId: achievement.id,
+        now,
       });
       achievementUnlocked = true;
     }
@@ -156,10 +145,16 @@ export async function POST(req: Request) {
 
   return NextResponse.json({
     success: true,
-    xpEarned,
+    xpEarned: awardResult.xpAwarded,
     score,
-    streak: currentStreak,
-    achievementUnlocked,
-    isFirstCompletionToday: !existingXp,
+    streak: awardResult.streak.currentStreak,
+    achievementUnlocked: achievementUnlocked || awardResult.newlyUnlockedAchievements.length > 0,
+    isFirstCompletionToday: awardResult.xpAwarded > 0,
+    newLevel: awardResult.level,
+    newTotalXP: awardResult.totalXP,
+    leveledUp: awardResult.leveledUp,
+    newlyUnlockedAchievements: awardResult.newlyUnlockedAchievements,
+    newlyUnlockedJourney: awardResult.newlyUnlockedJourney,
   });
 }
+

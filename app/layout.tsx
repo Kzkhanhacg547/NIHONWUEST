@@ -31,12 +31,6 @@ export const metadata: Metadata = {
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
-  scripts: [
-    {
-      id: "theme-initializer",
-      dangerouslySetInnerHTML: `(function(){try{var t=localStorage.getItem("nq_theme");var d=document.documentElement;var dark=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(dark){d.classList.add("dark");d.style.colorScheme="dark";}else{d.classList.remove("dark");d.style.colorScheme="light";}}catch(e){}})();`,
-    },
-  ],
 };
 
 // viewportFit: "cover" là bắt buộc để env(safe-area-inset-*) có giá trị, nếu không
@@ -55,6 +49,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${sans.variable} ${serifJp.variable} max-w-full overflow-x-clip`}
     >
+      <head>
+        <script
+          id="theme-initializer"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("nq_theme");var d=document.documentElement;var dark=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(dark){d.classList.add("dark");d.style.colorScheme="dark";}else{d.classList.remove("dark");d.style.colorScheme="light";}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-[100dvh] font-sans selection:bg-[#d22f27] selection:text-white max-w-full overflow-x-clip">
         <a
           href="#main"

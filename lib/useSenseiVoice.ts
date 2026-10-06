@@ -12,6 +12,7 @@ import {
   type Timeline,
   type Viseme,
 } from "@/lib/senseiLipSync";
+import { playSenseiAudio, type WebAudioPlayback } from "@/lib/senseiWebAudio";
 
 export interface JaVoice {
   uri: string;
@@ -21,7 +22,17 @@ export interface JaVoice {
   local: boolean;
 }
 
-const isJa = (v: SpeechSynthesisVoice) => /^ja/i.test(v.lang.replace("_", "-"));
+const isJa = (v: SpeechSynthesisVoice) => {
+  const lang = (v.lang || "").toLowerCase().replace("_", "-");
+  const name = (v.name || "").toLowerCase();
+  return (
+    lang.startsWith("ja") ||
+    lang.includes("jp") ||
+    name.includes("japanese") ||
+    name.includes("日本語") ||
+    name.includes("japan")
+  );
+};
 
 function scoreVoice(v: SpeechSynthesisVoice) {
   let s = 0;
@@ -59,29 +70,36 @@ export function useSenseiVoice(character: SenseiCharacter) {
   const rateRef = useRef(speechRate);
   rateRef.current = speechRate;
   const [raw, setRaw] = useState<SpeechSynthesisVoice[]>([]);
-  const [override, setOverride] = useState<string | null>(null);
+  const [overrideMap, setOverrideMap] = useState<Record<SenseiGender, string | null>>(() => {
+    if (typeof window === "undefined") return { female: null, male: null };
+    try {
+      return {
+        female: localStorage.getItem(storeKey("female")),
+        male: localStorage.getItem(storeKey("male")),
+      };
+    } catch {
+      return { female: null, male: null };
+    }
+  });
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [viseme, setViseme] = useState<Viseme>("closed");
   const supported = typeof window !== "undefined" && "speechSynthesis" in window;
+
+  const override = overrideMap[gender];
 
   // Danh sách giọng nạp bất đồng bộ (getVoices() rỗng ở lần đầu trên Chrome).
   useEffect(() => {
     if (!supported) return;
     const synth = window.speechSynthesis;
-    const load = () => setRaw(synth.getVoices().filter(isJa));
+    const load = () => {
+      const all = synth.getVoices();
+      const ja = all.filter(isJa);
+      setRaw(ja.length > 0 ? ja : all);
+    };
     load();
     synth.addEventListener("voiceschanged", load);
     return () => synth.removeEventListener("voiceschanged", load);
   }, [supported]);
-
-  // Giọng người học đã chọn tay cho từng giới tính.
-  useEffect(() => {
-    try {
-      setOverride(localStorage.getItem(storeKey(gender)));
-    } catch {
-      setOverride(null);
-    }
-  }, [gender]);
 
   const voices: JaVoice[] = useMemo(
     () => raw.map((v) => ({ uri: v.voiceURI, name: v.name, guess: guessVoiceGender(v.name), local: v.localService })),
@@ -98,30 +116,42 @@ export function useSenseiVoice(character: SenseiCharacter) {
   /**
    * Thứ tự chọn giọng:
    * 1. Giọng người học chọn riêng cho Sensei (nhớ theo giới tính).
-   * 2. Giọng chung ở navbar, nếu không trái giới tính với nhân vật.
-   * 3. Tự chọn theo giới tính; nam mà máy không có giọng nam thì hạ tông giọng sẵn có.
+   * 2. Giọng nam/nữ khớp chính xác theo giới tính của nhân vật.
+   * 3. Giọng chung ở navbar, nếu cùng giới tính với nhân vật.
+   * 4. Giọng tiếng Nhật tốt nhất sẵn có + hạ/nâng tông pitch tự động.
    */
   const picked = useMemo(() => {
     type Pick = { voice: SpeechSynthesisVoice | null; exact: boolean; source: VoiceSource };
     if (!raw.length) return { voice: null, exact: false, source: "auto" } as Pick;
 
-    const manual = override ? raw.find((v) => v.voiceURI === override) : undefined;
+    // 1. Lựa chọn thủ công riêng cho giới tính này
+    const manual = override ? raw.find((v) => v.voiceURI === override || v.name === override) : undefined;
     if (manual) {
       const isExact = guessVoiceGender(manual.name) === gender;
       return { voice: manual, exact: isExact, source: "manual" } as Pick;
     }
 
+    const byScore = (a: SpeechSynthesisVoice, b: SpeechSynthesisVoice) => scoreVoice(b) - scoreVoice(a);
+
+    // 2. Tìm giọng chuẩn khớp giới tính
+    const match = raw.filter((v) => guessVoiceGender(v.name) === gender).sort(byScore);
+    if (match.length) return { voice: match[0], exact: true, source: "auto" } as Pick;
+
+    // 3. Nếu là nhân vật Nam, thử các giọng không bị nhận diện cứng là Nữ
+    if (gender === "male") {
+      const nonFemale = raw.filter((v) => guessVoiceGender(v.name) !== "female").sort(byScore);
+      if (nonFemale.length) return { voice: nonFemale[0], exact: false, source: "auto" } as Pick;
+    }
+
+    // 4. Giọng chung ở navbar nếu cùng giới tính
     if (globalVoice && globalGender === gender) {
       return { voice: globalVoice, exact: true, source: "global" } as Pick;
     }
 
-    const byScore = (a: SpeechSynthesisVoice, b: SpeechSynthesisVoice) => scoreVoice(b) - scoreVoice(a);
-    const match = raw.filter((v) => guessVoiceGender(v.name) === gender).sort(byScore);
-    if (match.length) return { voice: match[0], exact: true, source: "auto" } as Pick;
-
+    // 5. Fallback giọng tiếng Nhật tốt nhất với pitch bù theo giới tính
     const chosen = [...raw].sort(byScore)[0];
-    const isExact = guessVoiceGender(chosen.name) === gender;
-    return { voice: chosen, exact: isExact, source: "auto" } as Pick;
+    const isExact = chosen ? guessVoiceGender(chosen.name) === gender : false;
+    return { voice: chosen ?? null, exact: isExact, source: "auto" } as Pick;
   }, [raw, override, gender, globalVoice, globalGender]);
 
   // ── Trạng thái chạy, giữ trong ref để speak() ổn định và không re-render ──
@@ -135,6 +165,8 @@ export function useSenseiVoice(character: SenseiCharacter) {
   const cur = useRef<{ tl: Timeline; start: number; t0: number; ms: number } | null>(null);
   const msPerMora = useRef(BASE_MS_PER_MORA);
   const shown = useRef<Viseme>("closed");
+
+  const activeAudioPlayback = useRef<WebAudioPlayback | null>(null);
 
   const show = useCallback((v: Viseme) => {
     if (shown.current !== v) {
@@ -151,6 +183,10 @@ export function useSenseiVoice(character: SenseiCharacter) {
 
   const cancel = useCallback(() => {
     runId.current++;
+    if (activeAudioPlayback.current) {
+      activeAudioPlayback.current.stop();
+      activeAudioPlayback.current = null;
+    }
     stopLoop();
     setIsSpeaking(false);
     if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel();
@@ -158,8 +194,8 @@ export function useSenseiVoice(character: SenseiCharacter) {
 
   const speak = useCallback(
     (rawText: string, opts: SpeakOptions = {}) => {
-      if (typeof window === "undefined" || !("speechSynthesis" in window) || !rawText) return;
-      const synth = window.speechSynthesis;
+      if (typeof window === "undefined" || !rawText) return;
+      const synth = typeof window !== "undefined" && "speechSynthesis" in window ? window.speechSynthesis : null;
 
       const jp = rawText.match(/[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF\u3000-\u303F々ー！？!?]+/g);
       const text = jp ? jp.join(" ") : rawText;
@@ -173,13 +209,43 @@ export function useSenseiVoice(character: SenseiCharacter) {
         readings = r.length === sentences.length ? r : [];
       }
 
-      const wasBusy = synth.speaking || synth.pending;
+      const wasBusy = synth ? (synth.speaking || synth.pending) : false;
       cancel();
       const id = ++runId.current;
       const { voice, exact } = pickedRef.current;
       const ch = charRef.current;
       const pitch = exact ? ch.voice.pitch : ch.voice.fallbackPitch;
       const rate = opts.rate ?? rateRef.current;
+
+      // Nếu là giọng Nam và thiết bị không có giọng nam tự nhiên: phát qua Web Audio DSP Engine
+      if (ch.gender === "male" && !exact) {
+        setIsSpeaking(true);
+        playSenseiAudio(
+          text,
+          "male",
+          () => {
+            if (id === runId.current) setIsSpeaking(true);
+          },
+          (viseme) => {
+            if (id === runId.current) show(viseme);
+          },
+          () => {
+            if (id === runId.current) {
+              setIsSpeaking(false);
+              show("closed");
+            }
+          }
+        ).then((playback) => {
+          if (id === runId.current && playback) {
+            activeAudioPlayback.current = playback;
+          } else if (id === runId.current && !playback && synth) {
+            run();
+          }
+        }).catch(() => {
+          if (id === runId.current && synth) run();
+        });
+        return;
+      }
 
       const begin = (i: number) => {
         const tl = buildTimeline(sentences[i], readings[i]);
@@ -210,7 +276,7 @@ export function useSenseiVoice(character: SenseiCharacter) {
 
       const started = new Set<number>();
       const run = () => {
-        if (id !== runId.current) return;
+        if (id !== runId.current || !synth) return;
         sentences.forEach((s, i) => {
           const u = new SpeechSynthesisUtterance(s);
           u.lang = "ja-JP";
@@ -256,7 +322,7 @@ export function useSenseiVoice(character: SenseiCharacter) {
 
   const setVoiceURI = useCallback(
     (uri: string | null) => {
-      setOverride(uri);
+      setOverrideMap((prev) => ({ ...prev, [gender]: uri }));
       try {
         if (uri) localStorage.setItem(storeKey(gender), uri);
         else localStorage.removeItem(storeKey(gender));

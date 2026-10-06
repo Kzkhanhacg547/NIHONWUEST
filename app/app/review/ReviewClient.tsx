@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button, Card, EmptyState, Icon, Modal, type IconName } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 import { type EnrichedReviewItem } from "@/lib/review/resolveReviewItem";
 import { updateSrs } from "@/lib/srs";
 
@@ -262,6 +263,7 @@ export function ReviewClient({ initial, backgrounds = [] }: { initial: EnrichedR
                   : "Phần thưởng hôm nay đã được nhận. Tiếp tục ôn tập để giữ vững trí nhớ!",
               type: "achievement",
             });
+            notifyProgressUpdated();
             router.refresh();
           } else {
             setCurrentIndex((prev) => (prev >= nextItems.length ? 0 : prev));

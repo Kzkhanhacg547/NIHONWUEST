@@ -308,9 +308,10 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
   useEffect(() => {
     const prev = lastGlobalURI.current;
     lastGlobalURI.current = speechVoiceURI;
-    const userChanged = prev !== null && prev !== speechVoiceURI;
+    const userChanged = prev !== null && prev !== "" && prev !== speechVoiceURI;
     const initialDerive = !hasSavedCharacter.current && !derivedFromGlobal.current;
     if (globalGender === "unknown" || (!userChanged && !initialDerive)) return;
+    if (hasSavedCharacter.current && !userChanged) return;
     derivedFromGlobal.current = true;
     if (globalGender === character.gender) return;
     const target = Object.values(SENSEI_CHARACTERS).find((c) => c.gender === globalGender);

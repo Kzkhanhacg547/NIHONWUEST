@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge, Button, Card, EmptyState, Icon, IconButton, Modal, SelectField } from "@/components/ui";
 import { useSoundAndTheme } from "@/components/SoundAndThemeContext";
+import { notifyProgressUpdated } from "@/components/UserProgressContext";
 import { Sakura } from "./Sakura";
 
 /* ============================== TYPES ============================== */
@@ -1037,6 +1038,7 @@ export function VocabKanjiClient({
       if (res.ok) {
         playCorrect();
         setSavedSet((prev) => new Set(prev).add(contentId));
+        notifyProgressUpdated();
         showToast({
           title: `Đã lưu thẻ Flashcard: ${name}! 🎴`,
           description: "Mục này đã được đưa vào hàng đợi ôn tập SRS!",

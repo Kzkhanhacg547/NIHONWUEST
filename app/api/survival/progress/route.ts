@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { calculateLevel } from "@/lib/level";
 import { todayKeyForUser } from "@/lib/missionDay";
+import { awardUserXP } from "@/lib/progress-service";
 
 const schema = z.object({
   scenarioId: z.string().min(1),
@@ -35,24 +35,13 @@ export async function POST(req: Request) {
     create: { userId, scenarioId: scenario.id, status: "COMPLETED", completedAt: now },
   });
 
-  await prisma.xpTransaction.create({
-    data: {
-      userId,
-      amount: scenario.xpReward,
-      reason: "SCENARIO_COMPLETE",
-      referenceId: scenario.id,
-    },
+  const awardResult = await awardUserXP({
+    userId,
+    amount: scenario.xpReward,
+    reason: "SCENARIO_COMPLETE",
+    referenceId: scenario.id,
+    now,
   });
-
-  const user = await prisma.user.findUnique({ where: { id: userId } });
-  if (user) {
-    const newXP = user.totalXP + scenario.xpReward;
-    const { level } = calculateLevel(newXP);
-    await prisma.user.update({
-      where: { id: userId },
-      data: { totalXP: newXP, level, lastActivityAt: now },
-    });
-  }
 
   // Update daily mission if applicable
   const todayKey = await todayKeyForUser(userId, now);
@@ -61,5 +50,14 @@ export async function POST(req: Request) {
     data: { progress: { increment: 1 } },
   });
 
-  return NextResponse.json({ ok: true, xpAwarded: scenario.xpReward });
+  return NextResponse.json({
+    ok: true,
+    xpAwarded: awardResult.xpAwarded,
+    newLevel: awardResult.level,
+    newTotalXP: awardResult.totalXP,
+    leveledUp: awardResult.leveledUp,
+    newlyUnlockedAchievements: awardResult.newlyUnlockedAchievements,
+    newlyUnlockedJourney: awardResult.newlyUnlockedJourney,
+  });
 }
+

@@ -4,6 +4,7 @@ import { requireUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { updateSrs, nextDueDate, type Grade } from "@/lib/srs";
 import { localDateKey } from "@/lib/streak";
+import { awardUserXP, touchUserActivity } from "@/lib/progress-service";
 
 const schema = z.object({
   results: z.array(
@@ -44,10 +45,8 @@ export async function POST(req: Request) {
       maxCombo = Math.max(maxCombo, currentCombo);
       correctCount++;
       const baseXP = 10;
-      // Speed bonus: under 1.5s → +5 XP
       const speedBonus = r.timeMs < 1500 ? 5 : 0;
       const effectiveBase = baseXP + speedBonus;
-      // Combo multiplier: x2 khi combo >= 5
       const multiplier = currentCombo >= 5 ? 2 : 1;
       const earned = effectiveBase * multiplier;
       totalXP += earned;
@@ -79,32 +78,32 @@ export async function POST(req: Request) {
         data: { ease: next.ease, interval: next.interval, repetitions: next.repetitions, dueAt, lastReviewedAt: now },
       });
       await prisma.reviewHistory.create({
-        data: { userId, reviewItemId: existing.id, contentType: "KANA", contentId, grade },
+        data: { userId, reviewItemId: existing.id, contentType: "KANA", contentId, grade, createdAt: now },
       });
     } else {
-      // Create new ReviewItem
       const next = updateSrs({ ease: 2.5, interval: 0, repetitions: 0 }, grade);
       const dueAt = next.dueInDays <= 0 ? now : nextDueDate(now, next.dueInDays);
       const newItem = await prisma.reviewItem.create({
-        data: { userId, contentType: "KANA", contentId, ease: next.ease, interval: next.interval, repetitions: next.repetitions, dueAt, lastReviewedAt: now },
+        data: { userId, contentType: "KANA", contentId, ease: next.ease, interval: next.interval, repetitions: next.repetitions, dueAt, lastReviewedAt: now, createdAt: now },
       });
       await prisma.reviewHistory.create({
-        data: { userId, reviewItemId: newItem.id, contentType: "KANA", contentId, grade },
+        data: { userId, reviewItemId: newItem.id, contentType: "KANA", contentId, grade, createdAt: now },
       });
     }
   }
 
   // --- Award XP ---
+  let awardResult = null;
   if (totalXP > 0) {
-    await prisma.xpTransaction.create({
-      data: { userId, amount: totalXP, reason: "KANA_BATTLE", referenceId: `battle_${now.getTime()}` },
-    });
-    await prisma.user.update({
-      where: { id: userId },
-      data: { totalXP: { increment: totalXP }, lastActivityAt: now },
+    awardResult = await awardUserXP({
+      userId,
+      amount: totalXP,
+      reason: "KANA_BATTLE",
+      referenceId: `battle_${now.getTime()}`,
+      now,
     });
   } else {
-    await prisma.user.update({ where: { id: userId }, data: { lastActivityAt: now } });
+    await touchUserActivity(userId, now);
   }
 
   // --- Update daily missions (KANA type) ---
@@ -121,5 +120,11 @@ export async function POST(req: Request) {
     totalCount: results.length,
     maxCombo,
     xpBreakdown,
+    newLevel: awardResult?.level,
+    newTotalXP: awardResult?.totalXP,
+    leveledUp: awardResult?.leveledUp ?? false,
+    newlyUnlockedAchievements: awardResult?.newlyUnlockedAchievements ?? [],
+    newlyUnlockedJourney: awardResult?.newlyUnlockedJourney ?? [],
   });
 }
+
