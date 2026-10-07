@@ -41,6 +41,10 @@ export function getBaseUrl(req?: Request | NextRequest | null): string {
   if (process.env.NEXTAUTH_URL) {
     return process.env.NEXTAUTH_URL.replace(/\/$/, "");
   }
+  if (process.env.URL) {
+    const netlifyUrl = process.env.URL.replace(/\/$/, "");
+    return netlifyUrl.startsWith("http") ? netlifyUrl : `https://${netlifyUrl}`;
+  }
   if (process.env.VERCEL_URL) {
     const vercelUrl = process.env.VERCEL_URL.replace(/\/$/, "");
     return vercelUrl.startsWith("http") ? vercelUrl : `https://${vercelUrl}`;
