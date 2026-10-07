@@ -132,7 +132,9 @@ export function JapanScenicPanel({
         {Array.from({ length: 22 }).map((_, i) => {
           const x = 18 + i * 19.2;
           const y = 58 - Math.sin(i * 0.9) * 22;
-          return <circle key={i} cx={x} cy={y} r={6 + (i % 3)} fill={i % 2 ? "#ef7778" : "#e64f53"} opacity=".93" />;
+          const cx = parseFloat(x.toFixed(3));
+          const cy = parseFloat(y.toFixed(3));
+          return <circle key={i} cx={cx} cy={cy} r={6 + (i % 3)} fill={i % 2 ? "#ef7778" : "#e64f53"} opacity=".93" />;
         })}
       </svg>
       {showLabel && (
@@ -266,9 +268,11 @@ export function JapanHeroScene({ className = "" }: { className?: string }) {
         <g stroke="#352a25" strokeWidth="3.5" strokeLinecap="round" fill="none">
           <path d="M0 40C80 62 120 30 190 14C250 0 300 -4 350 -16" />
         </g>
-        {Array.from({ length: 16 }).map((_, i) => (
-          <circle key={i} cx={14 + i * 20} cy={34 - Math.sin(i * 0.9) * 18} r={6 + (i % 3)} fill={i % 2 ? "#ef7778" : "#e64f53"} opacity=".92" />
-        ))}
+        {Array.from({ length: 16 }).map((_, i) => {
+          const cx = 14 + i * 20;
+          const cy = parseFloat((34 - Math.sin(i * 0.9) * 18).toFixed(3));
+          return <circle key={i} cx={cx} cy={cy} r={6 + (i % 3)} fill={i % 2 ? "#ef7778" : "#e64f53"} opacity=".92" />;
+        })}
       </svg>
     </div>
   );

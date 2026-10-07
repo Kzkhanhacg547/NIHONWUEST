@@ -1235,7 +1235,6 @@ export const VOCABULARY_N3: SeedVocab[] = [
     "exampleMeaning": "Khi đến thăm xin vui lòng liên lạc trước.",
     "tags": "Công việc"
   },
-
   {
     "word": "解決する",
     "kana": "かいけつする",
@@ -1378,583 +1377,1164 @@ export const VOCABULARY_N3: SeedVocab[] = [
     "jlptLevel": "N3",
     "exampleJapanese": "彼の努力は高く評価されています。",
     "exampleRomaji": "Kare no doryoku wa takaku hyōka sarete imasu.",
-    "exampleMeaning": "Nỗ lực của anh ấy được đánh giá rất cao.",
-    "tags": "Công việc"
+    "exampleMeaning": "Nỗ lực của anh ấy được đánh giá rất cao."
   },
   {
-    "word": "提案する",
-    "kana": "ていあんする",
-    "kanji": "提案する",
-    "romaji": "teian suru",
-    "meaning": "Đề xuất, kiến nghị",
-    "partOfSpeech": "verb",
+    "word": "愛する",
+    "kana": "あいする",
+    "romaji": "aisuru",
+    "meaning": "Yêu thương",
     "jlptLevel": "N3",
-    "exampleJapanese": "新しい業務改善プランを提案しました。",
-    "exampleRomaji": "Atarashii gyoumu kaizen puran o teian shimashita.",
-    "exampleMeaning": "Tôi đã đề xuất kế hoạch cải tiến công việc mới.",
-    "tags": "Công việc"
+    "category": "verb"
   },
   {
-    "word": "交渉する",
-    "kana": "こうしょうする",
-    "kanji": "交渉する",
-    "romaji": "koushou suru",
-    "meaning": "Đàm phán, thương lượng",
-    "partOfSpeech": "verb",
+    "word": "愛情",
+    "kana": "あいじょう",
+    "romaji": "aijou",
+    "meaning": "Tình yêu thương",
     "jlptLevel": "N3",
-    "exampleJapanese": "取引先と prices について交渉しています。",
-    "exampleRomaji": "Torihikisaki to kakaku ni tsuite koushou shite imasu.",
-    "exampleMeaning": "Tôi đang đàm phán với đối tác về giá cả.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "経営する",
-    "kana": "けいえいする",
-    "kanji": "経営する",
-    "romaji": "keiei suru",
-    "meaning": "Kinh doanh, quản lý doanh nghiệp",
-    "partOfSpeech": "verb",
+    "word": "合図",
+    "kana": "あいず",
+    "romaji": "aizu",
+    "meaning": "Tín hiệu, dấu hiệu",
     "jlptLevel": "N3",
-    "exampleJapanese": "父はレストランを経営しています。",
-    "exampleRomaji": "Chichi wa resutoran o keiei shite imasu.",
-    "exampleMeaning": "Bố tôi kinh doanh một nhà hàng.",
-    "tags": "Kinh tế"
+    "category": "noun"
   },
   {
-    "word": "開発する",
-    "kana": "かいはつする",
-    "kanji": "開発する",
-    "romaji": "kaihatsu suru",
-    "meaning": "Phát triển (phần mềm, sản phẩm)",
-    "partOfSpeech": "verb",
+    "word": "相手",
+    "kana": "あいて",
+    "romaji": "aite",
+    "meaning": "Đối thủ, đối phương",
     "jlptLevel": "N3",
-    "exampleJapanese": "新しいスマホアプリを開発中です。",
-    "exampleRomaji": "Atarashii sumaho apuri o kaihatsuchuu desu.",
-    "exampleMeaning": "Chúng tôi đang phát triển ứng dụng điện thoại mới.",
-    "tags": "Công nghệ"
+    "category": "noun"
   },
   {
-    "word": "維持する",
-    "kana": "いじする",
-    "kanji": "維持する",
-    "romaji": "iji suru",
-    "meaning": "Duy trì, giữ vững",
-    "partOfSpeech": "verb",
+    "word": "あいにく",
+    "kana": "あいにく",
+    "romaji": "ainiku",
+    "meaning": "Thật không may",
     "jlptLevel": "N3",
-    "exampleJapanese": "健康を維持するために運動します。",
-    "exampleRomaji": "Kenkou o iji suru tame ni undou shimasu.",
-    "exampleMeaning": "Tôi tập thể dục để duy trì sức khỏe.",
-    "tags": "Sức khỏe"
+    "category": "adverb"
   },
   {
-    "word": "改善する",
-    "kana": "かいぜんする",
-    "kanji": "改善する",
-    "romaji": "kaizen suru",
-    "meaning": "Cải tiến, làm tốt hơn",
-    "partOfSpeech": "verb",
+    "word": "明かり",
+    "kana": "あかり",
+    "romaji": "akari",
+    "meaning": "Ánh sáng, đèn",
     "jlptLevel": "N3",
-    "exampleJapanese": "サービス品質を継続的に改善します。",
-    "exampleRomaji": "Saabisu hinshitsu o keizokuteki ni kaizen shimasu.",
-    "exampleMeaning": "Chúng tôi liên tục cải tiến chất lượng dịch vụ.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "感謝する",
-    "kana": "かんしゃする",
-    "kanji": "感謝する",
-    "romaji": "kansha suru",
-    "meaning": "Cảm ơn, tri ân sâu sắc",
-    "partOfSpeech": "verb",
+    "word": "空き地",
+    "kana": "あきち",
+    "romaji": "akichi",
+    "meaning": "Khu đất trống",
     "jlptLevel": "N3",
-    "exampleJapanese": "皆様のご支援に心から感謝いたします。",
-    "exampleRomaji": "Minasama no goshien ni kokoro kara kansha itashimasu.",
-    "exampleMeaning": "Tôi xin chân thành cảm ơn sự hỗ trợ của quý vị.",
-    "tags": "Cảm xúc"
+    "category": "noun"
   },
   {
-    "word": "感動する",
-    "kana": "かんどうする",
-    "kanji": "感動する",
-    "romaji": "kandou suru",
-    "meaning": "Cảm động, xúc động",
-    "partOfSpeech": "verb",
+    "word": "明らか",
+    "kana": "あきらか",
+    "romaji": "akiraka",
+    "meaning": "Rõ ràng, minh bạch",
     "jlptLevel": "N3",
-    "exampleJapanese": "素晴らしい映画に深く感動しました。",
-    "exampleRomaji": "Subarashii eiga ni fukaku kandou shimashita.",
-    "exampleMeaning": "Tôi đã rất xúc động bởi một bộ phim tuyệt vời.",
-    "tags": "Cảm xúc"
+    "category": "adjective"
   },
   {
-    "word": "失望する",
-    "kana": "しつぼうする",
-    "kanji": "失望する",
-    "romaji": "shitsubou suru",
-    "meaning": "Thất vọng",
-    "partOfSpeech": "verb",
+    "word": "諦める",
+    "kana": "あきらめる",
+    "romaji": "akirameru",
+    "meaning": "Từ bỏ, bỏ cuộc",
     "jlptLevel": "N3",
-    "exampleJapanese": "期待していた結果にならず失望しました。",
-    "exampleRomaji": "Kitai shite ita kekka ni narazu shitsubou shimashita.",
-    "exampleMeaning": "Tôi thất vọng vì không đạt được kết quả như kỳ vọng.",
-    "tags": "Cảm xúc"
+    "category": "verb"
   },
   {
-    "word": "後悔する",
-    "kana": "こうかいする",
-    "kanji": "後悔する",
-    "romaji": "koukai suru",
-    "meaning": "Hối hận",
-    "partOfSpeech": "verb",
+    "word": "飽きる",
+    "kana": "あきる",
+    "romaji": "akiru",
+    "meaning": "Chán ngấy",
     "jlptLevel": "N3",
-    "exampleJapanese": "あの時諦めなかったことを後悔していません。",
-    "exampleRomaji": "Ano toki akiramenakatta koto o koukai shite imasen.",
-    "exampleMeaning": "Tôi không hối hận vì đã không bỏ cuộc lúc đó.",
-    "tags": "Cảm xúc"
+    "category": "verb"
   },
   {
-    "word": "環境",
-    "kana": "かんきょう",
-    "kanji": "環境",
-    "romaji": "kankyou",
-    "meaning": "Môi trường",
-    "partOfSpeech": "noun",
+    "word": "握手",
+    "kana": "あくしゅ",
+    "romaji": "akushu",
+    "meaning": "Bắt tay",
     "jlptLevel": "N3",
-    "exampleJapanese": "地球環境を守る活動に参加します。",
-    "exampleRomaji": "Chikyuu kankyou o mamoru katsudou ni sanka shimasu.",
-    "exampleMeaning": "Tôi tham gia các hoạt động bảo vệ môi trường trái đất.",
-    "tags": "Xã hội"
+    "category": "noun"
   },
   {
-    "word": "技術",
-    "kana": "ぎじゅつ",
-    "kanji": "技術",
-    "romaji": "gijutsu",
-    "meaning": "Kỹ thuật, công nghệ",
-    "partOfSpeech": "noun",
+    "word": "悪魔",
+    "kana": "あくま",
+    "romaji": "akuma",
+    "meaning": "Ac quỷ",
     "jlptLevel": "N3",
-    "exampleJapanese": "日本の最先端技術は世界で有名です。",
-    "exampleRomaji": "Nihon no saisentan gijutsu wa sekai de yuumei desu.",
-    "exampleMeaning": "Công nghệ tiên tiến của Nhật Bản nổi tiếng trên toàn thế giới.",
-    "tags": "Công nghệ"
+    "category": "noun"
   },
   {
-    "word": "価値",
-    "kana": "かち",
-    "kanji": "価値",
-    "romaji": "kachi",
-    "meaning": "Giá trị",
-    "partOfSpeech": "noun",
+    "word": "明ける",
+    "kana": "あける",
+    "romaji": "akeru",
+    "meaning": "Rạng sáng, kết thúc (mùa/năm)",
     "jlptLevel": "N3",
-    "exampleJapanese": "この古書には高い歴史的価値があります。",
-    "exampleRomaji": "Kono kosho ni wa takai rekishiteki kachi ga arimasu.",
-    "exampleMeaning": "Cuốn sách cổ này có giá trị lịch sử rất cao.",
-    "tags": "Văn hóa"
+    "category": "verb"
   },
   {
-    "word": "意識する",
-    "kana": "いしきする",
-    "kanji": "意識する",
-    "romaji": "ishiki suru",
-    "meaning": "Nhận thức, ý thức được",
-    "partOfSpeech": "verb",
+    "word": "預ける",
+    "kana": "あずける",
+    "romaji": "azukeru",
+    "meaning": "Gửi, ký gửi",
     "jlptLevel": "N3",
-    "exampleJapanese": "健康のために食生活を意識しています。",
-    "exampleRomaji": "Kenkou no tame ni shokuseikatsu o ishiki shite imasu.",
-    "exampleMeaning": "Vì sức khỏe tôi luôn có ý thức về chế độ ăn uống.",
-    "tags": "Nhận thức"
+    "category": "verb"
   },
   {
-    "word": "期待する",
-    "kana": "きたいする",
-    "kanji": "期待する",
-    "romaji": "kitai suru",
-    "meaning": "Kỳ vọng, hy vọng",
-    "partOfSpeech": "verb",
+    "word": "汗",
+    "kana": "あせ",
+    "romaji": "ase",
+    "meaning": "Mồ hôi",
     "jlptLevel": "N3",
-    "exampleJapanese": "新商品のヒットを大きく期待しています。",
-    "exampleRomaji": "Shinshouhin no hitto o ookiku kitai shite imasu.",
-    "exampleMeaning": "Tôi rất kỳ vọng vào sự thành công của sản phẩm mới.",
-    "tags": "Cảm xúc"
+    "category": "noun"
   },
   {
-    "word": "信頼する",
-    "kana": "しんらいする",
-    "kanji": "信頼する",
-    "romaji": "shinrai suru",
-    "meaning": "Tin tưởng, tín nhiệm",
-    "partOfSpeech": "verb",
+    "word": "与える",
+    "kana": "あたえる",
+    "romaji": "ataeru",
+    "meaning": "Ban cho, gây ra",
     "jlptLevel": "N3",
-    "exampleJapanese": "彼なら任せられると信頼しています。",
-    "exampleRomaji": "Kare nara makaserareru to shinrai shite imasu.",
-    "exampleMeaning": "Tôi tin tưởng có thể giao việc cho anh ấy.",
-    "tags": "Cảm xúc"
+    "category": "verb"
   },
   {
-    "word": "尊敬する",
-    "kana": "そんけいする",
-    "kanji": "尊敬する",
-    "romaji": "sonkei suru",
-    "meaning": "Kính trọng, tôn kính",
-    "partOfSpeech": "verb",
+    "word": "暖かい",
+    "kana": "あたたかい",
+    "romaji": "atatakai",
+    "meaning": "Ấm áp",
     "jlptLevel": "N3",
-    "exampleJapanese": "努力家の指導者を心から尊敬しています。",
-    "exampleRomaji": "Doryokuka no shidousha o kokoro kara sonkei shite imasu.",
-    "exampleMeaning": "Tôi từ đáy lòng kính trọng vị lãnh đạo đầy nỗ lực.",
-    "tags": "Cảm xúc"
+    "category": "adjective"
   },
   {
-    "word": "批判する",
-    "kana": "ひはんする",
-    "kanji": "批判する",
-    "romaji": "hihan suru",
-    "meaning": "Phê bình, chỉ trích",
-    "partOfSpeech": "verb",
+    "word": "辺り",
+    "kana": "あたり",
+    "romaji": "atari",
+    "meaning": "Vùng lân cận, quanh đây",
     "jlptLevel": "N3",
-    "exampleJapanese": "無責任な発言がメディアで批判されました。",
-    "exampleRomaji": "Murosekin na hatsugen ga media de hihan saremashita.",
-    "exampleMeaning": "Phát ngôn thiếu trách nhiệm đã bị truyền thông chỉ trích.",
-    "tags": "Xã hội"
+    "category": "noun"
   },
   {
-    "word": "主張する",
-    "kana": "しゅちょうする",
-    "kanji": "主張する",
-    "romaji": "shuchou suru",
-    "meaning": "Khẳng định, chủ trương, quả quyết",
-    "partOfSpeech": "verb",
+    "word": "当たる",
+    "kana": "あたる",
+    "romaji": "ataru",
+    "meaning": "Trúng (vé số), va chạm",
     "jlptLevel": "N3",
-    "exampleJapanese": "自分の権利を正当に主張します。",
-    "exampleRomaji": "Jibun no kenri o seitou ni shuchou shimasu.",
-    "exampleMeaning": "Tôi khẳng định quyền lợi chính đáng của mình.",
-    "tags": "Xã hội"
+    "category": "verb"
   },
   {
-    "word": "矛盾する",
-    "kana": "むじゅんする",
-    "kanji": "矛盾する",
-    "romaji": "mujun suru",
-    "meaning": "Mâu thuẫn, trái ngược",
-    "partOfSpeech": "verb",
+    "word": "扱う",
+    "kana": "あつかう",
+    "romaji": "atsukau",
+    "meaning": "Xử lý, thao tác",
     "jlptLevel": "N3",
-    "exampleJapanese": "言動が矛盾していて信用できません。",
-    "exampleRomaji": "Gendou ga mujun shite ite shin'you dekimasen.",
-    "exampleMeaning": "Lời nói và hành động mâu thuẫn nên không thể tin tưởng.",
-    "tags": "Xã hội"
+    "category": "verb"
   },
   {
-    "word": "影響力",
-    "kana": "えいきょうりょく",
-    "kanji": "影響力",
-    "romaji": "eikyouryoku",
-    "meaning": "Sức ảnh hưởng",
-    "partOfSpeech": "noun",
+    "word": "集まり",
+    "kana": "あつまり",
+    "romaji": "atsumari",
+    "meaning": "Cuộc tập hợp, buổi gặp mặt",
     "jlptLevel": "N3",
-    "exampleJapanese": "インフルエンサーは強い影響力を持っています。",
-    "exampleRomaji": "Infuruensaa wa tsuyoi eikyouryoku o motte imasu.",
-    "exampleMeaning": "Người có ảnh hưởng nắm giữ sức ảnh hưởng rất lớn.",
-    "tags": "Xã hội"
+    "category": "noun"
   },
   {
-    "word": "責任",
-    "kana": "せきにん",
-    "kanji": "責任",
-    "romaji": "sekinin",
-    "meaning": "Trách nhiệm",
-    "partOfSpeech": "noun",
+    "word": "当てはまる",
+    "kana": "あてはまる",
+    "romaji": "atehamaru",
+    "meaning": "Thích hợp, áp dụng",
     "jlptLevel": "N3",
-    "exampleJapanese": "リーダーとして責任を果たします。",
-    "exampleRomaji": "Riidaa to shite sekinin o hatashimasu.",
-    "exampleMeaning": "Với tư cách nhóm trưởng tôi sẽ hoàn thành trách nhiệm.",
-    "tags": "Công việc"
+    "category": "verb"
   },
   {
-    "word": "権利",
-    "kana": "けんり",
-    "kanji": "権利",
-    "romaji": "kenri",
-    "meaning": "Quyền lợi, quyền hạn",
-    "partOfSpeech": "noun",
+    "word": "跡",
+    "kana": "あと",
+    "romaji": "ato",
+    "meaning": "Dấu vết, vết tích",
     "jlptLevel": "N3",
-    "exampleJapanese": "すべての人に平等な権利があります。",
-    "exampleRomaji": "Subete no hito ni byoudou na kenri ga arimasu.",
-    "exampleMeaning": "Tất cả mọi người đều có quyền lợi bình đẳng.",
-    "tags": "Xã hội"
+    "category": "noun"
   },
   {
-    "word": "義務",
-    "kana": "ぎむ",
-    "kanji": "義務",
-    "romaji": "gimu",
-    "meaning": "Nghĩa vụ, bổn phận",
-    "partOfSpeech": "noun",
+    "word": "穴",
+    "kana": "あな",
+    "romaji": "ana",
+    "meaning": "Cái lỗ, hang",
     "jlptLevel": "N3",
-    "exampleJapanese": "納税は国民の義務の一つです。",
-    "exampleRomaji": "Nouzei wa kokumin no gimu no hitotsu desu.",
-    "exampleMeaning": "Nộp thuế là một trong những nghĩa vụ của công dân.",
-    "tags": "Xã hội"
+    "category": "noun"
   },
   {
-    "word": "優先する",
-    "kana": "ゆうせんする",
-    "kanji": "優先する",
-    "romaji": "yuusen suru",
-    "meaning": "Ưu tiên",
-    "partOfSpeech": "verb",
+    "word": "油",
+    "kana": "あぶら",
+    "romaji": "abura",
+    "meaning": "Dầu ăn",
     "jlptLevel": "N3",
-    "exampleJapanese": "緊急の課題を優先して処理します。",
-    "exampleRomaji": "Kinkyuu no kadai o yuusen shite shori shimasu.",
-    "exampleMeaning": "Tôi ưu tiên xử lý nhiệm vụ khẩn cấp trước.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "効率",
-    "kana": "こうりつ",
-    "kanji": "効率",
-    "romaji": "kouritsu",
-    "meaning": "Hiệu suất, hiệu quả",
-    "partOfSpeech": "noun",
+    "word": "誤り",
+    "kana": "あやまり",
+    "romaji": "ayamari",
+    "meaning": "Sai lầm, lỗi",
     "jlptLevel": "N3",
-    "exampleJapanese": "作業効率を高めるためにツールを導入しました。",
-    "exampleRomaji": "Sagyou kouritsu o takameru tame ni tsuuru o dounyuu shimashita.",
-    "exampleMeaning": "Tôi đã đưa công cụ vào để nâng cao hiệu suất công việc.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "コスト",
-    "kana": "こすと",
-    "kanji": null,
-    "romaji": "kosuto",
-    "meaning": "Chi phí",
-    "partOfSpeech": "noun",
+    "word": "荒い",
+    "kana": "あらい",
+    "romaji": "arai",
+    "meaning": "Thô giáp, dữ dội",
     "jlptLevel": "N3",
-    "exampleJapanese": "生産コストを大幅に削減しました。",
-    "exampleRomaji": "Seisan kosuto o oohaba ni sakugen shimashita.",
-    "exampleMeaning": "Chúng tôi đã cắt giảm đáng kể chi phí sản xuất.",
-    "tags": "Kinh tế"
+    "category": "adjective"
   },
   {
-    "word": "利益",
-    "kana": "りえき",
-    "kanji": "利益",
-    "romaji": "rieki",
-    "meaning": "Lợi nhuận, lợi ích",
-    "partOfSpeech": "noun",
+    "word": "嵐",
+    "kana": "あらし",
+    "romaji": "arashi",
+    "meaning": "Cơn bão",
     "jlptLevel": "N3",
-    "exampleJapanese": "今期の売上と利益が共に増加しました。",
-    "exampleRomaji": "Konki no uriage to rieki ga tomo ni zouka shimashita.",
-    "exampleMeaning": "Doanh thu và lợi nhuận kỳ này đều tăng.",
-    "tags": "Kinh tế"
+    "category": "noun"
   },
   {
-    "word": "赤字",
-    "kana": "あかじ",
-    "kanji": "赤字",
-    "romaji": "akaji",
-    "meaning": "Thâm hụt, lỗ vốn",
-    "partOfSpeech": "noun",
+    "word": "争う",
+    "kana": "あらそう",
+    "romaji": "arasou",
+    "meaning": "Tranh chấp, tranh luận",
     "jlptLevel": "N3",
-    "exampleJapanese": "赤字を解消するための対策を講じます。",
-    "exampleRomaji": "Akaji o kaishou suru tame no taisaku o koujimasu.",
-    "exampleMeaning": "Chúng tôi đề ra biện pháp để xóa bỏ thâm hụt.",
-    "tags": "Kinh tế"
+    "category": "verb"
   },
   {
-    "word": "黒字",
-    "kana": "くろじ",
-    "kanji": "黒字",
-    "romaji": "kuroji",
-    "meaning": "Thặng dư, có lãi",
-    "partOfSpeech": "noun",
+    "word": "改めて",
+    "kana": "あらためて",
+    "romaji": "aratamete",
+    "meaning": "Một lần nữa, lại",
     "jlptLevel": "N3",
-    "exampleJapanese": "おかげさまで年間決算が黒字になりました。",
-    "exampleRomaji": "Okagesama de nenkan kessan ga kuroji ni narimashita.",
-    "exampleMeaning": "Nhờ có sự giúp đỡ quyết toán năm đã có lãi.",
-    "tags": "Kinh tế"
+    "category": "adverb"
   },
   {
-    "word": "投資する",
-    "kana": "とうしする",
-    "kanji": "投資する",
-    "romaji": "toushi suru",
-    "meaning": "Đầu tư",
-    "partOfSpeech": "verb",
+    "word": "現れる",
+    "kana": "あらわれる",
+    "romaji": "arawareru",
+    "meaning": "Xuất hiện, hiện ra",
     "jlptLevel": "N3",
-    "exampleJapanese": "将来のためにAI分野に投資します。",
-    "exampleRomaji": "Shourai no tame ni AI bun'ya ni toushi shimasu.",
-    "exampleMeaning": "Tôi đầu tư vào lĩnh vực AI vì tương lai.",
-    "tags": "Kinh tế"
+    "category": "verb"
   },
   {
-    "word": "市場",
-    "kana": "しじょう",
-    "kanji": "市場",
-    "romaji": "shijou",
-    "meaning": "Thị trường",
-    "partOfSpeech": "noun",
+    "word": "表す",
+    "kana": "あらわす",
+    "romaji": "arawasu",
+    "meaning": "Biểu thị, thể hiện",
     "jlptLevel": "N3",
-    "exampleJapanese": "海外市場への参入を検討しています。",
-    "exampleRomaji": "Kaigai shijou e no sannyuu o kentou shite imasu.",
-    "exampleMeaning": "Chúng tôi đang xem xét thâm nhập thị trường nước ngoài.",
-    "tags": "Kinh tế"
+    "category": "verb"
   },
   {
-    "word": "消費する",
-    "kana": "しょうひする",
-    "kanji": "消費する",
-    "romaji": "shouhi suru",
-    "meaning": "Tiêu dùng, tiêu thụ",
-    "partOfSpeech": "verb",
+    "word": "有難い",
+    "kana": "ありがたい",
+    "romaji": "arigatashii",
+    "meaning": "Biết ơn, may mắn",
     "jlptLevel": "N3",
-    "exampleJapanese": "電気の消費量を抑えるよう心掛けます。",
-    "exampleRomaji": "Denki no shouhiryou o osaeru you kokorogakemasu.",
-    "exampleMeaning": "Tôi cố gắng kiềm chế lượng tiêu thụ điện năng.",
-    "tags": "Kinh tế"
+    "category": "adjective"
   },
   {
-    "word": "需要",
-    "kana": "じゅよう",
-    "kanji": "需要",
-    "romaji": "juyou",
-    "meaning": "Nhu cầu",
-    "partOfSpeech": "noun",
+    "word": "在る",
+    "kana": "ある",
+    "romaji": "aru",
+    "meaning": "Tồn tại, có",
     "jlptLevel": "N3",
-    "exampleJapanese": "再生可能エネルギーの需要が高まっています。",
-    "exampleRomaji": "Saiseikanou enerugii no juyou ga takamatte imasu.",
-    "exampleMeaning": "Nhu cầu về năng lượng tái tạo đang tăng cao.",
-    "tags": "Kinh tế"
+    "category": "verb"
   },
   {
-    "word": "供給する",
-    "kana": "きょうきゅうする",
-    "kanji": "供給する",
-    "romaji": "kyoukyuu suru",
-    "meaning": "Cung cấp, cung ứng",
-    "partOfSpeech": "verb",
+    "word": "泡",
+    "kana": "あわ",
+    "romaji": "awa",
+    "meaning": "Bọt, bong bóng",
     "jlptLevel": "N3",
-    "exampleJapanese": "安定した電力を地域に供給します。",
-    "exampleRomaji": "Antei shita denryoku o chiiki ni kyoukyuu shimasu.",
-    "exampleMeaning": "Chúng tôi cung cấp điện năng ổn định cho khu vực.",
-    "tags": "Kinh tế"
+    "category": "noun"
   },
   {
-    "word": "専門家",
-    "kana": "せんもんか",
-    "kanji": "専門家",
-    "romaji": "senmonka",
-    "meaning": "Chuyên gia",
-    "partOfSpeech": "noun",
+    "word": "合わせる",
+    "kana": "あわせる",
+    "romaji": "awaseru",
+    "meaning": "Hợp lại, hòa vào",
     "jlptLevel": "N3",
-    "exampleJapanese": "ITの専門家にアドバイスを求めました。",
-    "exampleRomaji": "IT no senmonka ni adobaisu o motomemashita.",
-    "exampleMeaning": "Tôi đã tìm kiếm lời khuyên từ chuyên gia IT.",
-    "tags": "Công việc"
+    "category": "verb"
   },
   {
-    "word": "資格",
-    "kana": "しかく",
-    "kanji": "資格",
-    "romaji": "shikaku",
-    "meaning": "Bằng cấp, chứng chỉ, tư cách",
-    "partOfSpeech": "noun",
+    "word": "慌てる",
+    "kana": "あわてる",
+    "romaji": "awateru",
+    "meaning": "Vội vã, cuống cuồng",
     "jlptLevel": "N3",
-    "exampleJapanese": "JLPT N3の資格を取得しました。",
-    "exampleRomaji": "JLPT N3 no shikaku o tsutoku shimashita.",
-    "exampleMeaning": "Tôi đã lấy được chứng chỉ JLPT N3.",
-    "tags": "Học tập"
+    "category": "verb"
   },
   {
-    "word": "知識",
-    "kana": "ちしき",
-    "kanji": "知識",
-    "romaji": "chishiki",
-    "meaning": "Tri thức, kiến thức",
-    "partOfSpeech": "noun",
+    "word": "哀れ",
+    "kana": "あわれ",
+    "romaji": "aware",
+    "meaning": "Thương hại, đáng thương",
     "jlptLevel": "N3",
-    "exampleJapanese": "幅広い専門知識を身につけたいです。",
-    "exampleRomaji": "Hiroi senmon chishiki o mi ni tsuketai desu.",
-    "exampleMeaning": "Tôi muốn trang bị kiến thức chuyên môn rộng rãi.",
-    "tags": "Học tập"
+    "category": "adjective"
   },
   {
-    "word": "能力",
-    "kana": "のうりょく",
-    "kanji": "能力",
-    "romaji": "nouryoku",
-    "meaning": "Năng lực, khả năng",
-    "partOfSpeech": "noun",
+    "word": "案",
+    "kana": "あん",
+    "romaji": "an",
+    "meaning": "Đề án, phương án",
     "jlptLevel": "N3",
-    "exampleJapanese": "実践的な日本語コミュニケーション能力を磨きます。",
-    "exampleRomaji": "Jissenteki na nihongo komyunikeeshon nouryoku o migakimasu.",
-    "exampleMeaning": "Tôi mài giũa năng lực giao tiếp tiếng Nhật thực tế.",
-    "tags": "Học tập"
+    "category": "noun"
   },
   {
-    "word": "技術革新",
-    "kana": "ぎじゅつかくしん",
-    "kanji": "技術革新",
-    "romaji": "gijutsukakushin",
-    "meaning": "Đột phá công nghệ, đổi mới sáng tạo",
-    "partOfSpeech": "noun",
+    "word": "暗記",
+    "kana": "あんき",
+    "romaji": "anki",
+    "meaning": "Học thuộc lòng",
     "jlptLevel": "N3",
-    "exampleJapanese": "技術革新によって生活が便利になりました。",
-    "exampleRomaji": "Gijutsukakushin ni yotte seikatsu ga benri ni narimashita.",
-    "exampleMeaning": "Nhờ đột phá công nghệ cuộc sống đã trở nên tiện lợi.",
-    "tags": "Công nghệ"
+    "category": "noun"
   },
   {
-    "word": "人工知能",
-    "kana": "じんこうちのう",
-    "kanji": "人工知能",
-    "romaji": "jinkouchinou",
-    "meaning": "Trí tuệ nhân tạo (AI)",
-    "partOfSpeech": "noun",
+    "word": "安定",
+    "kana": "あんてい",
+    "romaji": "antei",
+    "meaning": "Ổn định",
     "jlptLevel": "N3",
-    "exampleJapanese": "人工知能の発展が目覚ましいです。",
-    "exampleRomaji": "Jinkouchinou no hatten ga mezamashii desu.",
-    "exampleMeaning": "Sự phát triển của trí tuệ nhân tạo thật vượt bậc.",
-    "tags": "Công nghệ"
+    "category": "noun"
+  },
+  {
+    "word": "案内",
+    "kana": "あんない",
+    "romaji": "annai",
+    "meaning": "Hướng dẫn, dẫn đường",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "胃",
+    "kana": "い",
+    "romaji": "i",
+    "meaning": "Dạ dày",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "委員",
+    "kana": "いいん",
+    "romaji": "iin",
+    "meaning": "Ủy viên, thành viên ủy ban",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "意外",
+    "kana": "いがい",
+    "romaji": "igai",
+    "meaning": "Ngoài dự tính, ngạc nhiên",
+    "jlptLevel": "N3",
+    "category": "adjective"
+  },
+  {
+    "word": "医学",
+    "kana": "いがく",
+    "romaji": "igaku",
+    "meaning": "Y học",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "呼吸",
+    "kana": "いき",
+    "romaji": "iki",
+    "meaning": "Hơi thở",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "行き違い",
+    "kana": "いきちがい",
+    "romaji": "ikichigai",
+    "meaning": "Hiểu lầm, đi lướt qua nhau",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "意地悪",
+    "kana": "いじわる",
+    "romaji": "ijiwaru",
+    "meaning": "Xấu tính, tâm địa xấu",
+    "jlptLevel": "N3",
+    "category": "adjective"
+  },
+  {
+    "word": "維持",
+    "kana": "いじ",
+    "romaji": "iji",
+    "meaning": "Duy trì",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "意識",
+    "kana": "いしき",
+    "romaji": "ishiki",
+    "meaning": "Ý thức, nhận thức",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "衣料",
+    "kana": "いりょう",
+    "romaji": "iryou",
+    "meaning": "Quần áo, may mặc",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "医療",
+    "kana": "いりょう",
+    "romaji": "iryou",
+    "meaning": "Chăm sóc y tế",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "岩",
+    "kana": "いわ",
+    "romaji": "iwa",
+    "meaning": "Tảng đá lớn",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "祝う",
+    "kana": "いわう",
+    "romaji": "iwau",
+    "meaning": "Chúc mừng, ăn mừng",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "印刷",
+    "kana": "いんさつ",
+    "romaji": "insatsu",
+    "meaning": "In ấn",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "印象",
+    "kana": "いんしょう",
+    "romaji": "inshou",
+    "meaning": "Ấn tượng",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "引退",
+    "kana": "いんたい",
+    "romaji": "intai",
+    "meaning": "Giải nghệ, giải thể",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "引用",
+    "kana": "いんよう",
+    "romaji": "inyou",
+    "meaning": "Trích dẫn",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "魚",
+    "kana": "うお",
+    "romaji": "uo",
+    "meaning": "Con cá",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "伺う",
+    "kana": "うかがう",
+    "romaji": "ukagau",
+    "meaning": "Thăm hỏi, hỏi (Khiêm nhường)",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "受け取る",
+    "kana": "うけとる",
+    "romaji": "uketoru",
+    "meaning": "Nhận lấy, tiếp nhận",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "動かす",
+    "kana": "うごかす",
+    "romaji": "ugokasu",
+    "meaning": "Di chuyển, vận hành",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "兎",
+    "kana": "うさぎ",
+    "romaji": "usagi",
+    "meaning": "Con thỏ",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "失う",
+    "kana": "うしなう",
+    "romaji": "ushinau",
+    "meaning": "Mất, thất lạc",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "疑う",
+    "kana": "うたがう",
+    "romaji": "utagau",
+    "meaning": "Nghi ngờ",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "宇宙",
+    "kana": "うちゅう",
+    "romaji": "uchuu",
+    "meaning": "Vũ trụ",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "撃つ",
+    "kana": "うつ",
+    "romaji": "utsu",
+    "meaning": "Bắn (súng)",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "訴える",
+    "kana": "うったえる",
+    "romaji": "uttaeru",
+    "meaning": "Kệ tụng, khiếu nại",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "奪う",
+    "kana": "うばう",
+    "romaji": "ubau",
+    "meaning": "Cướp đoạt",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "馬",
+    "kana": "うま",
+    "romaji": "uma",
+    "meaning": "Con ngựa",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "生まれ",
+    "kana": "うまれ",
+    "romaji": "umare",
+    "meaning": "Nơi sinh ra, xuất thân",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "梅",
+    "kana": "うめ",
+    "romaji": "ume",
+    "meaning": "Cây mơ, hoa mơ",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "裏切る",
+    "kana": "うらぎる",
+    "romaji": "uragiru",
+    "meaning": "Phản bội",
+    "jlptLevel": "N3",
+    "category": "verb"
+  },
+  {
+    "word": "売り切れ",
+    "kana": "うりきれ",
+    "romaji": "urikire",
+    "meaning": "Bán hết sạch",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "売り上げ",
+    "kana": "うりあげ",
+    "romaji": "uriage",
+    "meaning": "Doanh thu",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "噂",
+    "kana": "うわさ",
+    "romaji": "uwasa",
+    "meaning": "Tin đồn",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "運",
+    "kana": "うん",
+    "romaji": "un",
+    "meaning": "Vận may, số phận",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "運転",
+    "kana": "うんてん",
+    "romaji": "unten",
+    "meaning": "Lái xe, vận hành",
+    "jlptLevel": "N3",
+    "category": "noun"
+  },
+  {
+    "word": "運動",
+    "kana": "うんどう",
+    "romaji": "undou",
+    "meaning": "Vận động, tập thể thao",
+    "jlptLevel": "N3",
+    "category": "noun"
   }
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // JLPT N3 GRAMMAR SEED DATA (2 structures)
 // ─────────────────────────────────────────────────────────────────────────────
-export const GRAMMAR_N3 = [
+export const GRAMMAR_N3: SeedGrammar[] = [
   {
-    "title": "〜最中に (Đúng lúc đang... thì...)",
+    "title": "〜に関して / 〜に関する (ni kanshite)",
     "level": "N3",
-    "meaning": "Đang trong lúc thực hiện hành động này thì có hành động khác bất ngờ chen vào.",
-    "structure": "Động từ thể V-te iru / Danh từ + の + 最中に",
-    "commonMistakes": "Dùng với hành động diễn ra trong thời gian ngắn hoặc có tính ngẫu nhiên.",
+    "meaning": "Về... / Liên quan đến... — Dùng trong văn viết hoặc tình huống trang trọng",
+    "structure": "[Danh từ] + に関して / [Danh từ] + に関する + [Danh từ]",
+    "commonMistakes": "Trang trọng hơn 〜について. Đứng trước danh từ phải dùng 〜に関する.",
     "examples": [
       {
-        "japanese": "会議の最中に、突然携帯電話が鳴った。",
-        "romaji": "Kaigi no saichū ni, totsuzen keitaidenwa ga natta.",
-        "meaning": "Đúng lúc đang họp thì điện thoại di động bất ngờ reo lên."
+        "japanese": "環境問題に関して、論文を書きました。",
+        "romaji": "Kankyou mondai ni kanshite, ronbun o kakimashita.",
+        "meaning": "Tôi đã viết một luận văn liên quan đến vấn đề môi trường."
       },
       {
-        "japanese": "シャワーを浴びている最中に停電になった。",
-        "romaji": "Shawā o abite iru saichū ni teiden ni natta.",
-        "meaning": "Đúng lúc đang tắm thì bị mất điện."
+        "japanese": "この事件に関する情報をお持ちの方はご連絡ください。",
+        "romaji": "Kono jiken ni kansuru jouhou o omochi no kata wa gorenraku kudasai.",
+        "meaning": "Ai có thông tin liên quan đến vụ án này xin vui lòng liên hệ."
       }
     ]
   },
   {
-    "title": "〜うちに (Tranh thủ lúc / Trong khi còn...)",
+    "title": "〜に対して / 〜に対する (ni taishite)",
     "level": "N3",
-    "meaning": "Thực hiện hành động trước khi trạng thái thay đổi.",
-    "structure": "Động từ thể V-ru / V-nai / Tính từ / Danh từ + の + うちに",
-    "commonMistakes": "Tránh nhầm với AIDA (Aida diễn tả khoảng thời gian liên tục).",
+    "meaning": "Đối với... / Ngược lại với... — Biểu thị thái độ đối ứng hoặc so sánh tương phản",
+    "structure": "[Danh từ] + に対して / [Danh từ] + に対する + [Danh từ]",
+    "commonMistakes": "Phân biệt với 〜にとって (đứng trên lập trường đánh giá). Đối với người/đối tượng tiếp nhận hành vi dùng 〜に対して.",
     "examples": [
       {
-        "japanese": "日本にいるうちに、一度富士山に登りたい。",
-        "romaji": "Nihon ni iru uchi ni, ichido Fujisan ni noboritai.",
-        "meaning": "Tranh thủ lúc còn ở Nhật, tôi muốn leo núi Phú Sĩ một lần."
+        "japanese": "お客様に対して、丁寧な言葉を使いましょう。",
+        "romaji": "Okyakusama ni taishite, teinei na kotoba o tsukaimashou.",
+        "meaning": "Đối với khách hàng, hãy sử dụng lời lẽ lịch sự."
       },
       {
-        "japanese": "温かいうちに召し上がってください。",
-        "romaji": "Warm uchi ni meshisagatte kudasai.",
-        "meaning": "Xin hãy ăn khi đồ ăn còn nóng."
+        "japanese": "兄が活発なのに対して、弟はおとなしいです。",
+        "romaji": "Ani ga kappatsu na no ni taishite, otouto wa otonashii desu.",
+        "meaning": "Trái ngược với anh trai rất năng động, em trai lại rất trầm tính."
+      }
+    ]
+  },
+  {
+    "title": "〜にとって (ni totte)",
+    "level": "N3",
+    "meaning": "Đối với... / Đứng trên lập trường của... — Đưa ra quan điểm, đánh giá",
+    "structure": "[Danh từ (chỉ người/tổ chức)] + にとって",
+    "commonMistakes": "Vế sau là câu đánh giá (quan trọng, khó khăn, có ích...), không đi với hành động trực tiếp.",
+    "examples": [
+      {
+        "japanese": "現代人にとって、スマートフォンは必需品です。",
+        "romaji": "Gendaijin ni totte, sumaatofon wa hitsujuuhin desu.",
+        "meaning": "Đối với người hiện đại, điện thoại thông minh là vật dụng thiết yếu."
+      },
+      {
+        "japanese": "私にとって家族は一番大切な存在です。",
+        "romaji": "Watashi ni totte kazoku wa ichiban taisetsu na sonzai desu.",
+        "meaning": "Đối với tôi, gia đình là sự tồn tại quan trọng nhất."
+      }
+    ]
+  },
+  {
+    "title": "〜わけにはいかない (wake ni wa ikanai)",
+    "level": "N3",
+    "meaning": "Không thể... (vì đạo đức, lương tâm, trách nhiệm xã hội)",
+    "structure": "[Động từ thể từ điển / thể ない] + わけにはいかない",
+    "commonMistakes": "Không dùng cho việc bất khả thi về mặt thể chất/năng lực (khác với thể khả năng).",
+    "examples": [
+      {
+        "japanese": "明日は大事な会議があるから、休むわけにはいかない。",
+        "romaji": "Ashita wa daiji na kaigi ga aru kara, yasumu wake ni wa ikanai.",
+        "meaning": "Ngày mai có cuộc họp quan trọng nên tôi không thể nghỉ được."
+      },
+      {
+        "japanese": "大切な約束だから、行かないわけにはいかない。",
+        "romaji": "Taisetsu na yakusoku da kara, ikanai wake ni wa ikanai.",
+        "meaning": "Vì là lời hứa quan trọng nên tôi không thể không đi (buộc phải đi)."
+      }
+    ]
+  },
+  {
+    "title": "〜わけがない (wake ga nai)",
+    "level": "N3",
+    "meaning": "Tuyệt đối không thể nào... / Làm sao có chuyện...",
+    "structure": "[Thể thông thường (Na な / N の)] + わけがない",
+    "commonMistakes": "Biểu thị sự phủ định mạnh mẽ dựa trên lý do logic xác đáng.",
+    "examples": [
+      {
+        "japanese": "あんなに真面目な彼が嘘をつくわけがない。",
+        "romaji": "Anna ni majime na kare ga uso o tsuku wake ga nai.",
+        "meaning": "Người nghiêm túc như anh ấy tuyệt đối không thể nào nói dối."
+      },
+      {
+        "japanese": "こんな難しい問題、小学生にできるわけがない。",
+        "romaji": "Konna muzukashii mondai, shougakusei ni dekiru wake ga nai.",
+        "meaning": "Đề khó thế này thì học sinh tiểu học làm sao mà làm được."
+      }
+    ]
+  },
+  {
+    "title": "〜わけではない (wake dewa nai)",
+    "level": "N3",
+    "meaning": "Không hẳn là... / Không nhất thiết là...",
+    "structure": "[Thể thông thường (Na な / N の/な)] + わけではない",
+    "commonMistakes": "Phủ định một phần, dùng khi không muốn khẳng định 100%.",
+    "examples": [
+      {
+        "japanese": "日本語が嫌いなわけではないが、漢字が苦手だ。",
+        "romaji": "Nihongo ga kirai na wake dewa nai ga, kanji ga nigate da.",
+        "meaning": "Không hẳn là tôi ghét tiếng Nhật, mà là tôi kém chữ Hán."
+      },
+      {
+        "japanese": "高い料理が必ずしも美味しいわけではない。",
+        "romaji": "Takai ryouri ga kanarazushimo oishii wake dewa nai.",
+        "meaning": "Món ăn đắt tiền không nhất thiết lúc nào cũng ngon."
+      }
+    ]
+  },
+  {
+    "title": "〜に違いない (ni chigainai)",
+    "level": "N3",
+    "meaning": "Chắc chắn là... / Không thể sai được — Phán đoán chắc nịch của người nói",
+    "structure": "[Thể thông thường (Na / N không だ)] + に違いない",
+    "commonMistakes": "Biểu thị niềm tin mang tính trực giác hoặc suy đoán cá nhân rất cao.",
+    "examples": [
+      {
+        "japanese": "電気がついているから、部屋に誰かいるに違いない。",
+        "romaji": "Denki ga tsuite iru kara, heya ni dareka iru ni chigainai.",
+        "meaning": "Đèn đang bật nên chắc chắn có ai đó trong phòng."
+      },
+      {
+        "japanese": "これだけの努力をしたのだから、合格するに違いない。",
+        "romaji": "Koredake no doryoku o shita no da kara, goukaku suru ni chigainai.",
+        "meaning": "Đã nỗ lực đến mức này thì chắc chắn sẽ đỗ thôi."
+      }
+    ]
+  },
+  {
+    "title": "〜はずだ (hazu da)",
+    "level": "N3",
+    "meaning": "Chắc chắn là... (dựa trên căn cứ, logic, lịch trình)",
+    "structure": "[Thể thông thường (Na な / N の)] + はずだ",
+    "commonMistakes": "Dựa trên chứng cứ khách quan, khác với に違いない vốn mang tính trực giác chủ quan hơn.",
+    "examples": [
+      {
+        "japanese": "彼は日本に5年も住んでいたから、日本語が上手なはずだ。",
+        "romaji": "Kare wa Nihon ni go-nen mo sunde ita kara, Nihongo ga jouzu na hazu da.",
+        "meaning": "Anh ấy đã sống ở Nhật tận 5 năm nên chắc chắn tiếng Nhật rất giỏi."
+      },
+      {
+        "japanese": "約束の時間だから、もうすぐ到着するはずです。",
+        "romaji": "Yakusoku no jikan da kara, mousugu touchaku suru hazu desu.",
+        "meaning": "Đến giờ hẹn rồi nên chắc chắn sẽ đến nơi ngay thôi."
+      }
+    ]
+  },
+  {
+    "title": "〜たとたん（に） (ta totan ni)",
+    "level": "N3",
+    "meaning": "Vừa mới... thì ngay lập tức...",
+    "structure": "[Động từ thể た] + とたん（に）",
+    "commonMistakes": "Vế sau là hành động bất ngờ ngoài dự kiến, không đi với câu mệnh lệnh hay ý chí.",
+    "examples": [
+      {
+        "japanese": "窓を開けたとたん、冷たい風が入ってきた。",
+        "romaji": "Mado o aketa totan, tsumetai kaze ga haitte kita.",
+        "meaning": "Vừa mới mở cửa sổ ra thì ngay lập tức cơn gió lạnh ùa vào."
+      },
+      {
+        "japanese": "疲れていたので、ベッドに入ったとたんに眠ってしまった。",
+        "romaji": "Tsukarete ita node, beddo ni haitta totan ni nemutte shimatta.",
+        "meaning": "Vì quá mệt nên vừa đặt lưng xuống giường là tôi ngủ thiếp đi."
+      }
+    ]
+  },
+  {
+    "title": "〜うちに (uchi ni)",
+    "level": "N3",
+    "meaning": "Trong lúc... / Nhân lúc còn... (trước khi trạng thái thay đổi)",
+    "structure": "[V-dict / V-nai / V-teiru / I-adj / Na-adj な / N の] + うちに",
+    "commonMistakes": "Làm gì đó trước khi cơ hội trôi qua (nhân lúc còn nóng, nhân lúc còn trẻ...).",
+    "examples": [
+      {
+        "japanese": "温かいうちに、どうぞ召し上がってください。",
+        "romaji": "Atatakai uchi ni, douzo meshiagatte kudasai.",
+        "meaning": "Nhân lúc món ăn còn ấm nóng, xin mời bạn dùng ngay."
+      },
+      {
+        "japanese": "日本にいるうちに、富士山に登ってみたい。",
+        "romaji": "Nihon ni iru uchi ni, Fujisan ni nobotte mitai.",
+        "meaning": "Trong lúc còn ở Nhật, tôi muốn thử leo núi Phú Sĩ."
+      }
+    ]
+  },
+  {
+    "title": "〜わりに（は） (wari ni wa)",
+    "level": "N3",
+    "meaning": "So với... thì... (bất ngờ, kết quả không tương xứng với mức độ chuẩn)",
+    "structure": "[Thể thông thường (Na な / N の)] + わりに（は）",
+    "commonMistakes": "Dùng để diễn tả sự ngạc nhiên vì thực tế lệch so với định mức chung.",
+    "examples": [
+      {
+        "japanese": "この店は値段が安いのわりに、とても美味しい。",
+        "romaji": "Kono mise wa nedan ga yasui no wari ni, totemo oishii.",
+        "meaning": "Quán này so với giá thành rẻ thì ăn rất ngon."
+      },
+      {
+        "japanese": "彼はあまり勉強しなかったわりには、いい点数を取った。",
+        "romaji": "Kare wa amari benkyou shinakatta wari ni wa, ii tensuu o totta.",
+        "meaning": "So với việc ít học bài thì anh ấy đã đạt điểm khá tốt."
+      }
+    ]
+  },
+  {
+    "title": "〜くせに (kuse ni)",
+    "level": "N3",
+    "meaning": "Thế mà lại... / Mặc dù... (mang hàm ý trách móc, khinh miệt, mỉa mai)",
+    "structure": "[Thể thông thường (Na な / N の)] + くせに",
+    "commonMistakes": "Chỉ dùng để phê phán người khác, không dùng cho bản thân mình.",
+    "examples": [
+      {
+        "japanese": "自分では何もしないくせに、文句ばかり言う。",
+        "romaji": "Jibun dewa nani mo shinai kuse ni, monku bakari iu.",
+        "meaning": "Bản thân chẳng làm gì thế mà suốt ngày chỉ biết cằn nhằn."
+      },
+      {
+        "japanese": "知っているくせに、教えてくれない。",
+        "romaji": "Shitte iru kuse ni, oshiete kurenai.",
+        "meaning": "Rõ ràng là biết thế mà lại không thèm chỉ cho tôi."
+      }
+    ]
+  },
+  {
+    "title": "〜おそれがある (osore ga aru)",
+    "level": "N3",
+    "meaning": "E rằng... / Có nguy cơ... (xảy ra sự việc xấu)",
+    "structure": "[V-dict / V-nai / N の] + おそれがある",
+    "commonMistakes": "Dùng trong bản tin thời sự, dự báo thời tiết hoặc cảnh báo rủi ro.",
+    "examples": [
+      {
+        "japanese": "大雨の影響で、土砂崩れが起きるおそれがあります。",
+        "romaji": "Ooame no eikyou de, doshakuzure ga okiru osore ga arimasu.",
+        "meaning": "Do ảnh hưởng của mưa lớn, có nguy cơ xảy ra sạt lở đất."
+      },
+      {
+        "japanese": "このまま放置すると、病気が悪化するおそれがある。",
+        "romaji": "Kono mama houchi suru to, byouki ga akka suru osore ga aru.",
+        "meaning": "Nếu cứ để mặc thế này e rằng bệnh tình sẽ trầm trọng hơn."
+      }
+    ]
+  },
+  {
+    "title": "〜をはじめ（として） (o hajime to shite)",
+    "level": "N3",
+    "meaning": "Trước tiên phải kể đến... / Tiêu biểu là...",
+    "structure": "[Danh từ] + をはじめ / をはじめとする + [Danh từ]",
+    "commonMistakes": "Đưa ra ví dụ tiêu biểu nhất trong một tập hợp.",
+    "examples": [
+      {
+        "japanese": "日本には富士山をはじめ、美しい自然がたくさんある。",
+        "romaji": "Nihon ni wa Fujisan o hajime, utsukushii shizen ga takusan aru.",
+        "meaning": "Ở Nhật Bản có rất nhiều cảnh sắc thiên nhiên tươi đẹp, tiêu biểu nhất là núi Phú Sĩ."
+      },
+      {
+        "japanese": "校長先生をはじめ、先生方に心から感謝いたします。",
+        "romaji": "Kouchou-sensei o hajime, senseigata ni kokoro kara kansha itashimasu.",
+        "meaning": "Tôi xin chân thành cảm ơn các thầy cô giáo, trước hết là thầy hiệu trưởng."
+      }
+    ]
+  },
+  {
+    "title": "〜にともなって / 〜とともに (ni tomonatte)",
+    "level": "N3",
+    "meaning": "Cùng với... thì... cũng biến đổi theo",
+    "structure": "[Động từ thể từ điển / Danh từ] + にともなって",
+    "commonMistakes": "Vế trước biến đổi kéo theo vế sau biến đổi theo.",
+    "examples": [
+      {
+        "japanese": "人口の増加にともなって、ゴミ問題も深刻化している。",
+        "romaji": "Jinkou no zouka ni tomonatte, gomi mondai mo shinkokuka shite iru.",
+        "meaning": "Cùng với sự gia tăng dân số, vấn đề rác thải cũng ngày càng nghiêm trọng."
+      },
+      {
+        "japanese": "経済の発展とともに、人々の生活様式も変わった。",
+        "romaji": "Keizai no hatten to tomo ni, hitobito no seikatsu youshiki mo kawatta.",
+        "meaning": "Cùng với sự phát triển kinh tế, phong cách sống của người dân cũng thay đổi."
+      }
+    ]
+  },
+  {
+    "title": "〜たびに (tabi ni)",
+    "level": "N3",
+    "meaning": "Cứ mỗi lần... lại...",
+    "structure": "[V-dict / N の] + たびに",
+    "commonMistakes": "Mỗi khi sự việc A xảy ra thì sự việc B luôn luôn lặp lại.",
+    "examples": [
+      {
+        "japanese": "この曲を聴くたびに、学生時代を思い出す。",
+        "romaji": "Kono kyoku o kiku tabi ni, gakusei jidai o omoidasu.",
+        "meaning": "Cứ mỗi lần nghe khúc nhạc này tôi lại nhớ về thời học sinh."
+      },
+      {
+        "japanese": "旅行のたびに、たくさんのお土産を買ってしまいます。",
+        "romaji": "Ryokou no tabi ni, takusan no omiyage o katte shimaimasu.",
+        "meaning": "Cứ mỗi lần đi du lịch tôi lại mua cả đống quà lưu niệm."
+      }
+    ]
+  },
+  {
+    "title": "〜っぱなし (ppanashi)",
+    "level": "N3",
+    "meaning": "Cứ để nguyên như thế (không làm hành động tiếp theo cần thiết)",
+    "structure": "[V-masu bỏ ます] + っぱなし",
+    "commonMistakes": "Thường mang hàm ý tiêu cực, phê phán việc bất cẩn (để cửa mở, để nước chảy...).",
+    "examples": [
+      {
+        "japanese": "テレビをつけっぱなしで寝てしまった。",
+        "romaji": "Terebi o tsukeppanashi de nette shimatta.",
+        "meaning": "Tôi đã ngủ quên mà cứ để ti vi bật nguyên như thế."
+      },
+      {
+        "japanese": "ドアを開けっぱなしにしないでください。",
+        "romaji": "Doa o akeppanashi ni shinaide kudasai.",
+        "meaning": "Xin đừng để cửa mở toang như thế."
+      }
+    ]
+  },
+  {
+    "title": "〜っぽい (ppoi)",
+    "level": "N3",
+    "meaning": "Có vẻ... / Mang cảm giác... / Hay...",
+    "structure": "[V-masu bỏ ます / N / I-adj bỏ い] + っぽい",
+    "commonMistakes": "Hay đi với màu sắc (trắng trắng), tính cách (dễ giận: 怒りっぽい), hoặc tính chất (trẻ con: 子供っぽい).",
+    "examples": [
+      {
+        "japanese": "彼は大人なのに、話し方が子供っぽい。",
+        "romaji": "Kare wa otona na no ni, hanashikata ga kodomoppoi.",
+        "meaning": "Anh ấy là người lớn rồi mà cách nói chuyện cứ trẻ con thế nào ấy."
+      },
+      {
+        "japanese": "最近、忘れっぽくなって困っている。",
+        "romaji": "Saikin, wasureppoku natte komatte iru.",
+        "meaning": "Dạo này tôi hay quên quá, thật là phiền toái."
+      }
+    ]
+  },
+  {
+    "title": "〜気味 (gimi)",
+    "level": "N3",
+    "meaning": "Hơi có cảm giác... / Hơi có triệu chứng...",
+    "structure": "[V-masu bỏ ます / N] + 気味",
+    "commonMistakes": "Chỉ dùng cho trạng thái tâm lý hoặc thể trạng tiêu cực tạm thời (hơi sốt: 風邪気味, hơi mệt: 疲れ気味).",
+    "examples": [
+      {
+        "japanese": "今日は風邪気味なので、早めに帰宅します。",
+        "romaji": "Kyou wa kaze gimi na node, hayame ni kitaku shimasu.",
+        "meaning": "Hôm nay tôi hơi có triệu chứng cảm cúm nên sẽ về nhà sớm."
+      },
+      {
+        "japanese": "最近仕事が忙しくて、少し疲れ気味です。",
+        "romaji": "Saikin shigoto ga isogashikute, sukoshi tsukare gimi desu.",
+        "meaning": "Dạo này công việc bận rộn nên tôi hơi có vẻ mệt mỏi."
+      }
+    ]
+  },
+  {
+    "title": "〜切る / 〜切れない (kiru / kirenai)",
+    "level": "N3",
+    "meaning": "Làm hết sạch hoàn toàn / Không thể làm xuể",
+    "structure": "[V-masu bỏ ます] + 切る / 切れない",
+    "commonMistakes": "Biểu thị hành động đạt đến giới hạn tận cùng hoặc hết sạch không còn sót lại.",
+    "examples": [
+      {
+        "japanese": "長い小説をやっと読み切りました。",
+        "romaji": "Nagai shousetsu o yatto yomikirimashita.",
+        "meaning": "Cuối cùng tôi cũng đọc hết sạch cuốn tiểu thuyết dài."
+      },
+      {
+        "japanese": "料理が多すぎて、全部は食べ切れません。",
+        "romaji": "Ryouri ga oosugite, zenbu wa tabekiremasen.",
+        "meaning": "Thức ăn nhiều quá, tôi không thể ăn hết xuể được."
+      }
+    ]
+  },
+  {
+    "title": "〜かねる (kaneru)",
+    "level": "N3",
+    "meaning": "Khó lòng mà... / Không thể... (từ chối lịch sự trong kinh doanh)",
+    "structure": "[V-masu bỏ ます] + かねる",
+    "commonMistakes": "Dùng trong văn phong dịch vụ/kinh doanh để từ chối khéo.",
+    "examples": [
+      {
+        "japanese": "そのご要望には応じかねます。",
+        "romaji": "Sono goyoubou ni wa oujikanemasu.",
+        "meaning": "Yêu cầu đó của quý khách chúng tôi khó lòng có thể đáp ứng được."
+      },
+      {
+        "japanese": "個人情報はお教えいたしかねます。",
+        "romaji": "Kojin jouhou wa ooshie itashikanemasu.",
+        "meaning": "Thông tin cá nhân chúng tôi không thể cung cấp được ạ."
+      }
+    ]
+  },
+  {
+    "title": "〜かねない (kanenai)",
+    "level": "N3",
+    "meaning": "Có nguy cơ... / Có khả năng sẽ dẫn đến (kết quả xấu)",
+    "structure": "[V-masu bỏ ます] + かねない",
+    "commonMistakes": "Cảnh báo một hậu quả tiêu cực có thể xảy ra nếu tiếp tục duy trì trạng thái.",
+    "examples": [
+      {
+        "japanese": "スピードを出しすぎると、事故を起こしかねない。",
+        "romaji": "Supiido o dashisugiru to, jiko o okoshikanenai.",
+        "meaning": "Nếu đi quá nhanh thì rất có nguy cơ gây tai nạn đấy."
+      },
+      {
+        "japanese": "無理を続けると、病気になりかねませんよ。",
+        "romaji": "Muri o tsuzukeru to, byouki ni narikanemasen yo.",
+        "meaning": "Nếu cứ làm việc quá sức liên tục thì rất có thể sẽ phát bệnh đấy."
+      }
+    ]
+  },
+  {
+    "title": "〜どころではない (dokoro dewa nai)",
+    "level": "N3",
+    "meaning": "Không phải là lúc để... / Không còn tâm trí đâu mà...",
+    "structure": "[V-dict / N] + どころではない",
+    "commonMistakes": "Hoàn cảnh cấp bách/bận rộn đến mức không thể làm việc khác được.",
+    "examples": [
+      {
+        "japanese": "試験の前日だから、遊んでいるどころではない。",
+        "romaji": "Shiken no zenjitsu da kara, asonde iru dokoro dewa nai.",
+        "meaning": "Hôm nay là ngày trước hôm thi rồi, không phải lúc để rong chơi đâu."
+      },
+      {
+        "japanese": "風邪で高熱が出て、食事どころではなかった。",
+        "romaji": "Kaze de kounetsu ga dete, shokuji dokoro dewa nakatta.",
+        "meaning": "Bị cảm sốt cao nên tôi chẳng còn tâm trí đâu mà ăn uống nữa."
+      }
+    ]
+  },
+  {
+    "title": "〜一方だ (ippou da)",
+    "level": "N3",
+    "meaning": "Ngày càng... / Càng lúc càng... (theo một chiều hướng liên tục)",
+    "structure": "[Động từ thể từ điển] + 一方だ",
+    "commonMistakes": "Thường đi kèm với các động từ biến đổi như 増える, 減る, 悪化する...",
+    "examples": [
+      {
+        "japanese": "不景気で、失業率は増える一方だ。",
+        "romaji": "Fukeiki de, hitsugyouritsu wa fueru ippou da.",
+        "meaning": "Do kinh tế suy thoái, tỷ lệ thất nghiệp càng lúc càng tăng."
+      },
+      {
+        "japanese": "スマートフォンの利用者は増加する一方です。",
+        "romaji": "Sumaatofon no riyousha wa zouka suru ippou desu.",
+        "meaning": "Số lượng người dùng điện thoại thông minh ngày một tăng lên."
+      }
+    ]
+  },
+  {
+    "title": "〜によって / 〜による (ni yotte)",
+    "level": "N3",
+    "meaning": "Do / Bởi / Bằng cách / Tùy theo...",
+    "structure": "[Danh từ] + によって / による + [Danh từ]",
+    "commonMistakes": "Có 4 nghĩa chính: tác giả câu bị động, nguyên nhân, phương tiện cách thức, và sự khác biệt tùy theo đối tượng.",
+    "examples": [
+      {
+        "japanese": "台風によって、多くの家が被害を受けた。",
+        "romaji": "Taifuu ni yotte, ooku no ie ga higai o uketa.",
+        "meaning": "Do cơn bão nên nhiều ngôi nhà đã bị thiệt hại."
+      },
+      {
+        "japanese": "人によって考え方が違います。",
+        "romaji": "Hito ni yotte kangaekata ga chigaimasu.",
+        "meaning": "Tùy từng người mà cách suy nghĩ sẽ khác nhau."
+      }
+    ]
+  },
+  {
+    "title": "〜を通じて / 〜を通して (o tsuujite)",
+    "level": "N3",
+    "meaning": "Thông qua / Suốt cả...",
+    "structure": "[Danh từ] + を通じて / を通して",
+    "commonMistakes": "Dùng cho trung gian phương tiện (thông qua bạn bè) hoặc thời gian (suốt cả năm).",
+    "examples": [
+      {
+        "japanese": "ボランティア活動を通じて、たくさんの友人ができた。",
+        "romaji": "Borantia katsudou o tsuujite, takusan no yuujin ga dekita.",
+        "meaning": "Thông qua các hoạt động tình nguyện, tôi đã có thêm rất nhiều bạn bè."
+      },
+      {
+        "japanese": "この地方は、一年を通じて温暖な気候です。",
+        "romaji": "Kono chihou wa, ichinen o tsuujite ondan na kikou desu.",
+        "meaning": "Vùng này suốt cả năm khí hậu đều ôn hòa ấm áp."
+      }
+    ]
+  },
+  {
+    "title": "〜ざるを得ない (zaru o enai)",
+    "level": "N3",
+    "meaning": "Đành phải... / Buộc phải... (dù trong lòng không muốn)",
+    "structure": "[V-nai bỏ ない] + ざるを得ない (する -> せざるを得ない)",
+    "commonMistakes": "Hành động bất đắc dĩ do tình thế bắt buộc.",
+    "examples": [
+      {
+        "japanese": "証拠が揃っているので、認めざるを得ない。",
+        "romaji": "Shouko ga sorotte iru node, mitomezaru o enai.",
+        "meaning": "Bằng chứng đã đầy đủ nên tôi đành phải thừa nhận."
+      },
+      {
+        "japanese": "体調不良のため、旅行は中止せざるを得なかった。",
+        "romaji": "Taichou furyou no tame, ryokou wa chuushi sezaru o enakatta.",
+        "meaning": "Do sức khỏe không tốt nên tôi đành phải hủy chuyến du lịch."
       }
     ]
   }
@@ -1980,25 +2560,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "最中に",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "うちに",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "代わりに",
-            "isCorrect": false,
+            "text": "最中に",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ついでに",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 3
           }
@@ -2018,13 +2598,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "たびに",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "代わりに",
+            "text": "たびに",
             "isCorrect": false,
             "order": 2
           },
@@ -2044,25 +2624,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "代わりに",
-            "isCorrect": true,
+            "text": "おかげで",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "最中に",
-            "isCorrect": false,
+            "text": "代わりに",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "うちに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おかげで",
+            "text": "うちに",
             "isCorrect": false,
             "order": 3
           }
@@ -2076,14 +2656,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Liệt kê hành động theo trình tự",
-            "isCorrect": false,
+            "text": "Một hành động chen ngang bất ngờ khi đang làm việc gì đó",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Một hành động chen ngang bất ngờ khi đang làm việc gì đó",
-            "isCorrect": true,
+            "text": "Liệt kê hành động theo trình tự",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -2108,14 +2688,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "最中に",
-            "isCorrect": false,
+            "text": "うちに",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "うちに",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -2146,19 +2726,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "通りに",
-            "isCorrect": false,
+            "text": "代わりに",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "代わりに",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "最中に",
+            "text": "通りに",
             "isCorrect": false,
             "order": 3
           }
@@ -2172,14 +2752,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "代わりに",
-            "isCorrect": false,
+            "text": "最中に",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "最中に",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -2190,7 +2770,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "うちに",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 3
           }
@@ -2210,20 +2790,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "せいで",
+            "text": "最中に",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "最中に",
-            "isCorrect": false,
+            "text": "うちに",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "うちに",
-            "isCorrect": true,
+            "text": "せいで",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -2236,7 +2816,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "うちに",
+            "text": "おかげで",
             "isCorrect": false,
             "order": 0
           },
@@ -2254,7 +2834,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "おかげで",
+            "text": "うちに",
             "isCorrect": false,
             "order": 3
           }
@@ -2268,20 +2848,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Thay cho / Thay vì đối tượng hoặc hành động khác",
-            "isCorrect": true,
+            "text": "Nhân tiện làm việc gì đó",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Nhân tiện làm việc gì đó",
+            "text": "Chắc chắn là như vậy",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Chắc chắn là như vậy",
-            "isCorrect": false,
+            "text": "Thay cho / Thay vì đối tượng hoặc hành động khác",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -2306,19 +2886,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "最中に",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "代わりに",
-            "isCorrect": false,
+            "text": "最中に",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "うちに",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 3
           }
@@ -2332,20 +2912,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "最中に",
+            "text": "せいで",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "うちに",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せいで",
-            "isCorrect": false,
+            "text": "うちに",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -2364,13 +2944,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "代わりに",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "最中に",
+            "text": "うちに",
             "isCorrect": false,
             "order": 1
           },
@@ -2382,8 +2962,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "うちに",
-            "isCorrect": false,
+            "text": "代わりに",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2402,20 +2982,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "うちに",
-            "isCorrect": false,
+            "text": "最中に",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "代わりに",
+            "text": "うちに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "最中に",
-            "isCorrect": true,
+            "text": "代わりに",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -2428,26 +3008,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "うちに",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "代わりに",
+            "text": "ものの",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "最中に",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ものの",
-            "isCorrect": false,
+            "text": "うちに",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2470,25 +3050,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "うちに",
-            "isCorrect": false,
+            "text": "ついでに",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "最中に",
+            "text": "たびに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ついでに",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たびに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 3
           }
@@ -2514,14 +3094,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "たびに",
-            "isCorrect": true,
+            "text": "ついでに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ついでに",
-            "isCorrect": false,
+            "text": "たびに",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2534,26 +3114,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たびに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ついでに",
-            "isCorrect": true,
+            "text": "せいで",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せいで",
+            "text": "たびに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "最中に",
-            "isCorrect": false,
+            "text": "ついでに",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2598,25 +3178,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Nhân tiện / Tiện thể tiện đường làm luôn việc thứ hai",
-            "isCorrect": true,
+            "text": "Mỗi khi làm việc A thì luôn làm việc B",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Ngay sau khi làm việc A",
-            "isCorrect": false,
+            "text": "Nhân tiện / Tiện thể tiện đường làm luôn việc thứ hai",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Chỉ vì làm việc A nên bị hỏng",
+            "text": "Ngay sau khi làm việc A",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Mỗi khi làm việc A thì luôn làm việc B",
+            "text": "Chỉ vì làm việc A nên bị hỏng",
             "isCorrect": false,
             "order": 3
           }
@@ -2630,20 +3210,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Mỗi lần / Cứ mỗi dịp lại có cùng một hành động lặp lại",
-            "isCorrect": true,
+            "text": "Nhờ có sự giúp đỡ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Nhờ có sự giúp đỡ",
+            "text": "Tranh thủ lúc còn rảnh rỗi",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Tranh thủ lúc còn rảnh rỗi",
-            "isCorrect": false,
+            "text": "Mỗi lần / Cứ mỗi dịp lại có cùng một hành động lặp lại",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -2662,7 +3242,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たびに",
+            "text": "せいで",
             "isCorrect": false,
             "order": 0
           },
@@ -2674,7 +3254,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "せいで",
+            "text": "たびに",
             "isCorrect": false,
             "order": 2
           },
@@ -2694,14 +3274,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たびに",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "うちに",
-            "isCorrect": false,
+            "text": "たびに",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -2726,25 +3306,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ついでに",
-            "isCorrect": true,
+            "text": "せいで",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "せいで",
+            "text": "たびに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "途端に",
-            "isCorrect": false,
+            "text": "ついでに",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たびに",
+            "text": "途端に",
             "isCorrect": false,
             "order": 3
           }
@@ -2758,8 +3338,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "代わりに",
-            "isCorrect": false,
+            "text": "たびに",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -2770,14 +3350,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "最中に",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たびに",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -2790,25 +3370,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ついでに",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "おかげで",
-            "isCorrect": false,
+            "text": "ついでに",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "うちに",
+            "text": "たびに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たびに",
+            "text": "おかげで",
             "isCorrect": false,
             "order": 3
           }
@@ -2860,20 +3440,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "たびに",
+            "text": "せいで",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ついでに",
-            "isCorrect": true,
+            "text": "たびに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "せいで",
-            "isCorrect": false,
+            "text": "ついでに",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2886,26 +3466,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "代わりに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "たびに",
-            "isCorrect": true,
+            "text": "ついでに",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "最中に",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ついでに",
-            "isCorrect": false,
+            "text": "たびに",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2918,19 +3498,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "うちに",
-            "isCorrect": false,
+            "text": "ついでに",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ついでに",
-            "isCorrect": true,
+            "text": "せいで",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せいで",
+            "text": "うちに",
             "isCorrect": false,
             "order": 2
           },
@@ -2960,25 +3540,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "せいで",
-            "isCorrect": true,
+            "text": "おかげで",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "だらけ",
+            "text": "にかけて",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "にかけて",
-            "isCorrect": false,
+            "text": "せいで",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おかげで",
+            "text": "だらけ",
             "isCorrect": false,
             "order": 3
           }
@@ -2998,8 +3578,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "せいで",
-            "isCorrect": false,
+            "text": "おかげで",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -3010,8 +3590,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "おかげで",
-            "isCorrect": true,
+            "text": "せいで",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3024,19 +3604,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "だらけ",
-            "isCorrect": true,
+            "text": "にかけて",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "おかげで",
-            "isCorrect": false,
+            "text": "だらけ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "にかけて",
+            "text": "おかげで",
             "isCorrect": false,
             "order": 2
           },
@@ -3068,13 +3648,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ほど",
+            "text": "まで",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "まで",
+            "text": "ほど",
             "isCorrect": false,
             "order": 3
           }
@@ -3088,26 +3668,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Khoảng từ thời gian này đến thời gian khác",
+            "text": "Toàn là những thứ bẩn thỉu",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Tại vì... dẫn đến hậu quả xui xẻo",
+            "text": "Khoảng từ thời gian này đến thời gian khác",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Nhờ có... dẫn đến kết quả tốt đẹp",
-            "isCorrect": true,
+            "text": "Tại vì... dẫn đến hậu quả xui xẻo",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Toàn là những thứ bẩn thỉu",
-            "isCorrect": false,
+            "text": "Nhờ có... dẫn đến kết quả tốt đẹp",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3120,26 +3700,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Tranh thủ lúc còn trẻ",
+            "text": "Nhờ có sự cố gắng của bản thân",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Tại vì / Do... dẫn đến kết quả tiêu cực hay đổ lỗi",
-            "isCorrect": true,
+            "text": "Tranh thủ lúc còn trẻ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Nhờ có sự cố gắng của bản thân",
+            "text": "Thay vì làm việc này",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Thay vì làm việc này",
-            "isCorrect": false,
+            "text": "Tại vì / Do... dẫn đến kết quả tiêu cực hay đổ lỗi",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3152,19 +3732,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Toàn là / Đầy là (thường dính nhiều thứ không tốt như bùn, lỗi, máu)",
-            "isCorrect": true,
+            "text": "Tốt đẹp hoàn hảo",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Rất ít khi xảy ra",
-            "isCorrect": false,
+            "text": "Toàn là / Đầy là (thường dính nhiều thứ không tốt như bùn, lỗi, máu)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Tốt đẹp hoàn hảo",
+            "text": "Rất ít khi xảy ra",
             "isCorrect": false,
             "order": 2
           },
@@ -3184,26 +3764,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "おかげで",
+            "text": "にかけて",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "せいで",
+            "text": "おかげで",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "だらけ",
-            "isCorrect": true,
+            "text": "せいで",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にかけて",
-            "isCorrect": false,
+            "text": "だらけ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3222,20 +3802,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "通りに",
+            "text": "だらけ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "おかげで",
-            "isCorrect": true,
+            "text": "通りに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "だらけ",
-            "isCorrect": false,
+            "text": "おかげで",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3280,26 +3860,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "代わりに",
-            "isCorrect": false,
+            "text": "だらけ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "おかげで",
+            "text": "せいで",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せいで",
+            "text": "代わりに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "だらけ",
-            "isCorrect": true,
+            "text": "おかげで",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3312,25 +3892,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "にしては",
+            "text": "だらけ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "おかげで",
-            "isCorrect": true,
+            "text": "にしては",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せいで",
-            "isCorrect": false,
+            "text": "おかげで",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "だらけ",
+            "text": "せいで",
             "isCorrect": false,
             "order": 3
           }
@@ -3344,25 +3924,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "おかげで",
-            "isCorrect": false,
+            "text": "せいで",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "だらけ",
+            "text": "おかげで",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せいで",
-            "isCorrect": true,
+            "text": "ついでに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ついでに",
+            "text": "だらけ",
             "isCorrect": false,
             "order": 3
           }
@@ -3376,26 +3956,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "に",
+            "text": "まで",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "より",
-            "isCorrect": false,
+            "text": "から",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "まで",
+            "text": "に",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "から",
-            "isCorrect": true,
+            "text": "より",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3408,7 +3988,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "うちに",
+            "text": "せいで",
             "isCorrect": false,
             "order": 0
           },
@@ -3420,14 +4000,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "だらけ",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "せいで",
-            "isCorrect": false,
+            "text": "だらけ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3450,26 +4030,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけがない",
+            "text": "かもしれない",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "に違いない",
-            "isCorrect": false,
+            "text": "はずだ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かもしれない",
+            "text": "に違いない",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はずだ",
-            "isCorrect": true,
+            "text": "わけがない",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3514,25 +4094,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけだ",
+            "text": "はずがない",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "わけがない",
-            "isCorrect": false,
+            "text": "に違いない",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "に違いない",
-            "isCorrect": true,
+            "text": "わけがない",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はずがない",
+            "text": "わけだ",
             "isCorrect": false,
             "order": 3
           }
@@ -3578,7 +4158,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Không chắc lắm",
+            "text": "Thà làm việc A còn hơn",
             "isCorrect": false,
             "order": 0
           },
@@ -3590,13 +4170,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "Phải làm việc B",
+            "text": "Không chắc lắm",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Thà làm việc A còn hơn",
+            "text": "Phải làm việc B",
             "isCorrect": false,
             "order": 3
           }
@@ -3616,8 +4196,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "はずがない",
-            "isCorrect": true,
+            "text": "わけだ",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -3628,8 +4208,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "わけだ",
-            "isCorrect": false,
+            "text": "はずがない",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3642,7 +4222,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はずだ",
+            "text": "に違いない",
             "isCorrect": false,
             "order": 0
           },
@@ -3654,14 +4234,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "わけがない",
-            "isCorrect": true,
+            "text": "はずだ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "に違いない",
-            "isCorrect": false,
+            "text": "わけがない",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3674,25 +4254,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけがない",
+            "text": "らしい",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "に違いない",
-            "isCorrect": true,
+            "text": "はずがない",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "らしい",
-            "isCorrect": false,
+            "text": "に違いない",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はずがない",
+            "text": "わけがない",
             "isCorrect": false,
             "order": 3
           }
@@ -3706,25 +4286,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "こと",
-            "isCorrect": false,
+            "text": "はず",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "違い",
+            "text": "わけ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "はず",
-            "isCorrect": true,
+            "text": "こと",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "わけ",
+            "text": "違い",
             "isCorrect": false,
             "order": 3
           }
@@ -3738,7 +4318,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "に違いない",
+            "text": "はずだ",
             "isCorrect": false,
             "order": 0
           },
@@ -3750,14 +4330,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "わけがない",
-            "isCorrect": true,
+            "text": "に違いない",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はずだ",
-            "isCorrect": false,
+            "text": "わけがない",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3770,13 +4350,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はずがない",
-            "isCorrect": false,
+            "text": "に違いない",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "そうだ",
+            "text": "はずがない",
             "isCorrect": false,
             "order": 1
           },
@@ -3788,8 +4368,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "に違いない",
-            "isCorrect": true,
+            "text": "そうだ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3802,7 +4382,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はずがない",
+            "text": "わけ",
             "isCorrect": false,
             "order": 0
           },
@@ -3814,13 +4394,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "違い",
+            "text": "はずがない",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "わけ",
+            "text": "違い",
             "isCorrect": false,
             "order": 3
           }
@@ -3834,19 +4414,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけだ",
+            "text": "はずだ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "に違いない",
+            "text": "わけだ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "はずだ",
+            "text": "に違いない",
             "isCorrect": false,
             "order": 2
           },
@@ -3866,20 +4446,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけがない",
-            "isCorrect": false,
+            "text": "に違いない",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "はずがない",
+            "text": "わけがない",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "に違いない",
-            "isCorrect": true,
+            "text": "はずがない",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -3898,8 +4478,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はず",
-            "isCorrect": true,
+            "text": "わけがない",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -3916,8 +4496,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "わけがない",
-            "isCorrect": false,
+            "text": "はず",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3940,7 +4520,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "として",
+            "text": "にしても",
             "isCorrect": false,
             "order": 0
           },
@@ -3952,14 +4532,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "にしても",
-            "isCorrect": false,
+            "text": "にしては",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にしては",
-            "isCorrect": true,
+            "text": "として",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3972,25 +4552,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "にしても",
-            "isCorrect": false,
+            "text": "として",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "について",
+            "text": "にしては",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "として",
-            "isCorrect": true,
+            "text": "にしても",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にしては",
+            "text": "について",
             "isCorrect": false,
             "order": 3
           }
@@ -4048,13 +4628,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "Cho dù là thế nhưng lại...",
+            "text": "Thay vì chọn cái này...",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Thay vì chọn cái này...",
+            "text": "Cho dù là thế nhưng lại...",
             "isCorrect": false,
             "order": 3
           }
@@ -4068,7 +4648,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Hoàn toàn phù hợp với tiêu chuẩn",
+            "text": "Cảm ơn vì đã giúp đỡ",
             "isCorrect": false,
             "order": 0
           },
@@ -4080,13 +4660,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "Không có cách nào khác",
+            "text": "Hoàn toàn phù hợp với tiêu chuẩn",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Cảm ơn vì đã giúp đỡ",
+            "text": "Không có cách nào khác",
             "isCorrect": false,
             "order": 3
           }
@@ -4100,20 +4680,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "Tranh thủ lúc còn rảnh",
-            "isCorrect": false,
+            "text": "Cho dù... đi chăng nữa thì (vẫn giữ nguyên quan điểm)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Bởi vì là nhân viên công ty",
+            "text": "Tranh thủ lúc còn rảnh",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Cho dù... đi chăng nữa thì (vẫn giữ nguyên quan điểm)",
-            "isCorrect": true,
+            "text": "Bởi vì là nhân viên công ty",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -4132,19 +4712,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "として",
+            "text": "にしても",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "にしても",
+            "text": "について",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "について",
+            "text": "として",
             "isCorrect": false,
             "order": 2
           },
@@ -4164,20 +4744,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "にしても",
+            "text": "にしては",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "として",
-            "isCorrect": true,
+            "text": "にしても",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "にしては",
-            "isCorrect": false,
+            "text": "として",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -4196,25 +4776,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "にしては",
+            "text": "として",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "にしても",
-            "isCorrect": true,
+            "text": "として",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "として",
-            "isCorrect": false,
+            "text": "にしても",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "として",
+            "text": "にしては",
             "isCorrect": false,
             "order": 3
           }
@@ -4228,14 +4808,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "にしても",
-            "isCorrect": false,
+            "text": "にしては",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "にしては",
-            "isCorrect": true,
+            "text": "にしても",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -4266,19 +4846,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "として",
-            "isCorrect": true,
+            "text": "にしても",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "にしては",
-            "isCorrect": false,
+            "text": "として",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にしても",
+            "text": "にしては",
             "isCorrect": false,
             "order": 3
           }
@@ -4292,25 +4872,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "にしては",
+            "text": "として",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "としては",
-            "isCorrect": false,
+            "text": "にしても",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "にしても",
-            "isCorrect": true,
+            "text": "としては",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "として",
+            "text": "にしては",
             "isCorrect": false,
             "order": 3
           }
@@ -4324,8 +4904,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "について",
-            "isCorrect": false,
+            "text": "にしては",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -4342,8 +4922,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "にしては",
-            "isCorrect": true,
+            "text": "について",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -4356,26 +4936,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "にしても",
+            "text": "にしては",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "にとって",
+            "text": "にしても",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "として",
-            "isCorrect": true,
+            "text": "にとって",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にしては",
-            "isCorrect": false,
+            "text": "として",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -4394,20 +4974,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "として",
+            "text": "にしては",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "にしては",
-            "isCorrect": false,
+            "text": "にしても",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にしても",
-            "isCorrect": true,
+            "text": "として",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -4430,8 +5010,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "からには",
-            "isCorrect": false,
+            "text": "ので",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -4442,8 +5022,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ので",
-            "isCorrect": true,
+            "text": "からには",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -4462,7 +5042,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "協力",
+            "text": "効力",
             "isCorrect": false,
             "order": 0
           },
@@ -4474,7 +5054,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "効力",
+            "text": "協力",
             "isCorrect": false,
             "order": 2
           },
@@ -4494,20 +5074,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんけつ",
+            "text": "かいしょう",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かいけつ",
-            "isCorrect": true,
+            "text": "かんけつ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かいしょう",
-            "isCorrect": false,
+            "text": "かいけつ",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -4526,8 +5106,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "こと",
-            "isCorrect": false,
+            "text": "どころ",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -4538,13 +5118,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "どころ",
-            "isCorrect": true,
+            "text": "わけ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "わけ",
+            "text": "こと",
             "isCorrect": false,
             "order": 3
           }
@@ -4558,25 +5138,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "一体",
+            "text": "一味",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "一番",
-            "isCorrect": false,
+            "text": "一部",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "一部",
-            "isCorrect": true,
+            "text": "一体",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "一味",
+            "text": "一番",
             "isCorrect": false,
             "order": 3
           }
@@ -4590,13 +5170,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "みたい",
+            "text": "そうに",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "そうに",
+            "text": "みたい",
             "isCorrect": false,
             "order": 1
           },
@@ -4622,8 +5202,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ていせい",
-            "isCorrect": false,
+            "text": "ちょうせい",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -4640,8 +5220,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ちょうせい",
-            "isCorrect": true,
+            "text": "ていせい",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -4654,25 +5234,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ことにしている",
-            "isCorrect": true,
+            "text": "ことにされた",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ことになっている",
-            "isCorrect": false,
+            "text": "ことにしている",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ことに決まった",
+            "text": "ことになっている",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ことにされた",
+            "text": "ことに決まった",
             "isCorrect": false,
             "order": 3
           }
@@ -4692,19 +5272,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "変形",
-            "isCorrect": false,
+            "text": "変更",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "変更",
-            "isCorrect": true,
+            "text": "変化",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "変化",
+            "text": "変形",
             "isCorrect": false,
             "order": 3
           }
@@ -4718,26 +5298,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ついでに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "最中に",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "途端に",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "うちに",
-            "isCorrect": false,
+            "text": "途端に",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -4750,8 +5330,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かくにん",
-            "isCorrect": true,
+            "text": "しくにん",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -4762,8 +5342,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "しくにん",
-            "isCorrect": false,
+            "text": "かくにん",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -4782,7 +5362,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "こと",
+            "text": "はず",
             "isCorrect": false,
             "order": 0
           },
@@ -4794,13 +5374,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "はず",
+            "text": "わけ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "わけ",
+            "text": "こと",
             "isCorrect": false,
             "order": 3
           }
@@ -4814,13 +5394,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "印象",
+            "text": "対象",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "対象",
+            "text": "印象",
             "isCorrect": false,
             "order": 1
           },
@@ -4852,20 +5432,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "わけ",
-            "isCorrect": false,
+            "text": "こと",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ほう",
+            "text": "わけ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "こと",
-            "isCorrect": true,
+            "text": "ほう",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -4878,25 +5458,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "漢字だけを集中して覚えること",
+            "text": "直前に徹夜で暗記すること",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "文法を無視して読解だけ解くこと",
-            "isCorrect": false,
+            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
-            "isCorrect": true,
+            "text": "文法を無視して読解だけ解くこと",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "直前に徹夜で暗記すること",
+            "text": "漢字だけを集中して覚えること",
             "isCorrect": false,
             "order": 3
           }
@@ -4952,25 +5532,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "協力",
+            "text": "圧力",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "努力",
-            "isCorrect": true,
+            "text": "効力",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "圧力",
-            "isCorrect": false,
+            "text": "努力",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "効力",
+            "text": "協力",
             "isCorrect": false,
             "order": 3
           }
@@ -4990,14 +5570,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "かいけつ",
-            "isCorrect": true,
+            "text": "かんけつ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かんけつ",
-            "isCorrect": false,
+            "text": "かいけつ",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -5016,14 +5596,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はず",
+            "text": "こと",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こと",
-            "isCorrect": false,
+            "text": "どころ",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -5034,8 +5614,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "どころ",
-            "isCorrect": true,
+            "text": "はず",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5048,25 +5628,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "一体",
+            "text": "一味",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "一部",
-            "isCorrect": true,
+            "text": "一体",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "一番",
-            "isCorrect": false,
+            "text": "一部",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "一味",
+            "text": "一番",
             "isCorrect": false,
             "order": 3
           }
@@ -5080,8 +5660,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ように",
-            "isCorrect": true,
+            "text": "らしく",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -5092,8 +5672,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "らしく",
-            "isCorrect": false,
+            "text": "ように",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -5112,13 +5692,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ちょうせい",
-            "isCorrect": true,
+            "text": "せいてい",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "せいてい",
+            "text": "ていせい",
             "isCorrect": false,
             "order": 1
           },
@@ -5130,8 +5710,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ていせい",
-            "isCorrect": false,
+            "text": "ちょうせい",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5144,26 +5724,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ことにされた",
+            "text": "ことになっている",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ことに決まった",
-            "isCorrect": false,
+            "text": "ことにしている",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ことになっている",
+            "text": "ことにされた",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ことにしている",
-            "isCorrect": true,
+            "text": "ことに決まった",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5176,26 +5756,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "変形",
+            "text": "変換",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "変化",
+            "text": "変形",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "変更",
-            "isCorrect": true,
+            "text": "変化",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "変換",
-            "isCorrect": false,
+            "text": "変更",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5208,26 +5788,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "うちに",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ついでに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "途端に",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "最中に",
-            "isCorrect": false,
+            "text": "途端に",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5240,20 +5820,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たしかに",
+            "text": "しくにん",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かくにん",
-            "isCorrect": true,
+            "text": "たしかに",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "しくにん",
-            "isCorrect": false,
+            "text": "かくにん",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -5304,8 +5884,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "現象",
-            "isCorrect": false,
+            "text": "影響",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -5316,14 +5896,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "印象",
+            "text": "現象",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "影響",
-            "isCorrect": true,
+            "text": "印象",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5342,13 +5922,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "わけ",
+            "text": "もの",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "もの",
+            "text": "わけ",
             "isCorrect": false,
             "order": 2
           },
@@ -5368,7 +5948,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "直前に徹夜で暗記すること",
+            "text": "漢字だけを集中して覚えること",
             "isCorrect": false,
             "order": 0
           },
@@ -5380,7 +5960,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "漢字だけを集中して覚えること",
+            "text": "直前に徹夜で暗記すること",
             "isCorrect": false,
             "order": 2
           },
@@ -5416,8 +5996,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ので",
-            "isCorrect": true,
+            "text": "ものの",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -5428,8 +6008,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ものの",
-            "isCorrect": false,
+            "text": "ので",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5442,25 +6022,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "効力",
-            "isCorrect": false,
+            "text": "努力",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "努力",
-            "isCorrect": true,
+            "text": "協力",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "協力",
+            "text": "圧力",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "圧力",
+            "text": "効力",
             "isCorrect": false,
             "order": 3
           }
@@ -5474,26 +6054,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かいけつ",
-            "isCorrect": true,
+            "text": "けっさく",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かんけつ",
+            "text": "かいしょう",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かいしょう",
+            "text": "かんけつ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "けっさく",
-            "isCorrect": false,
+            "text": "かいけつ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5506,7 +6086,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "こと",
+            "text": "わけ",
             "isCorrect": false,
             "order": 0
           },
@@ -5518,7 +6098,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "わけ",
+            "text": "こと",
             "isCorrect": false,
             "order": 2
           },
@@ -5538,13 +6118,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "一体",
+            "text": "一味",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "一番",
+            "text": "一体",
             "isCorrect": false,
             "order": 1
           },
@@ -5556,7 +6136,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "一味",
+            "text": "一番",
             "isCorrect": false,
             "order": 3
           }
@@ -5570,13 +6150,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "そうに",
-            "isCorrect": false,
+            "text": "ように",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "らしく",
+            "text": "そうに",
             "isCorrect": false,
             "order": 1
           },
@@ -5588,8 +6168,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ように",
-            "isCorrect": true,
+            "text": "らしく",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5646,14 +6226,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ことに決まった",
-            "isCorrect": false,
+            "text": "ことにしている",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ことにしている",
-            "isCorrect": true,
+            "text": "ことに決まった",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5666,26 +6246,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "変形",
+            "text": "変化",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "変換",
+            "text": "変形",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "変更",
-            "isCorrect": true,
+            "text": "変換",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "変化",
-            "isCorrect": false,
+            "text": "変更",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5704,13 +6284,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ついでに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "最中に",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 2
           },
@@ -5736,8 +6316,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "しくにん",
-            "isCorrect": false,
+            "text": "かくにん",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -5748,8 +6328,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "かくにん",
-            "isCorrect": true,
+            "text": "しくにん",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5762,26 +6342,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "べき",
-            "isCorrect": true,
+            "text": "はず",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "わけ",
+            "text": "こと",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "こと",
+            "text": "わけ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はず",
-            "isCorrect": false,
+            "text": "べき",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5794,14 +6374,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "対象",
-            "isCorrect": false,
+            "text": "影響",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "影響",
-            "isCorrect": true,
+            "text": "現象",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -5812,7 +6392,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "現象",
+            "text": "対象",
             "isCorrect": false,
             "order": 3
           }
@@ -5826,13 +6406,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけ",
+            "text": "ほう",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ほう",
+            "text": "わけ",
             "isCorrect": false,
             "order": 1
           },
@@ -5858,26 +6438,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "直前に徹夜で暗記すること",
+            "text": "漢字だけを集中して覚えること",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
-            "isCorrect": true,
+            "text": "直前に徹夜で暗記すること",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "漢字だけを集中して覚えること",
+            "text": "文法を無視して読解だけ解くこと",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "文法を無視して読解だけ解くこと",
-            "isCorrect": false,
+            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5906,20 +6486,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "からには",
+            "text": "ものの",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ものの",
-            "isCorrect": false,
+            "text": "ので",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ので",
-            "isCorrect": true,
+            "text": "からには",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5932,8 +6512,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "努力",
-            "isCorrect": true,
+            "text": "協力",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -5944,8 +6524,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "協力",
-            "isCorrect": false,
+            "text": "努力",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -5964,7 +6544,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かいしょう",
+            "text": "けっさく",
             "isCorrect": false,
             "order": 0
           },
@@ -5982,7 +6562,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "けっさく",
+            "text": "かいしょう",
             "isCorrect": false,
             "order": 3
           }
@@ -5996,8 +6576,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "どころ",
-            "isCorrect": true,
+            "text": "こと",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -6008,13 +6588,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "わけ",
-            "isCorrect": false,
+            "text": "どころ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "こと",
+            "text": "わけ",
             "isCorrect": false,
             "order": 3
           }
@@ -6028,25 +6608,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "一部",
-            "isCorrect": true,
+            "text": "一味",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "一味",
-            "isCorrect": false,
+            "text": "一部",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "一番",
+            "text": "一体",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "一体",
+            "text": "一番",
             "isCorrect": false,
             "order": 3
           }
@@ -6060,26 +6640,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "そうに",
+            "text": "みたい",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "みたい",
+            "text": "そうに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "らしく",
-            "isCorrect": false,
+            "text": "ように",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ように",
-            "isCorrect": true,
+            "text": "らしく",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6092,14 +6672,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "せいてい",
+            "text": "ていせい",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ていせい",
-            "isCorrect": false,
+            "text": "ちょうせい",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -6110,8 +6690,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ちょうせい",
-            "isCorrect": true,
+            "text": "せいてい",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6130,8 +6710,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ことにされた",
-            "isCorrect": false,
+            "text": "ことにしている",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -6142,8 +6722,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ことにしている",
-            "isCorrect": true,
+            "text": "ことにされた",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6156,8 +6736,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "変換",
-            "isCorrect": false,
+            "text": "変更",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -6168,8 +6748,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "変更",
-            "isCorrect": true,
+            "text": "変換",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -6194,20 +6774,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "最中に",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "途端に",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ついでに",
-            "isCorrect": false,
+            "text": "途端に",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -6220,26 +6800,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たしかに",
-            "isCorrect": false,
+            "text": "かくにん",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かくほ",
+            "text": "しくにん",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "しくにん",
+            "text": "かくほ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かくにん",
-            "isCorrect": true,
+            "text": "たしかに",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6252,26 +6832,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "こと",
+            "text": "わけ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "はず",
-            "isCorrect": false,
+            "text": "べき",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "わけ",
+            "text": "こと",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "べき",
-            "isCorrect": true,
+            "text": "はず",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6284,26 +6864,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "印象",
-            "isCorrect": false,
+            "text": "影響",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "現象",
+            "text": "対象",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "対象",
+            "text": "印象",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "影響",
-            "isCorrect": true,
+            "text": "現象",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6316,26 +6896,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけ",
+            "text": "ほう",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ほう",
+            "text": "わけ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "こと",
-            "isCorrect": true,
+            "text": "もの",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "もの",
-            "isCorrect": false,
+            "text": "こと",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -6348,8 +6928,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "漢字だけを集中して覚えること",
-            "isCorrect": false,
+            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -6360,14 +6940,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "文法を無視して読解だけ解くこと",
+            "text": "漢字だけを集中して覚えること",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
-            "isCorrect": true,
+            "text": "文法を無視して読解だけ解くこと",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6390,25 +6970,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "のに",
+            "text": "ものの",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "からには",
-            "isCorrect": false,
+            "text": "ので",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ので",
-            "isCorrect": true,
+            "text": "からには",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ものの",
+            "text": "のに",
             "isCorrect": false,
             "order": 3
           }
@@ -6422,26 +7002,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "効力",
+            "text": "協力",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "圧力",
-            "isCorrect": false,
+            "text": "努力",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "協力",
+            "text": "圧力",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "努力",
-            "isCorrect": true,
+            "text": "効力",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6454,25 +7034,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんけつ",
+            "text": "かいしょう",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かいけつ",
-            "isCorrect": true,
+            "text": "けっさく",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "けっさく",
-            "isCorrect": false,
+            "text": "かいけつ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かいしょう",
+            "text": "かんけつ",
             "isCorrect": false,
             "order": 3
           }
@@ -6486,19 +7066,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "わけ",
+            "text": "はず",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "はず",
+            "text": "こと",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "こと",
+            "text": "わけ",
             "isCorrect": false,
             "order": 2
           },
@@ -6550,13 +7130,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "らしく",
+            "text": "みたい",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "みたい",
+            "text": "そうに",
             "isCorrect": false,
             "order": 1
           },
@@ -6568,7 +7148,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "そうに",
+            "text": "らしく",
             "isCorrect": false,
             "order": 3
           }
@@ -6582,7 +7162,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ていせい",
+            "text": "せいてい",
             "isCorrect": false,
             "order": 0
           },
@@ -6594,13 +7174,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "せいてい",
+            "text": "ちょうさ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ちょうさ",
+            "text": "ていせい",
             "isCorrect": false,
             "order": 3
           }
@@ -6620,19 +7200,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ことにされた",
-            "isCorrect": false,
+            "text": "ことにしている",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ことにしている",
-            "isCorrect": true,
+            "text": "ことになっている",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ことになっている",
+            "text": "ことにされた",
             "isCorrect": false,
             "order": 3
           }
@@ -6658,14 +7238,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "変更",
-            "isCorrect": true,
+            "text": "変換",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "変換",
-            "isCorrect": false,
+            "text": "変更",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -6678,25 +7258,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "途端に",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ついでに",
-            "isCorrect": false,
+            "text": "途端に",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "最中に",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "うちに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 3
           }
@@ -6710,26 +7290,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "しくにん",
+            "text": "かくほ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "たしかに",
-            "isCorrect": false,
+            "text": "かくにん",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かくほ",
+            "text": "たしかに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かくにん",
-            "isCorrect": true,
+            "text": "しくにん",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6742,7 +7322,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はず",
+            "text": "こと",
             "isCorrect": false,
             "order": 0
           },
@@ -6754,7 +7334,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "こと",
+            "text": "はず",
             "isCorrect": false,
             "order": 2
           },
@@ -6774,25 +7354,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "現象",
+            "text": "対象",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "影響",
-            "isCorrect": true,
+            "text": "印象",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "対象",
-            "isCorrect": false,
+            "text": "影響",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "印象",
+            "text": "現象",
             "isCorrect": false,
             "order": 3
           }
@@ -6806,13 +7386,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "もの",
+            "text": "ほう",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ほう",
+            "text": "もの",
             "isCorrect": false,
             "order": 1
           },
@@ -6838,25 +7418,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "文法を無視して読解だけ解くこと",
+            "text": "直前に徹夜で暗記すること",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "漢字だけを集中して覚えること",
-            "isCorrect": false,
+            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
-            "isCorrect": true,
+            "text": "文法を無視して読解だけ解くこと",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "直前に徹夜で暗記すること",
+            "text": "漢字だけを集中して覚えること",
             "isCorrect": false,
             "order": 3
           }
@@ -6880,25 +7460,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ショウ",
+            "text": "キョウ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ジ",
-            "isCorrect": false,
+            "text": "セイ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "セイ",
-            "isCorrect": true,
+            "text": "ショウ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "キョウ",
+            "text": "ジ",
             "isCorrect": false,
             "order": 3
           }
@@ -6918,19 +7498,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "セイ",
-            "isCorrect": false,
+            "text": "ジ / チ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ジ / チ",
-            "isCorrect": true,
+            "text": "サイ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "サイ",
+            "text": "セイ",
             "isCorrect": false,
             "order": 3
           }
@@ -6944,26 +7524,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "キョウ",
-            "isCorrect": false,
+            "text": "ケイ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ショウ",
+            "text": "キョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "チ",
+            "text": "ショウ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ケイ",
-            "isCorrect": true,
+            "text": "チ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6976,26 +7556,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "サイ",
-            "isCorrect": true,
+            "text": "セイ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "セイ",
+            "text": "カン",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "カン",
+            "text": "ケイ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ケイ",
-            "isCorrect": false,
+            "text": "サイ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7014,20 +7594,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "カク",
-            "isCorrect": true,
+            "text": "ニン",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ニン",
+            "text": "セツ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "セツ",
-            "isCorrect": false,
+            "text": "カク",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7040,8 +7620,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ニン",
-            "isCorrect": true,
+            "text": "カク",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -7052,8 +7632,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "カク",
-            "isCorrect": false,
+            "text": "ニン",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -7072,26 +7652,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ショク",
-            "isCorrect": false,
+            "text": "ホウ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ジョウ",
+            "text": "ギョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ギョウ",
+            "text": "ショク",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ホウ",
-            "isCorrect": true,
+            "text": "ジョウ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7104,7 +7684,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ホウ",
+            "text": "ドウ",
             "isCorrect": false,
             "order": 0
           },
@@ -7116,13 +7696,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ドウ",
+            "text": "ロウ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ロウ",
+            "text": "ホウ",
             "isCorrect": false,
             "order": 3
           }
@@ -7136,8 +7716,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ショク",
-            "isCorrect": true,
+            "text": "ノウ",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -7148,14 +7728,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ノウ",
+            "text": "ガン",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ガン",
-            "isCorrect": false,
+            "text": "ショク",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7168,25 +7748,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ギョウ",
-            "isCorrect": true,
+            "text": "ショク",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ショク",
-            "isCorrect": false,
+            "text": "ギョウ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ヨク",
+            "text": "タン",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "タン",
+            "text": "ヨク",
             "isCorrect": false,
             "order": 3
           }
@@ -7212,13 +7792,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "はか・る",
+            "text": "お・る",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "お・る",
+            "text": "はか・る",
             "isCorrect": false,
             "order": 3
           }
@@ -7232,8 +7812,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ま・ける",
-            "isCorrect": true,
+            "text": "さが・す",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -7244,13 +7824,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ねが・う",
-            "isCorrect": false,
+            "text": "ま・ける",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "さが・す",
+            "text": "ねが・う",
             "isCorrect": false,
             "order": 3
           }
@@ -7270,8 +7850,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ギ",
-            "isCorrect": false,
+            "text": "ヤク",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -7282,8 +7862,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ヤク",
-            "isCorrect": true,
+            "text": "ギ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7296,8 +7876,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ハ",
-            "isCorrect": false,
+            "text": "ソク",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -7314,8 +7894,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ソク",
-            "isCorrect": true,
+            "text": "ハ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7328,25 +7908,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はら・う",
-            "isCorrect": true,
+            "text": "だ・く",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "だ・く",
-            "isCorrect": false,
+            "text": "はら・う",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "お・す",
+            "text": "ひろ・う",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ひろ・う",
+            "text": "お・す",
             "isCorrect": false,
             "order": 3
           }
@@ -7370,26 +7950,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ジ",
-            "isCorrect": false,
+            "text": "セイ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ショウ",
+            "text": "キョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "キョウ",
+            "text": "ショウ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "セイ",
-            "isCorrect": true,
+            "text": "ジ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7402,7 +7982,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "サイ",
+            "text": "セイ",
             "isCorrect": false,
             "order": 0
           },
@@ -7414,14 +7994,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "セイ",
-            "isCorrect": false,
+            "text": "ジ / チ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ジ / チ",
-            "isCorrect": true,
+            "text": "サイ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7434,8 +8014,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "チ",
-            "isCorrect": false,
+            "text": "ケイ",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -7446,8 +8026,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ケイ",
-            "isCorrect": true,
+            "text": "チ",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -7472,20 +8052,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "カン",
+            "text": "ケイ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "サイ",
-            "isCorrect": true,
+            "text": "カン",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ケイ",
-            "isCorrect": false,
+            "text": "サイ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7504,14 +8084,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "カク",
-            "isCorrect": true,
+            "text": "セツ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "セツ",
-            "isCorrect": false,
+            "text": "カク",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -7530,8 +8110,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ニン",
-            "isCorrect": true,
+            "text": "ゾウ",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -7542,14 +8122,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ゾウ",
+            "text": "カク",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "カク",
-            "isCorrect": false,
+            "text": "ニン",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7568,14 +8148,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ショク",
-            "isCorrect": false,
+            "text": "ホウ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ホウ",
-            "isCorrect": true,
+            "text": "ショク",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -7594,25 +8174,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ホウ",
-            "isCorrect": false,
+            "text": "ジョウ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ドウ",
+            "text": "ロウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ジョウ",
-            "isCorrect": true,
+            "text": "ホウ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ロウ",
+            "text": "ドウ",
             "isCorrect": false,
             "order": 3
           }
@@ -7626,25 +8206,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ショク",
-            "isCorrect": true,
+            "text": "ノウ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ガン",
+            "text": "ギョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ノウ",
-            "isCorrect": false,
+            "text": "ショク",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ギョウ",
+            "text": "ガン",
             "isCorrect": false,
             "order": 3
           }
@@ -7658,26 +8238,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "タン",
+            "text": "ヨク",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ヨク",
+            "text": "ショク",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ギョウ",
-            "isCorrect": true,
+            "text": "タン",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ショク",
-            "isCorrect": false,
+            "text": "ギョウ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7690,25 +8270,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "お・る",
+            "text": "ま・ける",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ま・ける",
-            "isCorrect": false,
+            "text": "か・つ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "か・つ",
-            "isCorrect": true,
+            "text": "はか・る",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はか・る",
+            "text": "お・る",
             "isCorrect": false,
             "order": 3
           }
@@ -7722,26 +8302,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ま・ける",
-            "isCorrect": true,
+            "text": "ねが・う",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "さが・す",
+            "text": "か・つ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "か・つ",
+            "text": "さが・す",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ねが・う",
-            "isCorrect": false,
+            "text": "ま・ける",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7760,8 +8340,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ソク",
-            "isCorrect": false,
+            "text": "ヤク",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -7772,8 +8352,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ヤク",
-            "isCorrect": true,
+            "text": "ソク",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7786,26 +8366,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ハ",
+            "text": "ヤク",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ヤク",
+            "text": "ヒ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ソク",
-            "isCorrect": true,
+            "text": "ハ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ヒ",
-            "isCorrect": false,
+            "text": "ソク",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7818,26 +8398,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "お・す",
+            "text": "だ・く",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ひろ・う",
+            "text": "お・す",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "はら・う",
-            "isCorrect": true,
+            "text": "ひろ・う",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "だ・く",
-            "isCorrect": false,
+            "text": "はら・う",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7860,25 +8440,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "キョウ",
-            "isCorrect": false,
+            "text": "セイ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "セイ",
-            "isCorrect": true,
+            "text": "ショウ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ショウ",
+            "text": "ジ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ジ",
+            "text": "キョウ",
             "isCorrect": false,
             "order": 3
           }
@@ -7892,7 +8472,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "カン",
+            "text": "セイ",
             "isCorrect": false,
             "order": 0
           },
@@ -7904,13 +8484,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "セイ",
+            "text": "サイ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "サイ",
+            "text": "カン",
             "isCorrect": false,
             "order": 3
           }
@@ -7924,26 +8504,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "チ",
+            "text": "ショウ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "キョウ",
+            "text": "チ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ケイ",
-            "isCorrect": true,
+            "text": "キョウ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ショウ",
-            "isCorrect": false,
+            "text": "ケイ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7956,25 +8536,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "カン",
-            "isCorrect": false,
+            "text": "サイ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ケイ",
+            "text": "セイ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "サイ",
-            "isCorrect": true,
+            "text": "カン",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "セイ",
+            "text": "ケイ",
             "isCorrect": false,
             "order": 3
           }
@@ -7988,26 +8568,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "カク",
-            "isCorrect": true,
+            "text": "ニン",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "セツ",
+            "text": "ケイ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ケイ",
+            "text": "セツ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ニン",
-            "isCorrect": false,
+            "text": "カク",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8020,25 +8600,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ゾウ",
+            "text": "ショウ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ニン",
-            "isCorrect": true,
+            "text": "カク",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ショウ",
-            "isCorrect": false,
+            "text": "ニン",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "カク",
+            "text": "ゾウ",
             "isCorrect": false,
             "order": 3
           }
@@ -8052,26 +8632,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ギョウ",
+            "text": "ジョウ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ショク",
+            "text": "ギョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ジョウ",
-            "isCorrect": false,
+            "text": "ホウ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ホウ",
-            "isCorrect": true,
+            "text": "ショク",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8084,19 +8664,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ジョウ",
-            "isCorrect": true,
+            "text": "ロウ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ドウ",
-            "isCorrect": false,
+            "text": "ジョウ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ロウ",
+            "text": "ドウ",
             "isCorrect": false,
             "order": 2
           },
@@ -8122,20 +8702,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ノウ",
+            "text": "ギョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ショク",
-            "isCorrect": true,
+            "text": "ノウ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ギョウ",
-            "isCorrect": false,
+            "text": "ショク",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8148,20 +8728,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "タン",
-            "isCorrect": false,
+            "text": "ギョウ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ヨク",
+            "text": "タン",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ギョウ",
-            "isCorrect": true,
+            "text": "ヨク",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -8180,25 +8760,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "お・る",
-            "isCorrect": false,
+            "text": "か・つ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "か・つ",
-            "isCorrect": true,
+            "text": "お・る",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ま・ける",
+            "text": "はか・る",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はか・る",
+            "text": "ま・ける",
             "isCorrect": false,
             "order": 3
           }
@@ -8212,7 +8792,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ねが・う",
+            "text": "さが・す",
             "isCorrect": false,
             "order": 0
           },
@@ -8230,7 +8810,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "さが・す",
+            "text": "ねが・う",
             "isCorrect": false,
             "order": 3
           }
@@ -8250,13 +8830,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "コ",
+            "text": "ソク",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ソク",
+            "text": "コ",
             "isCorrect": false,
             "order": 2
           },
@@ -8276,25 +8856,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ハ",
-            "isCorrect": false,
+            "text": "ソク",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ソク",
-            "isCorrect": true,
+            "text": "ハ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ヤク",
+            "text": "ヒ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ヒ",
+            "text": "ヤク",
             "isCorrect": false,
             "order": 3
           }
@@ -8308,25 +8888,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はら・う",
-            "isCorrect": true,
+            "text": "ひろ・う",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "お・す",
-            "isCorrect": false,
+            "text": "はら・う",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "だ・く",
+            "text": "お・す",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ひろ・う",
+            "text": "だ・く",
             "isCorrect": false,
             "order": 3
           }
@@ -8356,19 +8936,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ショウ",
+            "text": "キョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ジ",
+            "text": "ショウ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "キョウ",
+            "text": "ジ",
             "isCorrect": false,
             "order": 3
           }
@@ -8394,14 +8974,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "サイ",
-            "isCorrect": false,
+            "text": "ジ / チ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ジ / チ",
-            "isCorrect": true,
+            "text": "サイ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8414,26 +8994,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "キョウ",
+            "text": "チ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ケイ",
-            "isCorrect": true,
+            "text": "ショウ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ショウ",
+            "text": "キョウ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "チ",
-            "isCorrect": false,
+            "text": "ケイ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8446,14 +9026,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "サイ",
-            "isCorrect": true,
+            "text": "カン",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ケイ",
-            "isCorrect": false,
+            "text": "サイ",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -8464,7 +9044,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "カン",
+            "text": "ケイ",
             "isCorrect": false,
             "order": 3
           }
@@ -8478,25 +9058,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "カク",
-            "isCorrect": true,
+            "text": "ケイ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "セツ",
-            "isCorrect": false,
+            "text": "カク",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ニン",
+            "text": "セツ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ケイ",
+            "text": "ニン",
             "isCorrect": false,
             "order": 3
           }
@@ -8510,26 +9090,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ニン",
-            "isCorrect": true,
+            "text": "ショウ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ショウ",
+            "text": "ゾウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ゾウ",
+            "text": "カク",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "カク",
-            "isCorrect": false,
+            "text": "ニン",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8542,7 +9122,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ジョウ",
+            "text": "ショク",
             "isCorrect": false,
             "order": 0
           },
@@ -8560,7 +9140,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ショク",
+            "text": "ジョウ",
             "isCorrect": false,
             "order": 3
           }
@@ -8574,8 +9154,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ジョウ",
-            "isCorrect": true,
+            "text": "ロウ",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -8586,13 +9166,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ドウ",
-            "isCorrect": false,
+            "text": "ジョウ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ロウ",
+            "text": "ドウ",
             "isCorrect": false,
             "order": 3
           }
@@ -8606,20 +9186,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ギョウ",
-            "isCorrect": false,
+            "text": "ショク",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ガン",
+            "text": "ギョウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ショク",
-            "isCorrect": true,
+            "text": "ガン",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -8638,26 +9218,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ヨク",
+            "text": "タン",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ショク",
+            "text": "ヨク",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "タン",
-            "isCorrect": false,
+            "text": "ギョウ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ギョウ",
-            "isCorrect": true,
+            "text": "ショク",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8670,26 +9250,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ま・ける",
+            "text": "お・る",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "お・る",
-            "isCorrect": false,
+            "text": "か・つ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "はか・る",
+            "text": "ま・ける",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "か・つ",
-            "isCorrect": true,
+            "text": "はか・る",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8708,8 +9288,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ま・ける",
-            "isCorrect": true,
+            "text": "さが・す",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -8720,8 +9300,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "さが・す",
-            "isCorrect": false,
+            "text": "ま・ける",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8734,7 +9314,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ギ",
+            "text": "ソク",
             "isCorrect": false,
             "order": 0
           },
@@ -8746,14 +9326,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ヤク",
-            "isCorrect": true,
+            "text": "ギ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ソク",
-            "isCorrect": false,
+            "text": "ヤク",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8766,7 +9346,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ヤク",
+            "text": "ハ",
             "isCorrect": false,
             "order": 0
           },
@@ -8778,7 +9358,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ハ",
+            "text": "ヤク",
             "isCorrect": false,
             "order": 2
           },
@@ -8804,13 +9384,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "だ・く",
+            "text": "お・す",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "お・す",
+            "text": "だ・く",
             "isCorrect": false,
             "order": 2
           },
@@ -8840,25 +9420,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "キョウ",
-            "isCorrect": false,
+            "text": "セイ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "セイ",
-            "isCorrect": true,
+            "text": "キョウ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ジ",
+            "text": "ショウ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ショウ",
+            "text": "ジ",
             "isCorrect": false,
             "order": 3
           }
@@ -8878,19 +9458,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "サイ",
-            "isCorrect": false,
+            "text": "ジ / チ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ジ / チ",
-            "isCorrect": true,
+            "text": "カン",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "カン",
+            "text": "サイ",
             "isCorrect": false,
             "order": 3
           }
@@ -8942,20 +9522,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "サイ",
-            "isCorrect": true,
+            "text": "ケイ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ケイ",
+            "text": "カン",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "カン",
-            "isCorrect": false,
+            "text": "サイ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8968,20 +9548,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ケイ",
+            "text": "ニン",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "カク",
-            "isCorrect": true,
+            "text": "ケイ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ニン",
-            "isCorrect": false,
+            "text": "カク",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -9000,19 +9580,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ショウ",
-            "isCorrect": false,
+            "text": "ニン",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ニン",
-            "isCorrect": true,
+            "text": "ゾウ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ゾウ",
+            "text": "ショウ",
             "isCorrect": false,
             "order": 2
           },
@@ -9032,8 +9612,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ホウ",
-            "isCorrect": true,
+            "text": "ギョウ",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -9050,8 +9630,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ギョウ",
-            "isCorrect": false,
+            "text": "ホウ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9070,20 +9650,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ドウ",
+            "text": "ロウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ロウ",
-            "isCorrect": false,
+            "text": "ジョウ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ジョウ",
-            "isCorrect": true,
+            "text": "ドウ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9096,26 +9676,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ノウ",
+            "text": "ギョウ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ガン",
+            "text": "ノウ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ショク",
-            "isCorrect": true,
+            "text": "ガン",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ギョウ",
-            "isCorrect": false,
+            "text": "ショク",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9140,14 +9720,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "ヨク",
-            "isCorrect": false,
+            "text": "ギョウ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ギョウ",
-            "isCorrect": true,
+            "text": "ヨク",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9166,20 +9746,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "か・つ",
-            "isCorrect": true,
+            "text": "お・る",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "お・る",
+            "text": "はか・る",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はか・る",
-            "isCorrect": false,
+            "text": "か・つ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9192,20 +9772,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ま・ける",
-            "isCorrect": true,
+            "text": "か・つ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "か・つ",
+            "text": "さが・す",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "さが・す",
-            "isCorrect": false,
+            "text": "ま・ける",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -9224,25 +9804,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ギ",
-            "isCorrect": false,
+            "text": "ヤク",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ヤク",
-            "isCorrect": true,
+            "text": "コ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ソク",
+            "text": "ギ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "コ",
+            "text": "ソク",
             "isCorrect": false,
             "order": 3
           }
@@ -9256,20 +9836,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ヤク",
+            "text": "ハ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ソク",
-            "isCorrect": true,
+            "text": "ヤク",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ハ",
-            "isCorrect": false,
+            "text": "ソク",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -9288,8 +9868,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はら・う",
-            "isCorrect": true,
+            "text": "お・す",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -9306,8 +9886,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "お・す",
-            "isCorrect": false,
+            "text": "はら・う",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9330,25 +9910,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かいけつする (Giải quyết vấn đề)",
-            "isCorrect": true,
+            "text": "かいしょうする (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かんりする (Không phù hợp)",
+            "text": "かいふくする (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かいふくする (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "かいけつする (Giải quyết vấn đề)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かいしょうする (Sai ý nghĩa)",
+            "text": "かんりする (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -9368,13 +9948,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "きょうりょく (Không phù hợp)",
+            "text": "えいぎょう (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "えいぎょう (Sai ý nghĩa)",
+            "text": "きょうりょく (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
@@ -9394,7 +9974,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんぜん (Không phù hợp)",
+            "text": "しょうきょくてき (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
@@ -9406,7 +9986,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "しょうきょくてき (Sai ý nghĩa)",
+            "text": "かんぜん (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
@@ -9426,25 +10006,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ぐたいてき (Cụ thể, rõ ràng)",
-            "isCorrect": true,
+            "text": "ちゅうしょうてき (Sai âm đọc)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "きほんてき (Không phù hợp)",
-            "isCorrect": false,
+            "text": "ぐたいてき (Cụ thể, rõ ràng)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せっきょくてき (Sai ý nghĩa)",
+            "text": "きほんてき (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ちゅうしょうてき (Sai âm đọc)",
+            "text": "せっきょくてき (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -9458,26 +10038,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "しゅうしゅうする (Sai ý nghĩa)",
+            "text": "しゅうりする (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "しゅっせきする (Không phù hợp)",
-            "isCorrect": false,
+            "text": "しゅうちゅうする (Tập trung cao độ)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "しゅうりする (Sai âm đọc)",
+            "text": "しゅうしゅうする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しゅうちゅうする (Tập trung cao độ)",
-            "isCorrect": true,
+            "text": "しゅっせきする (Không phù hợp)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9490,25 +10070,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんりしゃ (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "たんとうしゃ (Người phụ phụ trách)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "たんとうしゃ (Người phụ phụ trách)",
-            "isCorrect": true,
+            "text": "たんとうかん (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "だいひょうしゃ (Không phù hợp)",
+            "text": "かんりしゃ (Sai âm đọc)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たんとうかん (Sai ý nghĩa)",
+            "text": "だいひょうしゃ (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -9522,25 +10102,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "しょうじょう (Không phù hợp)",
-            "isCorrect": false,
+            "text": "じょうきょう (Tình hình, trạng thái)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "じょうきょう (Tình hình, trạng thái)",
-            "isCorrect": true,
+            "text": "じょうほう (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かんきょう (Sai âm đọc)",
+            "text": "しょうじょう (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "じょうほう (Sai ý nghĩa)",
+            "text": "かんきょう (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -9554,26 +10134,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "せいていする (Sai âm đọc)",
+            "text": "ていしする (Không phù hợp)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ていしする (Không phù hợp)",
+            "text": "ちょうさする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ちょうせいする (Điều chỉnh, sắp xếp)",
-            "isCorrect": true,
+            "text": "せいていする (Sai âm đọc)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ちょうさする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "ちょうせいする (Điều chỉnh, sắp xếp)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9586,26 +10166,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "みとめる (Không phù hợp)",
+            "text": "かくしんする (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かくしんする (Sai âm đọc)",
+            "text": "みとめる (Không phù hợp)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かくにんする (Xác nhận, kiểm tra)",
-            "isCorrect": true,
+            "text": "かくほする (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かくほする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "かくにんする (Xác nhận, kiểm tra)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9618,25 +10198,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ほうそうする (Sai ý nghĩa)",
+            "text": "れんらくする (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "そうだんする (Không phù hợp)",
-            "isCorrect": false,
+            "text": "ほうこくする (Báo cáo thông tin)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ほうこくする (Báo cáo thông tin)",
-            "isCorrect": true,
+            "text": "そうだんする (Không phù hợp)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "れんらくする (Sai âm đọc)",
+            "text": "ほうそうする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -9650,20 +10230,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "きかく (Không phù hợp)",
+            "text": "けいかい (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "けいかい (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "けいやく (Hợp đồng, thỏa thuận)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "けいやく (Hợp đồng, thỏa thuận)",
-            "isCorrect": true,
+            "text": "きかく (Không phù hợp)",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -9682,25 +10262,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ひょうばん (Sai âm đọc)",
+            "text": "はんだんする (Không phù hợp)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ひょうげんする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "ひょうかする (Đánh giá, ghi nhận)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ひょうかする (Đánh giá, ghi nhận)",
-            "isCorrect": true,
+            "text": "ひょうげんする (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はんだんする (Không phù hợp)",
+            "text": "ひょうばん (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -9714,25 +10294,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "sukejūru (Lịch trình công việc)",
-            "isCorrect": true,
+            "text": "suke-to (Không phù hợp)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "sujina (Sai ý nghĩa)",
+            "text": "sukī (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "suke-to (Không phù hợp)",
-            "isCorrect": false,
+            "text": "sukejūru (Lịch trình công việc)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "sukī (Sai âm đọc)",
+            "text": "sujina (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -9758,14 +10338,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "kosuto (Chi phí, giá thành)",
-            "isCorrect": true,
+            "text": "katsu (Không phù hợp)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "katsu (Không phù hợp)",
-            "isCorrect": false,
+            "text": "kosuto (Chi phí, giá thành)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9784,7 +10364,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "purofīru (Sai ý nghĩa)",
+            "text": "purogramu (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
@@ -9796,7 +10376,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "purogramu (Sai âm đọc)",
+            "text": "purofīru (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -9820,8 +10400,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かいけつする (Giải quyết vấn đề)",
-            "isCorrect": true,
+            "text": "かいしょうする (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -9832,8 +10412,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "かいしょうする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "かいけつする (Giải quyết vấn đề)",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -9852,19 +10432,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "きょうりょく (Không phù hợp)",
+            "text": "かんきょう (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "えいぎょう (Sai ý nghĩa)",
+            "text": "きょうりょく (Không phù hợp)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かんきょう (Sai âm đọc)",
+            "text": "えいぎょう (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 2
           },
@@ -9884,26 +10464,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "しょうきょくてき (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "せっきょくてき (Tích cực, chủ động)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かんぜん (Không phù hợp)",
+            "text": "ぐたいてき (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ぐたいてき (Sai âm đọc)",
+            "text": "かんぜん (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "せっきょくてき (Tích cực, chủ động)",
-            "isCorrect": true,
+            "text": "しょうきょくてき (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9916,25 +10496,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "きほんてき (Không phù hợp)",
-            "isCorrect": false,
+            "text": "ぐたいてき (Cụ thể, rõ ràng)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ぐたいてき (Cụ thể, rõ ràng)",
-            "isCorrect": true,
+            "text": "ちゅうしょうてき (Sai âm đọc)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せっきょくてき (Sai ý nghĩa)",
+            "text": "きほんてき (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ちゅうしょうてき (Sai âm đọc)",
+            "text": "せっきょくてき (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -9948,25 +10528,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "しゅうちゅうする (Tập trung cao độ)",
-            "isCorrect": true,
+            "text": "しゅっせきする (Không phù hợp)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "しゅうりする (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "しゅうちゅうする (Tập trung cao độ)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "しゅうしゅうする (Sai ý nghĩa)",
+            "text": "しゅうりする (Sai âm đọc)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しゅっせきする (Không phù hợp)",
+            "text": "しゅうしゅうする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -9980,7 +10560,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんりしゃ (Sai âm đọc)",
+            "text": "たんとうかん (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
@@ -9998,7 +10578,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "たんとうかん (Sai ý nghĩa)",
+            "text": "かんりしゃ (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -10012,25 +10592,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんきょう (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "じょうきょう (Tình hình, trạng thái)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "じょうきょう (Tình hình, trạng thái)",
-            "isCorrect": true,
+            "text": "じょうほう (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "じょうほう (Sai ý nghĩa)",
+            "text": "しょうじょう (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しょうじょう (Không phù hợp)",
+            "text": "かんきょう (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -10044,7 +10624,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ていしする (Không phù hợp)",
+            "text": "ちょうさする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
@@ -10056,13 +10636,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "せいていする (Sai âm đọc)",
+            "text": "ていしする (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ちょうさする (Sai ý nghĩa)",
+            "text": "せいていする (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -10076,26 +10656,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "みとめる (Không phù hợp)",
+            "text": "かくほする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かくにんする (Xác nhận, kiểm tra)",
-            "isCorrect": true,
+            "text": "かくしんする (Sai âm đọc)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かくしんする (Sai âm đọc)",
+            "text": "みとめる (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かくほする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "かくにんする (Xác nhận, kiểm tra)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -10108,7 +10688,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "れんらくする (Sai âm đọc)",
+            "text": "そうだんする (Không phù hợp)",
             "isCorrect": false,
             "order": 0
           },
@@ -10126,7 +10706,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "そうだんする (Không phù hợp)",
+            "text": "れんらくする (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -10178,20 +10758,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ひょうばん (Sai âm đọc)",
+            "text": "ひょうげんする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ひょうげんする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "ひょうかする (Đánh giá, ghi nhận)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ひょうかする (Đánh giá, ghi nhận)",
-            "isCorrect": true,
+            "text": "ひょうばん (Sai âm đọc)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10204,7 +10784,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "sukī (Sai âm đọc)",
+            "text": "suke-to (Không phù hợp)",
             "isCorrect": false,
             "order": 0
           },
@@ -10222,7 +10802,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "suke-to (Không phù hợp)",
+            "text": "sukī (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -10236,25 +10816,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "kōsu (Sai ý nghĩa)",
+            "text": "kōto (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "kosuto (Chi phí, giá thành)",
-            "isCorrect": true,
+            "text": "kōsu (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "katsu (Không phù hợp)",
-            "isCorrect": false,
+            "text": "kosuto (Chi phí, giá thành)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "kōto (Sai âm đọc)",
+            "text": "katsu (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -10268,8 +10848,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "purojekuto (Dự án công ty)",
-            "isCorrect": true,
+            "text": "purofīru (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -10280,14 +10860,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "purofīru (Sai ý nghĩa)",
+            "text": "purodukto (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "purodukto (Không phù hợp)",
-            "isCorrect": false,
+            "text": "purojekuto (Dự án công ty)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -10310,7 +10890,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かいしょうする (Sai ý nghĩa)",
+            "text": "かんりする (Không phù hợp)",
             "isCorrect": false,
             "order": 0
           },
@@ -10328,7 +10908,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "かんりする (Không phù hợp)",
+            "text": "かいしょうする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -10342,13 +10922,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "きょうりょく (Không phù hợp)",
-            "isCorrect": false,
+            "text": "えいきょう (Ảnh hưởng, tác động)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "えいぎょう (Sai ý nghĩa)",
+            "text": "きょうりょく (Không phù hợp)",
             "isCorrect": false,
             "order": 1
           },
@@ -10360,8 +10940,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "えいきょう (Ảnh hưởng, tác động)",
-            "isCorrect": true,
+            "text": "えいぎょう (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10374,25 +10954,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ぐたいてき (Sai âm đọc)",
+            "text": "しょうきょくてき (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かんぜん (Không phù hợp)",
-            "isCorrect": false,
+            "text": "せっきょくてき (Tích cực, chủ động)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せっきょくてき (Tích cực, chủ động)",
-            "isCorrect": true,
+            "text": "ぐたいてき (Sai âm đọc)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しょうきょくてき (Sai ý nghĩa)",
+            "text": "かんぜん (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -10406,13 +10986,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "せっきょくてき (Sai ý nghĩa)",
+            "text": "ちゅうしょうてき (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "きほんてき (Không phù hợp)",
+            "text": "せっきょくてき (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
@@ -10424,7 +11004,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ちゅうしょうてき (Sai âm đọc)",
+            "text": "きほんてき (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -10444,20 +11024,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "しゅうりする (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "しゅうちゅうする (Tập trung cao độ)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "しゅっせきする (Không phù hợp)",
+            "text": "しゅうりする (Sai âm đọc)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しゅうちゅうする (Tập trung cao độ)",
-            "isCorrect": true,
+            "text": "しゅっせきする (Không phù hợp)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10470,26 +11050,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たんとうしゃ (Người phụ phụ trách)",
-            "isCorrect": true,
+            "text": "たんとうかん (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "だいひょうしゃ (Không phù hợp)",
+            "text": "かんりしゃ (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "たんとうかん (Sai ý nghĩa)",
+            "text": "だいひょうしゃ (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かんりしゃ (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "たんとうしゃ (Người phụ phụ trách)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -10502,26 +11082,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "しょうじょう (Không phù hợp)",
+            "text": "じょうほう (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かんきょう (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "じょうきょう (Tình hình, trạng thái)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "じょうほう (Sai ý nghĩa)",
+            "text": "しょうじょう (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "じょうきょう (Tình hình, trạng thái)",
-            "isCorrect": true,
+            "text": "かんきょう (Sai âm đọc)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10534,7 +11114,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ちょうさする (Sai ý nghĩa)",
+            "text": "せいていする (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
@@ -10552,7 +11132,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "せいていする (Sai âm đọc)",
+            "text": "ちょうさする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -10572,19 +11152,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "かくほする (Sai ý nghĩa)",
+            "text": "かくしんする (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "みとめる (Không phù hợp)",
+            "text": "かくほする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かくしんする (Sai âm đọc)",
+            "text": "みとめる (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -10598,25 +11178,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "れんらくする (Sai âm đọc)",
+            "text": "ほうそうする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ほうこくする (Báo cáo thông tin)",
-            "isCorrect": true,
+            "text": "そうだんする (Không phù hợp)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ほうそうする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "ほうこくする (Báo cáo thông tin)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "そうだんする (Không phù hợp)",
+            "text": "れんらくする (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -10642,13 +11222,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "けいかい (Sai âm đọc)",
+            "text": "せいやく (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "せいやく (Sai ý nghĩa)",
+            "text": "けいかい (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -10662,26 +11242,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ひょうげんする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "ひょうかする (Đánh giá, ghi nhận)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "はんだんする (Không phù hợp)",
+            "text": "ひょうばん (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ひょうばん (Sai âm đọc)",
+            "text": "ひょうげんする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ひょうかする (Đánh giá, ghi nhận)",
-            "isCorrect": true,
+            "text": "はんだんする (Không phù hợp)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10694,26 +11274,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "sukī (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "sukejūru (Lịch trình công việc)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "suke-to (Không phù hợp)",
+            "text": "sujina (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "sujina (Sai ý nghĩa)",
+            "text": "suke-to (Không phù hợp)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "sukejūru (Lịch trình công việc)",
-            "isCorrect": true,
+            "text": "sukī (Sai âm đọc)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10726,19 +11306,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "kōto (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "kosuto (Chi phí, giá thành)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "kosuto (Chi phí, giá thành)",
-            "isCorrect": true,
+            "text": "katsu (Không phù hợp)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "katsu (Không phù hợp)",
+            "text": "kōto (Sai âm đọc)",
             "isCorrect": false,
             "order": 2
           },
@@ -10758,26 +11338,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "purofīru (Sai ý nghĩa)",
+            "text": "purogramu (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "purogramu (Sai âm đọc)",
+            "text": "purodukto (Không phù hợp)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "purojekuto (Dự án công ty)",
-            "isCorrect": true,
+            "text": "purofīru (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "purodukto (Không phù hợp)",
-            "isCorrect": false,
+            "text": "purojekuto (Dự án công ty)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -10800,25 +11380,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "資料の準備不足のため",
-            "isCorrect": false,
+            "text": "台風による悪天候のため",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "台風による悪天候のため",
-            "isCorrect": true,
+            "text": "資料の準備不足のため",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "社長の体調不良のため",
+            "text": "会場の予約漏れのため",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "会場の予約漏れのため",
+            "text": "社長の体調不良のため",
             "isCorrect": false,
             "order": 3
           }
@@ -10832,25 +11412,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "来週の月曜日午前9時まで",
+            "text": "今月の最終日まで",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "今週の金曜日午後5時まで",
-            "isCorrect": true,
+            "text": "明日の正午まで",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "明日の正午まで",
-            "isCorrect": false,
+            "text": "今週の金曜日午後5時まで",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "今月の最終日まで",
+            "text": "来週の月曜日午前9時まで",
             "isCorrect": false,
             "order": 3
           }
@@ -10876,14 +11456,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "新しい趣味を見つけること",
-            "isCorrect": false,
+            "text": "時間を効率的に管理する重要性",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "時間を効率的に管理する重要性",
-            "isCorrect": true,
+            "text": "新しい趣味を見つけること",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10896,26 +11476,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "直射日光に当てること",
-            "isCorrect": false,
+            "text": "水に濡らさないようにすること",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "高温の場所に放置すること",
+            "text": "分解して掃除すること",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "分解して掃除すること",
+            "text": "直射日光に当てること",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "水に濡らさないようにすること",
-            "isCorrect": true,
+            "text": "高温の場所に放置すること",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10940,14 +11520,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "迅速な対応と協力に対して",
-            "isCorrect": true,
+            "text": "食事の招待に対して",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "食事の招待に対して",
-            "isCorrect": false,
+            "text": "迅速な対応と協力に対して",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -10960,25 +11540,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "再配達の希望日時を連絡する",
-            "isCorrect": true,
+            "text": "差出人に電話する",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "直接郵便局へ取りに行く",
+            "text": "そのまま放置して待つ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "差出人に電話する",
-            "isCorrect": false,
+            "text": "再配達の希望日時を連絡する",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "そのまま放置して待つ",
+            "text": "直接郵便局へ取りに行く",
             "isCorrect": false,
             "order": 3
           }
@@ -10998,8 +11578,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "緊急度と重要度の高さ",
-            "isCorrect": true,
+            "text": "作業の楽しさ",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -11010,8 +11590,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "作業の楽しさ",
-            "isCorrect": false,
+            "text": "緊急度と重要度の高さ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -11024,7 +11604,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "全て完了し承認済み",
+            "text": "計画を جهان hỏng làm lại",
             "isCorrect": false,
             "order": 0
           },
@@ -11036,13 +11616,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "まだ着手できていない",
+            "text": "全て完了し承認済み",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "計画を جهان hỏng làm lại",
+            "text": "まだ着手できていない",
             "isCorrect": false,
             "order": 3
           }
@@ -11056,19 +11636,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "英語が母国語であること",
-            "isCorrect": false,
+            "text": "N3以上の日本語能力を持つこと",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "N3以上の日本語能力を持つこと",
-            "isCorrect": true,
+            "text": "実務経験5年以上",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "実務経験5年以上",
+            "text": "英語が母国語であること",
             "isCorrect": false,
             "order": 2
           },
@@ -11088,25 +11668,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "喜びから thất vọng に変化した",
+            "text": "終始変わらなかった",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "不安から安心へと変化した",
-            "isCorrect": true,
+            "text": "喜びから thất vọng に変化した",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "怒りから kháo に変化した",
-            "isCorrect": false,
+            "text": "不安から安心へと変化した",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "終始変わらなかった",
+            "text": "怒りから kháo に変化した",
             "isCorrect": false,
             "order": 3
           }
@@ -11126,19 +11706,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "終日ご利用いただけない",
-            "isCorrect": false,
+            "text": "深夜1時から午前5時まで",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "深夜1時から午前5時まで",
-            "isCorrect": true,
+            "text": "来週の土曜日全日",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "来週の土曜日全日",
+            "text": "終日ご利用いただけない",
             "isCorrect": false,
             "order": 3
           }
@@ -11152,8 +11732,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "エレベーターで急いで降りる",
-            "isCorrect": false,
+            "text": "落ち着いて避難場所へ移動する",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -11164,8 +11744,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "落ち着いて避難場所へ移動する",
-            "isCorrect": true,
+            "text": "エレベーターで急いで降りる",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -11184,8 +11764,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "担当者の不在",
-            "isCorrect": false,
+            "text": "システムの不具合による遅延",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -11196,13 +11776,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "システムの不具合による遅延",
-            "isCorrect": true,
+            "text": "価格の誤表記",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "価格の誤表記",
+            "text": "担当者の不在",
             "isCorrect": false,
             "order": 3
           }
@@ -11222,20 +11802,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "卒業証明書のみ",
+            "text": "写真2枚のみ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "身分証明書と申込書",
-            "isCorrect": true,
+            "text": "卒業証明書のみ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "写真2枚のみ",
-            "isCorrect": false,
+            "text": "身分証明書と申込書",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -11260,14 +11840,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "チーム内のコミュニケーション改善",
-            "isCorrect": true,
+            "text": "新しい人員の hired",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "新しい人員の hired",
-            "isCorrect": false,
+            "text": "チーム内のコミュニケーション改善",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -11290,26 +11870,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "会場の予約漏れのため",
-            "isCorrect": false,
+            "text": "台風による悪天候のため",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "資料の準備不足のため",
+            "text": "社長の体調不良のため",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "社長の体調不良のため",
+            "text": "会場の予約漏れのため",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "台風による悪天候のため",
-            "isCorrect": true,
+            "text": "資料の準備不足のため",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11334,13 +11914,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "明日の正午まで",
+            "text": "今月の最終日まで",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "今月の最終日まで",
+            "text": "明日の正午まで",
             "isCorrect": false,
             "order": 3
           }
@@ -11360,14 +11940,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "新しい趣味を見つけること",
-            "isCorrect": false,
+            "text": "時間を効率的に管理する重要性",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "時間を効率的に管理する重要性",
-            "isCorrect": true,
+            "text": "新しい趣味を見つけること",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -11386,20 +11966,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "分解して掃除すること",
-            "isCorrect": false,
+            "text": "水に濡らさないようにすること",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "高温の場所に放置すること",
+            "text": "分解して掃除すること",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "水に濡らさないようにすること",
-            "isCorrect": true,
+            "text": "高温の場所に放置すること",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -11430,14 +12010,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "食事の招待に対して",
-            "isCorrect": false,
+            "text": "迅速な対応と協力に対して",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "迅速な対応と協力に対して",
-            "isCorrect": true,
+            "text": "食事の招待に対して",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11450,26 +12030,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "そのまま放置して待つ",
+            "text": "差出人に電話する",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "差出人に電話する",
+            "text": "そのまま放置して待つ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "直接郵便局へ取りに行く",
-            "isCorrect": false,
+            "text": "再配達の希望日時を連絡する",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "再配達の希望日時を連絡する",
-            "isCorrect": true,
+            "text": "直接郵便局へ取りに行く",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11494,13 +12074,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "上司の指示の順番",
+            "text": "作業の楽しさ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "作業の楽しさ",
+            "text": "上司の指示の順番",
             "isCorrect": false,
             "order": 3
           }
@@ -11514,7 +12094,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "計画を جهان hỏng làm lại",
+            "text": "まだ着手できていない",
             "isCorrect": false,
             "order": 0
           },
@@ -11526,14 +12106,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "8割方完成し本日中に提出予定",
-            "isCorrect": true,
+            "text": "計画を جهان hỏng làm lại",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "まだ着手できていない",
-            "isCorrect": false,
+            "text": "8割方完成し本日中に提出予定",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -11546,14 +12126,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "車を運転できること",
-            "isCorrect": false,
+            "text": "N3以上の日本語能力を持つこと",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "N3以上の日本語能力を持つこと",
-            "isCorrect": true,
+            "text": "車を運転できること",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -11578,25 +12158,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "不安から安心へと変化した",
-            "isCorrect": true,
+            "text": "怒りから kháo に変化した",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "怒りから kháo に変化した",
-            "isCorrect": false,
+            "text": "不安から安心へと変化した",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "終始変わらなかった",
+            "text": "喜びから thất vọng に変化した",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "喜びから thất vọng に変化した",
+            "text": "終始変わらなかった",
             "isCorrect": false,
             "order": 3
           }
@@ -11610,8 +12190,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "深夜1時から午前5時まで",
-            "isCorrect": true,
+            "text": "正午から午後1時まで",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -11622,8 +12202,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "正午から午後1時まで",
-            "isCorrect": false,
+            "text": "深夜1時から午前5時まで",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -11642,25 +12222,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "エレベーターで急いで降りる",
+            "text": "一人で部屋に閉じこもる",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "一人で部屋に閉じこもる",
-            "isCorrect": false,
+            "text": "落ち着いて避難場所へ移動する",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "落ち着いて避難場所へ移動する",
-            "isCorrect": true,
+            "text": "荷物をたくさん持って逃げる",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "荷物をたくさん持って逃げる",
+            "text": "エレベーターで急いで降りる",
             "isCorrect": false,
             "order": 3
           }
@@ -11674,8 +12254,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "価格の誤表記",
-            "isCorrect": false,
+            "text": "システムの不具合による遅延",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -11686,8 +12266,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "システムの不具合による遅延",
-            "isCorrect": true,
+            "text": "価格の誤表記",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -11706,14 +12286,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "写真2枚のみ",
+            "text": "卒業証明書のみ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "卒業証明書のみ",
-            "isCorrect": false,
+            "text": "身分証明書と申込書",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -11724,8 +12304,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "身分証明書と申込書",
-            "isCorrect": true,
+            "text": "写真2枚のみ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11744,13 +12324,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "新しい人員の hired",
+            "text": "システムの全面 tháp đổi",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "システムの全面 tháp đổi",
+            "text": "新しい人員の hired",
             "isCorrect": false,
             "order": 2
           },
@@ -11786,19 +12366,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "友達にノートを借りる",
+            "text": "家に帰って勉強する",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "家に帰って勉強する",
+            "text": "先生の部屋へ行く",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "先生の部屋へ行く",
+            "text": "友達にノートを借りる",
             "isCorrect": false,
             "order": 3
           }
@@ -11812,26 +12392,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "朝起きてすぐに飲む",
+            "text": "痛い時だけ飲む",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "痛い時だけ飲む",
-            "isCorrect": false,
+            "text": "毎食後30分以内に飲む",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "寝る直前に1回飲む",
+            "text": "朝起きてすぐに飲む",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "毎食後30分以内に飲む",
-            "isCorrect": true,
+            "text": "寝る直前に1回飲む",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11844,25 +12424,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "社長を迎えること",
+            "text": "お茶を淹れること",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "会議室の予約と資料のコピー",
-            "isCorrect": true,
+            "text": "タクシーを呼ぶこと",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "お茶を淹れること",
-            "isCorrect": false,
+            "text": "会議室の予約と資料のコピー",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "タクシーを呼ぶこと",
+            "text": "社長を迎えること",
             "isCorrect": false,
             "order": 3
           }
@@ -11882,19 +12462,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "こちらこそよろしく。",
+            "text": "ごちそうさまでした。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "いいえ、どういたしまして。",
+            "text": "こちらこそよろしく。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ごちそうさまでした。",
+            "text": "いいえ、どういたしまして。",
             "isCorrect": false,
             "order": 3
           }
@@ -11908,13 +12488,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "また今度お願いします。",
+            "text": "結構です。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "結構です。",
+            "text": "はい、つまらないですね。",
             "isCorrect": false,
             "order": 1
           },
@@ -11926,7 +12506,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "はい、つまらないですね。",
+            "text": "また今度お願いします。",
             "isCorrect": false,
             "order": 3
           }
@@ -11940,26 +12520,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "コーヒーのみ",
+            "text": "パスタとサラダ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "日替わりランチコース2つ",
-            "isCorrect": true,
+            "text": "ラーメンと餃子",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ラーメンと餃子",
+            "text": "コーヒーのみ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "パスタとサラダ",
-            "isCorrect": false,
+            "text": "日替わりランチコース2つ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -11972,25 +12552,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "10時30分発の特急",
-            "isCorrect": false,
+            "text": "10時15分発の急行電車",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "10時00分発の各駅停車",
+            "text": "11時00分発",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "10時15分発の急行電車",
-            "isCorrect": true,
+            "text": "10時30分発の特急",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "11時00分発",
+            "text": "10時00分発の各駅停車",
             "isCorrect": false,
             "order": 3
           }
@@ -12010,7 +12590,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "どう致しまして。",
+            "text": "ごめんなさい。",
             "isCorrect": false,
             "order": 1
           },
@@ -12022,7 +12602,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "ごめんなさい。",
+            "text": "どう致しまして。",
             "isCorrect": false,
             "order": 3
           }
@@ -12042,7 +12622,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "アプリで提示する",
+            "text": "カードは拒否する",
             "isCorrect": false,
             "order": 1
           },
@@ -12054,7 +12634,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "カードは拒否する",
+            "text": "アプリで提示する",
             "isCorrect": false,
             "order": 3
           }
@@ -12068,8 +12648,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "大雪になる",
-            "isCorrect": false,
+            "text": "午後から雨が降り出す",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -12086,8 +12666,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "午後から雨が降り出す",
-            "isCorrect": true,
+            "text": "大雪になる",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12132,25 +12712,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "カフェの店内",
-            "isCorrect": false,
+            "text": "駅の改札口の前",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ハチ公像の前",
+            "text": "映画館の受付",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "駅の改札口の前",
-            "isCorrect": true,
+            "text": "ハチ公像の前",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "映画館の受付",
+            "text": "カフェの店内",
             "isCorrect": false,
             "order": 3
           }
@@ -12164,20 +12744,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "快く引き受けた",
-            "isCorrect": true,
+            "text": "保留にした",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "保留にした",
+            "text": "他の人に頼んだ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "他の人に頼んだ",
-            "isCorrect": false,
+            "text": "快く引き受けた",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -12196,14 +12776,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "気にしないでください。",
-            "isCorrect": false,
+            "text": "こちらこそ、よろしくお願いいたします。",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こちらこそ、よろしくお願いいたします。",
-            "isCorrect": true,
+            "text": "頑張ってください。",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -12214,7 +12794,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "頑張ってください。",
+            "text": "気にしないでください。",
             "isCorrect": false,
             "order": 3
           }
@@ -12228,14 +12808,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "第三者に決めてもらった",
-            "isCorrect": false,
+            "text": "最終的に合意した",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "最終的に合意した",
-            "isCorrect": true,
+            "text": "第三者に決めてもらった",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -12270,26 +12850,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "友達にノートを借りる",
+            "text": "先生の部屋へ行く",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "図書館へ行って本を返す",
-            "isCorrect": true,
+            "text": "友達にノートを借りる",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "先生の部屋へ行く",
+            "text": "家に帰って勉強する",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "家に帰って勉強する",
-            "isCorrect": false,
+            "text": "図書館へ行って本を返す",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12302,7 +12882,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "朝起きてすぐに飲む",
+            "text": "痛い時だけ飲む",
             "isCorrect": false,
             "order": 0
           },
@@ -12314,14 +12894,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "痛い時だけ飲む",
-            "isCorrect": false,
+            "text": "毎食後30分以内に飲む",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "毎食後30分以内に飲む",
-            "isCorrect": true,
+            "text": "朝起きてすぐに飲む",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12334,8 +12914,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "タクシーを呼ぶこと",
-            "isCorrect": false,
+            "text": "会議室の予約と資料のコピー",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -12346,14 +12926,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "お茶を淹れること",
+            "text": "タクシーを呼ぶこと",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "会議室の予約と資料のコピー",
-            "isCorrect": true,
+            "text": "お茶を淹れること",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12366,26 +12946,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ごちそうさまでした。",
+            "text": "こちらこそよろしく。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "いいえ、どういたしまして。",
+            "text": "ごちそうさまでした。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "お疲れ様でした。",
-            "isCorrect": true,
+            "text": "いいえ、どういたしまして。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "こちらこそよろしく。",
-            "isCorrect": false,
+            "text": "お疲れ様でした。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12398,20 +12978,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "はい、つまらないですね。",
+            "text": "また今度お願いします。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "また今度お願いします。",
-            "isCorrect": false,
+            "text": "ありがとうございます。頂戴いたします。",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ありがとうございます。頂戴いたします。",
-            "isCorrect": true,
+            "text": "はい、つまらないですね。",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -12436,14 +13016,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "コーヒーのみ",
-            "isCorrect": false,
+            "text": "日替わりランチコース2つ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "日替わりランチコース2つ",
-            "isCorrect": true,
+            "text": "コーヒーのみ",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -12468,7 +13048,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "10時30分発の特急",
+            "text": "10時00分発の各駅停車",
             "isCorrect": false,
             "order": 1
           },
@@ -12480,7 +13060,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "10時00分発の各駅停車",
+            "text": "10時30分発の特急",
             "isCorrect": false,
             "order": 3
           }
@@ -12494,8 +13074,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "失礼しました。",
-            "isCorrect": false,
+            "text": "いえ、大丈夫ですよ。",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -12506,14 +13086,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "どう致しまして。",
+            "text": "失礼しました。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "いえ、大丈夫ですよ。",
-            "isCorrect": true,
+            "text": "どう致しまして。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12532,19 +13112,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "家に忘れてきた",
+            "text": "カードは拒否する",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "カードは拒否する",
+            "text": "アプリで提示する",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "アプリで提示する",
+            "text": "家に忘れてきた",
             "isCorrect": false,
             "order": 3
           }
@@ -12570,14 +13150,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "午後から雨が降り出す",
-            "isCorrect": true,
+            "text": "一日中快晴が続く",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "一日中快晴が続く",
-            "isCorrect": false,
+            "text": "午後から雨が降り出す",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12590,26 +13170,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "いただきます。",
+            "text": "ただいま。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "お邪魔します。",
-            "isCorrect": true,
+            "text": "行ってきます。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ただいま。",
+            "text": "いただきます。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "行ってきます。",
-            "isCorrect": false,
+            "text": "お邪魔します。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12628,7 +13208,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "映画館の受付",
+            "text": "カフェの店内",
             "isCorrect": false,
             "order": 1
           },
@@ -12640,7 +13220,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "カフェの店内",
+            "text": "映画館の受付",
             "isCorrect": false,
             "order": 3
           }
@@ -12654,26 +13234,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "保留にした",
+            "text": "断った",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "快く引き受けた",
-            "isCorrect": true,
+            "text": "他の人に頼んだ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "断った",
+            "text": "保留にした",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "他の人に頼んだ",
-            "isCorrect": false,
+            "text": "快く引き受けた",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12686,26 +13266,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "頑張ってください。",
+            "text": "お疲れ様です。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "お疲れ様です。",
+            "text": "頑張ってください。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "こちらこそ、よろしくお願いいたします。",
-            "isCorrect": true,
+            "text": "気にしないでください。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "気にしないでください。",
-            "isCorrect": false,
+            "text": "こちらこそ、よろしくお願いいたします。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12718,8 +13298,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "第三者に決めてもらった",
-            "isCorrect": false,
+            "text": "最終的に合意した",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -12730,13 +13310,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "最終的に合意した",
-            "isCorrect": true,
+            "text": "話し合いを取りやめた",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "話し合いを取りやめた",
+            "text": "第三者に決めてもらった",
             "isCorrect": false,
             "order": 3
           }
@@ -12766,19 +13346,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "かんりする (Không phù hợp)",
+            "text": "かいしょうする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かいしょうする (Sai ý nghĩa)",
+            "text": "かいふくする (Sai âm đọc)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かいふくする (Sai âm đọc)",
+            "text": "かんりする (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -12792,13 +13372,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんきょう (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "えいきょう (Ảnh hưởng, tác động)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "えいぎょう (Sai ý nghĩa)",
+            "text": "かんきょう (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
@@ -12810,8 +13390,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "えいきょう (Ảnh hưởng, tác động)",
-            "isCorrect": true,
+            "text": "えいぎょう (Sai ý nghĩa)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12824,25 +13404,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かんぜん (Không phù hợp)",
-            "isCorrect": false,
+            "text": "せっきょくてき (Tích cực, chủ động)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "せっきょくてき (Tích cực, chủ động)",
-            "isCorrect": true,
+            "text": "かんぜん (Không phù hợp)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ぐたいてき (Sai âm đọc)",
+            "text": "しょうきょくてき (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しょうきょくてき (Sai ý nghĩa)",
+            "text": "ぐたいてき (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -12856,25 +13436,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ぐたいてき (Cụ thể, rõ ràng)",
-            "isCorrect": true,
+            "text": "ちゅうしょうてき (Sai âm đọc)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ちゅうしょうてき (Sai âm đọc)",
+            "text": "きほんてき (Không phù hợp)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せっきょくてき (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "ぐたいてき (Cụ thể, rõ ràng)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "きほんてき (Không phù hợp)",
+            "text": "せっきょくてき (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -12894,14 +13474,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "しゅっせきする (Không phù hợp)",
-            "isCorrect": false,
+            "text": "しゅうちゅうする (Tập trung cao độ)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "しゅうちゅうする (Tập trung cao độ)",
-            "isCorrect": true,
+            "text": "しゅっせきする (Không phù hợp)",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -12920,26 +13500,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たんとうしゃ (Người phụ phụ trách)",
-            "isCorrect": true,
+            "text": "だいひょうしゃ (Không phù hợp)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かんりしゃ (Sai âm đọc)",
+            "text": "たんとうかん (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "たんとうかん (Sai ý nghĩa)",
+            "text": "かんりしゃ (Sai âm đọc)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "だいひょうしゃ (Không phù hợp)",
-            "isCorrect": false,
+            "text": "たんとうしゃ (Người phụ phụ trách)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12952,25 +13532,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "じょうほう (Sai ý nghĩa)",
+            "text": "かんきょう (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "じょうきょう (Tình hình, trạng thái)",
-            "isCorrect": true,
+            "text": "しょうじょう (Không phù hợp)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かんきょう (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "じょうきょう (Tình hình, trạng thái)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しょうじょう (Không phù hợp)",
+            "text": "じょうほう (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -12984,25 +13564,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ちょうさする (Sai ý nghĩa)",
+            "text": "せいていする (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ちょうせいする (Điều chỉnh, sắp xếp)",
-            "isCorrect": true,
+            "text": "ていしする (Không phù hợp)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せいていする (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "ちょうせいする (Điều chỉnh, sắp xếp)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ていしする (Không phù hợp)",
+            "text": "ちょうさする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 3
           }
@@ -13022,7 +13602,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "かくしんする (Sai âm đọc)",
+            "text": "みとめる (Không phù hợp)",
             "isCorrect": false,
             "order": 1
           },
@@ -13034,7 +13614,7 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "みとめる (Không phù hợp)",
+            "text": "かくしんする (Sai âm đọc)",
             "isCorrect": false,
             "order": 3
           }
@@ -13048,26 +13628,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "そうだんする (Không phù hợp)",
+            "text": "れんらくする (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "れんらくする (Sai âm đọc)",
+            "text": "ほうそうする (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ほうそうする (Sai ý nghĩa)",
-            "isCorrect": false,
+            "text": "ほうこくする (Báo cáo thông tin)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ほうこくする (Báo cáo thông tin)",
-            "isCorrect": true,
+            "text": "そうだんする (Không phù hợp)",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13080,25 +13660,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "きかく (Không phù hợp)",
+            "text": "せいやく (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "けいかい (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "けいやく (Hợp đồng, thỏa thuận)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "けいやく (Hợp đồng, thỏa thuận)",
-            "isCorrect": true,
+            "text": "けいかい (Sai âm đọc)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "せいやく (Sai ý nghĩa)",
+            "text": "きかく (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -13112,13 +13692,13 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ひょうばん (Sai âm đọc)",
+            "text": "はんだんする (Không phù hợp)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "はんだんする (Không phù hợp)",
+            "text": "ひょうばん (Sai âm đọc)",
             "isCorrect": false,
             "order": 1
           },
@@ -13144,25 +13724,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "sukī (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "sukejūru (Lịch trình công việc)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "suke-to (Không phù hợp)",
+            "text": "sujina (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "sukejūru (Lịch trình công việc)",
-            "isCorrect": true,
+            "text": "sukī (Sai âm đọc)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "sujina (Sai ý nghĩa)",
+            "text": "suke-to (Không phù hợp)",
             "isCorrect": false,
             "order": 3
           }
@@ -13176,26 +13756,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "kōsu (Sai ý nghĩa)",
+            "text": "kōto (Sai âm đọc)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "kosuto (Chi phí, giá thành)",
-            "isCorrect": true,
+            "text": "katsu (Không phù hợp)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "katsu (Không phù hợp)",
+            "text": "kōsu (Sai ý nghĩa)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "kōto (Sai âm đọc)",
-            "isCorrect": false,
+            "text": "kosuto (Chi phí, giá thành)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13208,7 +13788,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "purogramu (Sai âm đọc)",
+            "text": "purodukto (Không phù hợp)",
             "isCorrect": false,
             "order": 0
           },
@@ -13220,14 +13800,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "purojekuto (Dự án công ty)",
-            "isCorrect": true,
+            "text": "purogramu (Sai âm đọc)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "purodukto (Không phù hợp)",
-            "isCorrect": false,
+            "text": "purojekuto (Dự án công ty)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13256,8 +13836,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "ので",
-            "isCorrect": true,
+            "text": "からには",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -13268,8 +13848,8 @@ export const LESSONS_N3 = [
           },
           {
             "label": "D",
-            "text": "からには",
-            "isCorrect": false,
+            "text": "ので",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13282,26 +13862,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "協力",
-            "isCorrect": false,
+            "text": "努力",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "圧力",
+            "text": "効力",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "効力",
+            "text": "協力",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "努力",
-            "isCorrect": true,
+            "text": "圧力",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13320,19 +13900,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "けっさく",
-            "isCorrect": false,
+            "text": "かいけつ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かいけつ",
-            "isCorrect": true,
+            "text": "かいしょう",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かいしょう",
+            "text": "けっさく",
             "isCorrect": false,
             "order": 3
           }
@@ -13346,26 +13926,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "どころ",
-            "isCorrect": true,
+            "text": "わけ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こと",
+            "text": "はず",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "わけ",
+            "text": "こと",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はず",
-            "isCorrect": false,
+            "text": "どころ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13384,19 +13964,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "一番",
-            "isCorrect": false,
+            "text": "一部",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "一部",
-            "isCorrect": true,
+            "text": "一味",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "一味",
+            "text": "一番",
             "isCorrect": false,
             "order": 3
           }
@@ -13410,8 +13990,8 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ように",
-            "isCorrect": true,
+            "text": "らしく",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -13422,13 +14002,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "そうに",
-            "isCorrect": false,
+            "text": "ように",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "らしく",
+            "text": "そうに",
             "isCorrect": false,
             "order": 3
           }
@@ -13454,13 +14034,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "せいてい",
+            "text": "ていせい",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ていせい",
+            "text": "せいてい",
             "isCorrect": false,
             "order": 3
           }
@@ -13474,25 +14054,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ことになっている",
-            "isCorrect": false,
+            "text": "ことにしている",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ことにしている",
-            "isCorrect": true,
+            "text": "ことになっている",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ことに決まった",
+            "text": "ことにされた",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ことにされた",
+            "text": "ことに決まった",
             "isCorrect": false,
             "order": 3
           }
@@ -13506,26 +14086,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "変化",
+            "text": "変形",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "変換",
-            "isCorrect": false,
+            "text": "変更",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "変形",
+            "text": "変化",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "変更",
-            "isCorrect": true,
+            "text": "変換",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13538,25 +14118,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ついでに",
+            "text": "うちに",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "うちに",
-            "isCorrect": false,
+            "text": "途端に",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "途端に",
-            "isCorrect": true,
+            "text": "最中に",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "最中に",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 3
           }
@@ -13570,26 +14150,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "たしかに",
+            "text": "かくほ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "しくにん",
+            "text": "たしかに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かくにん",
-            "isCorrect": true,
+            "text": "しくにん",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かくほ",
-            "isCorrect": false,
+            "text": "かくにん",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13602,25 +14182,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "べき",
-            "isCorrect": true,
+            "text": "はず",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こと",
-            "isCorrect": false,
+            "text": "べき",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "はず",
+            "text": "わけ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "わけ",
+            "text": "こと",
             "isCorrect": false,
             "order": 3
           }
@@ -13634,26 +14214,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "対象",
+            "text": "印象",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "現象",
+            "text": "対象",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "影響",
-            "isCorrect": true,
+            "text": "現象",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "印象",
-            "isCorrect": false,
+            "text": "影響",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13672,14 +14252,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "こと",
-            "isCorrect": true,
+            "text": "ほう",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ほう",
-            "isCorrect": false,
+            "text": "こと",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -13698,14 +14278,14 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
-            "isCorrect": true,
+            "text": "文法を無視して読解だけ解くこと",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "文法を無視して読解だけ解くこと",
-            "isCorrect": false,
+            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -13740,20 +14320,20 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "からには",
+            "text": "ものの",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ものの",
-            "isCorrect": false,
+            "text": "ので",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ので",
-            "isCorrect": true,
+            "text": "からには",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -13778,19 +14358,19 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "圧力",
+            "text": "協力",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "協力",
+            "text": "効力",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "効力",
+            "text": "圧力",
             "isCorrect": false,
             "order": 3
           }
@@ -13810,20 +14390,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "かいけつ",
-            "isCorrect": true,
+            "text": "かいしょう",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かいしょう",
+            "text": "かんけつ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かんけつ",
-            "isCorrect": false,
+            "text": "かいけつ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13842,13 +14422,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "はず",
+            "text": "わけ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "わけ",
+            "text": "はず",
             "isCorrect": false,
             "order": 2
           },
@@ -13874,13 +14454,13 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "一番",
+            "text": "一体",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "一体",
+            "text": "一番",
             "isCorrect": false,
             "order": 2
           },
@@ -13900,25 +14480,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "みたい",
+            "text": "そうに",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ように",
-            "isCorrect": true,
+            "text": "らしく",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "らしく",
-            "isCorrect": false,
+            "text": "ように",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "そうに",
+            "text": "みたい",
             "isCorrect": false,
             "order": 3
           }
@@ -13932,19 +14512,19 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ちょうせい",
-            "isCorrect": true,
+            "text": "ていせい",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ちょうさ",
-            "isCorrect": false,
+            "text": "ちょうせい",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ていせい",
+            "text": "ちょうさ",
             "isCorrect": false,
             "order": 2
           },
@@ -13964,26 +14544,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "ことにされた",
+            "text": "ことに決まった",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ことに決まった",
-            "isCorrect": false,
+            "text": "ことにしている",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ことになっている",
+            "text": "ことにされた",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ことにしている",
-            "isCorrect": true,
+            "text": "ことになっている",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -14002,20 +14582,20 @@ export const LESSONS_N3 = [
           },
           {
             "label": "B",
-            "text": "変化",
+            "text": "変換",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "変換",
-            "isCorrect": false,
+            "text": "変更",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "変更",
-            "isCorrect": true,
+            "text": "変化",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -14028,26 +14608,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "うちに",
+            "text": "最中に",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "途端に",
-            "isCorrect": true,
+            "text": "うちに",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "最中に",
+            "text": "ついでに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ついでに",
-            "isCorrect": false,
+            "text": "途端に",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14060,25 +14640,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "かくにん",
-            "isCorrect": true,
+            "text": "しくにん",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "たしかに",
+            "text": "かくほ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "しくにん",
-            "isCorrect": false,
+            "text": "かくにん",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かくほ",
+            "text": "たしかに",
             "isCorrect": false,
             "order": 3
           }
@@ -14092,25 +14672,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "こと",
+            "text": "わけ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "わけ",
-            "isCorrect": false,
+            "text": "べき",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "べき",
-            "isCorrect": true,
+            "text": "はず",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はず",
+            "text": "こと",
             "isCorrect": false,
             "order": 3
           }
@@ -14124,26 +14704,26 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "対象",
+            "text": "現象",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "現象",
+            "text": "印象",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "影響",
-            "isCorrect": true,
+            "text": "対象",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "印象",
-            "isCorrect": false,
+            "text": "影響",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14156,25 +14736,25 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "こと",
-            "isCorrect": true,
+            "text": "ほう",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ほう",
+            "text": "もの",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "わけ",
-            "isCorrect": false,
+            "text": "こと",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "もの",
+            "text": "わけ",
             "isCorrect": false,
             "order": 3
           }
@@ -14188,7 +14768,7 @@ export const LESSONS_N3 = [
         "options": [
           {
             "label": "A",
-            "text": "文法を無視して読解だけ解くこと",
+            "text": "漢字だけを集中して覚えること",
             "isCorrect": false,
             "order": 0
           },
@@ -14200,14 +14780,14 @@ export const LESSONS_N3 = [
           },
           {
             "label": "C",
-            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
-            "isCorrect": true,
+            "text": "文法を無視して読解だけ解くこと",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "漢字だけを集中して覚えること",
-            "isCorrect": false,
+            "text": "毎日継続して語彙・文法・読解を balance よく学習すること",
+            "isCorrect": true,
             "order": 3
           }
         ]

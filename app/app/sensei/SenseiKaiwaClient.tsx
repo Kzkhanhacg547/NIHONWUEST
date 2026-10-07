@@ -621,7 +621,7 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
             {/* ═════════ CỘT TRÁI — SENSEI ═════════ */}
             <section aria-label={character.nameRomaji} className={`overflow-hidden ${cardShell}`}>
               {/* Avatar chuyển động dựng từ ảnh (ảnh đã có sẵn nền lớp học) */}
-              <div className="relative h-[290px] overflow-hidden bg-rose-50 dark:bg-sumi-800">
+              <div className="relative h-[220px] sm:h-[290px] overflow-hidden bg-rose-50 dark:bg-sumi-800">
                 <SenseiAvatar
                   state={avatarState}
                   emotion={emotion}
@@ -819,7 +819,7 @@ export function SenseiKaiwaClient({ recentLessons = [] }: SenseiKaiwaClientProps
             {/* ═════════ CỘT GIỮA — HỘI THOẠI ═════════ */}
             <section
               aria-label={`Hội thoại với ${character.nameRomaji}`}
-              className={`flex h-[680px] flex-col overflow-hidden p-4 sm:p-5 lg:h-[min(820px,calc(100dvh-7rem))] lg:min-h-[640px] ${cardShell}`}
+              className={`flex h-[400px] sm:h-[680px] flex-col overflow-hidden p-3 sm:p-4 lg:h-[min(820px,calc(100dvh-7rem))] lg:min-h-[640px] ${cardShell}`}
             >
               {/* Header */}
               <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3 dark:border-slate-800">

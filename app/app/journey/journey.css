@@ -148,4 +148,8 @@
   .jy-hero-stats { grid-auto-flow:row; gap:10px; padding:12px; }
   .jy-hero-stats > div { padding:0 6px; }
   .jy-hero-stats > div + div::before { display:none; }
+  .jy-hero-map { height:280px; }
+}
+@media (max-width:480px) {
+  .jy-hero-map { height:220px; }
 }

@@ -181,11 +181,7 @@ export function LeaderboardClient({
                     <Badge variant={rank <= 3 ? "amber" : "slate"} className="text-[10px] shrink-0">
                       {tier.name}
                     </Badge>
-                    {user.isBot && (
-                      <Badge variant="slate" className="shrink-0 text-[9px] uppercase tracking-wider">
-                        AI
-                      </Badge>
-                    )}
+                   
                   </div>
                   <div className="flex items-center gap-2.5 mt-0.5 text-xs text-slate-500 font-medium">
                     <span>🎯 Lv.{user.level}</span>

@@ -1,0 +1,125 @@
+html:has(.nq-auth),body:has(.nq-auth){overflow:hidden;height:100%}
+/* Nihon Quest — trang đăng nhập (tự chứa, không phụ thuộc nq-ui.css)
+   Nền: ảnh 16:9 neo ở mép trên. Mọi lớp phủ định vị theo --W (chiều rộng ảnh
+   sau khi cover) để luôn khớp với ảnh ở mọi kích thước màn hình. */
+
+.nq-auth.nq-auth{
+  --lg-red:#c4202e;--lg-red-dark:#a3162a;--lg-navy:#1b2540;--lg-ink:#1f2a29;
+  --lg-muted:#6b7280;--lg-line:#e6e8ec;
+  --W:max(100vw,177.78vh);--U:min(100vw,177.78vh);
+  position:relative;height:100vh;height:100dvh;overflow:hidden;background:#f4efe9;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--lg-ink);
+}
+.nq-auth.nq-auth .nq-auth-bg{position:absolute;inset:0;z-index:0;pointer-events:none;background-size:cover;background-repeat:no-repeat;background-position:50% 0}
+.nq-auth.nq-auth .nq-auth-bg::after{content:"";position:absolute;inset:0;background:none}
+
+/* ---------- Layout 2 cột ---------- */
+.nq-auth.nq-auth .nq-auth-layout{
+  position:relative;z-index:1;height:100%;box-sizing:border-box;display:grid;align-items:start;max-width:none;
+  grid-template-columns:minmax(0,1fr) clamp(380px,calc(var(--U)*.302),520px);
+  gap:clamp(24px,4vw,64px);
+  padding:calc(var(--W)*.02) max(24px,calc(50vw - var(--W)*.412)) 24px max(24px,calc((100vw - var(--W))/2 + var(--W)*.0636));
+}
+.nq-auth.nq-auth .nq-auth-story{display:flex;flex-direction:column;gap:0;min-width:0}
+.nq-auth.nq-auth .nq-auth-copy{max-width:520px;margin-top:calc(var(--W)*.027)}
+.nq-auth.nq-auth .nq-auth-copy .nq-eyebrow-dot{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:clamp(11px,.0092*var(--W),13.5px);font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--lg-navy)}
+.nq-auth.nq-auth .nq-auth-copy .nq-eyebrow-dot::before{content:"";flex:none;width:14px;height:14px;box-sizing:border-box;border-radius:50%;background:var(--lg-red);border:3px solid #f6c9c4;box-shadow:0 0 0 1px var(--lg-red)}
+/* Tiêu đề đã được vẽ sẵn trong ảnh nền → h1 chỉ giữ chỗ (vẫn đọc được bởi screen reader) */
+.nq-auth.nq-auth .nq-auth-copy h1{height:calc(var(--W)*.172);margin:0;overflow:hidden;color:transparent;text-shadow:none;user-select:none;pointer-events:none;font-size:clamp(40px,4.5vw,76px);line-height:1.2;font-weight:400}
+.nq-auth.nq-auth .nq-auth-copy>p{margin:0;max-width:max(300px,calc(var(--W)*.18));font-size:clamp(13px,.0105*var(--W),16px);line-height:1.55;color:var(--lg-ink);text-shadow:0 0 12px rgba(255,255,255,.9),0 0 3px rgba(255,255,255,.7)}
+
+/* ---------- 3 lợi ích (định vị theo ảnh) ---------- */
+.nq-auth.nq-auth .nq-auth-benefits{position:absolute;z-index:2;left:max(24px,calc((100vw - var(--W))/2 + var(--W)*.07));bottom:clamp(20px,4.5vh,48px);width:min(calc(100vw - 48px),calc(var(--W)*.46));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.3vw,22px);padding:clamp(12px,1.1vw,18px) clamp(14px,1.3vw,22px);border-radius:20px;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 40px -24px rgba(60,30,25,.45),0 0 0 1px rgba(255,255,255,.7)}
+.nq-auth.nq-auth .nq-auth-benefit{display:flex;align-items:flex-start;gap:12px}
+.nq-auth.nq-auth .nq-auth-benefit>span{flex:none;display:grid;place-items:center;width:clamp(40px,.033*var(--W),50px);height:clamp(40px,.033*var(--W),50px);border-radius:14px;background:#fff;box-shadow:0 8px 20px -10px rgba(60,30,25,.4);color:var(--lg-red)}
+.nq-auth.nq-auth .nq-auth-benefit:nth-child(3)>span{color:#3b6fd6}
+.nq-auth.nq-auth .nq-auth-benefit>span svg{width:55%;height:55%}
+.nq-auth.nq-auth .nq-auth-benefit b{display:block;font-size:clamp(12.5px,.0105*var(--W),15.5px);font-weight:600;line-height:1.3;color:var(--lg-navy);text-shadow:0 0 10px rgba(255,255,255,.95)}
+.nq-auth.nq-auth .nq-auth-benefit small{display:block;max-width:190px;margin-top:6px;font-size:clamp(10px,.0078*var(--W),11.5px);line-height:1.45;color:#2a3534;text-shadow:0 0 10px rgba(255,255,255,.95)}
+
+/* ---------- Thẻ đăng nhập (glass) ---------- */
+.nq-auth.nq-auth .nq-auth-form-wrap{justify-self:end;width:100%;margin-top:calc(var(--U)*.0625 - var(--W)*.02)}
+.nq-auth.nq-auth .nq-login-card{
+  position:relative;padding:clamp(26px,.025*var(--W),36px) clamp(24px,.031*var(--W),46px) clamp(24px,.02*var(--W),30px);
+  text-align:left;border-radius:28px;background:rgba(255,255,255,.9);
+  backdrop-filter:blur(18px) saturate(1.1);-webkit-backdrop-filter:blur(18px) saturate(1.1);
+  box-shadow:0 40px 90px -40px rgba(70,30,20,.4),0 0 0 1px rgba(255,255,255,.85);
+}
+.nq-auth.nq-auth .nq-login-card h2{margin:clamp(14px,.016*var(--U),24px) 0 6px;font-size:clamp(28px,.0235*var(--U),36px);line-height:1.15;font-weight:700;color:var(--lg-navy)}
+.nq-auth.nq-auth .nq-login-sub{margin:0 0 clamp(16px,.0155*var(--U),24px);max-width:340px;font-size:14px;line-height:1.5;color:var(--lg-muted)}
+.nq-auth.nq-auth .nq-login-form{display:flex;flex-direction:column;gap:clamp(12px,.0105*var(--U),16px)}
+.nq-auth.nq-auth .nq-field label{display:block;margin-bottom:8px;font-size:13.5px;font-weight:700;color:var(--lg-navy)}
+.nq-auth.nq-auth .nq-input-wrap{display:flex;align-items:center;gap:10px;height:clamp(46px,.034*var(--U),52px);padding:0 14px;border:1px solid var(--lg-line);border-radius:12px;background:rgba(255,255,255,.75);transition:border-color .2s,box-shadow .2s}
+.nq-auth.nq-auth .nq-input-wrap:focus-within{border-color:var(--lg-red);box-shadow:0 0 0 3px rgba(196,32,46,.14)}
+.nq-auth.nq-auth .nq-input-icon{flex:none;display:grid;place-items:center;color:#3b4350}
+.nq-auth.nq-auth .nq-input-icon svg{width:19px;height:19px}
+.nq-auth.nq-auth .nq-input-wrap input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;font:inherit;font-size:14px;color:var(--lg-navy)}
+.nq-auth.nq-auth .nq-input-wrap input:-webkit-autofill{-webkit-box-shadow:0 0 0 40px #fff inset;-webkit-text-fill-color:var(--lg-navy);caret-color:var(--lg-navy)}
+.nq-auth.nq-auth .nq-input-wrap input::placeholder{color:#9aa1ad}
+.nq-auth.nq-auth .nq-password-toggle{flex:none;display:inline-flex;align-items:center;gap:6px;border:0;background:none;padding:4px;font:inherit;font-size:13.5px;color:#3b4350;cursor:pointer}
+.nq-auth.nq-auth .nq-password-toggle svg{width:17px;height:17px}
+.nq-auth.nq-auth .nq-remember{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.nq-auth.nq-auth .nq-remember label{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.nq-auth.nq-auth .nq-remember input[type=checkbox]{width:16px;height:16px;margin:0;accent-color:var(--lg-red)}
+.nq-auth.nq-auth .nq-remember a{color:var(--lg-red);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.nq-auth.nq-auth .nq-notice{padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.45}
+.nq-auth.nq-auth .nq-notice-ok{margin-bottom:14px;background:#ecf8f0;color:#1d6b3c}
+.nq-auth.nq-auth .nq-notice-err{background:#fdeceb;color:#a3162a}
+.nq-auth.nq-auth .nq-submit-red{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;height:clamp(48px,.037*var(--U),54px);border:0;border-radius:999px;background:linear-gradient(180deg,#c9242f,var(--lg-red-dark));color:#fff;font-family:inherit;font-weight:600;font-size:15.5px;cursor:pointer;box-shadow:0 16px 28px -14px rgba(180,30,25,.75);transition:transform .2s,box-shadow .2s,filter .2s}
+.nq-auth.nq-auth .nq-submit-red:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.nq-auth.nq-auth .nq-submit-red:disabled{opacity:.75;cursor:progress;transform:none}
+.nq-auth.nq-auth .nq-submit-red svg{width:18px;height:18px}
+.nq-auth.nq-auth .nq-or{display:flex;align-items:center;gap:14px;margin:16px 0 12px;font-size:12.5px;color:var(--lg-muted)}
+.nq-auth.nq-auth .nq-or::before,.nq-auth.nq-auth .nq-or::after{content:"";flex:1;height:1px;background:var(--lg-line)}
+.nq-auth.nq-auth .nq-or span{padding:0 2px}
+.nq-auth.nq-auth .nq-google{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;height:clamp(46px,.035*var(--U),52px);border:1px solid var(--lg-line);border-radius:999px;background:rgba(255,255,255,.85);font-family:inherit;font-weight:500;font-size:14px;color:var(--lg-navy);cursor:pointer;transition:background .2s,box-shadow .2s}
+.nq-auth.nq-auth .nq-google:hover{background:#fff;box-shadow:0 8px 20px -14px rgba(0,0,0,.35)}
+.nq-auth.nq-auth .nq-google:disabled{opacity:.7;cursor:progress}
+.nq-auth.nq-auth .nq-google svg{width:20px;height:20px}
+.nq-auth.nq-auth .nq-login-footer{margin-top:18px;text-align:center;font-size:13px;color:var(--lg-muted)}
+.nq-auth.nq-auth .nq-login-footer a{display:inline-flex;align-items:center;gap:4px;margin-left:6px;color:var(--lg-red);font-weight:700;text-decoration:none}
+.nq-auth.nq-auth .nq-login-footer a:hover{text-decoration:underline}
+.nq-auth.nq-auth .nq-login-footer svg{width:15px;height:15px}
+
+/* ---------- Chữ Nhật dọc góc phải + chân trang trái ---------- */
+.nq-auth.nq-auth .nq-side-jp{position:absolute;z-index:2;top:calc(var(--W)*.026);left:min(calc(50vw + var(--W)*.452),calc(100vw - 48px));width:40px;display:flex;flex-direction:column;align-items:center;gap:12px;pointer-events:none}
+.nq-auth.nq-auth .nq-side-jp .jp-text{writing-mode:vertical-rl;font-size:clamp(20px,.0185*var(--W),27px);letter-spacing:.14em;color:var(--lg-ink);text-shadow:0 0 10px rgba(255,255,255,.8)}
+.nq-auth.nq-auth .nq-side-jp i{display:block;width:1px;height:clamp(32px,.03*var(--W),44px);background:var(--lg-ink);opacity:.7}
+.nq-auth.nq-auth .nq-side-jp svg{width:24px;height:24px;color:#f08a96}
+.nq-auth.nq-auth .nq-foot-left{position:absolute;z-index:2;left:max(20px,calc((100vw - var(--W))/2 + var(--W)*.031));top:calc(var(--W)*.5255);display:flex;align-items:center;gap:14px;font-size:clamp(14px,.013*var(--W),19px);letter-spacing:.22em;color:#1c2423;text-shadow:0 0 10px rgba(255,255,255,.8);pointer-events:none}
+.nq-auth.nq-auth .nq-foot-left i{display:block;width:clamp(80px,.095*var(--W),140px);height:1px;background:#1c2423;opacity:.75}
+
+/* ---------- Tablet / mobile: xếp dọc, phủ mờ ảnh ---------- */
+@media (max-width:1024px){
+  html:has(.nq-auth),body:has(.nq-auth){overflow:auto;height:auto}
+  .nq-auth.nq-auth{height:100dvh;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .nq-auth.nq-auth .nq-auth-bg{background-position:62% 0}
+  .nq-auth.nq-auth .nq-auth-bg::after{background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.6))}
+  .nq-auth.nq-auth .nq-auth-layout{height:auto;grid-template-columns:1fr;gap:20px;padding:28px 20px 56px}
+  .nq-auth.nq-auth .nq-auth-copy{margin-top:20px}
+  .nq-auth.nq-auth .nq-auth-copy h1{height:auto;overflow:visible;color:var(--lg-ink);pointer-events:auto;user-select:auto;font-size:clamp(34px,9vw,48px)}
+  .nq-auth.nq-auth .nq-auth-copy h1 em{color:var(--lg-red);font-style:normal}
+  .nq-auth.nq-auth .nq-auth-copy>p,.nq-auth.nq-auth .nq-auth-benefits,.nq-auth.nq-auth .nq-foot-left,.nq-auth.nq-auth .nq-side-jp{display:none}
+  .nq-auth.nq-auth .nq-auth-form-wrap{justify-self:stretch;margin-top:0}
+  .nq-auth.nq-auth .nq-login-card{padding:28px 22px}
+  .nq-auth.nq-auth .nq-login-card h2{font-size:30px;margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){.nq-auth.nq-auth .nq-submit-red{transition:none}}
+
+/* Màn hình thấp: nén khoảng cách để thẻ luôn vừa 1 màn hình */
+@media (max-height:700px) and (min-width:1025px){
+  .nq-auth.nq-auth .nq-login-card{padding:20px 32px 18px}
+  .nq-auth.nq-auth .nq-login-card h2{margin:12px 0 4px;font-size:28px}
+  .nq-auth.nq-auth .nq-login-sub{margin-bottom:12px;font-size:13px}
+  .nq-auth.nq-auth .nq-login-form{gap:10px}
+  .nq-auth.nq-auth .nq-field label{margin-bottom:5px}
+  .nq-auth.nq-auth .nq-input-wrap{height:42px}
+  .nq-auth.nq-auth .nq-submit-red{height:44px}
+  .nq-auth.nq-auth .nq-google{height:42px}
+  .nq-auth.nq-auth .nq-or{margin:10px 0 8px}
+  .nq-auth.nq-auth .nq-login-footer{margin-top:12px}
+}
+@media (max-height:560px) and (min-width:1025px){
+  .nq-auth.nq-auth{overflow-y:auto}
+  .nq-auth.nq-auth .nq-auth-layout{height:auto}
+}

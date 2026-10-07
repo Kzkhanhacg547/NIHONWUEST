@@ -334,7 +334,7 @@ function Pagination({ page, totalPages, onPage }: { page: number; totalPages: nu
 /* ============================== LIST ROWS ============================== */
 
 const rowClass = (selected: boolean) =>
-  `rounded-2xl border px-3 py-3 transition sm:px-4 ${
+  `rounded-2xl border px-2.5 py-2 transition sm:px-3 sm:py-3 ${
     selected
       ? "border-red-400 bg-red-50/40 shadow-[0_0_0_3px_rgba(220,38,38,0.06)] dark:bg-red-950/20"
       : "cursor-pointer border-transparent shadow-[0_1px_0_0_rgb(241_245_249)] hover:bg-slate-50 dark:shadow-[0_1px_0_0_rgb(30_41_59)] dark:hover:bg-sumi-800/50"
@@ -397,22 +397,22 @@ function VocabRow({
     >
       <StarToggle starred={starred} name={v.word} onToggle={onToggleStar} />
 
-      <div className="jp-text break-words text-[26px] font-black leading-tight text-slate-900 dark:text-white sm:text-[28px]">{v.word}</div>
+      <div className="jp-text break-words text-[22px] font-black leading-tight text-slate-900 dark:text-white sm:text-[26px] md:text-[28px]">{v.word}</div>
 
       <div className="min-w-0">
-        <p className="jp-text text-sm text-slate-600 dark:text-slate-300">{v.kana}</p>
+        <p className="jp-text text-xs sm:text-sm text-slate-600 dark:text-slate-300">{v.kana}</p>
         {/* slate-400 on white is ~4.1:1, under AA. Romaji is core learning
             content, not decoration, so it uses slate-500 (~7:1). */}
-        <p className="truncate text-xs text-slate-500 dark:text-slate-400">{v.romaji}</p>
+        <p className="truncate text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">{v.romaji}</p>
       </div>
 
       <div className="min-w-0 basis-full md:basis-auto">
-        <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">{v.meaning}</p>
-        <div className="mt-1.5 flex flex-wrap gap-1.5">
-          <Badge variant="sky" className="text-[11px]">
+        <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100">{v.meaning}</p>
+        <div className="mt-1 flex flex-wrap gap-1 sm:gap-1.5">
+          <Badge variant="sky" className="text-[10px] sm:text-[11px]">
             {POS_LABELS[v.partOfSpeech] ?? v.partOfSpeech}
           </Badge>
-          <Badge variant="amber" className="text-[11px]">
+          <Badge variant="amber" className="text-[10px] sm:text-[11px]">
             JLPT {v.jlptLevel}
           </Badge>
         </div>
@@ -474,8 +474,9 @@ function KanjiRow({
       }}
       className={`${ROW_GRID} ${rowClass(selected)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500`}
     >
-      <StarToggle starred={starred} name={k.character} onToggle={onToggleStar} />
-      <div className="jp-text text-[34px] font-black leading-none text-slate-900 dark:text-white">{k.character}</div>
+       <StarToggle starred={starred} name={k.character} onToggle={onToggleStar} />
+
+       <div className="jp-text text-[28px] sm:text-[34px] font-black leading-none text-slate-900 dark:text-white">{k.character}</div>
       <div className="min-w-0">
         <p className="text-sm text-slate-600 dark:text-slate-300">{k.strokeCount} nét</p>
         <p className="text-xs text-slate-400">Số nét viết</p>

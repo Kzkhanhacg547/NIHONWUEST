@@ -1528,7 +1528,6 @@ export const VOCABULARY_N4: SeedVocab[] = [
     "exampleMeaning": "Hãy nói rõ ràng ý kiến của bản thân.",
     "tags": "Giao tiếp"
   },
-
   {
     "word": "会社員",
     "kana": "かいしゃいん",
@@ -1767,782 +1766,670 @@ export const VOCABULARY_N4: SeedVocab[] = [
     "jlptLevel": "N4",
     "exampleJapanese": "遅刻した理由を教えてください。",
     "exampleRomaji": "Chikoku shita riyū o oshiete kudasai.",
-    "exampleMeaning": "Xin hãy nói cho tôi lý do đến muộn.",
-    "tags": "Giao tiếp"
-  },
-  {
-    "word": "受ける",
-    "kana": "うける",
-    "kanji": "受ける",
-    "romaji": "ukeru",
-    "meaning": "Dự thi, nhận, tiếp nhận",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "来月JLPT N4の試験を受けます。",
-    "exampleRomaji": "Raigetsu JLPT N4 no shiken o ukemasu.",
-    "exampleMeaning": "Tháng sau tôi sẽ dự thi kì thi JLPT N4.",
-    "tags": "Học tập"
-  },
-  {
-    "word": "合格する",
-    "kana": "ごうかくする",
-    "kanji": "合格する",
-    "romaji": "goukaku suru",
-    "meaning": "Thi đỗ, vượt qua kì thi",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "試験に合格してとても嬉しいです。",
-    "exampleRomaji": "Shiken ni goukaku shite totemo ureshiddesu.",
-    "exampleMeaning": "Thi đỗ kỳ thi tôi rất vui mừng.",
-    "tags": "Học tập"
-  },
-  {
-    "word": "落ちる",
-    "kana": "おちる",
-    "kanji": "落ちる",
-    "romaji": "ochiru",
-    "meaning": "Thi trượt, rơi rớt",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "試験に落ちないように頑張ります。",
-    "exampleRomaji": "Shiken ni ochinai you ni ganbarimasu.",
-    "exampleMeaning": "Tôi sẽ cố gắng để không thi trượt.",
-    "tags": "Học tập"
-  },
-  {
-    "word": "申し込む",
-    "kana": "もうしこむ",
-    "kanji": "申し込む",
-    "romaji": "moushikomu",
-    "meaning": "Đăng ký, xin gia nhập",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "ボランティアに申し込みました。",
-    "exampleRomaji": "Borantia ni moushikomimashita.",
-    "exampleMeaning": "Tôi đã đăng ký tham gia hoạt động tình nguyện.",
-    "tags": "Công việc"
-  },
-  {
-    "word": "集める",
-    "kana": "あつめる",
-    "kanji": "集める",
-    "romaji": "atsumeru",
-    "meaning": "Sưu tầm, thu thập, tập hợp",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "趣味は切手を集めることです。",
-    "exampleRomaji": "Shumi wa kitte o atsumeru koto desu.",
-    "exampleMeaning": "Sở thích của tôi là sưu tầm tem.",
-    "tags": "Đời sống"
-  },
-  {
-    "word": "探す",
-    "kana": "さがす",
-    "kanji": "探す",
-    "romaji": "sagasu",
-    "meaning": "Tìm kiếm",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "無くした鍵を探しています。",
-    "exampleRomaji": "Nakushita kagi o sagashite imasu.",
-    "exampleMeaning": "Tôi đang tìm chiếc chìa khóa bị mất.",
-    "tags": "Đời sống"
-  },
-  {
-    "word": "選ぶ",
-    "kana": "えらぶ",
-    "kanji": "選ぶ",
-    "romaji": "erabu",
-    "meaning": "Lựa chọn",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "好きなものを選んでください。",
-    "exampleRomaji": "Suki na mono o erande kudasai.",
-    "exampleMeaning": "Hãy chọn thứ bạn thích nhé.",
-    "tags": "Đời sống"
-  },
-  {
-    "word": "手伝う",
-    "kana": "てつだう",
-    "kanji": "手伝う",
-    "romaji": "tetsudau",
-    "meaning": "Giúp đỡ, phụ giúp",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "母の料理を手伝いました。",
-    "exampleRomaji": "Haha no ryouri o tetsudaimashita.",
-    "exampleMeaning": "Tôi đã phụ giúp mẹ nấu ăn.",
-    "tags": "Gia đình"
-  },
-  {
-    "word": "始める",
-    "kana": "はじめる",
-    "kanji": "始める",
-    "romaji": "hajimeru",
-    "meaning": "Bắt đầu",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "会議を始めましょう。",
-    "exampleRomaji": "Kaigi o hajimemashou.",
-    "exampleMeaning": "Chúng ta cùng bắt đầu cuộc họp nào.",
-    "tags": "Công việc"
-  },
-  {
-    "word": "終わる",
-    "kana": "おわる",
-    "kanji": "終わる",
-    "romaji": "owaru",
-    "meaning": "Kết thúc, xong",
-    "partOfSpeech": "verb",
-    "jlptLevel": "N4",
-    "exampleJapanese": "宿題がやっと終わりました。",
-    "exampleRomaji": "Shukudai ga yatto owarimashita.",
-    "exampleMeaning": "Cuối cùng tôi cũng làm xong bài tập về nhà.",
-    "tags": "Học tập"
-  },
-  {
-    "word": "事故",
-    "kana": "じこ",
-    "kanji": "事故",
-    "romaji": "jiko",
-    "meaning": "Tai nạn, sự cố",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "交通事故に注意してください。",
-    "exampleRomaji": "Koutsuu jiko ni chuui shite kudasai.",
-    "exampleMeaning": "Xin hãy chú ý tai nạn giao thông.",
-    "tags": "Giao thông"
-  },
-  {
-    "word": "地震",
-    "kana": "じしん",
-    "kanji": "地震",
-    "romaji": "jishin",
-    "meaning": "Trận động đất",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "昨日大きな地震がありました。",
-    "exampleRomaji": "Kinou ookina jishin ga arimashita.",
-    "exampleMeaning": "Hôm qua đã có một trận động đất lớn.",
-    "tags": "Thời tiết"
-  },
-  {
-    "word": "火事",
-    "kana": "かじ",
-    "kanji": "火事",
-    "romaji": "kaji",
-    "meaning": "Vụ hỏa hoạn, cháy",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "近くで火事が発生しました。",
-    "exampleRomaji": "Chikaku de kaji ga hassei shimashita.",
-    "exampleMeaning": "Một vụ hỏa hoạn đã xảy ra gần đây.",
-    "tags": "Đời sống"
-  },
-  {
-    "word": "台風",
-    "kana": "たいふう",
-    "kanji": "台風",
-    "romaji": "taifuu",
-    "meaning": "Cơn bão",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "台風が近づいています。",
-    "exampleRomaji": "Taifuu ga chikazukite imasu.",
-    "exampleMeaning": "Cơn bão đang tiến đến gần.",
-    "tags": "Thời tiết"
-  },
-  {
-    "word": "世界",
-    "kana": "せかい",
-    "kanji": "世界",
-    "romaji": "sekai",
-    "meaning": "Thế giới",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "世界中を旅行したいです。",
-    "exampleRomaji": "Sekaijuu o ryokou shitai desu.",
-    "exampleMeaning": "Tôi muốn đi du lịch vòng quanh thế giới.",
-    "tags": "Địa điểm"
-  },
-  {
-    "word": "文化",
-    "kana": "ぶんか",
-    "kanji": "文化",
-    "romaji": "bunka",
-    "meaning": "Văn hóa",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "日本の伝統文化に興味があります。",
-    "exampleRomaji": "Nihon no dentou bunka ni kyoumi ga arimasu.",
-    "exampleMeaning": "Tôi có hứng thú với văn hóa truyền thống Nhật Bản.",
-    "tags": "Văn hóa"
-  },
-  {
-    "word": "歴史",
-    "kana": "れきし",
-    "kanji": "歴史",
-    "romaji": "rekishi",
-    "meaning": "Lịch sử",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "京都の長い歴史を勉強します。",
-    "exampleRomaji": "Kyoto no nagai rekishi o benkyou shimasu.",
-    "exampleMeaning": "Tôi tìm hiểu về lịch sử lâu đời của Kyoto.",
-    "tags": "Văn hóa"
-  },
-  {
-    "word": "法律",
-    "kana": "ほうりつ",
-    "kanji": "法律",
-    "romaji": "houritsu",
-    "meaning": "Luật pháp",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "国の法律を守らなければなりません。",
-    "exampleRomaji": "Kuni no houritsu o mamoranakereba narimasen.",
-    "exampleMeaning": "Chúng ta phải tuân thủ pháp luật của đất nước.",
-    "tags": "Xã hội"
-  },
-  {
-    "word": "政治",
-    "kana": "せいじ",
-    "kanji": "政治",
-    "romaji": "seiji",
-    "meaning": "Chính trị",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "大学で政治学を専攻しています。",
-    "exampleRomaji": "Daigaku de seijigaku o senkou shite imasu.",
-    "exampleMeaning": "Tôi chuyên ngành chính trị học ở đại học.",
-    "tags": "Xã hội"
-  },
-  {
-    "word": "経済",
-    "kana": "けいざい",
-    "kanji": "経済",
-    "romaji": "keizai",
-    "meaning": "Kinh tế",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "最近、世界経済が変化しています。",
-    "exampleRomaji": "Saikin, sekai keizai ga henka shite imasu.",
-    "exampleMeaning": "Gần đây kinh tế thế giới đang biến đổi.",
-    "tags": "Kinh tế"
-  },
-  {
-    "word": "習慣",
-    "kana": "しゅうかん",
-    "kanji": "習慣",
-    "romaji": "shuukan",
-    "meaning": "Tập quán, thói quen",
-    "partOfSpeech": "noun",
-    "jlptLevel": "N4",
-    "exampleJapanese": "国の生活習慣に慣れました。",
-    "exampleRomaji": "Kuni no seikatsu shuukan ni naremashita.",
-    "exampleMeaning": "Tôi đã quen với tập quán sinh hoạt của đất nước này.",
-    "tags": "Văn hóa"
+    "exampleMeaning": "Xin hãy nói cho tôi lý do đến muộn."
   },
   {
     "word": "安心する",
     "kana": "あんしんする",
-    "kanji": "安心する",
     "romaji": "anshin suru",
     "meaning": "An tâm, yên tâm",
-    "partOfSpeech": "verb",
     "jlptLevel": "N4",
-    "exampleJapanese": "無事に到着したと聞いて安心しました。",
-    "exampleRomaji": "Buji ni touchaku shita to kiite anshin shimashita.",
-    "exampleMeaning": "Nghe tin bạn đến nơi an toàn tôi đã rất yên tâm.",
-    "tags": "Cảm xúc"
+    "category": "verb"
   },
   {
-    "word": "心配する",
-    "kana": "しんぱいする",
-    "kanji": "心配する",
-    "romaji": "shinpai suru",
-    "meaning": "Lo lắng",
-    "partOfSpeech": "verb",
+    "word": "石",
+    "kana": "いし",
+    "romaji": "ishi",
+    "meaning": "Hòn đá",
     "jlptLevel": "N4",
-    "exampleJapanese": "どうぞ心配しないでください。",
-    "exampleRomaji": "Douzo shinpai shinaide kudasai.",
-    "exampleMeaning": "Xin đừng lo lắng quá nhé.",
-    "tags": "Cảm xúc"
+    "category": "noun"
   },
   {
-    "word": "驚く",
-    "kana": "おどろく",
-    "kanji": "驚く",
-    "romaji": "odoroku",
-    "meaning": "Kinh ngạc, giật mình, bất ngờ",
-    "partOfSpeech": "verb",
+    "word": "急ぐ",
+    "kana": "いそぐ",
+    "romaji": "isogu",
+    "meaning": "Vội vàng, gấp rút",
     "jlptLevel": "N4",
-    "exampleJapanese": "その大きなニュースに驚きました。",
-    "exampleRomaji": "Sono ookina nyuusu ni odorokimashita.",
-    "exampleMeaning": "Tôi đã bất ngờ trước tin tức lớn đó.",
-    "tags": "Cảm xúc"
+    "category": "verb"
   },
   {
-    "word": "怒る",
-    "kana": "おこる",
-    "kanji": "怒る",
-    "romaji": "okoru",
-    "meaning": "Tức giận, nổi giận",
-    "partOfSpeech": "verb",
+    "word": "指輪",
+    "kana": "ゆびわ",
+    "romaji": "yubiwa",
+    "meaning": "Nhẫn (đeo tay)",
     "jlptLevel": "N4",
-    "exampleJapanese": "約束を破って先生に怒られました。",
-    "exampleRomaji": "Yakusoku o yamete sensei ni okoraremashita.",
-    "exampleMeaning": "Tôi đã bị thầy giáo mắng vì thất hứa.",
-    "tags": "Cảm xúc"
+    "category": "noun"
   },
   {
-    "word": "喜ぶ",
-    "kana": "よろこぶ",
-    "kanji": "喜ぶ",
-    "romaji": "yorokobu",
-    "meaning": "Vui mừng, hoan hỉ",
-    "partOfSpeech": "verb",
+    "word": "受付",
+    "kana": "うけつけ",
+    "romaji": "uketsuke",
+    "meaning": "Quầy lễ tân",
     "jlptLevel": "N4",
-    "exampleJapanese": "プレゼントをあげたらとても喜びました。",
-    "exampleRomaji": "Purezento o agetara totemo yorokobimashita.",
-    "exampleMeaning": "Khi nhận được quà bạn ấy đã rất vui mừng.",
-    "tags": "Cảm xúc"
+    "category": "noun"
   },
   {
-    "word": "悲しい",
-    "kana": "かなしい",
-    "kanji": "悲しい",
-    "romaji": "kanashii",
-    "meaning": "Đau buồn, buồn bã",
-    "partOfSpeech": "adjective",
+    "word": "動く",
+    "kana": "うごく",
+    "romaji": "ugoku",
+    "meaning": "Chuyển động, cử động",
     "jlptLevel": "N4",
-    "exampleJapanese": "悲しい映画を見て泣いてしまいました。",
-    "exampleRomaji": "Kanashii eiga o mite naite shimaimashita.",
-    "exampleMeaning": "Xem bộ phim buồn tôi đã khóc mất rồi.",
-    "tags": "Cảm xúc"
+    "category": "verb"
   },
   {
-    "word": "恥ずかしい",
-    "kana": "はずかしい",
-    "kanji": "恥ずかしい",
-    "romaji": "hazukashii",
-    "meaning": "Xấu hổ, ngượng ngùng",
-    "partOfSpeech": "adjective",
+    "word": "嘘",
+    "kana": "うそ",
+    "romaji": "uso",
+    "meaning": "Lời nói dối",
     "jlptLevel": "N4",
-    "exampleJapanese": "皆の前で間違えて恥ずかしかったです。",
-    "exampleRomaji": "Minna no mae de machigaete hazukashikatta desu.",
-    "exampleMeaning": "Nói sai trước mặt mọi người thật xấu hổ.",
-    "tags": "Cảm xúc"
+    "category": "noun"
   },
   {
-    "word": "うらやましい",
-    "kana": "うらやましい",
-    "kanji": null,
-    "romaji": "urayamashii",
-    "meaning": "Ghen tị, ngưỡng mộ",
-    "partOfSpeech": "adjective",
+    "word": "売り場",
+    "kana": "うりば",
+    "romaji": "uriba",
+    "meaning": "Quầy bán hàng",
     "jlptLevel": "N4",
-    "exampleJapanese": "日本へ旅行に行けるなんてうらやましいです。",
-    "exampleRomaji": "Nihon e ryokou ni ikeru nante urayamashii desu.",
-    "exampleMeaning": "Được đi du lịch Nhật Bản thật ngưỡng mộ quá.",
-    "tags": "Cảm xúc"
+    "category": "noun"
   },
   {
-    "word": "案内板",
-    "kana": "あんないばん",
-    "kanji": "案内板",
-    "romaji": "annaiban",
-    "meaning": "Bảng hướng dẫn",
-    "partOfSpeech": "noun",
+    "word": "運転手",
+    "kana": "うんてんしゅ",
+    "romaji": "untenshu",
+    "meaning": "Tài xế, người lái xe",
     "jlptLevel": "N4",
-    "exampleJapanese": "駅の案内板を見て行き方を確認しました。",
-    "exampleRomaji": "Eki no annaiban o mite ikikata o kakunin shimashita.",
-    "exampleMeaning": "Tôi nhìn bảng hướng dẫn ở ga để check đường đi.",
-    "tags": "Giao thông"
+    "category": "noun"
   },
   {
-    "word": "乗車券",
-    "kana": "じょうしゃけん",
-    "kanji": "乗車券",
-    "romaji": "joushaken",
-    "meaning": "Vé xe, vé tàu",
-    "partOfSpeech": "noun",
+    "word": "お祝い",
+    "kana": "おいわい",
+    "romaji": "oiwai",
+    "meaning": "Chúc mừng, quà mừng",
     "jlptLevel": "N4",
-    "exampleJapanese": "券売機で乗車券を買います。",
-    "exampleRomaji": "Kenbaiki de joushaken o kaimasu.",
-    "exampleMeaning": "Tôi mua vé tàu ở máy bán vé tự động.",
-    "tags": "Giao thông"
+    "category": "noun"
   },
   {
-    "word": "乗り換える",
-    "kana": "のりかえる",
-    "kanji": "乗り換える",
-    "romaji": "norikaeru",
-    "meaning": "Đổi xe, chuyển tuyến tàu",
-    "partOfSpeech": "verb",
+    "word": "屋上",
+    "kana": "おくじょう",
+    "romaji": "okujou",
+    "meaning": "Sân thượng",
     "jlptLevel": "N4",
-    "exampleJapanese": "新宿駅で山手線に乗り換えます。",
-    "exampleRomaji": "Shinjuku eki de Yamanotesen ni norikaemasu.",
-    "exampleMeaning": "Tôi chuyển sang tuyến Yamanote ở ga Shinjuku.",
-    "tags": "Giao thông"
+    "category": "noun"
   },
   {
-    "word": "出発する",
-    "kana": "しゅっぱつする",
-    "kanji": "出発する",
-    "romaji": "shuppatsu suru",
-    "meaning": "Xuất phát, khởi hành",
-    "partOfSpeech": "verb",
+    "word": "贈り物",
+    "kana": "おくりもの",
+    "romaji": "okurimono",
+    "meaning": "Quà tặng",
     "jlptLevel": "N4",
-    "exampleJapanese": "明朝7時にバスが出発します。",
-    "exampleRomaji": "Myouchou 7-ji ni basu ga shuppatsu shimasu.",
-    "exampleMeaning": "Xe buýt khởi hành lúc 7 giờ sáng mai.",
-    "tags": "Giao thông"
+    "category": "noun"
   },
   {
-    "word": "到着する",
-    "kana": "とうちゃくする",
-    "kanji": "到着する",
-    "romaji": "touchaku suru",
-    "meaning": "Đến nơi, cập bến",
-    "partOfSpeech": "verb",
+    "word": "送る",
+    "kana": "おくる",
+    "romaji": "okuru",
+    "meaning": "Gửi, tiễn",
     "jlptLevel": "N4",
-    "exampleJapanese": "予定通りに成田空港に到着しました。",
-    "exampleRomaji": "Yoteidoori ni Narita kuukou ni touchaku shimashita.",
-    "exampleMeaning": "Tôi đã hạ cánh xuống sân bay Narita đúng dự kiến.",
-    "tags": "Giao thông"
+    "category": "verb"
   },
   {
     "word": "遅れる",
     "kana": "おくれる",
-    "kanji": "遅れる",
     "romaji": "okureru",
     "meaning": "Trễ, muộn",
-    "partOfSpeech": "verb",
     "jlptLevel": "N4",
-    "exampleJapanese": "大雨で電車が15分遅れました。",
-    "exampleRomaji": "Ooame de densha ga 15-pun okuremashita.",
-    "exampleMeaning": "Do mưa lớn nên tàu điện bị trễ 15 phút.",
-    "tags": "Giao thông"
+    "category": "verb"
   },
   {
-    "word": "間に合う",
-    "kana": "まにあう",
-    "kanji": "間に合う",
-    "romaji": "maniau",
-    "meaning": "Kịp giờ",
-    "partOfSpeech": "verb",
+    "word": "起こす",
+    "kana": "おこす",
+    "romaji": "okosu",
+    "meaning": "Đánh thức",
     "jlptLevel": "N4",
-    "exampleJapanese": "走ってなんとか新幹線に間に合いました。",
-    "exampleRomaji": "Hashitte nantoka Shinkansen ni maniaimashita.",
-    "exampleMeaning": "Tôi chạy và may mắn kịp chuyến Shinkansen.",
-    "tags": "Giao thông"
+    "category": "verb"
   },
   {
-    "word": "予約する",
-    "kana": "よやくする",
-    "kanji": "予約する",
-    "romaji": "yoyaku suru",
-    "meaning": "Đặt chỗ, đặt trước",
-    "partOfSpeech": "verb",
+    "word": "行う",
+    "kana": "おこなう",
+    "romaji": "okonau",
+    "meaning": "Tiến hành, thực hiện",
     "jlptLevel": "N4",
-    "exampleJapanese": "ホテルの部屋をネットで予約しました。",
-    "exampleRomaji": "Hoteru no heya o netto de yoyaku shimashita.",
-    "exampleMeaning": "Tôi đã đặt phòng khách sạn qua mạng.",
-    "tags": "Đời sống"
+    "category": "verb"
   },
   {
-    "word": "キャンセルする",
-    "kana": "きゃんせるする",
-    "kanji": null,
-    "romaji": "kyanseru suru",
-    "meaning": "Hủy bỏ",
-    "partOfSpeech": "verb",
+    "word": "怒る",
+    "kana": "おこる",
+    "romaji": "okoru",
+    "meaning": "Tức giận",
     "jlptLevel": "N4",
-    "exampleJapanese": "急な用事で飛行機をキャンセルしました。",
-    "exampleRomaji": "Kyuu na youji de hikouki o kyanseru shimashita.",
-    "exampleMeaning": "Vì bận việc đột xuất nên tôi đã hủy chuyến bay.",
-    "tags": "Đời sống"
+    "category": "verb"
   },
   {
-    "word": "招待する",
-    "kana": "しょうたいする",
-    "kanji": "招待する",
-    "romaji": "shoutai suru",
-    "meaning": "Mời, chiêu đãi",
-    "partOfSpeech": "verb",
+    "word": "落ちる",
+    "kana": "おちる",
+    "romaji": "ochiru",
+    "meaning": "Rơi, trượt",
     "jlptLevel": "N4",
-    "exampleJapanese": "誕生日パーティーに友達を招待しました。",
-    "exampleRomaji": "Tanjoubi paatii ni tomodachi o shoutai shimashita.",
-    "exampleMeaning": "Tôi đã mời bạn bè tới tiệc sinh nhật.",
-    "tags": "Giao tiếp"
+    "category": "verb"
   },
   {
-    "word": "受話器",
-    "kana": "じゅわき",
-    "kanji": "受話器",
-    "romaji": "juwaki",
-    "meaning": "Ống nghe điện thoại",
-    "partOfSpeech": "noun",
+    "word": "落とす",
+    "kana": "おとす",
+    "romaji": "otosu",
+    "meaning": "Làm rơi, đánh mất",
     "jlptLevel": "N4",
-    "exampleJapanese": "受話器を取って電話に出ました。",
-    "exampleRomaji": "Juwaki o totte denwa ni demashita.",
-    "exampleMeaning": "Tôi nhấc ống nghe để trả lời điện thoại.",
-    "tags": "Giao tiếp"
+    "category": "verb"
   },
   {
-    "word": "伝言",
-    "kana": "でんごん",
-    "kanji": "伝言",
-    "romaji": "dengon",
-    "meaning": "Lời nhắn",
-    "partOfSpeech": "noun",
+    "word": "踊り",
+    "kana": "おどり",
+    "romaji": "odori",
+    "meaning": "Điệu nhảy",
     "jlptLevel": "N4",
-    "exampleJapanese": "田中さんに伝言をお願いできますか？",
-    "exampleRomaji": "Tanaka-san ni dengon o onegai dekimasu ka?",
-    "exampleMeaning": "Tôi có thể nhờ anh chuyển lời nhắn cho anh Tanaka không?",
-    "tags": "Giao tiếp"
+    "category": "noun"
   },
   {
-    "word": "敬語",
-    "kana": "けいご",
-    "kanji": "敬語",
-    "romaji": "keigo",
-    "meaning": "Kính ngữ",
-    "partOfSpeech": "noun",
+    "word": "踊る",
+    "kana": "おどる",
+    "romaji": "odoru",
+    "meaning": "Nhảy múa",
     "jlptLevel": "N4",
-    "exampleJapanese": "目上の人には敬語を使います。",
-    "exampleRomaji": "Meue no hito ni wa keigo o tsukaimasu.",
-    "exampleMeaning": "Đối với người bề trên chúng ta dùng kính ngữ.",
-    "tags": "Văn hóa"
+    "category": "verb"
   },
   {
-    "word": "謙譲語",
-    "kana": "けんじょうご",
-    "kanji": "謙譲語",
-    "romaji": "kenjougo",
-    "meaning": "Khiêm nhường ngữ",
-    "partOfSpeech": "noun",
+    "word": "驚く",
+    "kana": "おどろく",
+    "romaji": "odoroku",
+    "meaning": "Giật mình, ngạc nhiên",
     "jlptLevel": "N4",
-    "exampleJapanese": "自分の行動を低く言う時に謙譲語を使います。",
-    "exampleRomaji": "Jibun no koudou o hikaku iu toki ni kenjougo o tsukaimasu.",
-    "exampleMeaning": "Khi hạ thấp hành động của mình người ta dùng khiêm nhường ngữ.",
-    "tags": "Văn hóa"
+    "category": "verb"
   },
   {
-    "word": "尊敬語",
-    "kana": "そんけいご",
-    "kanji": "尊敬語",
-    "romaji": "sonkeigo",
-    "meaning": "Tôn kính ngữ",
-    "partOfSpeech": "noun",
+    "word": "お祭り",
+    "kana": "おまつり",
+    "romaji": "omatsuri",
+    "meaning": "Lễ hội",
     "jlptLevel": "N4",
-    "exampleJapanese": "社長への挨拶に尊敬語を用います。",
-    "exampleRomaji": "Shachou e no aisatsu ni sonkeigo o mochiimasu.",
-    "exampleMeaning": "Dùng tôn kính ngữ khi chào hỏi giám đốc.",
-    "tags": "Văn hóa"
+    "category": "noun"
+  },
+  {
+    "word": "見舞い",
+    "kana": "おみまい",
+    "romaji": "omimai",
+    "meaning": "Thăm người bệnh",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "思い出す",
+    "kana": "おもいだす",
+    "romaji": "omoidasu",
+    "meaning": "Nhớ lại, hồi tưởng",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "表",
+    "kana": "おもて",
+    "romaji": "omote",
+    "meaning": "Bề mặt, phía trước",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "裏",
+    "kana": "うら",
+    "romaji": "ura",
+    "meaning": "Mặt sau, phía sau",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "泳ぎ方",
+    "kana": "およぎかた",
+    "romaji": "oyogikata",
+    "meaning": "Cách bơi",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "折る",
+    "kana": "おる",
+    "romaji": "oru",
+    "meaning": "Bẻ, gấp",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "折れる",
+    "kana": "おれる",
+    "romaji": "oreru",
+    "meaning": "Bị gãy, gập",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "海岸",
+    "kana": "かいがん",
+    "romaji": "kaigan",
+    "meaning": "Bờ biển",
+    "jlptLevel": "N4",
+    "category": "noun"
   },
   {
     "word": "会議室",
     "kana": "かいぎしつ",
-    "kanji": "会議室",
     "romaji": "kaigishitsu",
     "meaning": "Phòng họp",
-    "partOfSpeech": "noun",
     "jlptLevel": "N4",
-    "exampleJapanese": "10時から3階の会議室で打ち合わせがあります。",
-    "exampleRomaji": "10-ji kara 3-kai no kaigishitsu de uchiawase ga arimasu.",
-    "exampleMeaning": "Lúc 10 giờ có cuộc trao đổi ở phòng họp tầng 3.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "書類",
-    "kana": "しょるい",
-    "kanji": "書類",
-    "romaji": "shorui",
-    "meaning": "Hồ sơ, tài liệu",
-    "partOfSpeech": "noun",
+    "word": "会場",
+    "kana": "かいじょう",
+    "romaji": "kaijou",
+    "meaning": "Hội trường, địa điểm",
     "jlptLevel": "N4",
-    "exampleJapanese": "必要な書類を準備してください。",
-    "exampleRomaji": "Hitsuyou na shorui o junbi shite kudasai.",
-    "exampleMeaning": "Xin hãy chuẩn bị các tài liệu cần thiết.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "締め切り",
-    "kana": "しめきり",
-    "kanji": "締め切り",
-    "romaji": "shimekiri",
-    "meaning": "Hạn chót, deadline",
-    "partOfSpeech": "noun",
+    "word": "買い物",
+    "kana": "かいもの",
+    "romaji": "kaimono",
+    "meaning": "Mua sắm",
     "jlptLevel": "N4",
-    "exampleJapanese": "レポートの締め切りは金曜日です。",
-    "exampleRomaji": "Repooto no shimekiri wa kinneyoubi desu.",
-    "exampleMeaning": "Hạn chót nộp báo cáo là thứ sáu.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "残業する",
-    "kana": "ざんぎょうする",
-    "kanji": "残業する",
-    "romaji": "zangyou suru",
-    "meaning": "Làm thêm giờ, tăng ca",
-    "partOfSpeech": "verb",
+    "word": "変える",
+    "kana": "かえる",
+    "romaji": "kaeru",
+    "meaning": "Thay đổi, biến đổi",
     "jlptLevel": "N4",
-    "exampleJapanese": "今日は仕事が多くて2時間残業しました。",
-    "exampleRomaji": "Kyou wa shigoto ga ookute 2-jikan zangyou shimashita.",
-    "exampleMeaning": "Hôm nay công việc nhiều nên tôi đã làm tăng ca 2 tiếng.",
-    "tags": "Công việc"
+    "category": "verb"
   },
   {
-    "word": "出張する",
-    "kana": "しゅっちょうする",
-    "kanji": "出張する",
-    "romaji": "shutchou suru",
-    "meaning": "Đi công tác",
-    "partOfSpeech": "verb",
+    "word": "科学",
+    "kana": "かがく",
+    "romaji": "kagaku",
+    "meaning": "Khoa học",
     "jlptLevel": "N4",
-    "exampleJapanese": "来週大阪へ出張します。",
-    "exampleRomaji": "Raishuu Osaka e shutchou shimasu.",
-    "exampleMeaning": "Tuần sau tôi đi công tác Osaka.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "給料",
-    "kana": "きゅうりょう",
-    "kanji": "給料",
-    "romaji": "kyuuryou",
-    "meaning": "Tiền lương",
-    "partOfSpeech": "noun",
+    "word": "鏡",
+    "kana": "かがみ",
+    "romaji": "kagami",
+    "meaning": "Cái gương",
     "jlptLevel": "N4",
-    "exampleJapanese": "毎月25日は給料日です。",
-    "exampleRomaji": "Maitsuki 25-nichi wa kyuuryoubi desu.",
-    "exampleMeaning": "Ngày 25 hàng tháng là ngày nhận lương.",
-    "tags": "Công việc"
+    "category": "noun"
   },
   {
-    "word": "面接",
-    "kana": "めんせつ",
-    "kanji": "面接",
-    "romaji": "mensetsu",
-    "meaning": "Phỏng vấn xin việc",
-    "partOfSpeech": "noun",
+    "word": "かける",
+    "kana": "かける",
+    "romaji": "kakeru",
+    "meaning": "Đeo (kính), treo",
     "jlptLevel": "N4",
-    "exampleJapanese": "明日の採用面接に緊張しています。",
-    "exampleRomaji": "Ashita no saiyou mensetsu ni kinchou shite imasu.",
-    "exampleMeaning": "Tôi đang hồi hộp cho buổi phỏng vấn xin việc ngày mai.",
-    "tags": "Công việc"
+    "category": "verb"
   },
   {
-    "word": "履歴書",
-    "kana": "りれきしょ",
-    "kanji": "履歴書",
-    "romaji": "rirekisho",
-    "meaning": "Sơ yếu lý lịch, CV",
-    "partOfSpeech": "noun",
+    "word": "飾る",
+    "kana": "かざる",
+    "romaji": "kazaru",
+    "meaning": "Trang trí",
     "jlptLevel": "N4",
-    "exampleJapanese": "履歴書に写真を貼って提出します。",
-    "exampleRomaji": "Rirekisho ni shashin o hatte teishutsu shimasu.",
-    "exampleMeaning": "Tôi dán ảnh vào sơ yếu lý lịch và nộp.",
-    "tags": "Công việc"
+    "category": "verb"
   },
   {
-    "word": "健康診断",
-    "kana": "けんこうしんだん",
-    "kanji": "健康診断",
-    "romaji": "kenkoushindan",
-    "meaning": "Khám sức khỏe định kỳ",
-    "partOfSpeech": "noun",
+    "word": "火事",
+    "kana": "かじ",
+    "romaji": "kaji",
+    "meaning": "Hỏa hoạn, đám cháy",
     "jlptLevel": "N4",
-    "exampleJapanese": "年に一度、会社で健康診断を受けます。",
-    "exampleRomaji": "Nen ni ichido, kaisha de kenkoushindan o ukemasu.",
-    "exampleMeaning": "Mỗi năm một lần tôi khám sức khỏe ở công ty.",
-    "tags": "Sức khỏe"
+    "category": "noun"
   },
   {
-    "word": "風邪",
-    "kana": "かぜ",
-    "kanji": "風邪",
-    "romaji": "kaze",
-    "meaning": "Cảm cúm",
-    "partOfSpeech": "noun",
+    "word": "ガス",
+    "kana": "がす",
+    "romaji": "gasu",
+    "meaning": "Khí gas",
     "jlptLevel": "N4",
-    "exampleJapanese": "風邪をひいたので薬を飲んで寝ます。",
-    "exampleRomaji": "Kaze o hiita node kusuri o nonde nemasu.",
-    "exampleMeaning": "Vì bị cảm nên tôi uống thuốc rồi đi ngủ.",
-    "tags": "Sức khỏe"
+    "category": "noun"
   },
   {
-    "word": "熱",
-    "kana": "ねつ",
-    "kanji": "熱",
-    "romaji": "netsu",
-    "meaning": "Cơn sốt",
-    "partOfSpeech": "noun",
+    "word": "片付ける",
+    "kana": "かたづける",
+    "romaji": "katadukeru",
+    "meaning": "Dọn dẹp, sắp xếp",
     "jlptLevel": "N4",
-    "exampleJapanese": "38度の高い熱が出ました。",
-    "exampleRomaji": "38-do no takai netsu ga demashita.",
-    "exampleMeaning": "Tôi đã bị sốt cao 38 độ.",
-    "tags": "Sức khỏe"
+    "category": "verb"
   },
   {
-    "word": "頭痛",
-    "kana": "ずつう",
-    "kanji": "頭痛",
-    "romaji": "zutsuu",
-    "meaning": "Đau đầu",
-    "partOfSpeech": "noun",
+    "word": "勝つ",
+    "kana": "かつ",
+    "romaji": "katsu",
+    "meaning": "Chiến thắng",
     "jlptLevel": "N4",
-    "exampleJapanese": "ひどい頭痛がするので早退します。",
-    "exampleRomaji": "Hidoi zutsuu ga suru node soutai shimasu.",
-    "exampleMeaning": "Vì bị đau đầu dữ dội nên tôi xin về sớm.",
-    "tags": "Sức khỏe"
+    "category": "verb"
   },
   {
-    "word": "怪我",
-    "kana": "けが",
-    "kanji": "怪我",
-    "romaji": "kega",
-    "meaning": "Vết thương, chấn thương",
-    "partOfSpeech": "noun",
+    "word": "負ける",
+    "kana": "まける",
+    "romaji": "makeru",
+    "meaning": "Thua cuộc",
     "jlptLevel": "N4",
-    "exampleJapanese": "サッカーの試合で足に怪我をしました。",
-    "exampleRomaji": "Sakkaa no shiai de ashi ni kega o shimashita.",
-    "exampleMeaning": "Tôi bị thương ở chân trong trận bóng đá.",
-    "tags": "Sức khỏe"
+    "category": "verb"
   },
   {
-    "word": "手術",
-    "kana": "しゅじゅつ",
-    "kanji": "手術",
-    "romaji": "shujutsu",
-    "meaning": "Phẫu thuật",
-    "partOfSpeech": "noun",
+    "word": "家庭",
+    "kana": "かてい",
+    "romaji": "katei",
+    "meaning": "Gia đình",
     "jlptLevel": "N4",
-    "exampleJapanese": "胃の手術が無事に成功しました。",
-    "exampleRomaji": "I no shujutsu ga buji ni seikou shimashita.",
-    "exampleMeaning": "Ca phẫu thuật dạ dạ đã thành công tốt đẹp.",
-    "tags": "Sức khỏe"
+    "category": "noun"
   },
   {
-    "word": "注射",
-    "kana": "ちゅうしゃ",
-    "kanji": "注射",
-    "romaji": "chuusha",
-    "meaning": "Mũi tiêm, chích thuốc",
-    "partOfSpeech": "noun",
+    "word": "必ず",
+    "kana": "かならず",
+    "romaji": "kanarazu",
+    "meaning": "Nhất định, chắc chắn",
     "jlptLevel": "N4",
-    "exampleJapanese": "インフルエンザの予防注射を受けました。",
-    "exampleRomaji": "Infuruenza no yobou chuusha o ukemashita.",
-    "exampleMeaning": "Tôi đã tiêm vắc xin phòng cúm.",
-    "tags": "Sức khỏe"
+    "category": "adverb"
+  },
+  {
+    "word": "看護師",
+    "kana": "かんごし",
+    "romaji": "kangoshi",
+    "meaning": "Y tá",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "関係",
+    "kana": "かんけい",
+    "romaji": "kankei",
+    "meaning": "Mối quan hệ",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "観光",
+    "kana": "かんこう",
+    "romaji": "kankou",
+    "meaning": "Tham quan, du lịch",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "感情",
+    "kana": "かんじょう",
+    "romaji": "kanjou",
+    "meaning": "Cảm xúc",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "機会",
+    "kana": "きかい",
+    "romaji": "kikai",
+    "meaning": "Cơ hội",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "機械",
+    "kana": "きかい",
+    "romaji": "kikai",
+    "meaning": "Máy móc",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "気候",
+    "kana": "きこう",
+    "romaji": "kikou",
+    "meaning": "Khí hậu",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "技術",
+    "kana": "ぎじゅつ",
+    "romaji": "gijutsu",
+    "meaning": "Kỹ thuật, công nghệ",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "季節",
+    "kana": "きせつ",
+    "romaji": "kisetsu",
+    "meaning": "Mùa trong năm",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "規則",
+    "kana": "きそく",
+    "romaji": "kisoku",
+    "meaning": "Quy tắc, nội quy",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "絹",
+    "kana": "きぬ",
+    "romaji": "kinu",
+    "meaning": "Lụa, tơ lụa",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "気分",
+    "kana": "きぶん",
+    "romaji": "kibun",
+    "meaning": "Tâm trạng, cảm giác",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "決まる",
+    "kana": "きまる",
+    "romaji": "kimaru",
+    "meaning": "Được quyết định",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "決める",
+    "kana": "きめる",
+    "romaji": "kimeru",
+    "meaning": "Quyết định",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "気持ち",
+    "kana": "きもち",
+    "romaji": "kimochi",
+    "meaning": "Cảm xúc, tấm lòng",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "近所",
+    "kana": "きんじょ",
+    "romaji": "kinjo",
+    "meaning": "Hàng xóm, vùng lân cận",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "空気",
+    "kana": "くうき",
+    "romaji": "kuuki",
+    "meaning": "Không khí",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "空港",
+    "kana": "くうこう",
+    "romaji": "kuukou",
+    "meaning": "Sân bay",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "草",
+    "kana": "くさ",
+    "romaji": "kusa",
+    "meaning": "Cỏ",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "首",
+    "kana": "くび",
+    "romaji": "kubi",
+    "meaning": "Cổ",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "雲",
+    "kana": "くも",
+    "romaji": "kumo",
+    "meaning": "Mây",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "比べら",
+    "kana": "くらべる",
+    "romaji": "kuraberu",
+    "meaning": "So sánh",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "暮らす",
+    "kana": "くらす",
+    "romaji": "kurasu",
+    "meaning": "Sinh sống",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "毛",
+    "kana": "け",
+    "romaji": "ke",
+    "meaning": "Lông, tóc",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "計画",
+    "kana": "けいかく",
+    "romaji": "keikaku",
+    "meaning": "Kế hoạch",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "経済",
+    "kana": "けいざい",
+    "romaji": "keizai",
+    "meaning": "Kinh tế",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "警察",
+    "kana": "けいさつ",
+    "romaji": "keisatsu",
+    "meaning": "Cảnh sát",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "消しゴム",
+    "kana": "けしごむ",
+    "romaji": "keshigomu",
+    "meaning": "Cục tẩy",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "結果",
+    "kana": "けっか",
+    "romaji": "kekka",
+    "meaning": "Kết quả",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "欠席",
+    "kana": "けっせき",
+    "romaji": "kesseki",
+    "meaning": "Vắng mặt",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "決定",
+    "kana": "けってい",
+    "romaji": "kettei",
+    "meaning": "Quyết định",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "研究",
+    "kana": "けんきゅう",
+    "romaji": "kenkyuu",
+    "meaning": "Nghiên cứu",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "研究室",
+    "kana": "けんきゅうしつ",
+    "romaji": "kenkyuushitsu",
+    "meaning": "Phòng nghiên cứu",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "見学",
+    "kana": "けんがく",
+    "romaji": "kengaku",
+    "meaning": "Tham quan học hỏi",
+    "jlptLevel": "N4",
+    "category": "noun"
+  },
+  {
+    "word": "建てる",
+    "kana": "たてる",
+    "romaji": "tateru",
+    "meaning": "Xây dựng",
+    "jlptLevel": "N4",
+    "category": "verb"
+  },
+  {
+    "word": "健康",
+    "kana": "けんこう",
+    "romaji": "kenkou",
+    "meaning": "Sức khỏe",
+    "jlptLevel": "N4",
+    "category": "noun"
   }
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // JLPT N4 GRAMMAR SEED DATA (17 structures)
 // ─────────────────────────────────────────────────────────────────────────────
-export const GRAMMAR_N4 = [
+export const GRAMMAR_N4: SeedGrammar[] = [
   {
     "title": "〜んです (Giải thích hoàn cảnh)",
     "level": "N4",
@@ -2586,26 +2473,26 @@ export const GRAMMAR_N4 = [
     "level": "N4",
     "meaning": "Vừa thực hiện hành động 1 vừa thực hiện hành động 2 (Hành động 2 là chính)",
     "structure": "Động từ 1 thể ます (bỏ ます) + ながら + Động từ 2",
-    "commonMistakes": "Hành động quan trọng hơn đặt ở vế đằng sau.",
+    "commonMistakes": "Hai hành động phải do cùng một chủ thể thực hiện.",
     "examples": [
       {
         "japanese": "音楽を聞きながら勉強します。",
-        "romaji": "Ongaku o kikinagara benkyō shimasu.",
+        "romaji": "Ongaku o kikinagara benkyou shimasu.",
         "meaning": "Tôi vừa nghe nhạc vừa học bài."
       },
       {
         "japanese": "歩きながら話しましょう。",
-        "romaji": "Arukinagara hanashimashō.",
-        "meaning": "Chúng ta vừa đi dạo vừa nói chuyện nhé."
+        "romaji": "Arukinagara hanashimashou.",
+        "meaning": "Chúng ta hãy vừa đi dạo vừa nói chuyện nhé."
       }
     ]
   },
   {
-    "title": "〜し、〜し (Vừa A lại còn B / Liệt kê lý do)",
+    "title": "〜し、〜し (Liệt kê lý do)",
     "level": "N4",
-    "meaning": "Liệt kê nhiều lý do hoặc đặc điểm song song",
-    "structure": "Thể thông thường + し",
-    "commonMistakes": "Danh từ và tính từ đuôi -na đi với だし (Ví dụ: きれいだし).",
+    "meaning": "Vừa... lại vừa... / Vì... và vì...",
+    "structure": "[Thể thông thường] + し、[Thể thông thường] + し",
+    "commonMistakes": "Thường dùng để đưa ra nhiều lý do dẫn đến một kết luận.",
     "examples": [
       {
         "japanese": "この店は安いし、美味しいです。",
@@ -2613,151 +2500,189 @@ export const GRAMMAR_N4 = [
         "meaning": "Quán này vừa rẻ lại vừa ngon."
       },
       {
-        "japanese": "雨も降っているし、出かけません。",
-        "romaji": "Ame mo futte iru shi, dekakemasen.",
-        "meaning": "Trời vừa mưa nữa nên tôi sẽ không ra ngoài."
+        "japanese": "雨も降っているし、お腹もすいたし、帰りましょう。",
+        "romaji": "Ame mo futte iru shi, onaka mo suita shi, kaerimashou.",
+        "meaning": "Trời vừa mưa lại vừa đói bụng, chúng ta về thôi."
       }
     ]
   },
   {
     "title": "〜ています (Trạng thái kết quả - Tự động từ)",
     "level": "N4",
-    "meaning": "Diễn tả trạng thái kết quả của hành động đang diễn ra / tồn tại",
-    "structure": "Tự động từ thể て + います",
-    "commonMistakes": "Khác với hành động đang làm (V-te imasu), ở đây chỉ trạng thái của vật (Ví dụ: ドアが開いています).",
+    "meaning": "Đang trong trạng thái... (kết quả của tự động từ)",
+    "structure": "[Tự động từ thể て] + います",
+    "commonMistakes": "Dùng が chỉ đối tượng mang trạng thái (Ví dụ: 窓が開いています).",
     "examples": [
       {
-        "japanese": "電気をついています。",
+        "japanese": "電気 lunatic ついています。",
         "romaji": "Denki ga tsuite imasu.",
         "meaning": "Đèn đang bật."
       },
       {
-        "japanese": "窓が割れています。",
-        "romaji": "Mado ga warete imasu.",
-        "meaning": "Cửa sổ đang bị vỡ."
+        "japanese": "電車のドアが開いています。",
+        "romaji": "Densha no doa ga akite imasu.",
+        "meaning": "Cửa tàu điện đang mở."
       }
     ]
   },
   {
-    "title": "〜てあります (Trạng thái có mục đích - Tha động từ)",
+    "title": "〜てあります (Trạng thái duy trì có mục đích)",
     "level": "N4",
-    "meaning": "Ai đó đã làm việc gì đó và kết quả vẫn đang được giữ nguyên",
-    "structure": "Tha động từ thể て + あります",
-    "commonMistakes": "Trợ từ là が (Ví dụ: 壁に絵がかけてあります).",
+    "meaning": "Đã được... sẵn (Tha động từ + てあります)",
+    "structure": "[Tha động từ thể て] + あります",
+    "commonMistakes": "Nhấn mạnh có người cố ý thực hiện hành động để chuẩn bị.",
     "examples": [
       {
-        "japanese": "壁に地図がはってあります。",
-        "romaji": "Kabe ni chizu ga hatte arimasu.",
-        "meaning": "Trên tường có dán sẵn bản đồ."
+        "japanese": "壁にカレンダーが貼ってあります。",
+        "romaji": "Kabe ni karendaa ga hatte arimasu.",
+        "meaning": "Lịch đã được treo sẵn trên tường."
       },
       {
-        "japanese": "机の上にノートが置いてあります。",
-        "romaji": "Tsukue no ue ni nōto ga oite arimasu.",
-        "meaning": "Trên bàn có đặt sẵn cuốn sổ."
+        "japanese": "ホテルの部屋はもう予約してあります。",
+        "romaji": "Hoteru no heya wa mou yoyaku shite arimasu.",
+        "meaning": "Phòng khách sạn đã được đặt sẵn rồi."
       }
     ]
   },
   {
     "title": "〜ておきます (Làm sẵn / Chuẩn bị trước)",
     "level": "N4",
-    "meaning": "Chuẩn bị trước cho tương lai hoặc giữ nguyên trạng thái",
-    "structure": "Động từ thể て + おきます",
-    "commonMistakes": "Trong văn nói rút gọn thành 〜ときます (Ví dụ: 買っときます).",
+    "meaning": "Làm trước / Giữ nguyên trạng thái để chuẩn bị cho lần sau",
+    "structure": "[Động từ thể て] + おきます",
+    "commonMistakes": "Trong hội thoại ngắn gọn thường nói tắt là 〜ときます (V-tokimasu).",
     "examples": [
       {
-        "japanese": "旅行の前に切符を買っておきます。",
-        "romaji": "Ryokō no mae ni kippu o katte okimasu.",
-        "meaning": "Trước chuyến đi tôi sẽ mua sẵn vé."
+        "japanese": "旅行の前にチケットを買っておきます。",
+        "romaji": "Ryokou no mae ni chiketto o katte okimasu.",
+        "meaning": "Trước chuyến đi tôi sẽ mua vé trước."
       },
       {
         "japanese": "窓を開けておいてください。",
         "romaji": "Mado o akete oite kudasai.",
-        "meaning": "Xin hãy cứ để cửa sổ mở."
+        "meaning": "Hãy cứ để cửa sổ mở nhé."
       }
     ]
   },
   {
-    "title": "〜意向形 (Thể Ý Định: 〜よう / 〜と思っています)",
+    "title": "〜意向形 (Thể Ý Định) & 〜と思っています",
     "level": "N4",
-    "meaning": "Dự định làm gì (bày tỏ quyết tâm của bản thân)",
-    "structure": "Nhóm 1: âm u -> ō | Nhóm 2: bỏ る + よう | する -> しよう | くる -> こよう",
-    "commonMistakes": "Dùng と思っています khi ý định đã nảy sinh từ trước và kéo dài.",
+    "meaning": "Dự định làm gì... (Dự định đã ấp ủ từ trước)",
+    "structure": "Nhóm 1: âm u -> ou | Nhóm 2: bỏ る + よう | する -> よう | くる -> こよう + と思っています",
+    "commonMistakes": "〜と思う chỉ ý định tức thì, còn 〜と思っています chỉ ý định đã suy nghĩ từ trước.",
     "examples": [
       {
-        "japanese": "明日海へ行こうと思っています。",
-        "romaji": "Ashita umi e ikō to omotte imasu.",
-        "meaning": "Tôi đang có dự định ngày mai đi biển."
+        "japanese": "週末は海へ行こうと思っています。",
+        "romaji": "Shuumatsu wa umi e ikou to omotte imasu.",
+        "meaning": "Tôi đang có dự định đi biển vào cuối tuần."
       },
       {
-        "japanese": "会社をやめようと思います。",
-        "romaji": "Kaisha o yameyō to omoshimasu.",
-        "meaning": "Tôi định sẽ nghỉ việc ở công ty."
+        "japanese": "将来、自分の công ty を作ろうと思っています。",
+        "romaji": "Shourai, jibun no kaisha o tsukurou to omotte imasu.",
+        "meaning": "Trong tương lai tôi dự định mở công ty riêng."
       }
     ]
   },
   {
-    "title": "〜つもりです (Dự định chắc chắn)",
+    "title": "〜ほうがいい (Lời khuyên)",
     "level": "N4",
-    "meaning": "Dự định làm / không làm gì đó một cách rõ ràng",
-    "structure": "Động từ thể V-ru / V-nai + つもりです",
-    "commonMistakes": "Phủ định: V-nai tsumori desu hoặc V-ru tsumori wa arimasen.",
+    "meaning": "Nên... / Không nên...",
+    "structure": "Khuyên làm: [V-ta] + ほうがいい | Khuyên không làm: [V-nai] + ほうがいい",
+    "commonMistakes": "Khuyên nên làm phải dùng thể Quá khứ V-た + ほうがいい (không dùng V-ru).",
     "examples": [
       {
-        "japanese": "来年日本へ留学するつもりです。",
-        "romaji": "Rainen Nihon e ryūgaku suru tsumori desu.",
-        "meaning": "Tôi định năm sau sẽ sang Nhật du học."
+        "japanese": "薬を飲んだほうがいいですよ。",
+        "romaji": "Kusuri o nonda hou ga ii desu yo.",
+        "meaning": "Bạn nên uống thuốc đi thì hơn."
       },
       {
-        "japanese": "タバコを吸わないつもりです。",
-        "romaji": "Tabako o suwanai tsumori desu.",
-        "meaning": "Tôi dự định sẽ không hút thuốc nữa."
+        "japanese": "夜遅く一人で歩かないほうがいいです。",
+        "romaji": "Yoru osoku hitori de arukanai hou ga ii desu.",
+        "meaning": "Không nên đi bộ một mình lúc đêm muộn."
       }
     ]
   },
   {
-    "title": "〜ほうがいいです (Khuyên nên / Không nên)",
+    "title": "〜でしょう / 〜かもしれない (Dự đoán)",
     "level": "N4",
-    "meaning": "Đưa ra lời khuyên nên làm hoặc không nên làm gì",
-    "structure": "Động từ thể た (nên) / thể ない (không nên) + ほうがいいです",
-    "commonMistakes": "Khuyên nên dùng thể Ta (V-ta hō ga ii), khuyên không nên dùng thể Nai (V-nai hō ga ii).",
-    "examples": [
-      {
-        "japanese": "毎日運動したほうがいいです。",
-        "romaji": "Mainichi undō shita hō ga ii desu.",
-        "meaning": "Bạn nên tập thể dục mỗi ngày."
-      },
-      {
-        "japanese": "お酒を飲みすぎないほうがいいです。",
-        "romaji": "Osake o nomisuginai hō ga ii desu.",
-        "meaning": "Bạn không nên uống quá nhiều rượu."
-      }
-    ]
-  },
-  {
-    "title": "〜でしょう / 〜かもしれません (Dự đoán / Có lẽ)",
-    "level": "N4",
-    "meaning": "Phán đoán khả năng xảy ra (Deshou: ~80%, Kamoshiremasen: ~50%)",
-    "structure": "Thể thông thường (Tính từ -na / Danh từ bỏ だ) + でしょう / かもしれません",
-    "commonMistakes": "Deshou lên giọng ở cuối câu thành câu hỏi xác nhận, xuống giọng thành dự đoán.",
+    "meaning": "Có lẽ... (70-80%) / Có thể... (50%)",
+    "structure": "[Thể thông thường bỏ だ] + でしょう / かもしれない",
+    "commonMistakes": "かもしれない biểu thị khả năng thấp hơn でしょう.",
     "examples": [
       {
         "japanese": "明日は雨が降るでしょう。",
-        "romaji": "Ashita wa ame ga furu deshou.",
+        "romaji": "Ashita wa ame ga kuru deshou.",
         "meaning": "Có lẽ ngày mai trời sẽ mưa."
       },
       {
-        "japanese": "約束の時間に遅れるかもしれません。",
-        "romaji": "Yakusoku no jikan ni okureru kamoshiremasen.",
-        "meaning": "Có thể tôi sẽ đến muộn giờ hẹn."
+        "japanese": "彼はお腹が痛いのかもしれません。",
+        "romaji": "Kare wa onaka ga itai no kamo shiremasen.",
+        "meaning": "Có thể là anh ấy bị đau bụng."
       }
     ]
   },
   {
-    "title": "〜条件形 (Thể Điều Kiện: 〜ば / 〜たら / 〜なら)",
+    "title": "〜命令形 & 禁止形 (Thể Mệnh Lệnh & Cấm Đoán)",
     "level": "N4",
-    "meaning": "Giả định: Nếu... thì...",
-    "structure": "Nhóm 1: âm u -> e + ば | Nhóm 2: bỏ る + れば | Tính từ -i: bỏ い + ければ",
-    "commonMistakes": "Nara dùng cho giả định dựa trên thông tin đối phương vừa cung cấp.",
+    "meaning": "Hãy...! / Cấm không được...!",
+    "structure": "Mệnh lệnh: Nhóm 1 u->e | Cấm đoán: [V-ru] + な",
+    "commonMistakes": "Mang sắc thái rất mạnh, nam giới dùng trong khẩn cấp hoặc cổ vũ thể thao.",
+    "examples": [
+      {
+        "japanese": "早く走れ！",
+        "romaji": "Hayaku hashire!",
+        "meaning": "Chạy nhanh lên!"
+      },
+      {
+        "japanese": "ここに入るな！",
+        "romaji": "Koko ni hairu na!",
+        "meaning": "Cấm vào đây!"
+      }
+    ]
+  },
+  {
+    "title": "〜とおりに (Làm theo đúng như...)",
+    "level": "N4",
+    "meaning": "Theo đúng như / Làm đúng theo...",
+    "structure": "[V-ru / V-ta] + とおりに | [N] + のとおりに / どおりに",
+    "commonMistakes": "N đi trực tiếp biến âm thành どおりに.",
+    "examples": [
+      {
+        "japanese": "私が言ったとおりにやってみてください。",
+        "romaji": "Watashi ga ittaとおりに yatte mite kudasai.",
+        "meaning": "Hãy làm thử đúng như những gì tôi đã nói."
+      },
+      {
+        "japanese": " meijisho どおりに組み立てます。",
+        "romaji": "Setsumeisho doori ni kumetatemasu.",
+        "meaning": "Lắp ráp đúng theo sách hướng dẫn."
+      }
+    ]
+  },
+  {
+    "title": "〜あとで (Sau khi...)",
+    "level": "N4",
+    "meaning": "Sau khi làm A thì làm B",
+    "structure": "[V-ta] + あとで | [N] + のあとで",
+    "commonMistakes": "Động từ luôn ở thể quá khứ V-た (khác với てから).",
+    "examples": [
+      {
+        "japanese": "仕事が終わったあとで、飲みに行きましょう。",
+        "romaji": "Shigoto ga owatta ato de, nomi ni ikimashou.",
+        "meaning": "Sau khi công việc kết thúc, chúng ta đi uống nước nhé."
+      },
+      {
+        "japanese": "食事のあとで薬を飲みます。",
+        "romaji": "Shokuji no ato de kusuri o nomimasu.",
+        "meaning": "Tôi uống thuốc sau bữa ăn."
+      }
+    ]
+  },
+  {
+    "title": "〜ば (Thể điều kiện)",
+    "level": "N4",
+    "meaning": "Nếu... thì...",
+    "structure": "Nhóm 1 u->eba | Nhóm 2 -> rareba | Tính từ -i -> kereba | Tính từ -na/N -> nara",
+    "commonMistakes": "Dùng cho giả định điều kiện cần để vế sau xảy ra.",
     "examples": [
       {
         "japanese": "安ければ買います。",
@@ -2765,104 +2690,313 @@ export const GRAMMAR_N4 = [
         "meaning": "Nếu rẻ thì tôi sẽ mua."
       },
       {
-        "japanese": "時間があれば行きます。",
-        "romaji": "Jikan ga areba ikimasu.",
-        "meaning": "Nếu có thời gian thì tôi sẽ đi."
+        "japanese": "時間があれば行きたいです。",
+        "romaji": "Jikan ga areba ikitai desu.",
+        "meaning": "Nếu có thời gian tôi muốn đi."
       }
     ]
   },
   {
-    "title": "〜ように (Mục đích)",
+    "title": "〜ように (Mục đích) & 〜ようになる",
     "level": "N4",
-    "meaning": "Để cho / Nhằm mục đích (Đứng trước thường là thể khả năng hoặc phủ định)",
-    "structure": "Động từ thể V-ru (khả năng / không ý thức) / V-nai + ように",
-    "commonMistakes": "Tame ni dùng với động từ có ý thức, Yō ni dùng với động từ khả năng / trạng thái / phủ định.",
+    "meaning": "Để có thể... / Trở nên có thể...",
+    "structure": "[V-khả năng / V-nai] + ように | [V-khả năng] + ようになる",
+    "commonMistakes": "Vế trước ように dùng động từ không thể hiện ý chí (khả năng, triệt tiêu).",
     "examples": [
       {
-        "japanese": "忘れないようにノートにメモします。",
-        "romaji": "Wasurenai yō ni nōto ni memo shimasu.",
-        "meaning": "Tôi ghi chép vào sổ để không bị quên."
+        "japanese": "日本語が話せるように毎日練習しています。",
+        "romaji": "Nihongo ga hanaseru you ni mainichi renshuu shite imasu.",
+        "meaning": "Tôi luyện tập hàng ngày để có thể nói tiếng Nhật."
       },
       {
-        "japanese": "日本語が話せるように練習します。",
-        "romaji": "Nihongo ga hanaseru yō ni renshū shimasu.",
-        "meaning": "Tôi luyện tập để có thể nói được tiếng Nhật."
+        "japanese": "最近、漢字が読めるようになりました。",
+        "romaji": "Saikin, kanji ga yomeru you ni narimashita.",
+        "meaning": "Dạo này tôi đã trở nên đọc được chữ Hán."
       }
     ]
   },
   {
-    "title": "〜受身 (Thể Bị Động: 〜られる)",
+    "title": "〜受身形 (Thể Bị Động)",
     "level": "N4",
-    "meaning": "Bị hoặc được tác động bởi đối tượng khác",
-    "structure": "Nhóm 1: âm u -> a + れる | Nhóm 2: bỏ る + られる | くる -> こられる | する -> される",
-    "commonMistakes": "Tác giả hành động đánh dấu bằng trợ từ に (Ví dụ: 先生に褒められる).",
+    "meaning": "Bị / Được... (Bị động trực tiếp hoặc bị động quấy rầy)",
+    "structure": "Nhóm 1 a+reru | Nhóm 2 rareru | kuru -> korareru | suru -> sareru",
+    "commonMistakes": "Tác nhân gây hành động đi với trợ từ に.",
     "examples": [
       {
-        "japanese": "先生に褒められました。",
-        "romaji": "Sensei ni homeraremashita.",
-        "meaning": "Tôi đã được thầy giáo khen ngợi."
+        "japanese": "先生にほめられました。",
+        "romaji": "Sensei ni homeramashita.",
+        "meaning": "Tôi đã được thầy giáo khen."
       },
       {
-        "japanese": "泥棒に財布をとられました。",
-        "romaji": "Dorobō ni saifu o toraremashita.",
-        "meaning": "Tôi đã bị tên trộm lấy mất ví."
+        "japanese": "雨に降られて濡れてしまいました。",
+        "romaji": "Ame ni furarete nurete shimaimashita.",
+        "meaning": "Tôi bị mắc mưa nên đã bị ướt mất rồi."
       }
     ]
   },
   {
-    "title": "〜使役 (Thể Sai Khiến: 〜させる)",
+    "title": "Danh từ hóa 〜の / 〜こと",
     "level": "N4",
-    "meaning": "Bắt hoặc cho phép ai đó làm việc gì",
-    "structure": "Nhóm 1: âm u -> a + せる | Nhóm 2: bỏ る + させる | くる -> こさせる | する -> させる",
-    "commonMistakes": "Xin phép lịch sự: 使役 + ていただけませんか (Ví dụ: 休ませていただけませんか).",
+    "meaning": "Việc... (Chuyển động từ thành danh từ)",
+    "structure": "[V-ru] + の / こと",
+    "commonMistakes": "Dùng の với cảm giác trực tiếp (thấy/nghe). Dùng こと với sở thích, khả năng.",
     "examples": [
       {
-        "japanese": "部長は部下にレポートを書かせました。",
-        "romaji": "Buchō wa buka ni repōto o kakasemashita.",
-        "meaning": "Trưởng phòng bắt cấp dưới viết báo cáo."
+        "japanese": "私の趣味は写真を撮ることです。",
+        "romaji": "Watashi no shumi wa shashin o toru koto desu.",
+        "meaning": "Sở thích của tôi là chụp ảnh."
       },
       {
-        "japanese": "気分が悪いので、早く帰らせてください。",
-        "romaji": "Kibun ga warui node, hayaku kaerasete kudasai.",
-        "meaning": "Vì cảm thấy không khỏe, xin hãy cho phép tôi về sớm."
+        "japanese": "彼が走っているのを見ました。",
+        "romaji": "Kare ga hashitte iru no o mimashita.",
+        "meaning": "Tôi đã nhìn thấy anh ấy đang chạy."
       }
     ]
   },
   {
-    "title": "〜尊敬語 (Kính Ngữ)",
+    "title": "〜ので (Nguyên nhân khách quan)",
     "level": "N4",
-    "meaning": "Tôn vinh hành động của người khác (cấp trên, khách hàng)",
-    "structure": "Động từ đặc biệt (いらっしゃる, おっしゃる...) hoặc お + V-masu + になる",
-    "commonMistakes": "Không bao giờ dùng kính ngữ cho hành động của bản thân mình.",
+    "meaning": "Bởi vì... (Lý do khách quan, lịch sự hơn から)",
+    "structure": "[Thể thông thường] + ので (Na / N + なので)",
+    "commonMistakes": "Không dùng câu mệnh lệnh hay rủ rê ở vế sau ので.",
     "examples": [
       {
-        "japanese": "社長はもうお帰りに行かれましたか。",
-        "romaji": "Shachō wa mō okaeri ni narimashita ka.",
-        "meaning": "Giám đốc đã về rồi ạ?"
+        "japanese": "気分が悪いので、 sớm 帰ってもいいですか。",
+        "romaji": "Kibun ga warui node, hayaku kaette mo ii desu ka.",
+        "meaning": "Vì trong người không khỏe nên tôi xin phép về sớm được không ạ?"
       },
       {
-        "japanese": "先生は何とおっしゃいましたか。",
-        "romaji": "Sensei wa nan to osshaimashita ka.",
-        "meaning": "Thầy giáo đã nói gì vậy ạ?"
+        "japanese": "雨が降っているので、傘を持っていきます。",
+        "romaji": "Ame ga furitte iru node, kasa o motte ikimasu.",
+        "meaning": "Vì trời đang mưa nên tôi sẽ mang theo ô."
       }
     ]
   },
   {
-    "title": "〜謙譲語 (Khiêm Nhường Ngữ)",
+    "title": "〜てしまう (Lỡ làm / Phối hợp hoàn thành)",
     "level": "N4",
-    "meaning": "Hạ thấp hành động của bản thân để thể hiện sự tôn kính với đối phương",
-    "structure": "Động từ đặc biệt (参る, 申す, いただく...) hoặc お + V-masu + する",
-    "commonMistakes": "Chỉ dùng cho hành động của bản thân hoặc người thuộc nhóm mình (với đối tác ngoài).",
+    "meaning": "Lỡ... (tiếc nuối) / Đã hoàn thành xong...",
+    "structure": "[V-te] + しまう",
+    "commonMistakes": "Trong nói chuyện hay rút gọn thành 〜ちゃう / 〜じゃう.",
     "examples": [
       {
-        "japanese": "わたくしはナムと申します。",
-        "romaji": "Watakushi wa Namu to mōshimasu.",
-        "meaning": "Tên tôi được gọi là Nam ạ."
+        "japanese": "宿題を忘れてしまいました。",
+        "romaji": "Shukudai o wasurete shimaimashita.",
+        "meaning": "Tôi lỡ quên mất bài tập về nhà rồi."
       },
       {
-        "japanese": "明日お宅へ伺います。",
-        "romaji": "Ashita otaku e ukagaimasu.",
-        "meaning": "Ngày mai tôi xin phép ghé thăm nhà anh/chị ạ."
+        "japanese": "この本はもう全部読んでしまいました。",
+        "romaji": "Kono hon wa mou zenbu yonde shimaimashita.",
+        "meaning": "Cuốn sách này tôi đã đọc xong toàn bộ rồi."
+      }
+    ]
+  },
+  {
+    "title": "〜か / 〜かどうか (Câu hỏi lồng ghép)",
+    "level": "N4",
+    "meaning": "...hay không / Có... hay không",
+    "structure": "Có từ hỏi: [V-thông thường] + か | Không từ hỏi: [V-thông thường] + かどうか",
+    "commonMistakes": "Vế câu chứa か/かどうか đóng vai trò là một danh từ trong câu lớn.",
+    "examples": [
+      {
+        "japanese": "彼が来るかどうか分かりません。",
+        "romaji": "Kare ga kuru ka dou ka wakarimasen.",
+        "meaning": "Tôi không biết liệu anh ấy có đến hay không."
+      },
+      {
+        "japanese": "何時に入るか教えてください。",
+        "romaji": "Nanji ni hairu ka oshiete kudasai.",
+        "meaning": "Xin hãy chỉ cho tôi biết mấy giờ thì vào."
+      }
+    ]
+  },
+  {
+    "title": "〜てみます (Thử làm gì)",
+    "level": "N4",
+    "meaning": "Làm thử xem sao...",
+    "structure": "[V-te] + みます",
+    "commonMistakes": "Diễn tả hành động mang tính trải nghiệm thử.",
+    "examples": [
+      {
+        "japanese": "新しい服を着てみます。",
+        "romaji": "Atarashii fuku o kite mimasu.",
+        "meaning": "Tôi mặc thử bộ quần áo mới."
+      },
+      {
+        "japanese": "日本料理を作ってみました。",
+        "romaji": "Nihon ryouri o tsukutte mimashita.",
+        "meaning": "Tôi đã nấu thử món ăn Nhật Bản."
+      }
+    ]
+  },
+  {
+    "title": "〜ていただきます / くださいます (Cho - Nhận kính ngữ)",
+    "level": "N4",
+    "meaning": "Được ai đó làm cho... / Ai đó làm cho tôi...",
+    "structure": "[Ai đó に] + [V-te] + いただきます | [Ai đó が] + [V-te] + くださいます",
+    "commonMistakes": "Là dạng kính ngữ của てもらいます và てくれます.",
+    "examples": [
+      {
+        "japanese": "先生に漢字を教えていただきました。",
+        "romaji": "Sensei ni kanji o oshiete itadakamashita.",
+        "meaning": "Tôi được thầy giáo dạy chữ Hán cho."
+      },
+      {
+        "japanese": "部長が駅まで送ってくださいました。",
+        "romaji": "Buchou ga eki made okutte kudasaimashita.",
+        "meaning": "Trưởng phòng đã đưa tôi đến ga."
+      }
+    ]
+  },
+  {
+    "title": "〜ために (Mục đích / Lý do)",
+    "level": "N4",
+    "meaning": "Để... (Mục đích ý chí) / Vì... (Nguyên nhân)",
+    "structure": "[V-ru] + ために | [N] + のために",
+    "commonMistakes": "Khác ように ở chỗ ために thể hiện ý chí quyết tâm cao của chủ thể.",
+    "examples": [
+      {
+        "japanese": "家を買うために貯金しています。",
+        "romaji": "Ie o kau tame ni chokin shite imasu.",
+        "meaning": "Tôi tiết kiệm tiền để mua nhà."
+      },
+      {
+        "japanese": "家族のために一生懸命働きます。",
+        "romaji": "Kazoku no tame ni issho kensei hatarakimasu.",
+        "meaning": "Tôi làm việc hết sức vì gia đình."
+      }
+    ]
+  },
+  {
+    "title": "〜のに (Công dụng / Đánh giá)",
+    "level": "N4",
+    "meaning": "Dùng vào việc... / Đối với việc...",
+    "structure": "[V-ru] + のに (使います / 便利です / 時間がかかります)",
+    "commonMistakes": "Chỉ mục đích sử dụng công cụ hoặc thời gian/tiền bạc.",
+    "examples": [
+      {
+        "japanese": "このハサミは紙を切るのに使います。",
+        "romaji": "Kono hasami wa kami o kiru no ni tsukaimasu.",
+        "meaning": "Cái kéo này dùng để cắt giấy."
+      },
+      {
+        "japanese": "この辞書は勉強するのに便利です。",
+        "romaji": "Kono jisho wa benkyou suru no ni benri desu.",
+        "meaning": "Cuốn từ điển này rất tiện cho việc học."
+      }
+    ]
+  },
+  {
+    "title": "〜そうだ (Trông có vẻ)",
+    "level": "N4",
+    "meaning": "Trông có vẻ... (Nhìn trực quan dự đoán)",
+    "structure": "Tính từ -i bỏ い / Tính từ -na bỏ な + そうだ (Good: いい -> よさそうだ)",
+    "commonMistakes": "Tránh nhầm với 〜そうです (nghe nói - giữ nguyên thể thông thường).",
+    "examples": [
+      {
+        "japanese": "このケーキは美味しそうです。",
+        "romaji": "Kono keeki wa oishisou desu.",
+        "meaning": "Bánh này trông có vẻ ngon đấy."
+      },
+      {
+        "japanese": "今にも雨が降りそうです。",
+        "romaji": "Ima ni mo ame ga furisou desu.",
+        "meaning": "Trời sắp sửa mưa đến nơi rồi."
+      }
+    ]
+  },
+  {
+    "title": "〜すぎる (Quá mức)",
+    "level": "N4",
+    "meaning": "Quá... (Vượt quá giới hạn phù hợp)",
+    "structure": "[V-masu bỏ masu] / [Adj-i bỏ i] / [Adj-na] + すぎる",
+    "commonMistakes": "Thường mang nghĩa tiêu cực (quá nhiều, quá cay, quá đắt).",
+    "examples": [
+      {
+        "japanese": "昨日お酒を飲みすぎました。",
+        "romaji": "Kinou osake o nomisugimashita.",
+        "meaning": "Hôm qua tôi đã uống quá nhiều rượu."
+      },
+      {
+        "japanese": "この問題は難しすぎます。",
+        "romaji": "Kono mondai wa muzukashisugimasu.",
+        "meaning": "Câu hỏi này quá khó."
+      }
+    ]
+  },
+  {
+    "title": "〜やすい / 〜にくい (Dễ / Khó làm)",
+    "level": "N4",
+    "meaning": "Dễ làm... / Khó làm...",
+    "structure": "[V-masu bỏ masu] + やすい / にくい",
+    "commonMistakes": "Biến thành tính từ đuôi い sau khi kết hợp.",
+    "examples": [
+      {
+        "japanese": "このペンは書きやすいです。",
+        "romaji": "Kono pen wa kakiyasui desu.",
+        "meaning": "Cây bút này rất dễ viết."
+      },
+      {
+        "japanese": "彼の話は分かりにくいです。",
+        "romaji": "Kare no hanashi wa wakarinikui desu.",
+        "meaning": "Lời nói của anh ấy rất khó hiểu."
+      }
+    ]
+  },
+  {
+    "title": "〜ばあい (Trường hợp...)",
+    "level": "N4",
+    "meaning": "Trong trường hợp...",
+    "structure": "[Thể thông thường] + 場合 (Na + な / N + の)",
+    "commonMistakes": "Dùng trong thông báo, hướng dẫn giả định tình huống xảy ra.",
+    "examples": [
+      {
+        "japanese": "火事の場合は、エレベーターを使わないでください。",
+        "romaji": "Kaji no baai wa, erebeetaa o tsukawanai de kudasai.",
+        "meaning": "Trong trường hợp có hỏa hoạn, xin đừng sử dụng thang máy."
+      },
+      {
+        "japanese": "間に合わない場合は連絡してください。",
+        "romaji": "Ma ni awanai baai wa renraku shite kudasai.",
+        "meaning": "Trong trường hợp không kịp giờ thì hãy liên lạc nhé."
+      }
+    ]
+  },
+  {
+    "title": "〜のに (Thế mà / Bất mãn)",
+    "level": "N4",
+    "meaning": "Mặc dù... thế mà... (Bất ngờ, thất vọng)",
+    "structure": "[Thể thông thường] + のに (Na / N + なのに)",
+    "commonMistakes": "Vế 2 thể hiện sự trái ngược hoàn toàn với kỳ vọng ở vế 1.",
+    "examples": [
+      {
+        "japanese": "一生懸命勉強したのに、試験に落ちてしまいました。",
+        "romaji": "Isshoukenmei benkyou shita no ni, shiken ni ochite shimaimashita.",
+        "meaning": "Mặc dù đã học hành chăm chỉ thế mà lại bị trượt kỳ thi."
+      },
+      {
+        "japanese": "約束したのに、彼は来なかった。",
+        "romaji": "Yakusoku shita no ni, kare wa konakatta.",
+        "meaning": "Đã hứa rồi thế mà anh ấy không đến."
+      }
+    ]
+  },
+  {
+    "title": "〜ところ (Thời điểm thực hiện)",
+    "level": "N4",
+    "meaning": "Sắp làm / Đang làm / Vừa làm xong",
+    "structure": "Sắp làm: [V-ru] ところ | Đang làm: [V-te iru] ところ | Vừa xong: [V-ta] ところ",
+    "commonMistakes": "Chỉ thời điểm chính xác tính theo từng giây/phút.",
+    "examples": [
+      {
+        "japanese": "今からご飯を食べるところです。",
+        "romaji": "Ima kara gohan o taberu tokoro desu.",
+        "meaning": "Bây giờ tôi chuẩn bị ăn cơm đây."
+      },
+      {
+        "japanese": "たった今帰ってきたところです。",
+        "romaji": "Tatta ima kaette kita tokoro desu.",
+        "meaning": "Tôi vừa mới về đến nơi xong."
       }
     ]
   }
@@ -2894,20 +3028,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "バスが来なかったんです。",
-            "isCorrect": true,
+            "text": "バスが来ないです。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "バスが来ないです。",
+            "text": "バスが来ませんでしたです。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "バスが来ませんでしたです。",
-            "isCorrect": false,
+            "text": "バスが来なかったんです。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2920,26 +3054,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "日本語を勉強するんです、先生を呼びます。",
+            "text": "日本語を勉強したいので、先生を上げます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "日本語を勉強したいんですが、いい先生を紹介していただけませんか。",
-            "isCorrect": true,
+            "text": "日本語を勉強しますから、先生を教えてください。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "日本語を勉強したいので、先生を上げます。",
+            "text": "日本語を勉強するんです、先生を呼びます。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "日本語を勉強しますから、先生を教えてください。",
-            "isCorrect": false,
+            "text": "日本語を勉強したいんですが、いい先生を紹介していただけませんか。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -2952,19 +3086,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きれいんです",
+            "text": "きれいだんです",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "きれいであるんです",
+            "text": "きれいんです",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "きれいだんです",
+            "text": "きれいであるんです",
             "isCorrect": false,
             "order": 2
           },
@@ -2984,26 +3118,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "病気だんです",
-            "isCorrect": false,
+            "text": "病気なんです",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "病気んです",
+            "text": "病気である",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "病気である",
+            "text": "病気だんです",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "病気なんです",
-            "isCorrect": true,
+            "text": "病気んです",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3016,13 +3150,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "雨が降るでしょう。",
+            "text": "雨が降るそうです。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "雨が降るそうです。",
+            "text": "雨が降るでしょう。",
             "isCorrect": false,
             "order": 1
           },
@@ -3060,14 +3194,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "んです",
-            "isCorrect": false,
+            "text": "んですが",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "んですが",
-            "isCorrect": true,
+            "text": "んです",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3080,19 +3214,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "しょうゴミ",
+            "text": "いきゴミ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "せいゴミ",
+            "text": "しょうゴミ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "いきゴミ",
+            "text": "せいゴミ",
             "isCorrect": false,
             "order": 2
           },
@@ -3112,26 +3246,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đi du lịch nghỉ dưỡng",
-            "isCorrect": false,
+            "text": "Tham quan để học hỏi kinh nghiệm",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đi mua sắm",
+            "text": "Xem tivi",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Xem tivi",
+            "text": "Đi du lịch nghỉ dưỡng",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Tham quan để học hỏi kinh nghiệm",
-            "isCorrect": true,
+            "text": "Đi mua sắm",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3150,20 +3284,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Mệnh lệnh bắt buộc",
+            "text": "Lời hứa",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Yêu cầu / Nhờ vả rất lịch sự",
-            "isCorrect": true,
+            "text": "Mệnh lệnh bắt buộc",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Lời hứa",
-            "isCorrect": false,
+            "text": "Yêu cầu / Nhờ vả rất lịch sự",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3176,8 +3310,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "嫌いじゃないでした",
-            "isCorrect": false,
+            "text": "嫌いなわけじゃないんです / 嫌いじゃないんです",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -3188,8 +3322,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "嫌いなわけじゃないんです / 嫌いじゃないんです",
-            "isCorrect": true,
+            "text": "嫌いじゃないでした",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -3208,25 +3342,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "〜かな",
-            "isCorrect": false,
+            "text": "〜の",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "〜よ",
+            "text": "〜ね",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "〜の",
-            "isCorrect": true,
+            "text": "〜よ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "〜ね",
+            "text": "〜かな",
             "isCorrect": false,
             "order": 3
           }
@@ -3246,7 +3380,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "に",
+            "text": "で",
             "isCorrect": false,
             "order": 1
           },
@@ -3258,7 +3392,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "で",
+            "text": "に",
             "isCorrect": false,
             "order": 3
           }
@@ -3278,7 +3412,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 1
           },
@@ -3290,7 +3424,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -3305,14 +3439,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Giải Thích Hoàn Cảnh 〜んです & Nhờ Vả 〜んですが",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -3323,8 +3457,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 14 cho bài Giải Thích Hoàn Cảnh 〜んです & Nhờ Vả 〜んですが",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -3338,20 +3472,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Giải Thích Hoàn Cảnh 〜んです & Nhờ Vả 〜んですが",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Giải Thích Hoàn Cảnh 〜んです & Nhờ Vả 〜んですが",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -3387,20 +3521,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "書させます",
-            "isCorrect": false,
+            "text": "書けます",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "書きますできる",
+            "text": "書させます",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "書けます",
-            "isCorrect": true,
+            "text": "書きますできる",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3413,25 +3547,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "食べることができます",
-            "isCorrect": false,
+            "text": "食べられます",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "食べられます",
-            "isCorrect": true,
+            "text": "食べれます",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "食べさせます",
+            "text": "食べることができます",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "食べれます",
+            "text": "食べさせます",
             "isCorrect": false,
             "order": 3
           }
@@ -3445,13 +3579,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きられます",
+            "text": "こさせます",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こさせます",
+            "text": "きることができます",
             "isCorrect": false,
             "order": 1
           },
@@ -3463,7 +3597,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "きることができます",
+            "text": "きられます",
             "isCorrect": false,
             "order": 3
           }
@@ -3477,7 +3611,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "で",
+            "text": "と",
             "isCorrect": false,
             "order": 0
           },
@@ -3495,7 +3629,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "と",
+            "text": "で",
             "isCorrect": false,
             "order": 3
           }
@@ -3509,26 +3643,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "部屋の窓から富士山が見られます。",
+            "text": "部屋の窓から富士山を見ます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "部屋の窓から富士山が見るができます。",
+            "text": "部屋の窓から富士山が見られます。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "部屋の窓から富士山を見ます。",
-            "isCorrect": false,
+            "text": "部屋の窓から富士山が見えます。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "部屋の窓から富士山が見えます。",
-            "isCorrect": true,
+            "text": "部屋の窓から富士山が見るができます。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -3541,20 +3675,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "波の音が聞けます。",
+            "text": "波の音を聞きます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "波の音が聞こえます。",
-            "isCorrect": true,
+            "text": "波の音が聞けます。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "波の音を聞きます。",
-            "isCorrect": false,
+            "text": "波の音が聞こえます。",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -3637,20 +3771,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ひらがなを読めます。",
-            "isCorrect": false,
+            "text": "ひらがなが読めます。",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ひらがなで読めます。",
+            "text": "ひらがなを読めます。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ひらがなが読めます。",
-            "isCorrect": true,
+            "text": "ひらがなで読めます。",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -3675,13 +3809,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "されます",
+            "text": "させます",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "させます",
+            "text": "されます",
             "isCorrect": false,
             "order": 2
           },
@@ -3701,25 +3835,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Lau cửa",
+            "text": "Rửa bát",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Giặt khô / Giặt là",
-            "isCorrect": true,
+            "text": "Lau cửa",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Làm sạch nhà",
-            "isCorrect": false,
+            "text": "Giặt khô / Giặt là",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Rửa bát",
+            "text": "Làm sạch nhà",
             "isCorrect": false,
             "order": 3
           }
@@ -3733,13 +3867,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "見られません",
-            "isCorrect": true,
+            "text": "見させません",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "見させません",
+            "text": "見ません",
             "isCorrect": false,
             "order": 1
           },
@@ -3751,8 +3885,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "見ません",
-            "isCorrect": false,
+            "text": "見られません",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3765,7 +3899,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
@@ -3777,13 +3911,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -3798,8 +3932,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Thể Khả Năng (可能形) & Phân Biệt 見える / 聞こえる",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -3810,14 +3944,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 14 cho bài Thể Khả Năng (可能形) & Phân Biệt 見える / 聞こえる",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 14)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -3831,14 +3965,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Thể Khả Năng (可能形) & Phân Biệt 見える / 聞こえる",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Thể Khả Năng (可能形) & Phân Biệt 見える / 聞こえる",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -3874,25 +4008,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "音楽を聞きながら勉強します。",
-            "isCorrect": true,
+            "text": "音楽を聞きと勉強します。",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "音楽を聞いてながら勉強します。",
+            "text": "音楽を聞くながら勉強します。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "音楽を聞きと勉強します。",
-            "isCorrect": false,
+            "text": "音楽を聞きながら勉強します。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "音楽を聞くながら勉強します。",
+            "text": "音楽を聞いてながら勉強します。",
             "isCorrect": false,
             "order": 3
           }
@@ -3906,25 +4040,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Hành động V1",
-            "isCorrect": false,
+            "text": "Hành động V2",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Hành động V2",
-            "isCorrect": true,
+            "text": "Hành động V1",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Cả hai bằng nhau",
+            "text": "Không có hành động chính",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Không có hành động chính",
+            "text": "Cả hai bằng nhau",
             "isCorrect": false,
             "order": 3
           }
@@ -3938,26 +4072,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "この店は安いのし、美味しいのし、いつも混んでいます。",
+            "text": "この店は安いですし、美味しいですから、いつも混んでいます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "この店は安くて、美味しいと、いつも混んでいます。",
+            "text": "この店は安いのし、美味しいのし、いつも混んでいます。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "この店は安いし、美味しいし、いつも混んでいます。",
-            "isCorrect": true,
+            "text": "この店は安くて、美味しいと、いつも混んでいます。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "この店は安いですし、美味しいですから、いつも混んでいます。",
-            "isCorrect": false,
+            "text": "この店は安いし、美味しいし、いつも混んでいます。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -3970,19 +4104,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "熱心にし",
-            "isCorrect": false,
+            "text": "熱心だし",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "熱心だし",
-            "isCorrect": true,
+            "text": "熱心なもし",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "熱心なもし",
+            "text": "熱心にし",
             "isCorrect": false,
             "order": 2
           },
@@ -4002,25 +4136,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "雨だし",
-            "isCorrect": true,
+            "text": "雨にし",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "雨なもし",
+            "text": "雨いし",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "雨にし",
-            "isCorrect": false,
+            "text": "雨だし",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "雨いし",
+            "text": "雨なもし",
             "isCorrect": false,
             "order": 3
           }
@@ -4034,26 +4168,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きょうかん",
+            "text": "けいかん",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "けいかん",
+            "text": "きょうかん",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "けいけん",
-            "isCorrect": true,
+            "text": "きょうけん",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "きょうけん",
-            "isCorrect": false,
+            "text": "けいけん",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -4066,26 +4200,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "まめ",
+            "text": "しんめい",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "しんめい",
+            "text": "しんめん",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "まじめ",
-            "isCorrect": true,
+            "text": "まめ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しんめん",
-            "isCorrect": false,
+            "text": "まじめ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -4098,26 +4232,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "運転するながら電話をしないでください。",
-            "isCorrect": false,
+            "text": "運転しながら電話をしないでください。",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "運転にしてながら電話をしないでください。",
+            "text": "運転するながら電話をしないでください。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "運転したながら電話をしないでください。",
+            "text": "運転にしてながら電話をしないでください。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "運転しながら電話をしないでください。",
-            "isCorrect": true,
+            "text": "運転したながら電話をしないでください。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -4130,25 +4264,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "も",
-            "isCorrect": true,
+            "text": "へ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "で",
+            "text": "と",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "と",
-            "isCorrect": false,
+            "text": "も",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "へ",
+            "text": "で",
             "isCorrect": false,
             "order": 3
           }
@@ -4162,25 +4296,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きゅうりょう",
-            "isCorrect": true,
+            "text": "きくりょう",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "きゅうりょ",
+            "text": "きんりょう",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "きんりょう",
-            "isCorrect": false,
+            "text": "きゅうりょう",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "きくりょう",
+            "text": "きゅうりょ",
             "isCorrect": false,
             "order": 3
           }
@@ -4194,20 +4328,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ばんくみ",
+            "text": "ほんくみ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ばんぐみ",
-            "isCorrect": true,
+            "text": "ばんくみ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ほんくみ",
-            "isCorrect": false,
+            "text": "ばんぐみ",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -4232,19 +4366,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "で",
-            "isCorrect": false,
+            "text": "だし",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "だし",
-            "isCorrect": true,
+            "text": "にし",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にし",
+            "text": "で",
             "isCorrect": false,
             "order": 3
           }
@@ -4258,25 +4392,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 13 cho bài Hành Động Song Song 〜ながら & Liệt Kê Lý Do 〜し、〜し",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 13)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Hành Động Song Song 〜ながら & Liệt Kê Lý Do 〜し、〜し",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -4324,25 +4458,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 15 cho bài Hành Động Song Song 〜ながら & Liệt Kê Lý Do 〜し、〜し",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Hành Động Song Song 〜ながら & Liệt Kê Lý Do 〜し、〜し",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -4367,13 +4501,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ドアが閉まっています。",
-            "isCorrect": true,
+            "text": "ドアを هلاけます。",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ドアを هلاけます。",
+            "text": "ドアを閉めています。",
             "isCorrect": false,
             "order": 1
           },
@@ -4385,8 +4519,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "ドアを閉めています。",
-            "isCorrect": false,
+            "text": "ドアが閉まっています。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -4399,20 +4533,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "開させます",
+            "text": "開きますです",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "開きますです",
-            "isCorrect": false,
+            "text": "開きます (あきます)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "開きます (あきます)",
-            "isCorrect": true,
+            "text": "開させます",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -4437,19 +4571,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "つけられる",
-            "isCorrect": false,
+            "text": "つく (つきます)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "つく (つきます)",
-            "isCorrect": true,
+            "text": "つけさせる",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "つけさせる",
+            "text": "つけられる",
             "isCorrect": false,
             "order": 3
           }
@@ -4463,25 +4597,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "消させる",
-            "isCorrect": false,
+            "text": "消える (きえます)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "消される",
+            "text": "消す",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "消える (きえます)",
-            "isCorrect": true,
+            "text": "消される",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "消す",
+            "text": "消させる",
             "isCorrect": false,
             "order": 3
           }
@@ -4495,8 +4629,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "電気 が ついています。",
-            "isCorrect": true,
+            "text": "電気 を ついています。",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -4507,8 +4641,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "電気 を ついています。",
-            "isCorrect": false,
+            "text": "電気 が ついています。",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -4533,19 +4667,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "が",
-            "isCorrect": true,
+            "text": "に",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "で",
-            "isCorrect": false,
+            "text": "が",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "に",
+            "text": "で",
             "isCorrect": false,
             "order": 3
           }
@@ -4559,26 +4693,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ふく",
+            "text": "ろ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ふくろ",
-            "isCorrect": true,
+            "text": "たい",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "たい",
+            "text": "ふく",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ろ",
-            "isCorrect": false,
+            "text": "ふくろ",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -4597,14 +4731,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "き",
-            "isCorrect": false,
+            "text": "えだ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "えだ",
-            "isCorrect": true,
+            "text": "き",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -4623,14 +4757,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "袋を破っています。",
-            "isCorrect": false,
+            "text": "袋が破れています。",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "袋が破れています。",
-            "isCorrect": true,
+            "text": "袋を折っています。",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -4641,7 +4775,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "袋を折っています。",
+            "text": "袋を破っています。",
             "isCorrect": false,
             "order": 3
           }
@@ -4655,14 +4789,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Nuối tiếc vì sự cố trỡ trêu hoặc đã hoàn thành xong",
-            "isCorrect": true,
+            "text": "Lời khuyên",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Lời khuyên",
-            "isCorrect": false,
+            "text": "Nuối tiếc vì sự cố trỡ trêu hoặc đã hoàn thành xong",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -4693,19 +4827,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "財布を落としてしまいました。",
-            "isCorrect": true,
+            "text": "財布を落としておきます。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "財布を落としてあります。",
-            "isCorrect": false,
+            "text": "財布を落としてしまいました。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "財布を落としておきます。",
+            "text": "財布を落としてあります。",
             "isCorrect": false,
             "order": 3
           }
@@ -4719,7 +4853,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Tha động từ (他動詞)",
+            "text": "Tính từ",
             "isCorrect": false,
             "order": 0
           },
@@ -4737,7 +4871,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Tính từ",
+            "text": "Tha động từ (他動詞)",
             "isCorrect": false,
             "order": 3
           }
@@ -4751,13 +4885,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Tự Động Từ (自動詞) & Trạng Thái Hoàn Thành 〜ています",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 1
           },
@@ -4769,8 +4903,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 13 cho bài Tự Động Từ (自動詞) & Trạng Thái Hoàn Thành 〜ています",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 13)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -4784,20 +4918,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Tự Động Từ (自動詞) & Trạng Thái Hoàn Thành 〜ています",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 14 cho bài Tự Động Từ (自動詞) & Trạng Thái Hoàn Thành 〜ています",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 14)",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -4817,25 +4951,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Tự Động Từ (自動詞) & Trạng Thái Hoàn Thành 〜ています",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 15 cho bài Tự Động Từ (自動詞) & Trạng Thái Hoàn Thành 〜ています",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 15)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -4866,19 +5000,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "壁に地図がはってあります。",
-            "isCorrect": true,
+            "text": "壁に地図がはっています。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "壁に地図をはります。",
-            "isCorrect": false,
+            "text": "壁に地図がはってあります。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "壁に地図がはっています。",
+            "text": "壁に地図をはります。",
             "isCorrect": false,
             "order": 3
           }
@@ -4898,19 +5032,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Động từ tính từ",
-            "isCorrect": false,
+            "text": "Tha động từ (他動詞)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Tha động từ (他動詞)",
-            "isCorrect": true,
+            "text": "Danh từ",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Danh từ",
+            "text": "Động từ tính từ",
             "isCorrect": false,
             "order": 3
           }
@@ -4924,26 +5058,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "を",
+            "text": "へ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "へ",
+            "text": "を",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "が",
-            "isCorrect": true,
+            "text": "で",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "で",
-            "isCorrect": false,
+            "text": "が",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -4956,13 +5090,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "旅行の前にホテルを予約させます。",
+            "text": "旅行の前にホテルを予約してあります。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "旅行の前にホテルを予約しています。",
+            "text": "旅行の前にホテルを予約させます。",
             "isCorrect": false,
             "order": 1
           },
@@ -4974,7 +5108,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "旅行の前にホテルを予約してあります。",
+            "text": "旅行の前にホテルを予約しています。",
             "isCorrect": false,
             "order": 3
           }
@@ -4988,20 +5122,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "〜ちゃいます",
+            "text": "〜とあります",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "〜ときます",
-            "isCorrect": true,
+            "text": "〜ちゃいます",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "〜とあります",
-            "isCorrect": false,
+            "text": "〜ときます",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -5020,25 +5154,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Calendar",
-            "isCorrect": true,
+            "text": "Calculator",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Calculator",
+            "text": "Card",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Camera",
-            "isCorrect": false,
+            "text": "Calendar",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Card",
+            "text": "Camera",
             "isCorrect": false,
             "order": 3
           }
@@ -5052,7 +5186,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "いんだし",
+            "text": "ひきで",
             "isCorrect": false,
             "order": 0
           },
@@ -5064,7 +5198,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "ひきで",
+            "text": "いんだし",
             "isCorrect": false,
             "order": 2
           },
@@ -5090,19 +5224,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "窓を開けさせてください。",
-            "isCorrect": false,
+            "text": "窓を開けておいてください。",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "窓を開けておいてください。",
-            "isCorrect": true,
+            "text": "窓を開けています。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "窓を開けています。",
+            "text": "窓を開けさせてください。",
             "isCorrect": false,
             "order": 3
           }
@@ -5116,14 +5250,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Giữ nguyên trạng thái như vậy",
-            "isCorrect": true,
+            "text": "Vứt bỏ đi",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Vứt bỏ đi",
-            "isCorrect": false,
+            "text": "Giữ nguyên trạng thái như vậy",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -5148,8 +5282,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "よてい",
-            "isCorrect": true,
+            "text": "よてん",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -5160,14 +5294,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "よてん",
+            "text": "予定",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "予定",
-            "isCorrect": false,
+            "text": "よてい",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5180,20 +5314,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "戻って",
+            "text": "戻した",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "戻して",
-            "isCorrect": true,
+            "text": "戻って",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "戻した",
-            "isCorrect": false,
+            "text": "戻して",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -5212,8 +5346,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "A là trạng thái tự nhiên, B là trạng thái do người cố ý làm sẵn",
-            "isCorrect": true,
+            "text": "Cả hai giống hệt nhau",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -5230,8 +5364,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Cả hai giống hệt nhau",
-            "isCorrect": false,
+            "text": "A là trạng thái tự nhiên, B là trạng thái do người cố ý làm sẵn",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5244,26 +5378,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Trạng Thái Chuẩn Bị 〜てあります & Làm Sẵn 〜ておきます",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 13 cho bài Trạng Thái Chuẩn Bị 〜てあります & Làm Sẵn 〜ておきます",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 13)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -5277,13 +5411,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 1
           },
@@ -5310,7 +5444,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 0
           },
@@ -5322,13 +5456,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -5353,25 +5487,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "行こう",
-            "isCorrect": true,
+            "text": "行かれる",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "行かせる",
-            "isCorrect": false,
+            "text": "行こう",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "行きますよう",
+            "text": "行かせる",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "行かれる",
+            "text": "行きますよう",
             "isCorrect": false,
             "order": 3
           }
@@ -5385,26 +5519,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "食べろ",
+            "text": "食べられる",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "食べよう",
-            "isCorrect": true,
+            "text": "食べろ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "食べられる",
+            "text": "食べさせる",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "食べさせる",
-            "isCorrect": false,
+            "text": "食べよう",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5417,25 +5551,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きよう",
+            "text": "こさせる",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こよう",
-            "isCorrect": true,
+            "text": "きられる",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "きられる",
-            "isCorrect": false,
+            "text": "こよう",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "こさせる",
+            "text": "きよう",
             "isCorrect": false,
             "order": 3
           }
@@ -5455,20 +5589,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "される",
+            "text": "すよう",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "すよう",
-            "isCorrect": false,
+            "text": "しよう",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しよう",
-            "isCorrect": true,
+            "text": "される",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5481,26 +5615,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "いっしょに行くだろう",
-            "isCorrect": false,
+            "text": "いっしょに行こう",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "いっしょに行きそう",
+            "text": "いっしょに行け",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "いっしょに行け",
+            "text": "いっしょに行くだろう",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "いっしょに行こう",
-            "isCorrect": true,
+            "text": "いっしょに行きそう",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5513,14 +5647,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "新しい車を買うと思っています。",
+            "text": "新しい車を買ったと思っています。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "新しい車を買ったと思っています。",
-            "isCorrect": false,
+            "text": "新しい車を買おうと思っています。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -5531,8 +5665,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "新しい車を買おうと思っています。",
-            "isCorrect": true,
+            "text": "新しい車を買うと思っています。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5545,14 +5679,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "V-ō to omotte imasu dùng cho người khác",
-            "isCorrect": false,
+            "text": "V-ō to omotte imasu kéo dài lâu hơn",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "V-ō to omotte imasu kéo dài lâu hơn",
-            "isCorrect": true,
+            "text": "V-ō to omou là quá khứ",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -5563,7 +5697,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "V-ō to omou là quá khứ",
+            "text": "V-ō to omotte imasu dùng cho người khác",
             "isCorrect": false,
             "order": 3
           }
@@ -5577,25 +5711,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Động từ thể Từ điển (V-ru) hoặc thể Phủ định (V-nai)",
-            "isCorrect": true,
+            "text": "Động từ thể た",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Động từ thể た",
-            "isCorrect": false,
+            "text": "Động từ thể Từ điển (V-ru) hoặc thể Phủ định (V-nai)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Động từ thể て",
+            "text": "Động từ thể Ý định",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Động từ thể Ý định",
+            "text": "Động từ thể て",
             "isCorrect": false,
             "order": 3
           }
@@ -5615,19 +5749,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "結婚しようつもりです。",
-            "isCorrect": false,
+            "text": "結婚しないつもりです。",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "結婚しないつもりです。",
-            "isCorrect": true,
+            "text": "結婚しないと思っています。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "結婚しないと思っています。",
+            "text": "結婚しようつもりです。",
             "isCorrect": false,
             "order": 3
           }
@@ -5641,20 +5775,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ていねん",
-            "isCorrect": true,
+            "text": "じょうねい",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "じょうねい",
+            "text": "じょうねん",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "じょうねん",
-            "isCorrect": false,
+            "text": "ていねん",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -5679,7 +5813,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "ゆん",
+            "text": "め",
             "isCorrect": false,
             "order": 1
           },
@@ -5691,7 +5825,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "め",
+            "text": "ゆん",
             "isCorrect": false,
             "order": 3
           }
@@ -5705,26 +5839,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Danh từ + に + 予定です",
+            "text": "Danh từ + だ + 予定です",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Danh từ + で + 予定です",
-            "isCorrect": false,
+            "text": "Danh từ + の + 予定です",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Danh từ + だ + 予定です",
+            "text": "Danh từ + で + 予定です",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Danh từ + の + 予定です",
-            "isCorrect": true,
+            "text": "Danh từ + に + 予定です",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -5737,25 +5871,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 13 cho bài Thể Ý Định (意向形) & Dự Định 〜と思っています",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 13)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Thể Ý Định (意向形) & Dự Định 〜と思っています",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -5770,13 +5904,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 14 cho bài Thể Ý Định (意向形) & Dự Định 〜と思っています",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 14)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 1
           },
@@ -5788,8 +5922,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Thể Ý Định (意向形) & Dự Định 〜と思っています",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -5809,19 +5943,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -5852,20 +5986,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "病院へ行けばいいです。",
+            "text": "病院へ行かないほうがいいです。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "病院へ行ったほうがいいです。",
-            "isCorrect": true,
+            "text": "病院へ行けばいいです。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "病院へ行かないほうがいいです。",
-            "isCorrect": false,
+            "text": "病院へ行ったほうがいいです。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5890,14 +6024,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "夜遅くまで起きないほうがいいです。",
-            "isCorrect": true,
+            "text": "夜遅くまで起きたほうがいいです。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "夜遅くまで起きたほうがいいです。",
-            "isCorrect": false,
+            "text": "夜遅くまで起きないほうがいいです。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -5910,25 +6044,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Khoảng 50% (có thể có, có thể không)",
-            "isCorrect": true,
+            "text": "90%",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "0%",
-            "isCorrect": false,
+            "text": "Khoảng 50% (có thể có, có thể không)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "100% chắc chắn",
+            "text": "0%",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "90%",
+            "text": "100% chắc chắn",
             "isCorrect": false,
             "order": 3
           }
@@ -5942,8 +6076,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "午後から雨が降るかもしれない。",
-            "isCorrect": false,
+            "text": "午後から雨が降るでしょう。",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -5954,8 +6088,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "午後から雨が降るでしょう。",
-            "isCorrect": true,
+            "text": "午後から雨が降るかもしれない。",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -5974,14 +6108,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "元気かもしれない",
-            "isCorrect": true,
+            "text": "元気であるかもしれない",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "元気なかもしれない",
-            "isCorrect": false,
+            "text": "元気かもしれない",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -5992,7 +6126,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "元気であるかもしれない",
+            "text": "元気なかもしれない",
             "isCorrect": false,
             "order": 3
           }
@@ -6006,19 +6140,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "病気なかもしれない",
+            "text": "病気だかもしれない",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "病気だかもしれない",
+            "text": "病気であるかもしれない",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "病気であるかもしれない",
+            "text": "病気なかもしれない",
             "isCorrect": false,
             "order": 2
           },
@@ -6038,25 +6172,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Bệnh đau dạ dày",
-            "isCorrect": false,
+            "text": "Bệnh cúm mùa (Influenza)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Bệnh cảm thông thường",
+            "text": "Bệnh sốt xuất huyết",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Bệnh cúm mùa (Influenza)",
-            "isCorrect": true,
+            "text": "Bệnh đau dạ dày",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Bệnh sốt xuất huyết",
+            "text": "Bệnh cảm thông thường",
             "isCorrect": false,
             "order": 3
           }
@@ -6070,13 +6204,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ひきず",
+            "text": "ひしょう",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ひしょう",
+            "text": "ひきず",
             "isCorrect": false,
             "order": 1
           },
@@ -6102,25 +6236,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "こくがでる",
-            "isCorrect": false,
+            "text": "せきがでる",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "がいがでる",
+            "text": "こくがでる",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せきがでる",
-            "isCorrect": true,
+            "text": "しがでる",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しがでる",
+            "text": "がいがでる",
             "isCorrect": false,
             "order": 3
           }
@@ -6134,7 +6268,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "しないで",
+            "text": "する",
             "isCorrect": false,
             "order": 0
           },
@@ -6146,13 +6280,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "した",
+            "text": "しないで",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "する",
+            "text": "した",
             "isCorrect": false,
             "order": 3
           }
@@ -6172,13 +6306,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "せい",
+            "text": "ぼし",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ぼし",
+            "text": "せい",
             "isCorrect": false,
             "order": 2
           },
@@ -6198,7 +6332,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Nghỉ ngơi",
+            "text": "Uống thuốc",
             "isCorrect": false,
             "order": 0
           },
@@ -6210,14 +6344,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Uống thuốc",
-            "isCorrect": false,
+            "text": "Làm việc quá sức, cố quá đà",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Làm việc quá sức, cố quá đà",
-            "isCorrect": true,
+            "text": "Nghỉ ngơi",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6230,7 +6364,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
@@ -6242,7 +6376,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 2
           },
@@ -6263,7 +6397,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
@@ -6281,7 +6415,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 3
           }
@@ -6302,19 +6436,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Lời Khuyên 〜ほうがいい & Dự Đoán 〜でしょう / 〜かもしれない",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 15 cho bài Lời Khuyên 〜ほうがいい & Dự Đoán 〜でしょう / 〜かもしれない",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -6345,20 +6479,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "行け",
-            "isCorrect": true,
+            "text": "行こう",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "行こう",
+            "text": "行きなさい",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "行きなさい",
-            "isCorrect": false,
+            "text": "行け",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -6371,20 +6505,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "食え",
+            "text": "食べよ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "食べろ",
-            "isCorrect": true,
+            "text": "食え",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "食べよ",
-            "isCorrect": false,
+            "text": "食べろ",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -6409,14 +6543,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "触るな",
-            "isCorrect": true,
+            "text": "触るない",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "触るない",
-            "isCorrect": false,
+            "text": "触るな",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -6435,7 +6569,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Động từ thể た + な",
+            "text": "Động từ thể ます bỏ ます + な",
             "isCorrect": false,
             "order": 0
           },
@@ -6453,7 +6587,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Động từ thể ます bỏ ます + な",
+            "text": "Động từ thể た + な",
             "isCorrect": false,
             "order": 3
           }
@@ -6467,7 +6601,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "あの漢字は「止まれ」と言います。",
+            "text": "あの漢字は「止まれ」と書いてあります。",
             "isCorrect": false,
             "order": 0
           },
@@ -6479,13 +6613,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "あの漢字は「止まれ」と書いてあります。",
+            "text": "あの漢字は「止まれ」という意味です。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "あの漢字は「止まれ」という意味です。",
+            "text": "あの漢字は「止まれ」と言います。",
             "isCorrect": false,
             "order": 3
           }
@@ -6499,13 +6633,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "田中さんは明日休むと言いました。",
+            "text": "田中さんは明日休むと伝えます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "田中さんは明日休むと伝えます。",
+            "text": "田中さんは明日休むと聞きました。",
             "isCorrect": false,
             "order": 1
           },
@@ -6517,7 +6651,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "田中さんは明日休むと聞きました。",
+            "text": "田中さんは明日休むと言いました。",
             "isCorrect": false,
             "order": 3
           }
@@ -6531,13 +6665,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "りつにゅうきんし",
+            "text": "りついりきんし",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "たていりきんし",
+            "text": "りつにゅうきんし",
             "isCorrect": false,
             "order": 1
           },
@@ -6549,7 +6683,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "りついりきんし",
+            "text": "たていりきんし",
             "isCorrect": false,
             "order": 3
           }
@@ -6569,20 +6703,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "ひじょうぐち",
-            "isCorrect": true,
+            "text": "ひじょうこう",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ひじょうこう",
+            "text": "ひじょうくち",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ひじょうくち",
-            "isCorrect": false,
+            "text": "ひじょうぐち",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -6595,25 +6729,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "こい",
-            "isCorrect": true,
+            "text": "こよ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こさせ",
-            "isCorrect": false,
+            "text": "こい",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "こよ",
+            "text": "きろ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "きろ",
+            "text": "こさせ",
             "isCorrect": false,
             "order": 3
           }
@@ -6639,13 +6773,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "させ",
+            "text": "しよ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しよ",
+            "text": "させ",
             "isCorrect": false,
             "order": 3
           }
@@ -6659,25 +6793,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "田中さんに〜と伝えていただけませんか。",
-            "isCorrect": true,
+            "text": "田中さんに〜と言ってください。",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "田中さんに〜と言ってください。",
+            "text": "田中さんに〜と伝えてあります。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "田中さんに〜と伝えさせます。",
-            "isCorrect": false,
+            "text": "田中さんに〜と伝えていただけませんか。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "田中さんに〜と伝えてあります。",
+            "text": "田中さんに〜と伝えさせます。",
             "isCorrect": false,
             "order": 3
           }
@@ -6691,19 +6825,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Ký hiệu, nhãn hiệu (Mark)",
-            "isCorrect": true,
+            "text": "Máy móc",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Điểm số",
-            "isCorrect": false,
+            "text": "Ký hiệu, nhãn hiệu (Mark)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Máy móc",
+            "text": "Điểm số",
             "isCorrect": false,
             "order": 2
           },
@@ -6723,7 +6857,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 0
           },
@@ -6735,13 +6869,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -6756,25 +6890,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Thể Mệnh Lệnh (命令形) & Thể Cấm Đoán (禁止形)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 14 cho bài Thể Mệnh Lệnh (命令形) & Thể Cấm Đoán (禁止形)",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 3
           }
@@ -6832,26 +6966,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "私が教えたとおりにやってみてください。",
+            "text": "私が教えるとおりにやってください。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "私が教えるとおりにやってください。",
+            "text": "私が教えたとおりにやってみてください。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "私が教えてとおりにやってください。",
-            "isCorrect": false,
+            "text": "私が教えたとおりにやってください。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "私が教えたとおりにやってください。",
-            "isCorrect": true,
+            "text": "私が教えてとおりにやってください。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6864,20 +6998,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Danh từ + に + とおりに",
-            "isCorrect": false,
+            "text": "Danh từ + の + とおりに (hoặc Danh từ + どおりに)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Danh từ + とおりに",
+            "text": "Danh từ + に + とおりに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Danh từ + の + とおりに (hoặc Danh từ + どおりに)",
-            "isCorrect": true,
+            "text": "Danh từ + とおりに",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -6896,25 +7030,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "仕事が終わるあとで、ビールを飲みます。",
+            "text": "仕事が終わってあとで、ビールを飲みます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "仕事が終わったあとで、ビールを飲みます。",
-            "isCorrect": true,
+            "text": "仕事が終わったまえに、ビールを飲みます。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "仕事が終わってあとで、ビールを飲みます。",
-            "isCorrect": false,
+            "text": "仕事が終わったあとで、ビールを飲みます。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "仕事が終わったまえに、ビールを飲みます。",
+            "text": "仕事が終わるあとで、ビールを飲みます。",
             "isCorrect": false,
             "order": 3
           }
@@ -6928,8 +7062,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Danh từ + に + あとで",
-            "isCorrect": false,
+            "text": "Danh từ + の + あとで",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -6946,8 +7080,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Danh từ + の + あとで",
-            "isCorrect": true,
+            "text": "Danh từ + に + あとで",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -6960,26 +7094,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "砂糖を入れないとコーヒーを飲みます。",
+            "text": "砂糖を入れるないでコーヒーを飲みます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "砂糖を入れないでコーヒーを飲みます。",
-            "isCorrect": true,
+            "text": "砂糖を入れるなくてコーヒーを飲みます。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "砂糖を入れるないでコーヒーを飲みます。",
+            "text": "砂糖を入れないとコーヒーを飲みます。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "砂糖を入れるなくてコーヒーを飲みます。",
-            "isCorrect": false,
+            "text": "砂糖を入れないでコーヒーを飲みます。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -6992,26 +7126,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "V1-nakute dùng cho mệnh lệnh",
+            "text": "V1-naide dùng cho quá khứ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "V1-naide dùng cho quá khứ",
+            "text": "V1-nakute dùng cho mệnh lệnh",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Cả hai giống hệt nhau",
-            "isCorrect": false,
+            "text": "V1-naide chỉ phương thức/lựa chọn không làm V1, V1-nakute chỉ nguyên nhân",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "V1-naide chỉ phương thức/lựa chọn không làm V1, V1-nakute chỉ nguyên nhân",
-            "isCorrect": true,
+            "text": "Cả hai giống hệt nhau",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7024,8 +7158,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "やじるし",
-            "isCorrect": true,
+            "text": "やしん",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -7036,8 +7170,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "やしん",
-            "isCorrect": false,
+            "text": "やじるし",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -7088,26 +7222,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "くみたてる",
-            "isCorrect": true,
+            "text": "れんたてる",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "れんたてる",
+            "text": "くみたて",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "くみたて",
+            "text": "そたてる",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "そたてる",
-            "isCorrect": false,
+            "text": "くみたてる",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7120,13 +7254,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "で",
+            "text": "に",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "を",
+            "text": "で",
             "isCorrect": false,
             "order": 1
           },
@@ -7138,7 +7272,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "に",
+            "text": "を",
             "isCorrect": false,
             "order": 3
           }
@@ -7152,25 +7286,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "お風呂に入らないと寝ます。",
+            "text": "お風呂に入らないで寝てください。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "お風呂に入らないで寝ます。",
-            "isCorrect": true,
+            "text": "お風呂に入らないくて寝ます。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "お風呂に入らないで寝てください。",
-            "isCorrect": false,
+            "text": "お風呂に入らないで寝ます。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "お風呂に入らないくて寝ます。",
+            "text": "お風呂に入らないと寝ます。",
             "isCorrect": false,
             "order": 3
           }
@@ -7184,20 +7318,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "origami / おり紙",
-            "isCorrect": true,
+            "text": "せつがみ",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "せつがみ",
+            "text": "おりがみ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "おりがみ",
-            "isCorrect": false,
+            "text": "origami / おり紙",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -7216,26 +7350,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 13 cho bài Làm Theo Hướng Dẫn 〜とおりに & Sau Khi 〜あとで",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 13)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Làm Theo Hướng Dẫn 〜とおりに & Sau Khi 〜あとで",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -7249,25 +7383,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 14 cho bài Làm Theo Hướng Dẫn 〜とおりに & Sau Khi 〜あとで",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Làm Theo Hướng Dẫn 〜とおりに & Sau Khi 〜あとで",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 3
           }
@@ -7282,20 +7416,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Làm Theo Hướng Dẫn 〜とおりに & Sau Khi 〜あとで",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Làm Theo Hướng Dẫn 〜とおりに & Sau Khi 〜あとで",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -7325,14 +7459,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "安かったら",
-            "isCorrect": false,
+            "text": "安ければ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "安ければ",
-            "isCorrect": true,
+            "text": "安かったら",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -7357,8 +7491,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "行こうば",
-            "isCorrect": false,
+            "text": "行けば",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -7369,13 +7503,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "行けば",
-            "isCorrect": true,
+            "text": "行ったら",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "行ったら",
+            "text": "行こうば",
             "isCorrect": false,
             "order": 3
           }
@@ -7389,25 +7523,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "簡単なら / 簡単であれば",
-            "isCorrect": true,
+            "text": "簡単ば",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "簡単ならば",
-            "isCorrect": false,
+            "text": "簡単なら / 簡単であれば",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "簡単ければ",
+            "text": "簡単ならば",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "簡単ば",
+            "text": "簡単ければ",
             "isCorrect": false,
             "order": 3
           }
@@ -7421,19 +7555,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "家賃が安かったら、このアパートを借りたいです。",
+            "text": "家賃が安いなら、このアパートを借りたいです。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "家賃が安いなら、このアパートを借りたいです。",
+            "text": "家賃が安くば、このアパートを借りたいです。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "家賃が安くば、このアパートを借りたいです。",
+            "text": "家賃が安かったら、このアパートを借りたいです。",
             "isCorrect": false,
             "order": 2
           },
@@ -7453,7 +7587,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "〜と〜ほど",
+            "text": "〜なら〜ほど",
             "isCorrect": false,
             "order": 0
           },
@@ -7465,14 +7599,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "〜ば〜ほど",
-            "isCorrect": true,
+            "text": "〜と〜ほど",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "〜なら〜ほど",
-            "isCorrect": false,
+            "text": "〜ば〜ほど",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7491,8 +7625,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "日本語は勉強すればするほど面白くなります。",
-            "isCorrect": true,
+            "text": "日本語は勉強すればするほど面白いです。",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -7503,8 +7637,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "日本語は勉強すればするほど面白いです。",
-            "isCorrect": false,
+            "text": "日本語は勉強すればするほど面白くなります。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7517,26 +7651,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "どうしたらいいですか。",
+            "text": "どうするといいですか。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "どうするならいいですか。",
+            "text": "どうしたらいいですか。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "どうすればいいですか。",
-            "isCorrect": true,
+            "text": "どうするならいいですか。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "どうするといいですか。",
-            "isCorrect": false,
+            "text": "どうすればいいですか。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7549,26 +7683,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "いえちん",
-            "isCorrect": false,
+            "text": "やちん",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かちん",
+            "text": "いえちん",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "うちちん",
+            "text": "かちん",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "やちん",
-            "isCorrect": true,
+            "text": "うちちん",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7581,14 +7715,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "じま",
-            "isCorrect": false,
+            "text": "しま",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "しま",
-            "isCorrect": true,
+            "text": "じま",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -7619,19 +7753,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "こば",
+            "text": "これば",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "きれば",
+            "text": "こば",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "これば",
+            "text": "きれば",
             "isCorrect": false,
             "order": 3
           }
@@ -7645,13 +7779,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "すればいい",
+            "text": "さすれば",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "さすれば",
+            "text": "すればいい",
             "isCorrect": false,
             "order": 1
           },
@@ -7683,20 +7817,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "いいければ",
-            "isCorrect": false,
+            "text": "よければ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "よければいい",
+            "text": "いいければ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "よければ",
-            "isCorrect": true,
+            "text": "よければいい",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7709,25 +7843,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 13 cho bài Thể Điều Kiện (条件形: 〜ば) & Càng... Càng... 〜ば〜ほど",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 13)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Thể Điều Kiện (条件形: 〜ば) & Càng... Càng... 〜ば〜ほど",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -7742,26 +7876,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 14 cho bài Thể Điều Kiện (条件形: 〜ば) & Càng... Càng... 〜ば〜ほど",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 14)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Thể Điều Kiện (条件形: 〜ば) & Càng... Càng... 〜ば〜ほど",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -7775,8 +7909,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Thể Điều Kiện (条件形: 〜ば) & Càng... Càng... 〜ば〜ほど",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -7787,14 +7921,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 15 cho bài Thể Điều Kiện (条件形: 〜ば) & Càng... Càng... 〜ば〜ほど",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -7818,26 +7952,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "忘れないようにノートにメモしてください。",
+            "text": "忘れないためにノートにメモします。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "忘れないためにノートにメモします。",
+            "text": "忘れないことでノートにメモします。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "忘れないようにノートにメモします。",
-            "isCorrect": true,
+            "text": "忘れないようにノートにメモしてください。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "忘れないことでノートにメモします。",
-            "isCorrect": false,
+            "text": "忘れないようにノートにメモします。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -7862,14 +7996,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Cả hai dùng hoàn toàn như nhau",
-            "isCorrect": false,
+            "text": "Yō ni đi với động từ khả năng / phủ định, Tame ni đi với động từ ý thức",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Yō ni đi với động từ khả năng / phủ định, Tame ni đi với động từ ý thức",
-            "isCorrect": true,
+            "text": "Cả hai dùng hoàn toàn như nhau",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7882,25 +8016,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "1年勉強して、日本語が話せるために練習しました。",
+            "text": "1年勉強して、日本語が話せます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "1年勉強して、日本語が話せることにしました。",
-            "isCorrect": false,
+            "text": "1年勉強して、日本語が話せるようになりました。",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "1年勉強して、日本語が話せるようになりました。",
-            "isCorrect": true,
+            "text": "1年勉強して、日本語が話せるために練習しました。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "1年勉強して、日本語が話せます。",
+            "text": "1年勉強して、日本語が話せることにしました。",
             "isCorrect": false,
             "order": 3
           }
@@ -7920,20 +8054,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "〜ことにしています",
+            "text": "〜ようにになります",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "〜ようにになります",
-            "isCorrect": false,
+            "text": "〜ようにしています",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "〜ようにしています",
-            "isCorrect": true,
+            "text": "〜ことにしています",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -7946,25 +8080,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "毎日運動するためにしています。",
-            "isCorrect": false,
+            "text": "毎日運動するようにしています。",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "毎日運動するようになりました。",
+            "text": "毎日運動するためにしています。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "毎日運動するようにしています。",
-            "isCorrect": true,
+            "text": "毎日運動することにしています。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "毎日運動することにしています。",
+            "text": "毎日運動するようになりました。",
             "isCorrect": false,
             "order": 3
           }
@@ -7984,8 +8118,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Đồ ăn",
-            "isCorrect": false,
+            "text": "Cú sốc / Bị sốc (Shock)",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -7996,8 +8130,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Cú sốc / Bị sốc (Shock)",
-            "isCorrect": true,
+            "text": "Đồ ăn",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8010,14 +8144,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Thử thách, nỗ lực làm điều mới (Challenge)",
-            "isCorrect": true,
+            "text": "Kiểm tra",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Kiểm tra",
-            "isCorrect": false,
+            "text": "Thử thách, nỗ lực làm điều mới (Challenge)",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -8042,19 +8176,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Không bao giờ làm",
+            "text": "Đã bị mất đồ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Chưa từng làm",
+            "text": "Không bao giờ làm",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đã bị mất đồ",
+            "text": "Chưa từng làm",
             "isCorrect": false,
             "order": 2
           },
@@ -8080,8 +8214,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "かんこう",
-            "isCorrect": false,
+            "text": "けんこう",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -8092,8 +8226,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "けんこう",
-            "isCorrect": true,
+            "text": "かんこう",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8106,8 +8240,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ように",
-            "isCorrect": true,
+            "text": "ので",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -8118,13 +8252,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "から",
-            "isCorrect": false,
+            "text": "ように",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ので",
+            "text": "から",
             "isCorrect": false,
             "order": 3
           }
@@ -8138,14 +8272,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "期日までにレポートを出してください。",
-            "isCorrect": false,
+            "text": "期日までにレポートを出すようにしてください。",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "期日までにレポートを出すようにしてください。",
-            "isCorrect": true,
+            "text": "期日までにレポートを出させます。",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -8156,7 +8290,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "期日までにレポートを出させます。",
+            "text": "期日までにレポートを出してください。",
             "isCorrect": false,
             "order": 3
           }
@@ -8170,19 +8304,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Áo khoác",
+            "text": "Bóng đá",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Bóng đá",
+            "text": "Túi xách",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Túi xách",
+            "text": "Áo khoác",
             "isCorrect": false,
             "order": 2
           },
@@ -8202,7 +8336,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
@@ -8214,13 +8348,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -8241,14 +8375,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 14 cho bài Cấu Trúc Mục Đích 〜ように & Biến Đổi Thói Quen 〜ようになる",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 14)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Cấu Trúc Mục Đích 〜ように & Biến Đổi Thói Quen 〜ようになる",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -8268,7 +8402,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 0
           },
@@ -8280,13 +8414,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -8311,14 +8445,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "褒められる",
-            "isCorrect": true,
+            "text": "褒めやすい",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "褒めやすい",
-            "isCorrect": false,
+            "text": "褒められる",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -8343,26 +8477,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "叱られる",
-            "isCorrect": true,
+            "text": "叱れる",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "叱させる",
+            "text": "叱られるです",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "叱られるです",
+            "text": "叱させる",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "叱れる",
-            "isCorrect": false,
+            "text": "叱られる",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8375,8 +8509,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "踏まれる",
-            "isCorrect": true,
+            "text": "踏ませる",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -8387,8 +8521,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "踏ませる",
-            "isCorrect": false,
+            "text": "踏まれる",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -8407,25 +8541,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "こさせる",
-            "isCorrect": false,
+            "text": "こられる",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こられる",
-            "isCorrect": true,
+            "text": "きられる",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "きられる",
+            "text": "きさせる",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "きさせる",
+            "text": "こさせる",
             "isCorrect": false,
             "order": 3
           }
@@ -8439,25 +8573,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "される",
-            "isCorrect": true,
+            "text": "させれる",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "させれる",
-            "isCorrect": false,
+            "text": "される",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "すられる",
+            "text": "させられる",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "させられる",
+            "text": "すられる",
             "isCorrect": false,
             "order": 3
           }
@@ -8471,20 +8605,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "を",
-            "isCorrect": false,
+            "text": "に",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "で",
+            "text": "を",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "に",
-            "isCorrect": true,
+            "text": "で",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -8503,26 +8637,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "私は先生を褒められました。",
+            "text": "私は先生が褒められました。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "私は先生に褒められました。",
-            "isCorrect": true,
+            "text": "私は先生で褒められました。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "私は先生で褒められました。",
+            "text": "私は先生を褒められました。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "私は先生が褒められました。",
-            "isCorrect": false,
+            "text": "私は先生に褒められました。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8535,7 +8669,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "電車で誰かを足を踏ませました。",
+            "text": "電車で誰かが足を踏まれました。",
             "isCorrect": false,
             "order": 0
           },
@@ -8547,14 +8681,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "電車で誰かが足を踏まれました。",
-            "isCorrect": false,
+            "text": "電車で誰かに足を踏まれました。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "電車で誰かに足を踏まれました。",
-            "isCorrect": true,
+            "text": "電車で誰かを足を踏ませました。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8567,25 +8701,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "に",
+            "text": "で",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "から",
-            "isCorrect": false,
+            "text": "によって (Ví dụ: 富士山は... / 電話はベルによって発明された)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "によって (Ví dụ: 富士山は... / 電話はベルによって発明された)",
-            "isCorrect": true,
+            "text": "に",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "で",
+            "text": "から",
             "isCorrect": false,
             "order": 3
           }
@@ -8599,7 +8733,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "でいふ",
+            "text": "どろふ",
             "isCorrect": false,
             "order": 0
           },
@@ -8611,13 +8745,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "どろふ",
+            "text": "でいぼう",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "でいぼう",
+            "text": "でいふ",
             "isCorrect": false,
             "order": 3
           }
@@ -8637,13 +8771,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "けいさつ",
+            "text": "けいかん",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "けいかん",
+            "text": "けいさつ",
             "isCorrect": false,
             "order": 2
           },
@@ -8695,25 +8829,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 13 cho bài Thể Bị Động (受身形: 〜られる) & Trợ Từ に Trong Bị Động",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 13)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Thể Bị Động (受身形: 〜られる) & Trợ Từ に Trong Bị Động",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -8728,26 +8862,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Thể Bị Động (受身形: 〜られる) & Trợ Từ に Trong Bị Động",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 14 cho bài Thể Bị Động (受身形: 〜られる) & Trợ Từ に Trong Bị Động",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 14)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -8767,20 +8901,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 15 cho bài Thể Bị Động (受身形: 〜られる) & Trợ Từ に Trong Bị Động",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Thể Bị Động (受身形: 〜られる) & Trợ Từ に Trong Bị Động",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -8804,19 +8938,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "音楽を聞くのが好きにします。",
+            "text": "音楽を聞くことを好きです。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "音楽を聞くことを好きです。",
+            "text": "音楽を聞くが好きです。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "音楽を聞くが好きです。",
+            "text": "音楽を聞くのが好きにします。",
             "isCorrect": false,
             "order": 2
           },
@@ -8842,8 +8976,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "牛乳を買うを忘れました。",
-            "isCorrect": false,
+            "text": "牛乳を買うのを忘れました。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -8854,8 +8988,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "牛乳を買うのを忘れました。",
-            "isCorrect": true,
+            "text": "牛乳を買うを忘れました。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -8874,20 +9008,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "私の趣味は写真を撮ることです。",
-            "isCorrect": true,
+            "text": "私の趣味は写真を撮るのが好きです。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "私の趣味は写真を撮るのが好きです。",
+            "text": "私の趣味は写真を撮るの物です。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "私の趣味は写真を撮るの物です。",
-            "isCorrect": false,
+            "text": "私の趣味は写真を撮ることです。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -8900,20 +9034,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đi với các động từ tri giác như 見る, 聞こえる, 手伝う (Ví dụ: 彼女が泳ぐのを見る)",
-            "isCorrect": true,
+            "text": "Đi với sở thích (趣味は〜ことです)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đi với sở thích (趣味は〜ことです)",
+            "text": "Đi với mệnh đề kết thúc bằng です",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đi với mệnh đề kết thúc bằng です",
-            "isCorrect": false,
+            "text": "Đi với các động từ tri giác như 見る, 聞こえる, 手伝う (Ví dụ: 彼女が泳ぐのを見る)",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -8932,8 +9066,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "彼女が道を渡るのを見ました。",
-            "isCorrect": true,
+            "text": "彼女が道を渡ることを見ました。",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -8944,8 +9078,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "彼女が道を渡ることを見ました。",
-            "isCorrect": false,
+            "text": "彼女が道を渡るのを見ました。",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -8964,20 +9098,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "せきちゃん",
+            "text": "あかご",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "あかちゃん",
-            "isCorrect": true,
+            "text": "せきちゃん",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "あかご",
-            "isCorrect": false,
+            "text": "あかちゃん",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -8996,8 +9130,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "せばをする",
-            "isCorrect": false,
+            "text": "せわをする",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -9008,8 +9142,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "せわをする",
-            "isCorrect": true,
+            "text": "せばをする",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -9028,25 +9162,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "いんいんする",
+            "text": "いんえんする",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "にゅういんする",
-            "isCorrect": true,
+            "text": "にゅうえんする",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "いんえんする",
-            "isCorrect": false,
+            "text": "にゅういんする",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にゅうえんする",
+            "text": "いんいんする",
             "isCorrect": false,
             "order": 3
           }
@@ -9066,7 +9200,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "を",
+            "text": "で",
             "isCorrect": false,
             "order": 1
           },
@@ -9078,7 +9212,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "で",
+            "text": "を",
             "isCorrect": false,
             "order": 3
           }
@@ -9092,7 +9226,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "つけいんする",
+            "text": "たいえんする",
             "isCorrect": false,
             "order": 0
           },
@@ -9104,13 +9238,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "たいえんする",
+            "text": "ついえんする",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ついえんする",
+            "text": "つけいんする",
             "isCorrect": false,
             "order": 3
           }
@@ -9124,8 +9258,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "料理を作ることを得意です。",
-            "isCorrect": false,
+            "text": "料理を作るのが得意です。",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -9136,13 +9270,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "料理を作るのが得意です。",
-            "isCorrect": true,
+            "text": "料理を作ると得意です。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "料理を作ると得意です。",
+            "text": "料理を作ることを得意です。",
             "isCorrect": false,
             "order": 3
           }
@@ -9156,19 +9290,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "でんかん",
-            "isCorrect": false,
+            "text": "でんげん",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "でんげん",
-            "isCorrect": true,
+            "text": "でんえん",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "でんえん",
+            "text": "でんかん",
             "isCorrect": false,
             "order": 2
           },
@@ -9188,25 +9322,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Danh Từ Hóa Động Từ 〜の / 〜こと & Thích / Giỏi Việc Gì",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 13 cho bài Danh Từ Hóa Động Từ 〜の / 〜こと & Thích / Giỏi Việc Gì",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 13)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -9221,19 +9355,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 14 cho bài Danh Từ Hóa Động Từ 〜の / 〜こと & Thích / Giỏi Việc Gì",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Danh Từ Hóa Động Từ 〜の / 〜こと & Thích / Giỏi Việc Gì",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 2
           },
@@ -9254,26 +9388,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Danh Từ Hóa Động Từ 〜の / 〜こと & Thích / Giỏi Việc Gì",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Danh Từ Hóa Động Từ 〜の / 〜こと & Thích / Giỏi Việc Gì",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -9303,8 +9437,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "バスが遅れたから、遅刻しました。",
-            "isCorrect": false,
+            "text": "バスが遅れたので、遅刻しました。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -9315,8 +9449,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "バスが遅れたので、遅刻しました。",
-            "isCorrect": true,
+            "text": "バスが遅れたから、遅刻しました。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9335,8 +9469,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "好きので",
-            "isCorrect": false,
+            "text": "好きなので",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -9347,8 +9481,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "好きなので",
-            "isCorrect": true,
+            "text": "好きので",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9367,14 +9501,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "病気ので",
-            "isCorrect": false,
+            "text": "病気なので",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "病気なので",
-            "isCorrect": true,
+            "text": "病気ので",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -9393,19 +9527,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Node nhẹ nhàng, khách quan, lịch sự hơn Kara (Kara mang tính chủ quan)",
-            "isCorrect": true,
+            "text": "Node chỉ dùng cho mệnh lệnh",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Kara lịch sự hơn Node",
-            "isCorrect": false,
+            "text": "Node nhẹ nhàng, khách quan, lịch sự hơn Kara (Kara mang tính chủ quan)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Node chỉ dùng cho mệnh lệnh",
+            "text": "Kara lịch sự hơn Node",
             "isCorrect": false,
             "order": 2
           },
@@ -9425,8 +9559,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "で (Ví dụ: 地震でビルが倒れました)",
-            "isCorrect": true,
+            "text": "から",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -9443,8 +9577,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "から",
-            "isCorrect": false,
+            "text": "で (Ví dụ: 地震でビルが倒れました)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9457,14 +9591,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "地震でビルが倒れました。",
-            "isCorrect": true,
+            "text": "地震のでビルが倒れました。",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "地震にビルが倒れました。",
-            "isCorrect": false,
+            "text": "地震でビルが倒れました。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -9475,7 +9609,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "地震のでビルが倒れました。",
+            "text": "地震にビルが倒れました。",
             "isCorrect": false,
             "order": 3
           }
@@ -9489,14 +9623,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "とちゅうで",
-            "isCorrect": true,
+            "text": "とちゅうに",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "とちゅうに",
-            "isCorrect": false,
+            "text": "とちゅうで",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -9521,20 +9655,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ひじ",
-            "isCorrect": false,
+            "text": "かじ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ひごと",
+            "text": "ひじ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かじ",
-            "isCorrect": true,
+            "text": "ひごと",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -9559,20 +9693,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Va chạm, đâm vào nhau",
-            "isCorrect": true,
+            "text": "Bay lên",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Bay lên",
+            "text": "Rơi xuống",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Rơi xuống",
-            "isCorrect": false,
+            "text": "Va chạm, đâm vào nhau",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9585,26 +9719,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "妹のケーキを食べておきました。",
+            "text": "妹のケーキを食べさせました。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "妹のケーキを食べてあります。",
-            "isCorrect": false,
+            "text": "妹のケーキを食べてしまいました。",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "妹のケーキを食べさせました。",
+            "text": "妹のケーキを食べてあります。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "妹のケーキを食べてしまいました。",
-            "isCorrect": true,
+            "text": "妹のケーキを食べておきました。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9629,14 +9763,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "〜ちゃいました (hoặc 〜じゃいました)",
-            "isCorrect": true,
+            "text": "〜てありました",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "〜てありました",
-            "isCorrect": false,
+            "text": "〜ちゃいました (hoặc 〜じゃいました)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -9655,14 +9789,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "ふくざつ",
-            "isCorrect": true,
+            "text": "ふくさつ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ふくさつ",
-            "isCorrect": false,
+            "text": "ふくざつ",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -9681,20 +9815,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Nguyên Nhân Kết Quả 〜て/で, 〜ので & Thể Lỡ Lầm 〜てしまう",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 13 cho bài Nguyên Nhân Kết Quả 〜て/で, 〜ので & Thể Lỡ Lầm 〜てしまう",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 13)",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -9714,8 +9848,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Nguyên Nhân Kết Quả 〜て/で, 〜ので & Thể Lỡ Lầm 〜てしまう",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -9726,14 +9860,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 14 cho bài Nguyên Nhân Kết Quả 〜て/で, 〜ので & Thể Lỡ Lầm 〜てしまう",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 14)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -9747,14 +9881,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Nguyên Nhân Kết Quả 〜て/で, 〜ので & Thể Lỡ Lầm 〜てしまう",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Nguyên Nhân Kết Quả 〜て/で, 〜ので & Thể Lỡ Lầm 〜てしまう",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -9765,7 +9899,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -9790,8 +9924,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "何時に飛行機が到着するかどうか、調べてみます。",
-            "isCorrect": false,
+            "text": "何時に飛行機が到着するか、調べてみます。",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -9802,13 +9936,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "何時に飛行機が到着するか、調べてみます。",
-            "isCorrect": true,
+            "text": "何時に飛行機が到着するかを、調べてみます。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "何時に飛行機が到着するかを、調べてみます。",
+            "text": "何時に飛行機が到着するかどうか、調べてみます。",
             "isCorrect": false,
             "order": 3
           }
@@ -9822,13 +9956,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "明日雨が降るか、わかりません。",
+            "text": "明日雨が降るかどうかを、わかりません。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "明日雨が降るかどうかを、わかりません。",
+            "text": "明日雨が降るか、わかりません。",
             "isCorrect": false,
             "order": 1
           },
@@ -9854,26 +9988,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "〜てあります",
+            "text": "〜ておきます",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "〜て見ます",
+            "text": "〜てあります",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "〜ておきます",
-            "isCorrect": false,
+            "text": "〜てみます",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "〜てみます",
-            "isCorrect": true,
+            "text": "〜て見ます",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9886,8 +10020,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "この着物を着ておきたいです。",
-            "isCorrect": false,
+            "text": "この着物を着てみたいです。",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -9904,8 +10038,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "この着物を着てみたいです。",
-            "isCorrect": true,
+            "text": "この着物を着ておきたいです。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -9918,7 +10052,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "本当なかどうか",
+            "text": "本当だかどうか",
             "isCorrect": false,
             "order": 0
           },
@@ -9930,13 +10064,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "本当だかどうか",
+            "text": "本当であるかどうか",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "本当であるかどうか",
+            "text": "本当なかどうか",
             "isCorrect": false,
             "order": 3
           }
@@ -9950,19 +10084,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "間違いであるかどうか",
+            "text": "間違いだかどうか",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "間違いなかどうか",
+            "text": "間違いであるかどうか",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "間違いだかどうか",
+            "text": "間違いなかどうか",
             "isCorrect": false,
             "order": 2
           },
@@ -9982,26 +10116,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "たいかる",
+            "text": "そかる",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "りょうかる",
+            "text": "たいかる",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "そかる",
-            "isCorrect": false,
+            "text": "はかる",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "はかる",
-            "isCorrect": true,
+            "text": "りょうかる",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10020,13 +10154,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "しょう",
+            "text": "いたず",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "いたず",
+            "text": "しょう",
             "isCorrect": false,
             "order": 2
           },
@@ -10052,13 +10186,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "ぼうねんあつまし",
+            "text": "わすれねんかい",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "わすれねんかい",
+            "text": "ぼうねんあつまし",
             "isCorrect": false,
             "order": 2
           },
@@ -10078,7 +10212,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "にじあつまし",
+            "text": "ふたじかい",
             "isCorrect": false,
             "order": 0
           },
@@ -10090,14 +10224,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "ふたじかい",
-            "isCorrect": false,
+            "text": "にじかい",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "にじかい",
-            "isCorrect": true,
+            "text": "にじあつまし",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10110,25 +10244,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "かどうか",
-            "isCorrect": true,
+            "text": "のに",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "のに",
-            "isCorrect": false,
+            "text": "かどうか",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ので",
+            "text": "か",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "か",
+            "text": "ので",
             "isCorrect": false,
             "order": 3
           }
@@ -10148,19 +10282,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "みきし",
+            "text": "みきじ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "みきじ",
+            "text": "かんし",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かんし",
+            "text": "みきし",
             "isCorrect": false,
             "order": 3
           }
@@ -10174,25 +10308,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 13 cho bài Câu Hỏi Phụ 〜か / 〜かどうか & Thử Làm 〜てみます",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 13)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Câu Hỏi Phụ 〜か / 〜かどうか & Thử Làm 〜てみます",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -10207,25 +10341,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Câu Hỏi Phụ 〜か / 〜かどうか & Thử Làm 〜てみます",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 14 cho bài Câu Hỏi Phụ 〜か / 〜かどうか & Thử Làm 〜てみます",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 14)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 3
           }
@@ -10240,26 +10374,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 15 cho bài Câu Hỏi Phụ 〜か / 〜かどうか & Thử Làm 〜てみます",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 15)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Câu Hỏi Phụ 〜か / 〜かどうか & Thử Làm 〜てみます",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -10327,13 +10461,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "差し上げます",
+            "text": "やります",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "やります",
+            "text": "差し上げます",
             "isCorrect": false,
             "order": 3
           }
@@ -10347,7 +10481,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "いただきます",
+            "text": "くださいます",
             "isCorrect": false,
             "order": 0
           },
@@ -10359,7 +10493,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "くださいます",
+            "text": "いただきます",
             "isCorrect": false,
             "order": 2
           },
@@ -10385,19 +10519,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "やります (やる)",
-            "isCorrect": true,
+            "text": "いただきます",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "あげます",
-            "isCorrect": false,
+            "text": "やります (やる)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "いただきます",
+            "text": "あげます",
             "isCorrect": false,
             "order": 3
           }
@@ -10417,7 +10551,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "私は先生にプレゼントを差し上げました。",
+            "text": "私は先生にプレゼントをくださいました。",
             "isCorrect": false,
             "order": 1
           },
@@ -10429,7 +10563,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "私は先生にプレゼントをくださいました。",
+            "text": "私は先生にプレゼントを差し上げました。",
             "isCorrect": false,
             "order": 3
           }
@@ -10449,19 +10583,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "部長は私に説明してやりました。",
-            "isCorrect": false,
+            "text": "部長は私に説明してくださいました。",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "部長は私に説明してくださいました。",
-            "isCorrect": true,
+            "text": "部長は私に説明していただきました。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "部長は私に説明していただきました。",
+            "text": "部長は私に説明してやりました。",
             "isCorrect": false,
             "order": 3
           }
@@ -10475,25 +10609,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "犬にエサをくださいました。",
-            "isCorrect": false,
+            "text": "犬にエサをやりました。",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "犬にエサを差し上げました。",
+            "text": "犬にエサをくださいました。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "犬にエサをやりました。",
-            "isCorrect": true,
+            "text": "犬にエサをいただきました。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "犬にエサをいただきました。",
+            "text": "犬にエサを差し上げました。",
             "isCorrect": false,
             "order": 3
           }
@@ -10507,7 +10641,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "〜てくださいますか",
+            "text": "〜てください",
             "isCorrect": false,
             "order": 0
           },
@@ -10525,7 +10659,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "〜てください",
+            "text": "〜てくださいますか",
             "isCorrect": false,
             "order": 3
           }
@@ -10551,13 +10685,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "おしゅく",
+            "text": "おしゅくわい",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おしゅくわい",
+            "text": "おしゅく",
             "isCorrect": false,
             "order": 3
           }
@@ -10571,25 +10705,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "おとしだま",
-            "isCorrect": true,
+            "text": "おとしぎょく",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "おねんだま",
+            "text": "おねんぎょく",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "おねんぎょく",
-            "isCorrect": false,
+            "text": "おとしだま",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おとしぎょく",
+            "text": "おねんだま",
             "isCorrect": false,
             "order": 3
           }
@@ -10603,26 +10737,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "いえていきょうし",
+            "text": "かていきょうじ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "いえていきょうじ",
-            "isCorrect": false,
+            "text": "かていきょうし",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かていきょうじ",
+            "text": "いえていきょうし",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "かていきょうし",
-            "isCorrect": true,
+            "text": "いえていきょうじ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10635,8 +10769,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "が",
-            "isCorrect": false,
+            "text": "に",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -10647,13 +10781,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "に",
-            "isCorrect": true,
+            "text": "で",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "で",
+            "text": "が",
             "isCorrect": false,
             "order": 3
           }
@@ -10667,13 +10801,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 1
           },
@@ -10700,13 +10834,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 1
           },
@@ -10733,14 +10867,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Cho - Nhận Kính Ngữ (いただきます・くださいます・やります)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 15 cho bài Cho - Nhận Kính Ngữ (いただきます・くださいます・やります)",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -10776,26 +10910,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "車を買うので、貯金しています。",
+            "text": "車を買うように、貯金しています。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "車を買うために、貯金しています。",
-            "isCorrect": true,
+            "text": "車を買うことに、貯金しています。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "車を買うように、貯金しています。",
+            "text": "車を買うので、貯金しています。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "車を買うことに、貯金しています。",
-            "isCorrect": false,
+            "text": "車を買うために、貯金しています。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -10814,13 +10948,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Danh từ + ために",
+            "text": "Danh từ + に + ために",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Danh từ + に + ために",
+            "text": "Danh từ + ために",
             "isCorrect": false,
             "order": 2
           },
@@ -10840,7 +10974,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "このハサミは紙を切ることで使います。",
+            "text": "このハサミは紙を切るように使います。",
             "isCorrect": false,
             "order": 0
           },
@@ -10852,13 +10986,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "このハサミは紙を切るように使います。",
+            "text": "このハサミは紙を切るために使います。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "このハサミは紙を切るために使います。",
+            "text": "このハサミは紙を切ることで使います。",
             "isCorrect": false,
             "order": 3
           }
@@ -10872,8 +11006,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "この家を建てるために3年かかりました。",
-            "isCorrect": false,
+            "text": "この家を建てるのに3年かかりました。",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -10884,14 +11018,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "この家を建てることで3年かかりました。",
+            "text": "この家を建てるために3年かかりました。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "この家を建てるのに3年かかりました。",
-            "isCorrect": true,
+            "text": "この家を建てることで3年かかりました。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10904,7 +11038,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Tame ni không đi được với danh từ",
+            "text": "Cả hai hoàn toàn giống hệt nhau",
             "isCorrect": false,
             "order": 0
           },
@@ -10916,7 +11050,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Cả hai hoàn toàn giống hệt nhau",
+            "text": "Tame ni không đi được với danh từ",
             "isCorrect": false,
             "order": 2
           },
@@ -10936,26 +11070,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "べんごじ",
+            "text": "べんこうじ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "べんこうし",
-            "isCorrect": false,
+            "text": "べんごし",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "べんこうじ",
+            "text": "べんこうし",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "べんごし",
-            "isCorrect": true,
+            "text": "べんごじ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -10968,25 +11102,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Du lịch",
-            "isCorrect": false,
+            "text": "Hoạt động tình nguyện (Volunteer)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Kinh doanh",
+            "text": "Thể thao",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Hoạt động tình nguyện (Volunteer)",
-            "isCorrect": true,
+            "text": "Kinh doanh",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Thể thao",
+            "text": "Du lịch",
             "isCorrect": false,
             "order": 3
           }
@@ -11000,26 +11134,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ふんきり",
+            "text": "ふんぎり",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "かんぎり",
+            "text": "ふんきり",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かんきり",
-            "isCorrect": true,
+            "text": "かんぎり",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ふんぎり",
-            "isCorrect": false,
+            "text": "かんきり",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -11032,7 +11166,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "けいせんする",
+            "text": "けいぜんする",
             "isCorrect": false,
             "order": 0
           },
@@ -11044,14 +11178,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "けいぜんする",
-            "isCorrect": false,
+            "text": "けいさんする",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "けいさんする",
-            "isCorrect": true,
+            "text": "けいせんする",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11064,20 +11198,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "で",
-            "isCorrect": false,
+            "text": "の",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "に",
+            "text": "で",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "の",
-            "isCorrect": true,
+            "text": "に",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -11102,14 +11236,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "File",
-            "isCorrect": true,
+            "text": "Fill",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Fill",
-            "isCorrect": false,
+            "text": "File",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -11134,7 +11268,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "ふろき",
+            "text": "ふろじき",
             "isCorrect": false,
             "order": 1
           },
@@ -11146,7 +11280,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "ふろじき",
+            "text": "ふろき",
             "isCorrect": false,
             "order": 3
           }
@@ -11160,26 +11294,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Mục Đích 〜ために & Công Dụng / Phung Phí 〜のに",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 13 cho bài Mục Đích 〜ために & Công Dụng / Phung Phí 〜のに",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 13)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -11193,26 +11327,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 14 cho bài Mục Đích 〜ために & Công Dụng / Phung Phí 〜のに",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Mục Đích 〜ために & Công Dụng / Phung Phí 〜のに",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -11232,20 +11366,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 15 cho bài Mục Đích 〜ために & Công Dụng / Phung Phí 〜のに",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Mục Đích 〜ために & Công Dụng / Phung Phí 〜のに",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -11275,19 +11409,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "美味しいそうだ",
+            "text": "美味しさそうだ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "美味しさそうだ",
+            "text": "美味しいであるそうだ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "美味しいであるそうだ",
+            "text": "美味しいそうだ",
             "isCorrect": false,
             "order": 3
           }
@@ -11339,7 +11473,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "なきそうだ",
+            "text": "なくそうだ",
             "isCorrect": false,
             "order": 1
           },
@@ -11351,7 +11485,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "なくそうだ",
+            "text": "なきそうだ",
             "isCorrect": false,
             "order": 3
           }
@@ -11365,20 +11499,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "雨が降ったそうだ",
+            "text": "雨が降るそうだ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "雨が降りそうだ",
-            "isCorrect": true,
+            "text": "雨が降ったそうだ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "雨が降るそうだ",
-            "isCorrect": false,
+            "text": "雨が降りそうだ",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -11397,20 +11531,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "V-masu sōda là nghe nói",
-            "isCorrect": false,
+            "text": "V-masu sōda là dự đoán bề ngoài, V-ru sōda là nghe nói truyền đạt thông tin",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Cả hai giống hệt nhau",
+            "text": "V-masu sōda là nghe nói",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "V-masu sōda là dự đoán bề ngoài, V-ru sōda là nghe nói truyền đạt thông tin",
-            "isCorrect": true,
+            "text": "Cả hai giống hệt nhau",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -11429,14 +11563,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ボタンが外れそうです。",
-            "isCorrect": true,
+            "text": "ボタンが外れるそうです。",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ボタンが外れるそうです。",
-            "isCorrect": false,
+            "text": "ボタンが外れそうです。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -11461,25 +11595,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きっと",
-            "isCorrect": false,
+            "text": "今にも (Ví dụ: 今にも雨が降りそうです)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ぜんぜん",
+            "text": "きっと",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "今にも (Ví dụ: 今にも雨が降りそうです)",
-            "isCorrect": true,
+            "text": "たぶん",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たぶん",
+            "text": "ぜんぜん",
             "isCorrect": false,
             "order": 3
           }
@@ -11493,25 +11627,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "だんぽう",
+            "text": "たんぼう",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "だんぼう",
-            "isCorrect": true,
+            "text": "たんぽう",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "たんぼう",
-            "isCorrect": false,
+            "text": "だんぼう",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たんぽう",
+            "text": "だんぽう",
             "isCorrect": false,
             "order": 3
           }
@@ -11525,7 +11659,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "れいぽう",
+            "text": "りょうぼう",
             "isCorrect": false,
             "order": 0
           },
@@ -11537,14 +11671,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "りょうぼう",
-            "isCorrect": false,
+            "text": "れいぼう",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "れいぼう",
-            "isCorrect": true,
+            "text": "れいぽう",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11557,8 +11691,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "美味しそうなケーキ",
-            "isCorrect": true,
+            "text": "美味しさそうなケーキ",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -11569,8 +11703,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "美味しさそうなケーキ",
-            "isCorrect": false,
+            "text": "美味しそうなケーキ",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -11627,19 +11761,19 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "むかい",
+            "text": "むこうに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "こう",
+            "text": "むかい",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "むこうに",
+            "text": "こう",
             "isCorrect": false,
             "order": 3
           }
@@ -11653,26 +11787,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Dự Đoán Vẻ Bề Ngoài 〜そうだ & Sắp Sửa 今にも〜そうだ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 13 cho bài Dự Đoán Vẻ Bề Ngoài 〜そうだ & Sắp Sửa 今にも〜そうだ",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 13)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -11686,14 +11820,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Dự Đoán Vẻ Bề Ngoài 〜そうだ & Sắp Sửa 今にも〜そうだ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 14 cho bài Dự Đoán Vẻ Bề Ngoài 〜そうだ & Sắp Sửa 今にも〜そうだ",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 14)",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -11704,7 +11838,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 3
           }
@@ -11719,25 +11853,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 15 cho bài Dự Đoán Vẻ Bề Ngoài 〜そうだ & Sắp Sửa 今にも〜そうだ",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Dự Đoán Vẻ Bề Ngoài 〜そうだ & Sắp Sửa 今にも〜そうだ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -11768,8 +11902,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "昨夜お酒を飲みすぎますでした。",
-            "isCorrect": false,
+            "text": "昨夜お酒を飲みすぎました。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -11780,8 +11914,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "昨夜お酒を飲みすぎました。",
-            "isCorrect": true,
+            "text": "昨夜お酒を飲みすぎますでした。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11794,26 +11928,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "高くてすぎる",
+            "text": "高いすぎる",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "高いすぎる",
+            "text": "高かったすぎる",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "高かったすぎる",
-            "isCorrect": false,
+            "text": "高すぎる",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "高すぎる",
-            "isCorrect": true,
+            "text": "高くてすぎる",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11826,8 +11960,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "静かですぎる",
-            "isCorrect": false,
+            "text": "静かすぎる",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -11838,14 +11972,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "静かなすぎる",
+            "text": "静かですぎる",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "静かすぎる",
-            "isCorrect": true,
+            "text": "静かなすぎる",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -11864,13 +11998,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "このペンはとても書いたやすいです。",
+            "text": "このペンはとても書きやすくてです。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "このペンはとても書きやすくてです。",
+            "text": "このペンはとても書いたやすいです。",
             "isCorrect": false,
             "order": 2
           },
@@ -11890,7 +12024,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "漢字は覚えるにくいです。",
+            "text": "漢字は覚えてにくいです。",
             "isCorrect": false,
             "order": 0
           },
@@ -11902,7 +12036,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "漢字は覚えてにくいです。",
+            "text": "漢字は覚えるにくいです。",
             "isCorrect": false,
             "order": 2
           },
@@ -11928,14 +12062,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "Tính từ đuôi -i (có thể chia やすくない, にくかった...)",
-            "isCorrect": true,
+            "text": "Trạng từ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Trạng từ",
-            "isCorrect": false,
+            "text": "Tính từ đuôi -i (có thể chia やすくない, にくかった...)",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -11954,25 +12088,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "〜になります",
+            "text": "〜くさせます",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "〜くします / 〜にします (Ví dụ: 髪を短くします)",
-            "isCorrect": true,
+            "text": "〜くあります",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "〜くあります",
-            "isCorrect": false,
+            "text": "〜くします / 〜にします (Ví dụ: 髪を短くします)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "〜くさせます",
+            "text": "〜になります",
             "isCorrect": false,
             "order": 3
           }
@@ -11992,20 +12126,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "音を大きくになります。",
+            "text": "音を大きいにしてください。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "音を大きいにしてください。",
-            "isCorrect": false,
+            "text": "音を大きくしてください。",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "音を大きくしてください。",
-            "isCorrect": true,
+            "text": "音を大きくになります。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12018,26 +12152,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "りつは",
+            "text": "りっぱに",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "りゅうは",
-            "isCorrect": false,
+            "text": "りっぱ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "りっぱに",
+            "text": "りつは",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "りっぱ",
-            "isCorrect": true,
+            "text": "りゅうは",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12050,26 +12184,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "えらぷ",
+            "text": "せんぶ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "せんぶ",
-            "isCorrect": false,
+            "text": "えらぶ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "よりぶ",
+            "text": "えらぷ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "えらぶ",
-            "isCorrect": true,
+            "text": "よりぶ",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12114,8 +12248,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Màu sắc",
-            "isCorrect": false,
+            "text": "Thiết kế, kiểu dáng (Design)",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -12132,8 +12266,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Thiết kế, kiểu dáng (Design)",
-            "isCorrect": true,
+            "text": "Màu sắc",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12146,25 +12280,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Hành Động Quá Mức 〜すぎる & Dễ/Khó Làm 〜やすい / 〜にくい",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 13 cho bài Hành Động Quá Mức 〜すぎる & Dễ/Khó Làm 〜やすい / 〜にくい",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 13)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -12179,20 +12313,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Hành Động Quá Mức 〜すぎる & Dễ/Khó Làm 〜やすい / 〜にくい",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 14 cho bài Hành Động Quá Mức 〜すぎる & Dễ/Khó Làm 〜やすい / 〜にくい",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 14)",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -12212,25 +12346,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Hành Động Quá Mức 〜すぎる & Dễ/Khó Làm 〜やすい / 〜にくい",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Hành Động Quá Mức 〜すぎる & Dễ/Khó Làm 〜やすい / 〜にくい",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 3
           }
@@ -12255,14 +12389,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "火事の場合は、すぐに119番をかけてください。",
-            "isCorrect": true,
+            "text": "火事の時は、すぐに119番をかけましょう。",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "火事の時は、すぐに119番をかけましょう。",
-            "isCorrect": false,
+            "text": "火事の場合は、すぐに119番をかけてください。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -12287,19 +12421,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Danh từ + で + 場合",
-            "isCorrect": false,
+            "text": "Danh từ + の + 場合 (Ví dụ: 地震の場合)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Danh từ + の + 場合 (Ví dụ: 地震の場合)",
-            "isCorrect": true,
+            "text": "Danh từ + 場合",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Danh từ + 場合",
+            "text": "Danh từ + で + 場合",
             "isCorrect": false,
             "order": 2
           },
@@ -12325,13 +12459,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "緊急の場合",
+            "text": "緊急である場合",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "緊急である場合",
+            "text": "緊急の場合",
             "isCorrect": false,
             "order": 2
           },
@@ -12363,13 +12497,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "約束したので、彼は来ませんでした。",
+            "text": "約束したのに、彼は来ました。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "約束したのに、彼は来ました。",
+            "text": "約束したので、彼は来ませんでした。",
             "isCorrect": false,
             "order": 3
           }
@@ -12389,13 +12523,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "好きのに",
+            "text": "好きであるのに",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "好きであるのに",
+            "text": "好きのに",
             "isCorrect": false,
             "order": 2
           },
@@ -12427,13 +12561,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "日曜日のに",
+            "text": "日曜日であるのに",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "日曜日であるのに",
+            "text": "日曜日のに",
             "isCorrect": false,
             "order": 3
           }
@@ -12447,26 +12581,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Cả hai giống hệt nhau",
+            "text": "Noni chỉ dùng cho thời tiết",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Noni chỉ dùng cho thời tiết",
+            "text": "Keredomo chứa cảm xúc nuối tiếc mạnh hơn",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Noni chứa đựng cảm xúc bất bình, nuối tiếc, ngạc nhiên của người nói",
-            "isCorrect": true,
+            "text": "Cả hai giống hệt nhau",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Keredomo chứa cảm xúc nuối tiếc mạnh hơn",
-            "isCorrect": false,
+            "text": "Noni chứa đựng cảm xúc bất bình, nuối tiếc, ngạc nhiên của người nói",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12479,19 +12613,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "りょうしゅうじょ",
-            "isCorrect": false,
+            "text": "りょうしゅうしょ",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "りょうしゅうしょ",
-            "isCorrect": true,
+            "text": "れんしゅうしょ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "れんしゅうしょ",
+            "text": "りょうしゅうじょ",
             "isCorrect": false,
             "order": 2
           },
@@ -12511,25 +12645,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "かかりびと",
-            "isCorrect": false,
+            "text": "かかりいん",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "けいびと",
+            "text": "けいいん",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "かかりいん",
-            "isCorrect": true,
+            "text": "かかりびと",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "けいいん",
+            "text": "けいびと",
             "isCorrect": false,
             "order": 3
           }
@@ -12543,14 +12677,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Thật không may, đáng tiếc là...",
-            "isCorrect": true,
+            "text": "Tất nhiên rồi",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Rất may mắn",
-            "isCorrect": false,
+            "text": "Thật không may, đáng tiếc là...",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -12561,7 +12695,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Tất nhiên rồi",
+            "text": "Rất may mắn",
             "isCorrect": false,
             "order": 3
           }
@@ -12575,19 +12709,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "のに",
-            "isCorrect": true,
+            "text": "ように",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ために",
-            "isCorrect": false,
+            "text": "のに",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ように",
+            "text": "ために",
             "isCorrect": false,
             "order": 2
           },
@@ -12607,19 +12741,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ことご",
+            "text": "ことこ",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ことこ",
+            "text": "じご",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "じご",
+            "text": "ことご",
             "isCorrect": false,
             "order": 2
           },
@@ -12639,8 +12773,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Trường Hợp 〜ばあい & Dù Cho / Thế Mà 〜のに",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -12651,13 +12785,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 13 cho bài Trường Hợp 〜ばあい & Dù Cho / Thế Mà 〜のに",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu C (câu 13)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -12672,7 +12806,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
@@ -12684,7 +12818,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 2
           },
@@ -12705,14 +12839,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Trường Hợp 〜ばあい & Dù Cho / Thế Mà 〜のに",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 15 cho bài Trường Hợp 〜ばあい & Dù Cho / Thế Mà 〜のに",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -12748,14 +12882,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Động từ thể て + いるところです",
+            "text": "Động từ thể た + ところです",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Động từ thể Từ điển (V-ru) + ところです (Ví dụ: これからご飯を食べるところです)",
-            "isCorrect": true,
+            "text": "Động từ thể て + いるところです",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -12766,8 +12900,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Động từ thể た + ところです",
-            "isCorrect": false,
+            "text": "Động từ thể Từ điển (V-ru) + ところです (Ví dụ: これからご飯を食べるところです)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12780,26 +12914,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Động từ thể て + いるところです (Ví dụ: 今ご飯を食べているところです)",
-            "isCorrect": true,
+            "text": "Động từ thể V-ru + ところです",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Động từ thể V-ru + ところです",
+            "text": "Động từ thể た + ところです",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Động từ thể た + ところです",
+            "text": "Động từ thể た + ばかりです",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Động từ thể た + ばかりです",
-            "isCorrect": false,
+            "text": "Động từ thể て + いるところです (Ví dụ: 今ご飯を食べているところです)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12812,14 +12946,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Động từ thể V-ru + ところです",
+            "text": "Động từ thể て + いるところです",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Động từ thể て + いるところです",
-            "isCorrect": false,
+            "text": "Động từ thể た + ところです (Ví dụ: たった今ご飯を食べたところです)",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -12830,8 +12964,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Động từ thể た + ところです (Ví dụ: たった今ご飯を食べたところです)",
-            "isCorrect": true,
+            "text": "Động từ thể V-ru + ところです",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12844,26 +12978,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Động từ thể た + ところです",
+            "text": "Động từ thể V-ru + ところです",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Động từ thể て + いるところです",
+            "text": "Động từ thể た + ところです",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Động từ thể V-ru + ところです",
-            "isCorrect": false,
+            "text": "Động từ thể た + ばかりです (Ví dụ: 先月日本へ来たばかりです)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Động từ thể た + ばかりです (Ví dụ: 先月日本へ来たばかりです)",
-            "isCorrect": true,
+            "text": "Động từ thể て + いるところです",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12876,25 +13010,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Tokoro desu chỉ thời gian tức thì vừa xong (vài giây/phút), Bakari desu là cảm giác thời gian chưa lâu (vài ngày/tháng)",
-            "isCorrect": true,
+            "text": "Tokoro desu chỉ dùng cho quá khứ xa",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Bakari desu là sắp làm",
-            "isCorrect": false,
+            "text": "Tokoro desu chỉ thời gian tức thì vừa xong (vài giây/phút), Bakari desu là cảm giác thời gian chưa lâu (vài ngày/tháng)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Cả hai giống hệt nhau",
+            "text": "Bakari desu là sắp làm",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Tokoro desu chỉ dùng cho quá khứ xa",
+            "text": "Cả hai giống hệt nhau",
             "isCorrect": false,
             "order": 3
           }
@@ -12908,14 +13042,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "先月このバイクを買うところです。",
+            "text": "先月このバイクを買っているところです。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "先月このバイクを買っているところです。",
-            "isCorrect": false,
+            "text": "先月このバイクを買ったばかりです。",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -12926,8 +13060,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "先月このバイクを買ったばかりです。",
-            "isCorrect": true,
+            "text": "先月このバイクを買うところです。",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -12940,26 +13074,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きっと",
+            "text": "もし",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ちょうど (Ví dụ: ちょうど今終わったところです)",
-            "isCorrect": true,
+            "text": "きっと",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "もし",
+            "text": "たぶん",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "たぶん",
-            "isCorrect": false,
+            "text": "ちょうど (Ví dụ: ちょうど今終わったところです)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -12972,8 +13106,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "りゅうしゅ",
-            "isCorrect": false,
+            "text": "るす",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -12984,8 +13118,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "るす",
-            "isCorrect": true,
+            "text": "りゅうしゅ",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -13010,8 +13144,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "やあくはいびん",
-            "isCorrect": false,
+            "text": "たくはいびん",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -13022,8 +13156,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "たくはいびん",
-            "isCorrect": true,
+            "text": "やあくはいびん",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13042,20 +13176,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "ばかり",
-            "isCorrect": false,
+            "text": "ところ",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "とおり",
+            "text": "ばかり",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "ところ",
-            "isCorrect": true,
+            "text": "とおり",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13068,8 +13202,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "原えん",
-            "isCorrect": false,
+            "text": "げんいん",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -13080,14 +13214,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "原いん",
+            "text": "原えん",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "げんいん",
-            "isCorrect": true,
+            "text": "原いん",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13100,25 +13234,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Bếp ga (Gas stove)",
-            "isCorrect": true,
+            "text": "Máy sấy",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Bình nước",
+            "text": "Tủ lạnh ga",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Tủ lạnh ga",
-            "isCorrect": false,
+            "text": "Bếp ga (Gas stove)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Máy sấy",
+            "text": "Bình nước",
             "isCorrect": false,
             "order": 3
           }
@@ -13132,25 +13266,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Thời Điểm Điểm Thực Hiện 〜ところ & Vừa Mới 〜たばかり",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 13 cho bài Thời Điểm Điểm Thực Hiện 〜ところ & Vừa Mới 〜たばかり",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 13)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -13165,19 +13299,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 2
           },
@@ -13198,14 +13332,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Thời Điểm Điểm Thực Hiện 〜ところ & Vừa Mới 〜たばかり",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Thời Điểm Điểm Thực Hiện 〜ところ & Vừa Mới 〜たばかり",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -13253,13 +13387,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "天気予報によると、明日は晴れるようです。",
+            "text": "天気予報によると、明日は晴れそうです。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "天気予報によると、明日は晴れそうです。",
+            "text": "天気予報によると、明日は晴れるようです。",
             "isCorrect": false,
             "order": 3
           }
@@ -13273,8 +13407,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "美味しいそうです (nguyên dạng thể thông thường)",
-            "isCorrect": true,
+            "text": "美味しさそうです",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -13285,8 +13419,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "美味しさそうです",
-            "isCorrect": false,
+            "text": "美味しいそうです (nguyên dạng thể thông thường)",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -13305,25 +13439,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "〜にくらべて",
+            "text": "〜によって",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "〜について",
-            "isCorrect": false,
+            "text": "〜によると (Ví dụ: 新聞によると...)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "〜によると (Ví dụ: 新聞によると...)",
-            "isCorrect": true,
+            "text": "〜について",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "〜によって",
+            "text": "〜にくらべて",
             "isCorrect": false,
             "order": 3
           }
@@ -13343,14 +13477,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "〜らしいです",
-            "isCorrect": false,
+            "text": "〜ようです",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "〜ようです",
-            "isCorrect": true,
+            "text": "〜らしいです",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -13381,14 +13515,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "賑やかだようです",
-            "isCorrect": false,
+            "text": "賑やかなようです",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "賑やかなようです",
-            "isCorrect": true,
+            "text": "賑やかだようです",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13401,8 +13535,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "事故だようです",
-            "isCorrect": false,
+            "text": "事故のようです",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -13413,14 +13547,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "事故なようです",
+            "text": "事故だようです",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "事故のようです",
-            "isCorrect": true,
+            "text": "事故なようです",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -13433,13 +13567,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Cả hai giống hệt nhau",
+            "text": "Sōda nghe nói đi với tính từ bỏ i",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Sōda nghe nói đi với tính từ bỏ i",
+            "text": "Sōda trông có vẻ đi với nguồn tin ni yoru to",
             "isCorrect": false,
             "order": 1
           },
@@ -13451,7 +13585,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Sōda trông có vẻ đi với nguồn tin ni yoru to",
+            "text": "Cả hai giống hệt nhau",
             "isCorrect": false,
             "order": 3
           }
@@ -13471,7 +13605,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "せん",
+            "text": "うさ",
             "isCorrect": false,
             "order": 1
           },
@@ -13483,7 +13617,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "うさ",
+            "text": "せん",
             "isCorrect": false,
             "order": 3
           }
@@ -13497,25 +13631,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "し",
-            "isCorrect": false,
+            "text": "せき",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "こく",
+            "text": "し",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "せき",
-            "isCorrect": true,
+            "text": "がい",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "がい",
+            "text": "こく",
             "isCorrect": false,
             "order": 3
           }
@@ -13535,20 +13669,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "を",
+            "text": "に",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "の",
-            "isCorrect": true,
+            "text": "を",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "に",
-            "isCorrect": false,
+            "text": "の",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13561,25 +13695,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "けいさつ",
-            "isCorrect": true,
+            "text": "きょうさち",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "きょうさち",
+            "text": "けいさち",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "きょうさつ",
-            "isCorrect": false,
+            "text": "けいさつ",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "けいさち",
+            "text": "きょうさつ",
             "isCorrect": false,
             "order": 3
           }
@@ -13593,25 +13727,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "外に誰かがいるそうです。",
+            "text": "外に誰かがいそうです。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "外に誰かがいそうです。",
-            "isCorrect": false,
+            "text": "外に誰かがいるようです。",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "外に誰かがいるようです。",
-            "isCorrect": true,
+            "text": "外に誰かがいるらしいです。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "外に誰かがいるらしいです。",
+            "text": "外に誰かがいるそうです。",
             "isCorrect": false,
             "order": 3
           }
@@ -13625,26 +13759,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 13 cho bài Nghe Nói Là 〜そうです & Có Vẻ Như 〜ようです",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 13)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Nghe Nói Là 〜そうです & Có Vẻ Như 〜ようです",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -13658,13 +13792,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 1
           },
@@ -13676,7 +13810,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu B (câu 14)",
             "isCorrect": false,
             "order": 3
           }
@@ -13691,13 +13825,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Nghe Nói Là 〜そうです & Có Vẻ Như 〜ようです",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 1
           },
@@ -13709,8 +13843,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 15 cho bài Nghe Nói Là 〜そうです & Có Vẻ Như 〜ようです",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -13734,13 +13868,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "行こう",
+            "text": "行かさせられる",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "行かれる",
+            "text": "行こう",
             "isCorrect": false,
             "order": 1
           },
@@ -13752,7 +13886,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "行かさせられる",
+            "text": "行かれる",
             "isCorrect": false,
             "order": 3
           }
@@ -13766,20 +13900,20 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "食べさせる",
-            "isCorrect": true,
+            "text": "食べられる",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "食べられる",
+            "text": "食べろ",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "食べろ",
-            "isCorrect": false,
+            "text": "食べさせる",
+            "isCorrect": true,
             "order": 2
           },
           {
@@ -13798,25 +13932,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "こられる",
-            "isCorrect": false,
+            "text": "こさせる",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "きさせる",
+            "text": "こられる",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "こさせる",
-            "isCorrect": true,
+            "text": "きられる",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "きられる",
+            "text": "きさせる",
             "isCorrect": false,
             "order": 3
           }
@@ -13830,19 +13964,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "しよう",
-            "isCorrect": false,
+            "text": "させる",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "させる",
-            "isCorrect": true,
+            "text": "させられる",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "させられる",
+            "text": "しよう",
             "isCorrect": false,
             "order": 2
           },
@@ -13862,26 +13996,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "お母さんは子供で買い物に行かせました。",
+            "text": "お母さんは子供に買い物に行かせました。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "お母さんは子供を買い物に行かせました。",
-            "isCorrect": true,
+            "text": "お母さんは子供で買い物に行かせました。",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "お母さんは子供に買い物に行かせました。",
+            "text": "お母さんは子供が買い物に行かせました。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "お母さんは子供が買い物に行かせました。",
-            "isCorrect": false,
+            "text": "お母さんは子供を買い物に行かせました。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13900,7 +14034,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "お母さんは子供が野菜を食べさせました。",
+            "text": "お母さんは子供で野菜を食べさせました。",
             "isCorrect": false,
             "order": 1
           },
@@ -13912,7 +14046,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "お母さんは子供で野菜を食べさせました。",
+            "text": "お母さんは子供が野菜を食べさせました。",
             "isCorrect": false,
             "order": 3
           }
@@ -13926,26 +14060,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "明日休ませていただけませんか。",
-            "isCorrect": true,
+            "text": "明日休まないでください。",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "明日休ませてくださいませんか。",
+            "text": "明日休ませてください。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "明日休まないでください。",
+            "text": "明日休ませてくださいませんか。",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "明日休ませてください。",
-            "isCorrect": false,
+            "text": "明日休ませていただけませんか。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13958,26 +14092,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "この仕事を私にさせられます。",
+            "text": "この仕事を私にさせます。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "この仕事を私にさせます。",
+            "text": "この仕事を私にさせていただけませんか。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "この仕事を私にさせてください。",
-            "isCorrect": true,
+            "text": "この仕事を私にさせられます。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "この仕事を私にさせていただけませんか。",
-            "isCorrect": false,
+            "text": "この仕事を私にさせてください。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -13990,26 +14124,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "しゅっく",
+            "text": "しゅく",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "しゅく",
+            "text": "しゅっく",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "じゅっく",
-            "isCorrect": false,
+            "text": "じゅく",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "じゅく",
-            "isCorrect": true,
+            "text": "じゅっく",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -14054,25 +14188,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Xin phép / Nhờ đối phương cho phép mình làm việc gì",
-            "isCorrect": true,
+            "text": "Cấm đoán đối phương",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Cấm đoán đối phương",
-            "isCorrect": false,
+            "text": "Xin phép / Nhờ đối phương cho phép mình làm việc gì",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Bị đối phương mắng",
+            "text": "Bắt đối phương làm việc gì",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Bắt đối phương làm việc gì",
+            "text": "Bị đối phương mắng",
             "isCorrect": false,
             "order": 3
           }
@@ -14086,19 +14220,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "きょうぞうする",
+            "text": "けいそうする",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "けいぞうする",
+            "text": "きょうぞうする",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "けいそうする",
+            "text": "けいぞうする",
             "isCorrect": false,
             "order": 2
           },
@@ -14118,13 +14252,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 1
           },
@@ -14136,7 +14270,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -14151,19 +14285,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Thể Sai Khiến (使役形: 〜させる) & Xin Phép Lịch Sự",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 14 cho bài Thể Sai Khiến (使役形: 〜させる) & Xin Phép Lịch Sự",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 2
           },
@@ -14184,8 +14318,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 15 cho bài Thể Sai Khiến (使役形: 〜させる) & Xin Phép Lịch Sự",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -14202,8 +14336,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Thể Sai Khiến (使役形: 〜させる) & Xin Phép Lịch Sự",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -14227,14 +14361,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "なさいます",
-            "isCorrect": false,
+            "text": "いらっしゃいます (いらっしゃる)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "いらっしゃいます (いらっしゃる)",
-            "isCorrect": true,
+            "text": "なさいます",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -14259,8 +14393,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ご覧になります",
-            "isCorrect": false,
+            "text": "おっしゃいます (おっしゃる)",
+            "isCorrect": true,
             "order": 0
           },
           {
@@ -14277,8 +14411,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "おっしゃいます (おっしゃる)",
-            "isCorrect": true,
+            "text": "ご覧になります",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -14291,26 +14425,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "ご覧になります",
-            "isCorrect": false,
+            "text": "召し上がります (めしあがる)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "おっしゃいます",
+            "text": "ご覧になります",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "なさいます",
+            "text": "おっしゃいます",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "召し上がります (めしあがる)",
-            "isCorrect": true,
+            "text": "なさいます",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -14323,26 +14457,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "召し上がります",
+            "text": "おっしゃいます",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "ご覧になります (ごらんになる)",
-            "isCorrect": true,
+            "text": "なさいます",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "なさいます",
+            "text": "召し上がります",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おっしゃいます",
-            "isCorrect": false,
+            "text": "ご覧になります (ごらんになる)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14355,14 +14489,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "おっしゃいます",
+            "text": "いらっしゃいます",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "なさいます (なさる)",
-            "isCorrect": true,
+            "text": "おっしゃいます",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -14373,8 +14507,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "いらっしゃいます",
-            "isCorrect": false,
+            "text": "なさいます (なさる)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14393,14 +14527,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "ご存じします",
-            "isCorrect": false,
+            "text": "ご存じです (ごぞんじです)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "ご存じです (ごぞんじです)",
-            "isCorrect": true,
+            "text": "ご存じします",
+            "isCorrect": false,
             "order": 2
           },
           {
@@ -14419,13 +14553,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "社長はもうお帰りしましたか。",
+            "text": "社長はもうお帰りになりましたか。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "社長はもうお帰りになりましたか。",
+            "text": "社長はもうお帰りしましたか。",
             "isCorrect": false,
             "order": 1
           },
@@ -14451,19 +14585,19 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "部長、何を召し上がりますか。",
+            "text": "部長、何を食べますか。",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "部長、何を食べますか。",
+            "text": "部長、何をいただきますか。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "部長、何をいただきますか。",
+            "text": "部長、何を召し上がりますか。",
             "isCorrect": false,
             "order": 2
           },
@@ -14495,13 +14629,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "じゃちょう",
+            "text": "しゃとう",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "しゃとう",
+            "text": "じゃちょう",
             "isCorrect": false,
             "order": 3
           }
@@ -14515,14 +14649,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "かない",
-            "isCorrect": false,
+            "text": "おくさま",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "おくさま",
-            "isCorrect": true,
+            "text": "おくさん",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -14533,7 +14667,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "おくさん",
+            "text": "かない",
             "isCorrect": false,
             "order": 3
           }
@@ -14547,26 +14681,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Chỉ dùng cho trẻ em",
+            "text": "Sai",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đúng",
-            "isCorrect": true,
+            "text": "Chỉ dùng trong văn viết cổ",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Chỉ dùng trong văn viết cổ",
+            "text": "Chỉ dùng cho trẻ em",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Sai",
-            "isCorrect": false,
+            "text": "Đúng",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14579,8 +14713,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Gọi / Mời (kính ngữ của 呼びます)",
-            "isCorrect": true,
+            "text": "Nghe",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -14591,13 +14725,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Đi",
-            "isCorrect": false,
+            "text": "Gọi / Mời (kính ngữ của 呼びます)",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Nghe",
+            "text": "Đi",
             "isCorrect": false,
             "order": 3
           }
@@ -14611,26 +14745,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu C (câu 13)",
+            "text": "Phương án gây nhiễu A (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Kính Ngữ (尊敬語: いらっしゃいます・おっしゃいます)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 13 cho bài Kính Ngữ (尊敬語: いらっしゃいます・おっしゃいます)",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 13)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -14644,25 +14778,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Kính Ngữ (尊敬語: いらっしゃいます・おっしゃいます)",
+            "isCorrect": true,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Đáp án đúng câu 14 cho bài Kính Ngữ (尊敬語: いらっしゃいます・おっしゃいます)",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 3
           }
@@ -14677,14 +14811,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu B (câu 15)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Kính Ngữ (尊敬語: いらっしゃいます・おっしゃいます)",
+            "isCorrect": true,
             "order": 1
           },
           {
@@ -14695,8 +14829,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "Đáp án đúng câu 15 cho bài Kính Ngữ (尊敬語: いらっしゃいます・おっしゃいます)",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 15)",
+            "isCorrect": false,
             "order": 3
           }
         ],
@@ -14720,13 +14854,13 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "申します",
+            "text": "伺います",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "伺います",
+            "text": "いたします",
             "isCorrect": false,
             "order": 1
           },
@@ -14738,7 +14872,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "いたします",
+            "text": "申します",
             "isCorrect": false,
             "order": 3
           }
@@ -14752,14 +14886,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "伺います",
+            "text": "いたします",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "申します (もうします) / 申し上げます",
-            "isCorrect": true,
+            "text": "伺います",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -14770,8 +14904,8 @@ export const LESSONS_N4 = [
           },
           {
             "label": "D",
-            "text": "いたします",
-            "isCorrect": false,
+            "text": "申します (もうします) / 申し上げます",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14784,26 +14918,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "参ります",
+            "text": "申します",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "いたします (いたす)",
-            "isCorrect": true,
+            "text": "参ります",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "申します",
+            "text": "おります",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おります",
-            "isCorrect": false,
+            "text": "いたします (いたす)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14816,26 +14950,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "参ります",
-            "isCorrect": false,
+            "text": "おります (おる)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "申します",
+            "text": "参ります",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "いたします",
+            "text": "申します",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おります (おる)",
-            "isCorrect": true,
+            "text": "いたします",
+            "isCorrect": false,
             "order": 3
           }
         ]
@@ -14848,7 +14982,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "参ります",
+            "text": "ございます",
             "isCorrect": false,
             "order": 0
           },
@@ -14860,7 +14994,7 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "ございます",
+            "text": "参ります",
             "isCorrect": false,
             "order": 2
           },
@@ -14880,7 +15014,7 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "いたします",
+            "text": "申します",
             "isCorrect": false,
             "order": 0
           },
@@ -14892,14 +15026,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "伺います (うかがう)",
-            "isCorrect": true,
+            "text": "いたします",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "申します",
-            "isCorrect": false,
+            "text": "伺います (うかがう)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14918,20 +15052,20 @@ export const LESSONS_N4 = [
           },
           {
             "label": "B",
-            "text": "重い荷物をお持ちになります。",
+            "text": "重い荷物をお持ちいたします。",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "重い荷物をお持ちします。",
-            "isCorrect": true,
+            "text": "重い荷物をお持ちになります。",
+            "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "重い荷物をお持ちいたします。",
-            "isCorrect": false,
+            "text": "重い荷物をお持ちします。",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -14944,8 +15078,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "あります (Ví dụ: 電話の me にございます)",
-            "isCorrect": true,
+            "text": "いきます",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -14956,14 +15090,14 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "いきます",
+            "text": "きます",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "きます",
-            "isCorrect": false,
+            "text": "あります (Ví dụ: 電話の me にございます)",
+            "isCorrect": true,
             "order": 3
           }
         ]
@@ -15020,13 +15154,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "わたし",
+            "text": "おれ",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "おれ",
+            "text": "わたし",
             "isCorrect": false,
             "order": 3
           }
@@ -15040,8 +15174,8 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Kính ngữ dùng cho hành động người khác (sếp/khách), Khiêm nhường ngữ dùng cho hành động của mình",
-            "isCorrect": true,
+            "text": "Không có sự khác biệt",
+            "isCorrect": false,
             "order": 0
           },
           {
@@ -15052,13 +15186,13 @@ export const LESSONS_N4 = [
           },
           {
             "label": "C",
-            "text": "Khiêm nhường ngữ dùng cho sếp",
-            "isCorrect": false,
+            "text": "Kính ngữ dùng cho hành động người khác (sếp/khách), Khiêm nhường ngữ dùng cho hành động của mình",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Không có sự khác biệt",
+            "text": "Khiêm nhường ngữ dùng cho sếp",
             "isCorrect": false,
             "order": 3
           }
@@ -15072,14 +15206,14 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "諦める",
-            "isCorrect": false,
+            "text": "合格する (ごうかくする - Thi đỗ)",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "合格する (ごうかくする - Thi đỗ)",
-            "isCorrect": true,
+            "text": "諦める",
+            "isCorrect": false,
             "order": 1
           },
           {
@@ -15104,25 +15238,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 13)",
+            "text": "Phương án gây nhiễu C (câu 13)",
             "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 13 cho bài Khiêm Nhường Ngữ (謙譲語: 参ります・申します) & Tổng Ôn N4",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu A (câu 13)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 13)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 13 cho bài Khiêm Nhường Ngữ (謙譲語: 参ります・申します) & Tổng Ôn N4",
+            "isCorrect": true,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 13)",
+            "text": "Phương án gây nhiễu B (câu 13)",
             "isCorrect": false,
             "order": 3
           }
@@ -15137,26 +15271,26 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Đáp án đúng câu 14 cho bài Khiêm Nhường Ngữ (謙譲語: 参ります・申します) & Tổng Ôn N4",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 14)",
+            "isCorrect": false,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Phương án gây nhiễu A (câu 14)",
+            "text": "Phương án gây nhiễu C (câu 14)",
             "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 14)",
+            "text": "Phương án gây nhiễu A (câu 14)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu B (câu 14)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 14 cho bài Khiêm Nhường Ngữ (謙譲語: 参ります・申します) & Tổng Ôn N4",
+            "isCorrect": true,
             "order": 3
           }
         ],
@@ -15170,25 +15304,25 @@ export const LESSONS_N4 = [
         "options": [
           {
             "label": "A",
-            "text": "Phương án gây nhiễu B (câu 15)",
-            "isCorrect": false,
+            "text": "Đáp án đúng câu 15 cho bài Khiêm Nhường Ngữ (謙譲語: 参ります・申します) & Tổng Ôn N4",
+            "isCorrect": true,
             "order": 0
           },
           {
             "label": "B",
-            "text": "Đáp án đúng câu 15 cho bài Khiêm Nhường Ngữ (謙譲語: 参ります・申します) & Tổng Ôn N4",
-            "isCorrect": true,
+            "text": "Phương án gây nhiễu B (câu 15)",
+            "isCorrect": false,
             "order": 1
           },
           {
             "label": "C",
-            "text": "Phương án gây nhiễu C (câu 15)",
+            "text": "Phương án gây nhiễu A (câu 15)",
             "isCorrect": false,
             "order": 2
           },
           {
             "label": "D",
-            "text": "Phương án gây nhiễu A (câu 15)",
+            "text": "Phương án gây nhiễu C (câu 15)",
             "isCorrect": false,
             "order": 3
           }

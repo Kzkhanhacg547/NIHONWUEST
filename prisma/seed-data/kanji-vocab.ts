@@ -9,15 +9,16 @@ export interface SeedKanji {
 export interface SeedVocab {
   word: string;
   kana: string;
-  kanji: string | null;
+  kanji?: string | null;
   romaji: string;
   meaning: string;
-  partOfSpeech: string;
+  partOfSpeech?: string;
   jlptLevel: string;
-  exampleJapanese: string;
-  exampleRomaji: string;
-  exampleMeaning: string;
+  exampleJapanese?: string;
+  exampleRomaji?: string;
+  exampleMeaning?: string;
   tags?: string;
+  category?: string;
 }
 
 export const KANJI_N5: SeedKanji[] = [

@@ -30,6 +30,8 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const MORE_ITEMS: NavItem[] = [
+  { href: "/app/test", label: "Kiểm tra năng lực", glyph: "★", short: "Test" },
+  { href: "/app/achievements", label: "Huy hiệu & Thành tựu", glyph: "🏆", short: "Huy hiệu" },
   { href: "/app/journey", label: "Hành trình", glyph: "⌁", short: "Trình" },
   { href: "/app/learn", label: "Lộ trình học & Kana Lab", glyph: "学", short: "Lộ trình" },
   { href: "/app/survival", label: "Survival Mode", glyph: "食", short: "Sinh tồn" },
@@ -349,19 +351,19 @@ export function AppNav({
               <Icon name={resolvedTheme === "dark" ? "moon" : "sun"} className="h-[18px] w-[18px]" />
             </IconButton>
 
-            <IconButton
-              label="Thông báo"
-              className="relative h-9 w-9 sm:h-10 sm:w-10"
-              onClick={() => {
-                playClick();
-                showToast({ title: unreadCount > 0 ? `Bạn có ${unreadCount} thông báo mới` : "Chưa có thông báo mới", type: "info" });
-              }}
-            >
-              <Icon name="bell" className="h-[18px] w-[18px]" />
-              {unreadCount > 0 && (
-                <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-sumi-900" />
-              )}
-            </IconButton>
+             <IconButton
+               label="Thông báo"
+               className="relative h-9 w-9 sm:h-10 sm:w-10 max-[420px]:hidden"
+               onClick={() => {
+                 playClick();
+                 showToast({ title: unreadCount > 0 ? `Bạn có ${unreadCount} thông báo mới` : "Chưa có thông báo mới", type: "info" });
+               }}
+             >
+               <Icon name="bell" className="h-[18px] w-[18px]" />
+               {unreadCount > 0 && (
+                 <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-sumi-900" />
+               )}
+             </IconButton>
 
             <Link
               href="/app/profile"

@@ -1,9 +1,15 @@
 import bcrypt from "bcryptjs";
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+
+// Tự động bật AUTH_TRUST_HOST để NextAuth tự đọc request host header khi dùng ngrok / cloudflared / vercel / local IP
+if (!process.env.AUTH_TRUST_HOST) {
+  process.env.AUTH_TRUST_HOST = "true";
+}
 
 const loginSchema = z.object({
   email: z.string().trim().toLowerCase().email(),
@@ -44,8 +50,39 @@ export const authOptions: NextAuthOptions = {
         return { id: user.id, email: user.email, name: user.name };
       },
     }),
+    ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
+      ? [
+          GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            authorization: {
+              params: {
+                access_type: "offline",
+                prompt: "consent",
+              },
+            },
+          }),
+        ]
+      : []),
   ],
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      // 1. Cho phép các đường dẫn tương đối (vd: "/app", "/onboarding")
+      if (url.startsWith("/")) {
+        return `${baseUrl}${url}`;
+      }
+      // 2. Cho phép redirect nếu cùng origin/domain (kể cả ngrok, cloudflared, custom domain)
+      try {
+        const targetUrl = new URL(url);
+        const baseObj = new URL(baseUrl);
+        if (targetUrl.host === baseObj.host) {
+          return url;
+        }
+      } catch {
+        // url không hợp lệ
+      }
+      return baseUrl;
+    },
     async jwt({ token, user }) {
       if (user) token.uid = (user as { id: string }).id;
       return token;

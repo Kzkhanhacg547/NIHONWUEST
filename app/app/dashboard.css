@@ -291,10 +291,10 @@
   .nqd-cheer { display: none; }
 }
 @media (max-width: 640px) {
-  .nqd { padding: 8px 12px calc(110px + env(safe-area-inset-bottom)); }
+  .nqd { padding: 8px 10px calc(110px + env(safe-area-inset-bottom)); }
   .nqd-modes { grid-template-columns: 1fr; }
-  .nqd-mini-row { grid-template-columns: 1fr 1fr; }
-  .nqd-focus { padding: 22px 20px; }
+  .nqd-mini-row { grid-template-columns: 1fr; }
+  .nqd-focus { padding: 20px 16px; }
   .nqd-focus-vert { display: none; }
   .nqd-explore { padding: 14px; }
   .nqd-mode { gap: 14px; min-height: 0; }
@@ -303,24 +303,39 @@
   .nqd-path-deco { opacity: 0.6; }
   .nqd-path-head { flex-wrap: wrap; }
   .nqd-path-prog { width: 100%; text-align: left; }
+  .nqd-side-card { padding: 14px 14px; }
+  .nqd-mission { grid-template-columns: 18px 34px 1fr auto; gap: 8px; }
+  .nqd-mission .mi { width: 34px; height: 34px; font-size: 15px; }
+  .nqd-rank { grid-template-columns: 22px 32px 1fr auto; gap: 8px; padding: 6px 8px; }
+  .nqd-mini { padding: 14px 14px; }
+  .nqd-mini .big { font-size: 32px; }
+  .nqd-mini .unit { font-size: 15px; }
 }
 @media (max-width: 480px) {
   /* 5 nhóm font chữ Nhật dạng wrap không vừa 5 cột ở 360px (mỗi cột ~62px):
      nhãn vỡ 2-3 dòng và chồng lên đường nối. Cho phép cuộn ngang thay vì ép. */
   .nqd-track { justify-content: flex-start; gap: 10px; margin-left: 0; margin-right: 0; padding-bottom: 4px; overflow-x: auto; scrollbar-width: none; }
   .nqd-track::-webkit-scrollbar { display: none; }
-  .nqd-station { flex: 0 0 auto; min-width: 58px; font-size: 10px; text-align: center; }
-  .nqd-track::before { left: 29px; right: 29px; }
+  .nqd-station { flex: 0 0 auto; min-width: 54px; font-size: 10px; text-align: center; }
+  .nqd-track::before { left: 25px; right: 25px; }
   .nqd-mini { padding: 12px 14px; }
-  .nqd-mission { grid-template-columns: 20px 36px 1fr auto; gap: 9px; }
-  .nqd-mission .mi { width: 36px; height: 36px; font-size: 16px; }
-  .nqd-rank { grid-template-columns: 24px 34px 1fr auto; gap: 9px; padding: 7px 6px; }
-  .nqd-path-spotlight { padding: 18px 16px; }
+  .nqd-mission { grid-template-columns: 16px 30px 1fr auto; gap: 7px; }
+  .nqd-mission .mi { width: 30px; height: 30px; font-size: 14px; }
+  .nqd-rank { grid-template-columns: 20px 30px 1fr auto; gap: 7px; padding: 5px 6px; }
+  .nqd-path-spotlight { padding: 16px 14px; }
   .nqd-sec-title { flex-wrap: wrap; }
+  .nqd-focus { padding: 18px 14px; }
+  .nqd-mode { padding: 12px; }
+  .nqd-hero-scene { height: 200px; }
 }
 @media (max-width: 400px) {
-  .nqd-focus { padding: 20px 16px; }
-  .nqd-mode { padding: 14px; }
+  .nqd-mini .big { font-size: 28px; }
+  .nqd-mini .lv { font-size: 22px; }
+  .nqd-mini { padding: 12px 12px; }
+  .nqd-mode .art { width: 60px; height: 60px; }
+  .nqd-mode .art svg { width: 50px; height: 50px; }
+  .nqd-side-card { padding: 12px 12px; }
+  .nqd-side-head h3 { font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .nqd *, .nqd *::before, .nqd *::after { transition: none !important; animation: none !important; }
