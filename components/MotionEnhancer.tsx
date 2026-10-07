@@ -18,25 +18,30 @@ export function MotionEnhancer() {
           const main = document.getElementById("main");
           if (!main) return;
           const ctx = gsap.context(() => {
-            // Hero intro: small stagger, transform/opacity only. No layout animation.
-            gsap.from("[data-intro]", {
-              y: 24,
-              opacity: 0,
-              duration: 0.85,
-              stagger: 0.085,
-              ease: "power3.out",
-              clearProps: "transform,opacity",
-            });
-            gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
-              gsap.from(el, {
-                y: 22,
+            const intros = main.querySelectorAll<HTMLElement>("[data-intro]");
+            if (intros.length > 0) {
+              gsap.from(intros, {
+                y: 24,
                 opacity: 0,
-                duration: 0.7,
-                ease: "power2.out",
+                duration: 0.85,
+                stagger: 0.085,
+                ease: "power3.out",
                 clearProps: "transform,opacity",
-                scrollTrigger: { trigger: el, start: "top 94%", once: true },
               });
-            });
+            }
+            const reveals = main.querySelectorAll<HTMLElement>("[data-reveal]");
+            if (reveals.length > 0) {
+              reveals.forEach((el) => {
+                gsap.from(el, {
+                  y: 22,
+                  opacity: 0,
+                  duration: 0.7,
+                  ease: "power2.out",
+                  clearProps: "transform,opacity",
+                  scrollTrigger: { trigger: el, start: "top 94%", once: true },
+                });
+              });
+            }
           }, main);
           return () => ctx.revert();
         });
