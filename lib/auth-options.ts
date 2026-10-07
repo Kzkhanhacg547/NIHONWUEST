@@ -55,6 +55,8 @@ export const authOptions: NextAuthOptions = {
           GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            allowDangerousEmailAccountLinking: true,
+            checks: ["state"],
             authorization: {
               params: {
                 access_type: "offline",
@@ -92,6 +94,62 @@ export const authOptions: NextAuthOptions = {
         (session.user as { id?: string }).id = token.uid as string;
       }
       return session;
+    },
+  },
+  cookies: {
+    sessionToken: {
+      name: process.env.NODE_ENV === "production" ? "__Secure-next-auth.session-token" : "next-auth.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+      },
+    },
+    callbackUrl: {
+      name: process.env.NODE_ENV === "production" ? "__Secure-next-auth.callback-url" : "next-auth.callback-url",
+      options: {
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+      },
+    },
+    csrfToken: {
+      name: process.env.NODE_ENV === "production" ? "__Host-next-auth.csrf-token" : "next-auth.csrf-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+      },
+    },
+    pkceCodeVerifier: {
+      name: process.env.NODE_ENV === "production" ? "__Secure-next-auth.pkce.code_verifier" : "next-auth.pkce.code_verifier",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 60 * 15,
+      },
+    },
+    state: {
+      name: process.env.NODE_ENV === "production" ? "__Secure-next-auth.state" : "next-auth.state",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 60 * 15,
+      },
+    },
+  },
+  logger: {
+    error(code, metadata) {
+      console.error("[NextAuth Error]", code, metadata);
+    },
+    warn(code) {
+      console.warn("[NextAuth Warning]", code);
     },
   },
 };
