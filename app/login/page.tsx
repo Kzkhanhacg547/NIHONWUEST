@@ -3,7 +3,7 @@
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Sriracha } from "next/font/google";
 import "./login.css";
 import { NihonQuestLogo } from "@/components/NihonQuestLogo";
@@ -13,7 +13,10 @@ const brush = Sriracha({ subsets: ["latin", "vietnamese"], weight: "400", displa
 
 function RegisteredNotice() {
   const params = useSearchParams();
-  if (!params.get("registered")) return null;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted || !params.get("registered")) return null;
   return <div className="nq-notice nq-notice-ok">✓ Tài khoản đã tạo thành công. Hãy đăng nhập để bắt đầu hành trình.</div>;
 }
 
@@ -29,8 +32,11 @@ const AUTH_ERRORS: Record<string, string> = {
 
 function AuthErrorNotice() {
   const params = useSearchParams();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const code = params.get("error");
-  if (!code) return null;
+  if (!mounted || !code) return null;
   return (
     <div role="alert" className="nq-notice nq-notice-err" style={{ marginBottom: 14 }}>
       {AUTH_ERRORS[code] ?? "Đăng nhập không thành công. Vui lòng thử lại."} <small>({code})</small>
